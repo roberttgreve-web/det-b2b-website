@@ -73,3 +73,7 @@ html { scroll-behavior: smooth; }
 .sound-toggle .icon-unmuted { display: none; }
 .sound-toggle.is-unmuted .icon-muted { display: none; }
 .sound-toggle.is-unmuted .icon-unmuted { display: block; }
+
+/* ── Sprachnachricht: wortweises Text-Overlay, synchron zur Clip-Dauer ── */
+.ov-word { opacity: 0; transition: opacity 0.3s ease; }
+.ov-word.visible { opacity: 1; }

@@ -282,7 +282,7 @@
               <svg class="w-5 h-5 text-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"/></svg>
             </div>
             <h3 class="text-lg font-medium text-dark">#kurzerklärt</h3>
-            <p class="text-[15px] leading-relaxed text-dark/70">Ihr Beruf, humorvoll erzählt als Foto-Story: kurzweilig und informativ zugleich.</p>
+            <p class="text-[15px] leading-relaxed text-dark/70">Ihr Beruf, humorvoll erzählt als Foto-Story mit authentischen Infos und Wortwitz – kurzweilig und informativ.</p>
           </div>
         </div>
         <!-- Slide 2 – Augmented Reality -->
@@ -302,7 +302,10 @@
         <div class="snap-start shrink-0 w-[85vw] flex flex-col gap-4">
           <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-white relative">
             <div class="absolute -bottom-16 -left-16 w-56 h-56 bg-yellow rounded-full"></div>
-            <div class="relative z-10 w-full h-full flex flex-col items-center justify-center gap-4">
+            <div class="relative z-10 w-full h-full flex flex-col items-center justify-center gap-4 px-8">
+              <p id="sprachnachricht-text-mobile" class="text-center text-lg font-medium text-[#6a6ff5] leading-snug" aria-hidden="true">
+                <span class="ov-word">Du</span> <span class="ov-word">arbeitest</span> <span class="ov-word">halt</span> <span class="ov-word">an</span> <span class="ov-word">Fahrzeugen,</span> <span class="ov-word">die</span> <span class="ov-word">die</span> <span class="ov-word">ganze</span> <span class="ov-word">Stadt</span> <span class="ov-word">am</span> <span class="ov-word">laufen</span> <span class="ov-word">halten.</span> <span class="ov-word">Mega!</span>
+              </p>
               <div class="flex items-center justify-center gap-[3px]" aria-hidden="true">
                 <span class="waveform-bar" style="--wf-h:14px; animation-delay:0.0s"></span>
                 <span class="waveform-bar" style="--wf-h:26px; animation-delay:0.1s"></span>
@@ -324,14 +327,14 @@
                 <span class="sound-toggle-label">Ton an</span>
               </button>
             </div>
-            <audio id="sprachnachricht-audio-mobile" class="audio-el" data-src="assets/Sprachnachricht.mp3" data-clip-start="20" data-clip-end="25" muted loop></audio>
+            <audio id="sprachnachricht-audio-mobile" class="audio-el" data-src="assets/Sprachnachricht.mp3" data-clip-start="20" data-clip-end="25" data-text-overlay="sprachnachricht-text-mobile" muted loop></audio>
           </div>
           <div class="flex flex-col gap-3">
             <div class="w-10 h-10 bg-mist rounded-lg flex items-center justify-center shrink-0">
               <svg class="w-5 h-5 text-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
             </div>
             <h3 class="text-lg font-medium text-dark">Sprachnachrichten mit Mini-Games</h3>
-            <p class="text-[15px] leading-relaxed text-dark/70">Ausbildungsplätze bleiben unbesetzt – nicht weil Jugendliche kein Interesse haben, sondern weil sie nie von Ihnen gehört haben.</p>
+            <p class="text-[15px] leading-relaxed text-dark/70">Ihre Azubis nehmen selbst eine persönliche Sprachnachricht für Schüler*innen auf – oder unser Team produziert sie für Sie.</p>
           </div>
         </div>
       </div>
@@ -362,7 +365,10 @@
         </div>
         <div data-medien="3" class="medien-img absolute inset-0 w-full h-full bg-white overflow-hidden transition-opacity duration-700 opacity-0">
           <div class="absolute -bottom-28 -left-28 w-96 h-96 bg-yellow rounded-full"></div>
-          <div class="relative z-10 w-full h-full flex flex-col items-center justify-center gap-8">
+          <div class="relative z-10 w-full h-full flex flex-col items-center justify-center gap-8 px-16">
+            <p id="sprachnachricht-text-desktop" class="text-center text-2xl lg:text-3xl font-medium text-[#6a6ff5] leading-snug max-w-lg" aria-hidden="true">
+              <span class="ov-word">Du</span> <span class="ov-word">arbeitest</span> <span class="ov-word">halt</span> <span class="ov-word">an</span> <span class="ov-word">Fahrzeugen,</span> <span class="ov-word">die</span> <span class="ov-word">die</span> <span class="ov-word">ganze</span> <span class="ov-word">Stadt</span> <span class="ov-word">am</span> <span class="ov-word">laufen</span> <span class="ov-word">halten.</span> <span class="ov-word">Mega!</span>
+            </p>
             <div class="flex items-center justify-center gap-1" aria-hidden="true">
               <span class="waveform-bar" style="--wf-h:24px; animation-delay:0.0s"></span>
               <span class="waveform-bar" style="--wf-h:44px; animation-delay:0.1s"></span>
@@ -384,7 +390,7 @@
               <span class="sound-toggle-label">Ton an</span>
             </button>
           </div>
-          <audio id="sprachnachricht-audio-desktop" class="audio-el" data-src="assets/Sprachnachricht.mp3" data-clip-start="20" data-clip-end="25" muted loop></audio>
+          <audio id="sprachnachricht-audio-desktop" class="audio-el" data-src="assets/Sprachnachricht.mp3" data-clip-start="20" data-clip-end="25" data-text-overlay="sprachnachricht-text-desktop" muted loop></audio>
         </div>
       </div>
 
@@ -401,7 +407,7 @@
           <div class="w-12 h-12 bg-mist rounded-xl flex items-center justify-center shrink-0">
             <svg class="w-6 h-6 text-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"/></svg>
           </div>
-          <div><h3 class="text-xl leading-[30px] text-dark mb-2">#kurzerklärt</h3><p class="text-[15px] leading-relaxed text-dark/80">Ihr Beruf, humorvoll erzählt als Foto-Story: kurzweilig und informativ zugleich.</p></div>
+          <div><h3 class="text-xl leading-[30px] text-dark mb-2">#kurzerklärt</h3><p class="text-[15px] leading-relaxed text-dark/80">Ihr Beruf, humorvoll erzählt als Foto-Story mit authentischen Infos und Wortwitz – kurzweilig und informativ.</p></div>
           <div class="h-[2px] w-full bg-gray-200 rounded-full overflow-hidden"><div class="medien-bar h-full bg-brand rounded-full w-0"></div></div>
         </button>
         <button class="medien-item text-left flex flex-col gap-4 cursor-pointer transition-opacity duration-500 opacity-50" data-medien="2" aria-pressed="false">
@@ -415,7 +421,7 @@
           <div class="w-12 h-12 bg-mist rounded-xl flex items-center justify-center shrink-0">
             <svg class="w-6 h-6 text-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
           </div>
-          <div><h3 class="text-xl leading-[30px] text-dark mb-2">Sprachnachrichten mit Mini-Games</h3><p class="text-[15px] leading-relaxed text-dark/80">Ausbildungsplätze bleiben unbesetzt – nicht weil Jugendliche kein Interesse haben, sondern weil sie nie von Ihnen gehört haben.</p></div>
+          <div><h3 class="text-xl leading-[30px] text-dark mb-2">Sprachnachrichten mit Mini-Games</h3><p class="text-[15px] leading-relaxed text-dark/80">Ihre Azubis nehmen selbst eine persönliche Sprachnachricht für Schüler*innen auf – oder unser Team produziert sie für Sie.</p></div>
           <div class="h-[2px] w-full bg-gray-200 rounded-full overflow-hidden"><div class="medien-bar h-full bg-brand rounded-full w-0"></div></div>
         </button>
       </div>
@@ -431,7 +437,7 @@
   <div class="max-w-[1440px] mx-auto">
     <div class="bg-yellow rounded-2xl py-20 lg:py-24 px-8 reveal-scale">
       <div class="max-w-[651px] mx-auto flex flex-col gap-6 items-center text-center">
-        <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark"> Wir begeistern Schüler*innen.<br />Lassen Sie sich davon überzeugen. </h2>
+        <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark"> Wir begeistern Schüler*innen.<br />Lassen Sie sich von uns überzeugen. </h2>
         <p class="text-[15px] leading-relaxed text-dark"> Wir zeigen Ihnen in einem kostenlosen Beratungsgespräch, welche Medien zu Ihnen passen und wie wir Ihre Zielgruppe direkt im Klassenzimmer erreichen. </p>
         <a href="#kontakt" class="inline-flex items-center gap-2 bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200 group"> Beratungsgespräch vereinbaren <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/> </svg> </a>
       </div>
@@ -511,7 +517,7 @@
     <div class="max-w-[519px] mb-12 lg:mb-20 reveal">
       <p class="text-brand text-base tracking-tight2 mb-4">SO FUNKTIONIERT ES</p>
       <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark font-normal">
-        Sie geben uns die Berufe, wir bringen Sie in die Schulklassen.
+        Vom Konzept bis zum Einsatz in der Schulklasse: Wir übernehmen die Umsetzung.
       </h2>
     </div>
 
@@ -528,7 +534,7 @@
               <span class="text-lg font-medium">1</span>
             </div>
             <h3 class="text-lg font-medium text-dark">Wir produzieren ein Medium für Ihren Beruf.</h3>
-            <p class="text-[15px] leading-relaxed text-dark/70">Unser Team produziert Ihr Medium professionell und jugendgerecht.</p>
+            <p class="text-[15px] leading-relaxed text-dark/70">Unser Team produziert Ihr Medium professionell und jugendgerecht. Wir übernehmen jeden Schritt im Prozess.</p>
           </div>
         </div>
         <!-- Step 2 -->
@@ -599,7 +605,7 @@
       <div class="grid grid-cols-4 gap-4">
         <div class="flex flex-col gap-4 reveal delay-100">
           <div class="w-12 h-12 bg-mist rounded-xl flex items-center justify-center shrink-0"><span class="text-2xl font-normal tracking-tight">1</span></div>
-          <div><h3 class="text-xl leading-[30px] mb-2">Wir produzieren ein Medium für Ihren Beruf.</h3><p class="text-[15px] leading-relaxed text-dark/70">Unser Team produziert Ihr Medium professionell und jugendgerecht.</p></div>
+          <div><h3 class="text-xl leading-[30px] mb-2">Wir produzieren ein Medium für Ihren Beruf.</h3><p class="text-[15px] leading-relaxed text-dark/70">Unser Team produziert Ihr Medium professionell und jugendgerecht. Wir übernehmen jeden Schritt im Prozess.</p></div>
         </div>
         <div class="flex flex-col gap-4 reveal delay-200">
           <div class="w-12 h-12 bg-mist rounded-xl flex items-center justify-center shrink-0"><span class="text-2xl font-normal tracking-tight">2</span></div>
@@ -731,7 +737,7 @@
     <div class="max-w-[519px] mb-16 reveal">
       <p class="text-brand text-base tracking-tight2 mb-4">WAS SIE ZURÜCKBEKOMMEN</p>
       <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark font-normal">
-        Was Sie zurückbekommen: Bewerbungen, Schülerkontakte, Reportings.
+        Employer Branding like it's 2026: direkte Schülerkontakte, nachhaltige Markenpräsenz und messbare Ergebnisse.
       </h2>
     </div>
 
@@ -1036,9 +1042,20 @@
     if (media.dataset.clipStart !== undefined) {
       const start = parseFloat(media.dataset.clipStart);
       const end   = parseFloat(media.dataset.clipEnd);
+
+      // Optionales Text-Overlay (Sprachnachricht): Wörter blenden sich gleichmäßig
+      // über die Clip-Dauer ein, synchron zum Loop-Reset
+      const overlay = media.dataset.textOverlay ? document.getElementById(media.dataset.textOverlay) : null;
+      const words   = overlay ? overlay.querySelectorAll('.ov-word') : null;
+
       media.addEventListener('loadedmetadata', () => { media.currentTime = start; });
       media.addEventListener('timeupdate', () => {
         if (media.currentTime >= end) media.currentTime = start;
+        if (words && words.length) {
+          const progress = Math.min(1, Math.max(0, (media.currentTime - start) / (end - start)));
+          const visibleCount = Math.ceil(progress * words.length);
+          words.forEach((w, i) => w.classList.toggle('visible', i < visibleCount));
+        }
       });
     }
 
