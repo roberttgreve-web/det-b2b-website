@@ -1173,5 +1173,256 @@
     startObserver.observe(medienSection);
   })();
 </script>
+<script>
+  // ═══════════════════════════════════════
+  //   SCHULEN IN DER NÄHE – Static Fallback
+  //   (Datenbasis: nur Berliner Testschulen, siehe design.md /
+  //   spätere Erweiterung auf bundesweite Schuldatenbank offen)
+  // ═══════════════════════════════════════
+  const SCHULEN_DB = [{"name":"Albrecht-Haushofer-Schule","district":"Reinickendorf","city":"Berlin","postcode":"13403","lat":52.55731,"lon":13.403745},{"name":"Albrecht-von-Graefe-Schule","district":"Friedrichshain-Kreuzberg","city":"Berlin","postcode":"10247","lat":52.47875,"lon":13.431097},{"name":"Alexander-Puschkin-Schule","district":"Lichtenberg","city":"Berlin","postcode":"13051","lat":52.517656,"lon":13.457652},{"name":"Alfred-Nobel-Schule","district":"Neukölln","city":"Berlin","postcode":"12043","lat":52.441902,"lon":13.456897},{"name":"Anna-Essinger-Gemeinschaftsschule","district":"Steglitz-Zehlendorf","city":"Berlin","postcode":"12207","lat":52.468873,"lon":13.352157},{"name":"Anna-Seghers-Schule","district":"Treptow-Köpenick","city":"Berlin","postcode":"12559","lat":52.453436,"lon":13.619408},{"name":"B.-Traven-Gemeinschaftsschule","district":"Spandau","city":"Berlin","postcode":"13585","lat":52.570127,"lon":13.262748},{"name":"Benjamin-Franklin-Schule","district":"Reinickendorf","city":"Berlin","postcode":"13409","lat":52.55879,"lon":13.26489},{"name":"Bergmannkiez-Gemeinschaftsschule","district":"Friedrichshain-Kreuzberg","city":"Berlin","postcode":"10969","lat":52.48731,"lon":13.409955},{"name":"Bertolt-Brecht-Oberschule","district":"Spandau","city":"Berlin","postcode":"13585","lat":52.571918,"lon":13.186149},{"name":"Bettina-von-Arnim-Schule","district":"Reinickendorf","city":"Berlin","postcode":"13407","lat":52.62451,"lon":13.39272},{"name":"Bröndby-Schule","district":"Steglitz-Zehlendorf","city":"Berlin","postcode":"14163","lat":52.43866,"lon":13.276908},{"name":"Campus Hannah Höch","district":"Reinickendorf","city":"Berlin","postcode":"13407","lat":52.59882,"lon":13.387935},{"name":"Carl-Benz-Schule","district":"Reinickendorf","city":"Berlin","postcode":"13463","lat":52.60867,"lon":13.277715},{"name":"Carl-Bosch-Schule","district":"Reinickendorf","city":"Berlin","postcode":"13437","lat":52.54992,"lon":13.265415},{"name":"Carl-von-Ossietzky-Gemeinschaftsschule","district":"Friedrichshain-Kreuzberg","city":"Berlin","postcode":"10999","lat":52.49645,"lon":13.408515},{"name":"Carl-Zeiss-Schule","district":"Tempelhof-Schöneberg","city":"Berlin","postcode":"12103","lat":52.461338,"lon":13.375766},{"name":"Carlo-Schmid-Oberschule","district":"Spandau","city":"Berlin","postcode":"13591","lat":52.525424,"lon":13.171177},{"name":"Caspar-David-Friedrich-Schule","district":"Marzahn-Hellersdorf","city":"Berlin","postcode":"12683","lat":52.490004,"lon":13.555062},{"name":"Clay-Schule","district":"Neukölln","city":"Berlin","postcode":"12047","lat":52.47183,"lon":13.45957},{"name":"Ellen-Key-Schule","district":"Friedrichshain-Kreuzberg","city":"Berlin","postcode":"10999","lat":52.52529,"lon":13.4187},{"name":"Elsa-Neumann-Schule","district":"Lichtenberg","city":"Berlin","postcode":"10315","lat":52.55432,"lon":13.488108},{"name":"Emanuel-Lasker-Schule","district":"Friedrichshain-Kreuzberg","city":"Berlin","postcode":"10999","lat":52.50885,"lon":13.403393},{"name":"Ernst-Haeckel-Schule","district":"Marzahn-Hellersdorf","city":"Berlin","postcode":"12623","lat":52.561851,"lon":13.536},{"name":"Ernst-Reuter-Schule","district":"Mitte","city":"Berlin","postcode":"10179","lat":52.513975,"lon":13.417112},{"name":"Ernst-Schering-Schule","district":"Mitte","city":"Berlin","postcode":"10178","lat":52.52147,"lon":13.381533},{"name":"Ferdinand-Freiligrath-Schule","district":"Friedrichshain-Kreuzberg","city":"Berlin","postcode":"10245","lat":52.52286,"lon":13.461832},{"name":"Flatow-Oberschule","district":"Treptow-Köpenick","city":"Berlin","postcode":"12555","lat":52.480076,"lon":13.48286},{"name":"Friedenauer Gemeinschaftsschule","district":"Tempelhof-Schöneberg","city":"Berlin","postcode":"10777","lat":52.462395,"lon":13.341043},{"name":"Friedensburg-Schule","district":"Charlottenburg-Wilmersdorf","city":"Berlin","postcode":"10713","lat":52.531976,"lon":13.283052},{"name":"Friedrich-Bergius-Schule","district":"Tempelhof-Schöneberg","city":"Berlin","postcode":"12103","lat":52.44696,"lon":13.358326},{"name":"Fritz-Karsen-Schule","district":"Neukölln","city":"Berlin","postcode":"12051","lat":52.458174,"lon":13.462252},{"name":"Fritz-Kühn-Schule","district":"Treptow-Köpenick","city":"Berlin","postcode":"12489","lat":52.497104,"lon":13.51301},{"name":"Fritz-Reuter-Schule","district":"Lichtenberg","city":"Berlin","postcode":"13053","lat":52.509624,"lon":13.506324},{"name":"Gail S. Halvorsen Schule","district":"Steglitz-Zehlendorf","city":"Berlin","postcode":"14169","lat":52.432756,"lon":13.363376},{"name":"Gemeinschaftsschule auf dem Campus Rütli","district":"Neukölln","city":"Berlin","postcode":"12057","lat":52.475916,"lon":13.434865},{"name":"Gemeinschaftsschule Campus Efeuweg","district":"Neukölln","city":"Berlin","postcode":"12051","lat":52.477212,"lon":13.446169},{"name":"Gemeinschaftsschule Mahlsdorf","district":"Marzahn-Hellersdorf","city":"Berlin","postcode":"12621","lat":52.536471,"lon":13.580267},{"name":"Georg-Klingenberg-Schule","district":"Marzahn-Hellersdorf","city":"Berlin","postcode":"12619","lat":52.516176,"lon":13.627314},{"name":"Georg-von-Giesche-Schule","district":"Tempelhof-Schöneberg","city":"Berlin","postcode":"10823","lat":52.473812,"lon":13.374055},{"name":"Georg-Weerth-Schule","district":"Friedrichshain-Kreuzberg","city":"Berlin","postcode":"10997","lat":52.51391,"lon":13.431105},{"name":"Gretel-Bergmann-Gemeinschaftsschule","district":"Marzahn-Hellersdorf","city":"Berlin","postcode":"12625","lat":52.497555,"lon":13.531275},{"name":"Grünauer Gemeinschaftsschule","district":"Treptow-Köpenick","city":"Berlin","postcode":"12437","lat":52.499408,"lon":13.568792},{"name":"Grüner Campus Malchow","district":"Lichtenberg","city":"Berlin","postcode":"10318","lat":52.54976,"lon":13.48548},{"name":"Gustav-Freytag-Schule","district":"Reinickendorf","city":"Berlin","postcode":"13469","lat":52.57863,"lon":13.361745},{"name":"Gustav-Heinemann-Schule","district":"Tempelhof-Schöneberg","city":"Berlin","postcode":"10827","lat":52.493629,"lon":13.359785},{"name":"Gustav-Langenscheidt-Schule","district":"Tempelhof-Schöneberg","city":"Berlin","postcode":"10779","lat":52.452371,"lon":13.377142},{"name":"Gustave-Eiffel-Schule","district":"Pankow","city":"Berlin","postcode":"13187","lat":52.542928,"lon":13.425323},{"name":"Gutenberg-Schule","district":"Lichtenberg","city":"Berlin","postcode":"13057","lat":52.516432,"lon":13.48134},{"name":"Hagenbeck-Schule","district":"Pankow","city":"Berlin","postcode":"13158","lat":52.606666,"lon":13.391532},{"name":"Hans-Grade-Schule","district":"Treptow-Köpenick","city":"Berlin","postcode":"12487","lat":52.471376,"lon":13.48664},{"name":"Hector-Peterson-Schule","district":"Friedrichshain-Kreuzberg","city":"Berlin","postcode":"10999","lat":52.502635,"lon":13.421865},{"name":"Hedwig-Dohm-Schule","district":"Mitte","city":"Berlin","postcode":"10178","lat":52.52198,"lon":13.398355},{"name":"Heinrich-Böll-Oberschule","district":"Spandau","city":"Berlin","postcode":"13599","lat":52.548806,"lon":13.154437},{"name":"Heinrich-Mann-Schule","district":"Neukölln","city":"Berlin","postcode":"12057","lat":52.491858,"lon":13.393294},{"name":"Heinrich-von-Stephan-Gemeinschaftsschule","district":"Mitte","city":"Berlin","postcode":"10119","lat":52.543975,"lon":13.414547},{"name":"Heinz-Brandt-Schule","district":"Pankow","city":"Berlin","postcode":"13086","lat":52.551892,"lon":13.385984},{"name":"Helene-Lange-Schule","district":"Steglitz-Zehlendorf","city":"Berlin","postcode":"12203","lat":52.488106,"lon":13.261126},{"name":"Hemingway-Schule","district":"Mitte","city":"Berlin","postcode":"10115","lat":52.5059,"lon":13.417578},{"name":"Herbert-Hoover-Schule","district":"Mitte","city":"Berlin","postcode":"10117","lat":52.544915,"lon":13.396278},{"name":"Hermann-von-Helmholtz-Schule","district":"Neukölln","city":"Berlin","postcode":"12051","lat":52.465452,"lon":13.474807},{"name":"Hufeland-Schule","district":"Pankow","city":"Berlin","postcode":"13125","lat":52.613191,"lon":13.422474},{"name":"Hugo-Gaudig-Schule","district":"Tempelhof-Schöneberg","city":"Berlin","postcode":"10777","lat":52.500797,"lon":13.388272},{"name":"Integrierte Sekundarschule Mahlsdorf","district":"Marzahn-Hellersdorf","city":"Berlin","postcode":"12681","lat":52.551681,"lon":13.591876},{"name":"Isaac-Newton-Schule","district":"Treptow-Köpenick","city":"Berlin","postcode":"12555","lat":52.443716,"lon":13.533422},{"name":"Janusz-Korczak-Schule","district":"Pankow","city":"Berlin","postcode":"10439","lat":52.593274,"lon":13.366989},{"name":"Jean-Krämer-Schule","district":"Reinickendorf","city":"Berlin","postcode":"13403","lat":52.54857,"lon":13.30998},{"name":"Jean-Piaget-Schule","district":"Marzahn-Hellersdorf","city":"Berlin","postcode":"12683","lat":52.50147,"lon":13.646484},{"name":"Johann-Julius-Hecker-Schule","district":"Marzahn-Hellersdorf","city":"Berlin","postcode":"12619","lat":52.569843,"lon":13.535825},{"name":"Johanna-Eck-Schule","district":"Tempelhof-Schöneberg","city":"Berlin","postcode":"10785","lat":52.497717,"lon":13.405503},{"name":"John-F.-Kennedy-Schule","district":"Steglitz-Zehlendorf","city":"Berlin","postcode":"12161","lat":52.457344,"lon":13.308633},{"name":"Julius-Leber-Schule","district":"Reinickendorf","city":"Berlin","postcode":"13463","lat":52.6286,"lon":13.335645},{"name":"Kepler-Schule","district":"Neukölln","city":"Berlin","postcode":"12055","lat":52.44468,"lon":13.461352},{"name":"Kerschensteiner-Schule","district":"Marzahn-Hellersdorf","city":"Berlin","postcode":"12621","lat":52.539792,"lon":13.55459},{"name":"Konrad-Duden-Schule","district":"Pankow","city":"Berlin","postcode":"13086","lat":52.561756,"lon":13.346051},{"name":"Konrad-Wachsmann-Schule","district":"Marzahn-Hellersdorf","city":"Berlin","postcode":"12621","lat":52.541286,"lon":13.603352},{"name":"Kopernikus-Schule","district":"Steglitz-Zehlendorf","city":"Berlin","postcode":"12167","lat":52.472716,"lon":13.314965},{"name":"Kosmos-Schule","district":"Lichtenberg","city":"Berlin","postcode":"13059","lat":52.496048,"lon":13.495296},{"name":"Kurt-Schwitters-Schule","district":"Pankow","city":"Berlin","postcode":"13158","lat":52.557751,"lon":13.381272},{"name":"Kurt-Tucholsky-Schule","district":"Pankow","city":"Berlin","postcode":"13125","lat":52.595155,"lon":13.346469},{"name":"Marcana-Schule","district":"Marzahn-Hellersdorf","city":"Berlin","postcode":"12681","lat":52.568322,"lon":13.654571},{"name":"Martin-Buber-Oberschule","district":"Spandau","city":"Berlin","postcode":"13587","lat":52.521716,"lon":13.162834},{"name":"Max-Beckmann-Schule","district":"Reinickendorf","city":"Berlin","postcode":"13405","lat":52.57464,"lon":13.341345},{"name":"Max-von-Laue-Schule","district":"Steglitz-Zehlendorf","city":"Berlin","postcode":"12169","lat":52.422424,"lon":13.367209},{"name":"May-Ayim-Schule","district":"Lichtenberg","city":"Berlin","postcode":"13057","lat":52.544848,"lon":13.479072},{"name":"Merian-Schule","district":"Treptow-Köpenick","city":"Berlin","postcode":"12487","lat":52.417868,"lon":13.562744},{"name":"Mildred-Harnack-Schule","district":"Lichtenberg","city":"Berlin","postcode":"10318","lat":52.544664,"lon":13.455888},{"name":"Nelson-Mandela-Schule","district":"Charlottenburg-Wilmersdorf","city":"Berlin","postcode":"10707","lat":52.49252,"lon":13.266},{"name":"Otto-Hahn-Schule","district":"Neukölln","city":"Berlin","postcode":"12051","lat":52.444032,"lon":13.40818},{"name":"Otto-von-Guericke-Schule","district":"Charlottenburg-Wilmersdorf","city":"Berlin","postcode":"10713","lat":52.536888,"lon":13.27374},{"name":"Paul-Löbe-Schule","district":"Reinickendorf","city":"Berlin","postcode":"13403","lat":52.60758,"lon":13.356525},{"name":"Paul-Schmidt-Schule","district":"Lichtenberg","city":"Berlin","postcode":"10317","lat":52.50772,"lon":13.53828},{"name":"Paul-und-Charlotte-Kniese-Schule","district":"Lichtenberg","city":"Berlin","postcode":"13051","lat":52.482728,"lon":13.495068},{"name":"Paula-Fürst-Schule","district":"Charlottenburg-Wilmersdorf","city":"Berlin","postcode":"10629","lat":52.517368,"lon":13.271964},{"name":"Peter-Ustinov-Schule","district":"Charlottenburg-Wilmersdorf","city":"Berlin","postcode":"10711","lat":52.528456,"lon":13.315776},{"name":"Philipp-Reis-Schule","district":"Lichtenberg","city":"Berlin","postcode":"10317","lat":52.552112,"lon":13.465128},{"name":"Refik-Veseli-Schule","district":"Friedrichshain-Kreuzberg","city":"Berlin","postcode":"10999","lat":52.478875,"lon":13.466588},{"name":"Reinhold-Burger-Schule","district":"Pankow","city":"Berlin","postcode":"13189","lat":52.602544,"lon":13.377087},{"name":"Robert-Jungk-Schule","district":"Charlottenburg-Wilmersdorf","city":"Berlin","postcode":"10589","lat":52.497264,"lon":13.350684},{"name":"Röntgen-Schule","district":"Treptow-Köpenick","city":"Berlin","postcode":"12437","lat":52.485968,"lon":13.476092},{"name":"Rudolf-Virchow-Schule","district":"Marzahn-Hellersdorf","city":"Berlin","postcode":"12621","lat":52.509408,"lon":13.566753},{"name":"Schul- und Leistungssportzentrum (SLZB)","district":"Lichtenberg","city":"Berlin","postcode":"13057","lat":52.548192,"lon":13.539324},{"name":"Schule am Berlinickeplatz","district":"Tempelhof-Schöneberg","city":"Berlin","postcode":"10827","lat":52.507013,"lon":13.406185},{"name":"Schule am Königstor","district":"Friedrichshain-Kreuzberg","city":"Berlin","postcode":"10967","lat":52.48389,"lon":13.425713},{"name":"Schule am Rathaus","district":"Lichtenberg","city":"Berlin","postcode":"10318","lat":52.484168,"lon":13.493724},{"name":"Schule am Schillerpark","district":"Mitte","city":"Berlin","postcode":"10117","lat":52.525265,"lon":13.382478},{"name":"Schule am Schloss","district":"Charlottenburg-Wilmersdorf","city":"Berlin","postcode":"10707","lat":52.53216,"lon":13.316172},{"name":"Schule am Staakener Kleeblatt","district":"Spandau","city":"Berlin","postcode":"13591","lat":52.544063,"lon":13.266231},{"name":"Schule am Tierpark","district":"Lichtenberg","city":"Berlin","postcode":"13059","lat":52.55492,"lon":13.506612},{"name":"Schule an der Dahme","district":"Treptow-Köpenick","city":"Berlin","postcode":"12437","lat":52.502816,"lon":13.568432},{"name":"Schule an der Haveldüne","district":"Spandau","city":"Berlin","postcode":"13587","lat":52.557518,"lon":13.144987},{"name":"Schule an der Jungfernheide","district":"Spandau","city":"Berlin","postcode":"13585","lat":52.561136,"lon":13.191846},{"name":"Sekundarschule Falkenberger Chaussee","district":"Lichtenberg","city":"Berlin","postcode":"13055","lat":52.481072,"lon":13.4724},{"name":"Sekundarschule Wilmersdorf","district":"Charlottenburg-Wilmersdorf","city":"Berlin","postcode":"10713","lat":52.477072,"lon":13.258032},{"name":"Solling-Schule","district":"Tempelhof-Schöneberg","city":"Berlin","postcode":"10777","lat":52.448808,"lon":13.350031},{"name":"Sophie-Brahe-Gemeinschaftsschule","district":"Treptow-Köpenick","city":"Berlin","postcode":"12459","lat":52.467056,"lon":13.546868},{"name":"Sophie-Scholl-Schule","district":"Tempelhof-Schöneberg","city":"Berlin","postcode":"12099","lat":52.494448,"lon":13.331215},{"name":"Sportschule im Olympiapark","district":"Charlottenburg-Wilmersdorf","city":"Berlin","postcode":"10719","lat":52.536968,"lon":13.315656},{"name":"Tesla-Schule","district":"Pankow","city":"Berlin","postcode":"13187","lat":52.614334,"lon":13.346334},{"name":"Theodor-Haubach-Schule","district":"Tempelhof-Schöneberg","city":"Berlin","postcode":"10827","lat":52.502071,"lon":13.375262},{"name":"Theodor-Heuss-Gemeinschaftsschule","district":"Mitte","city":"Berlin","postcode":"10117","lat":52.540285,"lon":13.440835},{"name":"Vincent-van-Gogh-Schule","district":"Lichtenberg","city":"Berlin","postcode":"10319","lat":52.517856,"lon":13.485084},{"name":"Walter-Gropius-Schule","district":"Neukölln","city":"Berlin","postcode":"12049","lat":52.465764,"lon":13.392331},{"name":"Wangari-Maathai-Internationale-Schule","district":"Charlottenburg-Wilmersdorf","city":"Berlin","postcode":"10719","lat":52.48816,"lon":13.305696},{"name":"Wilhelm-Bölsche-Schule","district":"Treptow-Köpenick","city":"Berlin","postcode":"12437","lat":52.471112,"lon":13.4933},{"name":"Wilhelm-von-Humboldt-Schule","district":"Pankow","city":"Berlin","postcode":"13156","lat":52.576777,"lon":13.436433},{"name":"Willy-Brandt-Schule","district":"Mitte","city":"Berlin","postcode":"10117","lat":52.52978,"lon":13.438645},{"name":"Wilma-Rudolph-Schule","district":"Steglitz-Zehlendorf","city":"Berlin","postcode":"14163","lat":52.435447,"lon":13.324671},{"name":"Wolfgang-Amadeus-Mozart-Schule","district":"Marzahn-Hellersdorf","city":"Berlin","postcode":"12679","lat":52.49373,"lon":13.599355},{"name":"Wolfgang-Borchert-Schule","district":"Spandau","city":"Berlin","postcode":"13585","lat":52.507712,"lon":13.261506},{"name":"Zuckmayer-Schule","district":"Neukölln","city":"Berlin","postcode":"12049","lat":52.471578,"lon":13.452037}];
+
+
+  // ═══════════════════════════════════════
+  //   SCHULEN IN DER NÄHE – Search Logic
+  // ═══════════════════════════════════════
+
+  // Wire up search button + Enter key
+  document.getElementById('schulen-search-btn').addEventListener('click', searchSchulen);
+  document.getElementById('plz-input').addEventListener('keydown', e => {
+    if (e.key === 'Enter') searchSchulen();
+  });
+
+  // Global data store
+  let _schulenData = { partner: [], network: [] };
+  let _schulenPage = { tab: 'partner', current: 1 };
+  const PAGE_SIZE = 10;
+
+  async function searchSchulen() {
+    const plz = document.getElementById('plz-input').value.trim();
+    const radiusKm = parseInt(document.getElementById('radius-select').value, 10);
+
+    if (!/^\d{5}$/.test(plz)) {
+      document.getElementById('plz-input').focus();
+      return;
+    }
+
+    // Reset UI
+    document.getElementById('schulen-results').classList.add('hidden');
+    document.getElementById('schulen-error').classList.add('hidden');
+    document.getElementById('schulen-loading').classList.remove('hidden');
+
+    try {
+      // 1. Geocode PLZ → lat/lon via Nominatim
+      const geoRes = await fetch(
+        `https://nominatim.openstreetmap.org/search?postalcode=${encodeURIComponent(plz)}&country=de&format=json&limit=1`,
+        { headers: { 'Accept-Language': 'de-DE' } }
+      );
+      const geoData = await geoRes.json();
+
+      if (!geoData.length) {
+        showSchulError('Diese Postleitzahl konnte nicht gefunden werden. Bitte überprüfen Sie Ihre Eingabe.');
+        return;
+      }
+
+      const centerLat = parseFloat(geoData[0].lat);
+      const centerLon = parseFloat(geoData[0].lon);
+
+      // 2. Filter DB by radius – auto-expand if too few results
+      let actualRadius = radiusKm;
+      let schools = [];
+      let radiusExpanded = false;
+
+      for (const r of [radiusKm, radiusKm * 2, radiusKm * 3]) {
+        schools = SCHULEN_DB
+          .map(s => ({ ...s, distance: haversineKm(centerLat, centerLon, s.lat, s.lon) }))
+          .filter(s => s.distance <= r)
+          .sort((a, b) => a.distance - b.distance);
+        actualRadius = r;
+        if (schools.length >= 3) break;
+        radiusExpanded = r > radiusKm;
+      }
+
+      if (!schools.length) {
+        showSchulError('Es konnten keine Schulen in diesem Bereich gefunden werden.');
+        return;
+      }
+
+      // 3. Split: every 3rd school → Partnerschule (~33%), rest → Netzwerkschule
+      const partner = [];
+      const network = [];
+      schools.forEach((s, i) => (i % 3 === 0 ? partner : network).push(s));
+      _schulenData = { partner, network };
+
+      // 5. Populate result headline + stats
+      document.getElementById('result-radius').textContent = actualRadius + ' km';
+      document.getElementById('result-plz').textContent = plz;
+      document.getElementById('partner-count').textContent = partner.length;
+      document.getElementById('network-count').textContent = network.length;
+      document.getElementById('tab-partner-count').textContent = partner.length;
+      document.getElementById('tab-network-count').textContent = network.length;
+
+      const radiusNote = document.getElementById('radius-note');
+      if (radiusExpanded) {
+        radiusNote.textContent =
+          `Für ${radiusKm} km wurden zu wenige Schulen gefunden – Radius automatisch auf ${actualRadius} km erweitert.`;
+        radiusNote.classList.remove('hidden');
+      } else {
+        radiusNote.classList.add('hidden');
+      }
+
+      document.getElementById('schulen-loading').classList.add('hidden');
+      document.getElementById('schulen-results').classList.remove('hidden');
+
+      _schulenPage = { tab: 'partner', current: 1 };
+      switchSchulTab('partner');
+
+    } catch (err) {
+      console.error('Schulen-Suche:', err);
+      showSchulError('Beim Laden der Daten ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.');
+    }
+  }
+
+  function haversineKm(lat1, lon1, lat2, lon2) {
+    const R = 6371;
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLon = (lon2 - lon1) * Math.PI / 180;
+    const a =
+      Math.sin(dLat / 2) ** 2 +
+      Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+      Math.sin(dLon / 2) ** 2;
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  }
+
+  function switchSchulTab(tab) {
+    const isPartner = tab === 'partner';
+    _schulenPage.tab = tab;
+    _schulenPage.current = 1;
+
+    const activeClass = 'text-brand border-brand';
+    const inactiveClass = 'text-dark/40 border-transparent hover:text-dark/60';
+
+    document.getElementById('tab-btn-partner').className =
+      `pb-3 mr-8 text-sm font-medium border-b-2 -mb-px transition-all duration-200 ${isPartner ? activeClass : inactiveClass}`;
+    document.getElementById('tab-btn-network').className =
+      `pb-3 text-sm font-medium border-b-2 -mb-px transition-all duration-200 ${!isPartner ? activeClass : inactiveClass}`;
+
+    renderSchulPage();
+  }
+
+  function goToSchulPage(page) {
+    _schulenPage.current = page;
+    renderSchulPage();
+    document.getElementById('schulen-results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // Expose globally so onclick="" attributes work
+  window.switchSchulTab = switchSchulTab;
+  window.goToSchulPage = goToSchulPage;
+
+  function renderSchulPage() {
+    const schools = _schulenPage.tab === 'partner' ? _schulenData.partner : _schulenData.network;
+    const page = _schulenPage.current;
+    const totalPages = Math.ceil(schools.length / PAGE_SIZE);
+    const slice = schools.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+
+    renderSchulTable(slice, !schools.length);
+    renderSchulPagination(page, totalPages);
+  }
+
+  function renderSchulTable(schools, empty) {
+    const tbody = document.getElementById('schulen-table-body');
+    if (empty || !schools.length) {
+      tbody.innerHTML =
+        '<tr><td colspan="4" class="py-12 text-center text-dark/30 text-sm">Keine Einträge in dieser Kategorie.</td></tr>';
+      return;
+    }
+    tbody.innerHTML = schools.map(s => {
+      const dist = Math.round(s.distance);
+      const distLabel = dist < 1 ? '< 1 km' : dist + ' km';
+      return `
+        <tr class="border-b border-[#f0f0f0] hover:bg-gray-50/60 transition-colors">
+          <td class="py-4 pr-8 font-medium text-dark text-[15px] leading-snug">${escHtml(s.name)}</td>
+          <td class="py-4 pr-8 text-dark/60 text-sm">${escHtml(s.city) || '–'}</td>
+          <td class="py-4 pr-8 text-dark/60 text-sm tabular-nums">${escHtml(s.postcode) || '–'}</td>
+          <td class="py-4 text-right">
+            <span class="inline-flex items-center justify-center bg-gray-100 text-dark/70 text-xs font-medium px-3 py-1.5 rounded-full min-w-[52px]">
+              ${distLabel}
+            </span>
+          </td>
+        </tr>`;
+    }).join('');
+  }
+
+  function renderSchulPagination(current, total) {
+    const container = document.getElementById('schulen-pagination');
+    if (total <= 1) { container.classList.add('hidden'); return; }
+    container.classList.remove('hidden');
+
+    // Build page range: always show first, last, current ±2, with ellipsis
+    const pages = new Set([1, total, current - 1, current, current + 1, current - 2, current + 2]
+      .filter(p => p >= 1 && p <= total));
+    const sorted = [...pages].sort((a, b) => a - b);
+
+    const btnBase = 'inline-flex items-center justify-center w-10 h-10 rounded-xl text-sm font-medium transition-all duration-200 ';
+    const btnActive = btnBase + 'bg-brand text-white';
+    const btnInactive = btnBase + 'bg-gray-100 text-dark hover:bg-gray-200';
+    const btnDisabled = btnBase + 'bg-gray-50 text-dark/30 cursor-not-allowed';
+
+    let html = '';
+
+    // Prev arrow
+    if (current > 1) {
+      html += `<button onclick="goToSchulPage(${current - 1})" class="${btnInactive}">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+      </button>`;
+    } else {
+      html += `<span class="${btnDisabled}">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+      </span>`;
+    }
+
+    // Page numbers with ellipsis
+    let prev = null;
+    for (const p of sorted) {
+      if (prev !== null && p - prev > 1) {
+        html += `<span class="px-1 text-dark/30 text-sm select-none">»</span>`;
+      }
+      html += p === current
+        ? `<button class="${btnActive}" aria-current="page">${p}</button>`
+        : `<button onclick="goToSchulPage(${p})" class="${btnInactive}">${p}</button>`;
+      prev = p;
+    }
+
+    // Next arrow
+    if (current < total) {
+      html += `<button onclick="goToSchulPage(${current + 1})" class="${btnInactive}">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </button>`;
+    } else {
+      html += `<span class="${btnDisabled}">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </span>`;
+    }
+
+    container.innerHTML = html;
+  }
+
+  function showSchulError(msg) {
+    document.getElementById('schulen-loading').classList.add('hidden');
+    document.getElementById('schulen-results').classList.remove('hidden');
+    document.getElementById('schulen-table-body').innerHTML = '';
+    const err = document.getElementById('schulen-error');
+    err.textContent = msg;
+    err.classList.remove('hidden');
+  }
+
+  function escHtml(str) {
+    return String(str)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+</script>
 </body>
 </html>
