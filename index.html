@@ -302,25 +302,28 @@
         <div class="snap-start shrink-0 w-[85vw] flex flex-col gap-4">
           <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-white relative">
             <div class="absolute -bottom-16 -left-16 w-56 h-56 bg-yellow rounded-full"></div>
-            <div class="relative z-10 w-full h-full flex items-center justify-center gap-[3px]" aria-hidden="true">
-              <span class="waveform-bar" style="--wf-h:14px; animation-delay:0.0s"></span>
-              <span class="waveform-bar" style="--wf-h:26px; animation-delay:0.1s"></span>
-              <span class="waveform-bar" style="--wf-h:18px; animation-delay:0.2s"></span>
-              <span class="waveform-bar" style="--wf-h:34px; animation-delay:0.3s"></span>
-              <span class="waveform-bar" style="--wf-h:22px; animation-delay:0.4s"></span>
-              <div class="w-14 h-14 rounded-full bg-[#6a6ff5] flex items-center justify-center mx-1.5 shrink-0">
-                <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
+            <div class="relative z-10 w-full h-full flex flex-col items-center justify-center gap-4">
+              <div class="flex items-center justify-center gap-[3px]" aria-hidden="true">
+                <span class="waveform-bar" style="--wf-h:14px; animation-delay:0.0s"></span>
+                <span class="waveform-bar" style="--wf-h:26px; animation-delay:0.1s"></span>
+                <span class="waveform-bar" style="--wf-h:18px; animation-delay:0.2s"></span>
+                <span class="waveform-bar" style="--wf-h:34px; animation-delay:0.3s"></span>
+                <span class="waveform-bar" style="--wf-h:22px; animation-delay:0.4s"></span>
+                <div class="w-14 h-14 rounded-full bg-[#6a6ff5] flex items-center justify-center mx-1.5 shrink-0">
+                  <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
+                </div>
+                <span class="waveform-bar" style="--wf-h:22px; animation-delay:0.5s"></span>
+                <span class="waveform-bar" style="--wf-h:34px; animation-delay:0.6s"></span>
+                <span class="waveform-bar" style="--wf-h:18px; animation-delay:0.7s"></span>
+                <span class="waveform-bar" style="--wf-h:26px; animation-delay:0.8s"></span>
+                <span class="waveform-bar" style="--wf-h:14px; animation-delay:0.9s"></span>
               </div>
-              <span class="waveform-bar" style="--wf-h:22px; animation-delay:0.5s"></span>
-              <span class="waveform-bar" style="--wf-h:34px; animation-delay:0.6s"></span>
-              <span class="waveform-bar" style="--wf-h:18px; animation-delay:0.7s"></span>
-              <span class="waveform-bar" style="--wf-h:26px; animation-delay:0.8s"></span>
-              <span class="waveform-bar" style="--wf-h:14px; animation-delay:0.9s"></span>
+              <button class="sound-toggle inline-flex items-center gap-2 bg-[#6a6ff5] text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-[#6a6ff5]/90 active:scale-95 transition-all duration-200 z-20" aria-label="Ton einschalten" data-audio-target="sprachnachricht-audio-mobile">
+                <svg class="icon-muted w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 9.75L19.5 12m0 0l2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25M9 9v6h4l4 4V5l-4 4H9z"/></svg>
+                <svg class="icon-unmuted w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 9v6h4l4 4V5l-4 4H9z"/><path stroke-linecap="round" stroke-linejoin="round" d="M18.5 8.5a5 5 0 010 7"/></svg>
+                <span class="sound-toggle-label">Ton an</span>
+              </button>
             </div>
-            <button class="sound-toggle absolute top-4 right-4 w-10 h-10 rounded-full bg-white shadow flex items-center justify-center z-20" aria-label="Ton einschalten" data-audio-target="sprachnachricht-audio-mobile">
-              <svg class="icon-muted w-5 h-5 text-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 9.75L19.5 12m0 0l2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25M9 9v6h4l4 4V5l-4 4H9z"/></svg>
-              <svg class="icon-unmuted w-5 h-5 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 9v6h4l4 4V5l-4 4H9z"/><path stroke-linecap="round" stroke-linejoin="round" d="M18.5 8.5a5 5 0 010 7"/></svg>
-            </button>
             <audio id="sprachnachricht-audio-mobile" class="audio-el" data-src="assets/Sprachnachricht.mp3" muted loop></audio>
           </div>
           <div class="flex flex-col gap-3">
@@ -351,7 +354,7 @@
                data-clip-start="5" data-clip-end="9"></video>
         <video data-medien="1" class="hls-video medien-img absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 bg-dark" muted playsinline
                data-hls-src="https://video.deinerstertag.de/Rossmann-Einzelhandelskaufleute-ke-DSB-F02_Anpassung2026/HLS/master.m3u8"
-               data-clip-start="36" data-clip-end="40"></video>
+               data-clip-start="37" data-clip-end="41"></video>
         <div data-medien="2" class="medien-img absolute inset-0 w-full h-full bg-white flex items-center justify-center transition-opacity duration-700 opacity-0">
           <div class="phone-mockup w-[300px] h-[624px]">
             <video data-src="assets/AR.mp4" muted loop playsinline></video>
@@ -359,25 +362,28 @@
         </div>
         <div data-medien="3" class="medien-img absolute inset-0 w-full h-full bg-white overflow-hidden transition-opacity duration-700 opacity-0">
           <div class="absolute -bottom-28 -left-28 w-96 h-96 bg-yellow rounded-full"></div>
-          <div class="relative z-10 w-full h-full flex items-center justify-center gap-1" aria-hidden="true">
-            <span class="waveform-bar" style="--wf-h:24px; animation-delay:0.0s"></span>
-            <span class="waveform-bar" style="--wf-h:44px; animation-delay:0.1s"></span>
-            <span class="waveform-bar" style="--wf-h:30px; animation-delay:0.2s"></span>
-            <span class="waveform-bar" style="--wf-h:56px; animation-delay:0.3s"></span>
-            <span class="waveform-bar" style="--wf-h:36px; animation-delay:0.4s"></span>
-            <div class="w-24 h-24 rounded-full bg-[#6a6ff5] flex items-center justify-center mx-3 shrink-0">
-              <svg class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
+          <div class="relative z-10 w-full h-full flex flex-col items-center justify-center gap-8">
+            <div class="flex items-center justify-center gap-1" aria-hidden="true">
+              <span class="waveform-bar" style="--wf-h:24px; animation-delay:0.0s"></span>
+              <span class="waveform-bar" style="--wf-h:44px; animation-delay:0.1s"></span>
+              <span class="waveform-bar" style="--wf-h:30px; animation-delay:0.2s"></span>
+              <span class="waveform-bar" style="--wf-h:56px; animation-delay:0.3s"></span>
+              <span class="waveform-bar" style="--wf-h:36px; animation-delay:0.4s"></span>
+              <div class="w-24 h-24 rounded-full bg-[#6a6ff5] flex items-center justify-center mx-3 shrink-0">
+                <svg class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
+              </div>
+              <span class="waveform-bar" style="--wf-h:36px; animation-delay:0.5s"></span>
+              <span class="waveform-bar" style="--wf-h:56px; animation-delay:0.6s"></span>
+              <span class="waveform-bar" style="--wf-h:30px; animation-delay:0.7s"></span>
+              <span class="waveform-bar" style="--wf-h:44px; animation-delay:0.8s"></span>
+              <span class="waveform-bar" style="--wf-h:24px; animation-delay:0.9s"></span>
             </div>
-            <span class="waveform-bar" style="--wf-h:36px; animation-delay:0.5s"></span>
-            <span class="waveform-bar" style="--wf-h:56px; animation-delay:0.6s"></span>
-            <span class="waveform-bar" style="--wf-h:30px; animation-delay:0.7s"></span>
-            <span class="waveform-bar" style="--wf-h:44px; animation-delay:0.8s"></span>
-            <span class="waveform-bar" style="--wf-h:24px; animation-delay:0.9s"></span>
+            <button class="sound-toggle inline-flex items-center gap-2 bg-[#6a6ff5] text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-[#6a6ff5]/90 active:scale-95 transition-all duration-200 z-20" aria-label="Ton einschalten" data-audio-target="sprachnachricht-audio-desktop">
+              <svg class="icon-muted w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 9.75L19.5 12m0 0l2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25M9 9v6h4l4 4V5l-4 4H9z"/></svg>
+              <svg class="icon-unmuted w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 9v6h4l4 4V5l-4 4H9z"/><path stroke-linecap="round" stroke-linejoin="round" d="M18.5 8.5a5 5 0 010 7"/></svg>
+              <span class="sound-toggle-label">Ton an</span>
+            </button>
           </div>
-          <button class="sound-toggle absolute top-8 right-8 w-12 h-12 rounded-full bg-white shadow-lg flex items-center justify-center z-20" aria-label="Ton einschalten" data-audio-target="sprachnachricht-audio-desktop">
-            <svg class="icon-muted w-5 h-5 text-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 9.75L19.5 12m0 0l2.25 2.25M19.5 12l2.25-2.25M19.5 12l-2.25 2.25M9 9v6h4l4 4V5l-4 4H9z"/></svg>
-            <svg class="icon-unmuted w-5 h-5 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 9v6h4l4 4V5l-4 4H9z"/><path stroke-linecap="round" stroke-linejoin="round" d="M18.5 8.5a5 5 0 010 7"/></svg>
-          </button>
           <audio id="sprachnachricht-audio-desktop" class="audio-el" data-src="assets/Sprachnachricht.mp3" muted loop></audio>
         </div>
       </div>
@@ -425,7 +431,7 @@
   <div class="max-w-[1440px] mx-auto">
     <div class="bg-yellow rounded-2xl py-20 lg:py-24 px-8 reveal-scale">
       <div class="max-w-[651px] mx-auto flex flex-col gap-6 items-center text-center">
-        <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark"> Wir begeistern Schüler*innen. Lassen Sie sich davon überzeugen. </h2>
+        <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark"> Wir begeistern Schüler*innen.<br />Lassen Sie sich davon überzeugen. </h2>
         <p class="text-[15px] leading-relaxed text-dark"> Wir zeigen Ihnen in einem kostenlosen Beratungsgespräch, welche Medien zu Ihnen passen und wie wir Ihre Zielgruppe direkt im Klassenzimmer erreichen. </p>
         <a href="#kontakt" class="inline-flex items-center gap-2 bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200 group"> Beratungsgespräch vereinbaren <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/> </svg> </a>
       </div>
@@ -468,18 +474,21 @@
       <div class="flex gap-5 lg:gap-7 items-start snap-start shrink-0 w-[85vw] sm:w-[70vw] lg:w-auto lg:shrink lg:max-w-[48%]">
         <div class="shrink-0">
           <img
-            src="assets/16333b01.jpg"
-            alt="Eduarda Goncalves Ribeiro de Castro, Vodafone"
+            src="assets/Penny_Martina_Weinhold-768x768.webp"
+            alt="Martina Weinhold, Penny"
             class="w-20 h-20 lg:w-[171px] lg:h-[171px] rounded-full object-cover"
           />
         </div>
         <div class="flex flex-col gap-5 lg:gap-7">
           <p class="text-[15px] leading-relaxed italic text-dark">
-            "Der TikTok-Kanal ist authentisch und passend für die GenZ. Die kreative Planung rund um die TikTok-Videos ist sehr gut und dran an aktuellen Trends."
+            "DEIN ERSTER TAG bietet den Schüler*innen authentische und moderne Berufsorientierung und uns Reichweite und Aufmerksamkeit für unsere tollen Ausbildungswege. Die Zusammenarbeit ist unkompliziert und immer zielführend und wir sind sehr froh, bereits zahlreiche gemeinsame Projekte umgesetzt zu haben."
           </p>
-          <div>
-            <p class="text-[15px] font-bold leading-relaxed">Vodafone</p>
-            <p class="text-[15px] leading-relaxed">Eduarda Goncalves Ribeiro de Castro, Employer Branding Youth</p>
+          <div class="flex items-center gap-4">
+            <div>
+              <p class="text-[15px] font-bold leading-relaxed">Penny</p>
+              <p class="text-[15px] leading-relaxed">Martina Weinhold, Expertin Ausbildung</p>
+            </div>
+            <img src="assets/Logo Penny.png" alt="Penny Logo" class="h-10 w-auto rounded-md shrink-0" />
           </div>
         </div>
       </div>
@@ -1029,6 +1038,8 @@
         if (audio.paused) audio.play().catch(() => {});
         btn.classList.toggle('is-unmuted', !audio.muted);
         btn.setAttribute('aria-label', audio.muted ? 'Ton einschalten' : 'Ton ausschalten');
+        const label = btn.querySelector('.sound-toggle-label');
+        if (label) label.textContent = audio.muted ? 'Ton an' : 'Ton aus';
       });
     });
   })();
@@ -1103,7 +1114,18 @@
     const medienSection = medienItems[0].closest('section');
     medienSection.addEventListener('mouseleave', () => activateMedien(medienIndex, true));
 
-    activateMedien(0);
+    // Setzt den Anfangszustand (Bild/Text aktiv, erste Kachel spielt), startet den
+    // Fortschrittsbalken/Auto-Wechsel aber erst, wenn die Section sichtbar gescrollt
+    // wurde – sonst läuft die CSS-Transition unsichtbar im Hintergrund ab und der
+    // Balken zeigt beim Reinscrollen keinen Fortschritt mehr an.
+    activateMedien(0, false);
+    const startObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        runProgress();
+        startObserver.disconnect();
+      }
+    }, { threshold: 0.3 });
+    startObserver.observe(medienSection);
   })();
 </script>
 </body>
