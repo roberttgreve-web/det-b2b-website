@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Für Lehrkräfte – DEIN ERSTER TAG</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+  <script src="shared/config.js"></script>
+  <link rel="stylesheet" href="shared/shared.css" />
+</head>
+<body class="font-sans bg-light text-dark overflow-x-hidden">
+
+<!-- STICKY NAVIGATION -->
+<header class="fixed top-0 left-0 right-0 z-50 nav-bar bg-white/90 border-b border-gray-100">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8 py-3 flex items-center justify-between">
+    <a href="index.html" aria-label="DEIN ERSTER TAG – Startseite">
+      <img src="logo.svg" alt="DEIN ERSTER TAG Logo" width="96" height="57" class="h-10 lg:h-14 w-auto object-contain" />
+    </a>
+    <nav aria-label="Hauptnavigation" class="hidden lg:block">
+      <ul class="flex items-center gap-12 text-base">
+        <li><a href="lehrkraefte.html" class="font-bold text-brand border-b-2 border-brand pb-0.5">Für Lehrkräfte</a></li>
+        <li><a href="index.html" class="text-dark hover:text-brand transition-colors duration-200">Für Personaler*innen</a></li>
+        <li><a href="shop.html" class="text-dark hover:text-brand transition-colors duration-200">Shop</a></li>
+      </ul>
+    </nav>
+    <button id="nav-hamburger" class="lg:hidden p-2 rounded-lg hover:bg-gray-100" aria-label="Menü öffnen" aria-expanded="false">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+  <div id="mobile-menu" class="lg:hidden border-t border-gray-100 bg-white/95">
+    <nav class="flex flex-col px-6 py-4 gap-4 text-base">
+      <a href="lehrkraefte.html" class="font-bold text-brand py-1">Für Lehrkräfte</a>
+      <a href="index.html" class="text-dark hover:text-brand transition-colors py-1">Für Personaler*innen</a>
+      <a href="shop.html" class="text-dark hover:text-brand transition-colors py-1">Shop</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO SECTION -->
+<section class="pt-20 lg:pt-24 pb-10 lg:pb-20 bg-light">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8 pt-8 lg:pt-10">
+    <div class="flex flex-col lg:flex-row gap-8 xl:gap-[105px] items-start lg:items-center">
+
+      <div class="w-full lg:w-[55%] xl:w-[795px] aspect-[4/3] lg:aspect-auto lg:h-auto xl:h-[694px] overflow-hidden rounded-2xl shrink-0 reveal-left">
+        <img
+          src="assets/0eaab361.jpg"
+          alt="Schüler*innen im Unterricht"
+          class="w-full h-full object-cover parallax-img"
+          style="object-position: center top;"
+        />
+      </div>
+
+      <div class="flex flex-col gap-6 lg:gap-8 w-full lg:flex-1 lg:min-w-0 reveal-right">
+        <h1 class="text-display-xs sm:text-display-sm lg:text-[36px] xl:text-display text-dark font-normal">
+          Berufsorientierung die Ihre Schüler*innen begeistert.
+        </h1>
+        <p class="text-base lg:text-xl leading-[26px] lg:leading-[30px] text-dark">
+          Innovative Unterrichtsangebote von der Berufsorientierung über die Vermittlung von Kenntnissen zum Jobmarkt bis zur Bewerbungshilfe.
+        </p>
+        <a href="medienbox.html" class="inline-flex items-center gap-2 bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200 w-fit group">
+          Kostenlos Medienbox bestellen
+          <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <div class="flex gap-4 items-center">
+          <div class="bg-yellow flex items-center justify-center p-2.5 rounded-xl shrink-0 w-16 lg:w-20">
+            <span class="text-3xl lg:text-4xl" role="img" aria-label="Trophäe">🏆</span>
+          </div>
+          <p class="text-[13px] leading-relaxed text-dark">
+            <strong>Ausgezeichnet</strong> vom BMBF für bestes Angebot für das Erleben von Berufsfeldern und Berufen in Deutschland.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats bar -->
+    <div class="flex flex-col sm:flex-row items-stretch mt-8 reveal delay-200 gap-px">
+      <div class="border border-line flex items-center justify-center px-4 py-4 sm:rounded-bl-2xl sm:rounded-tl-2xl rounded-t-2xl sm:rounded-t-none flex-1 hover:bg-gray-50 transition-colors">
+        <p class="text-base lg:text-xl text-center"><strong>Komplett kostenlos</strong> <span class="text-muted">für alle Schulen</span></p>
+      </div>
+      <div class="border border-line flex items-center justify-center px-4 py-4 flex-1 hover:bg-gray-50 transition-colors">
+        <p class="text-base lg:text-xl text-center"><strong>Ohne Vorbereitung</strong> <span class="text-muted">direkt einsatzbereit</span></p>
+      </div>
+      <div class="border border-line flex items-center justify-center px-4 py-4 sm:rounded-br-2xl sm:rounded-tr-2xl rounded-b-2xl sm:rounded-b-none flex-1 hover:bg-gray-50 transition-colors">
+        <p class="text-base lg:text-xl text-center"><strong>Mit Praktischen Stationen</strong> <span class="text-muted">für den Unterricht</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLUE SECTION -->
+<section class="bg-brand py-16 lg:py-24 overflow-hidden">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8">
+    <div class="flex flex-col gap-12 lg:gap-24">
+      <div class="max-w-[679px] reveal">
+        <h2 class="text-display-xs sm:text-display-sm lg:text-display text-[#fafafa] font-normal">
+          Eine starke Headline die Lehrkräften klar macht wie toll die Erlebnisse sind!
+        </h2>
+        <p class="mt-6 text-[15px] leading-relaxed text-white/80">
+          Ausbildungsplätze bleiben unbesetzt – nicht weil Jugendliche kein Interesse haben, sondern weil sie nie von Ihnen gehört haben. Wir ändern das: mit Sichtbarkeit direkt im Unterricht, von Klasse 7 bis zum Abschluss.
+        </p>
+      </div>
+      <div class="rounded-2xl h-[240px] sm:h-[420px] lg:h-[730px] reveal-scale relative overflow-hidden">
+        <img
+          src="assets/61104a65.jpg"
+          alt="Schüler*innen im Unterricht"
+          class="w-full h-full object-cover parallax-img"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEDIENBOX SECTION: copy left, image right -->
+<section class="bg-light py-16 lg:py-24 overflow-hidden">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+
+      <!-- Copy -->
+      <div class="w-full lg:w-[531px] shrink-0 flex flex-col gap-8 reveal-left">
+        <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark font-normal">
+          Berufe im Unterricht in Virtual Reality erleben. Mit unserer Medienbox.
+        </h2>
+        <div class="flex flex-col gap-6">
+          <div class="flex gap-4 items-start">
+            <div class="w-12 h-12 bg-mist rounded-xl shrink-0 flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div>
+              <h3 class="text-xl leading-[30px] mb-2">Kostenlos für Ihre Schule</h3>
+              <p class="text-[15px] leading-relaxed text-dark/70">Ausbildungsplätze bleiben unbesetzt – nicht weil Jugendliche kein Interesse haben, sondern weil sie nie von Ihnen gehört haben.</p>
+            </div>
+          </div>
+          <div class="border-t border-line pt-6 flex gap-4 items-start">
+            <div class="w-12 h-12 bg-mist rounded-xl shrink-0 flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <div>
+              <h3 class="text-xl leading-[30px] mb-2">VR Brillen, Kurzfilm Kino und Mini Games</h3>
+              <p class="text-[15px] leading-relaxed text-dark/70">Ausbildungsplätze bleiben unbesetzt – nicht weil Jugendliche kein Interesse haben, sondern weil sie nie von Ihnen gehört haben.</p>
+            </div>
+          </div>
+          <div class="border-t border-line pt-6 flex gap-4 items-start">
+            <div class="w-12 h-12 bg-mist rounded-xl shrink-0 flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.07A1 1 0 0121 8.87V15.13a1 1 0 01-1.447.9L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+            </div>
+            <div>
+              <h3 class="text-xl leading-[30px] mb-2">Authentische 360° - Einblicke in echte Berufe</h3>
+              <p class="text-[15px] leading-relaxed text-dark/70">Ausbildungsplätze bleiben unbesetzt – nicht weil Jugendliche kein Interesse haben, sondern weil sie nie von Ihnen gehört haben.</p>
+            </div>
+          </div>
+        </div>
+        <a href="medienbox.html" class="inline-flex items-center gap-2 bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200 w-fit group">
+          Mehr über die Medienbox erfahren
+          <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Image -->
+      <div class="w-full lg:flex-1 rounded-2xl overflow-hidden aspect-[4/3] lg:aspect-auto lg:h-[600px] reveal-right">
+        <img
+          src="assets/01121d9c.jpg"
+          alt="Medienbox im Einsatz"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEOSTUNDE SECTION: image left, copy right -->
+<section class="bg-light py-16 lg:py-24 overflow-hidden">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+
+      <!-- Image -->
+      <div class="w-full lg:flex-1 rounded-2xl overflow-hidden aspect-[4/3] lg:aspect-auto lg:h-[600px] reveal-left">
+        <img
+          src="assets/a68f76c6.jpg"
+          alt="Videostunde im Einsatz"
+          class="w-full h-full object-cover"
+        />
+      </div>
+
+      <!-- Copy -->
+      <div class="w-full lg:w-[531px] shrink-0 flex flex-col gap-8 reveal-right">
+        <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark font-normal">
+          Videostunde mit unserer eigenen Lehrkraft.
+        </h2>
+        <div class="flex flex-col gap-6">
+          <div class="flex gap-4 items-start">
+            <div class="w-12 h-12 bg-mist rounded-xl shrink-0 flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <div>
+              <h3 class="text-xl leading-[30px] mb-2">Augmented Reality - Spielerisch lernen</h3>
+              <p class="text-[15px] leading-relaxed text-dark/70">Ausbildungsplätze bleiben unbesetzt – nicht weil Jugendliche kein Interesse haben, sondern weil sie nie von Ihnen gehört haben.</p>
+            </div>
+          </div>
+          <div class="border-t border-line pt-6 flex gap-4 items-start">
+            <div class="w-12 h-12 bg-mist rounded-xl shrink-0 flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <div>
+              <h3 class="text-xl leading-[30px] mb-2">Augmented Reality - Spielerisch lernen</h3>
+              <p class="text-[15px] leading-relaxed text-dark/70">Ausbildungsplätze bleiben unbesetzt – nicht weil Jugendliche kein Interesse haben, sondern weil sie nie von Ihnen gehört haben.</p>
+            </div>
+          </div>
+          <div class="border-t border-line pt-6 flex gap-4 items-start">
+            <div class="w-12 h-12 bg-mist rounded-xl shrink-0 flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+            </div>
+            <div>
+              <h3 class="text-xl leading-[30px] mb-2">Augmented Reality - Spielerisch lernen</h3>
+              <p class="text-[15px] leading-relaxed text-dark/70">Ausbildungsplätze bleiben unbesetzt – nicht weil Jugendliche kein Interesse haben, sondern weil sie nie von Ihnen gehört haben.</p>
+            </div>
+          </div>
+        </div>
+        <a href="videostunden.html" class="inline-flex items-center gap-2 bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200 w-fit group">
+          Zu den Videostunden
+          <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA YELLOW -->
+<section class="px-6 lg:px-8 pb-16 bg-light">
+  <div class="max-w-[1440px] mx-auto">
+    <div class="bg-yellow rounded-2xl py-20 lg:py-24 px-8 reveal-scale">
+      <div class="max-w-[651px] mx-auto flex flex-col gap-6 items-center text-center">
+        <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark"> Medienbox für ihre Schule bestellen. </h2>
+        <p class="text-[15px] leading-relaxed text-dark"> Ausbildung oder Duales Studium? Mit uns findest du deinen ersten Job. Ohne Stress, aber mit Zukunft. Leg los mit unserer kostenlosen App. </p>
+        <a href="medienbox.html" class="inline-flex items-center gap-2 bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200 group"> Kostenlos bestellen <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/> </svg> </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="bg-light py-16 lg:py-24">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8">
+    <div class="flex overflow-x-auto snap-x snap-mandatory swipe-track lg:overflow-visible lg:snap-none gap-6 lg:gap-0 lg:items-start lg:justify-between pb-4 lg:pb-0">
+
+      <div class="flex gap-5 lg:gap-7 items-start snap-start shrink-0 w-[85vw] sm:w-[70vw] lg:w-auto lg:shrink lg:max-w-[48%]">
+        <div class="shrink-0">
+          <img
+            src="assets/9d189bef.jpg"
+            alt="Nicole Soesanto"
+            class="w-20 h-20 lg:w-[171px] lg:h-[171px] rounded-full object-cover"
+          />
+        </div>
+        <div class="flex flex-col gap-5 lg:gap-7">
+          <p class="text-[15px] leading-relaxed italic text-dark">
+            "Mit DEIN ERSTER TAG erreichen wir Schülerin*innen zu dem Zeitpunkt an dem die Berufswahl relevant wird und an dem Ort wo sie sich intensiv damit beschäftigen, in der Schule."
+          </p>
+          <div>
+            <p class="text-[15px] font-bold leading-relaxed">Sophie-Scholl-Oberschule</p>
+            <p class="text-[15px] leading-relaxed">Nicole Soesanto, Spezialistin Azubi-Marketing</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-px bg-gray-200 self-stretch mx-4 hidden lg:block shrink-0"></div>
+
+      <div class="flex gap-5 lg:gap-7 items-start snap-start shrink-0 w-[85vw] sm:w-[70vw] lg:w-auto lg:shrink lg:max-w-[48%]">
+        <div class="shrink-0">
+          <img
+            src="assets/17588350.jpg"
+            alt="Eduarda Goncalves Ribeiro de Castro"
+            class="w-20 h-20 lg:w-[171px] lg:h-[171px] rounded-full object-cover"
+          />
+        </div>
+        <div class="flex flex-col gap-5 lg:gap-7">
+          <p class="text-[15px] leading-relaxed italic text-dark">
+            "Der TikTok-Kanal ist authentisch und passend für die GenZ. Die kreative Planung rund um die TikTok-Videos ist sehr gut und dran an aktuellen Trends."
+          </p>
+          <div>
+            <p class="text-[15px] font-bold leading-relaxed">Alexander-von-Humboldt Gymnasium</p>
+            <p class="text-[15px] leading-relaxed">Eduarda Goncalves Ribeiro de Castro, Employer Branding Youth</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-center gap-2 mt-4 lg:hidden" aria-hidden="true">
+      <span class="w-2 h-2 rounded-full bg-brand"></span>
+      <span class="w-2 h-2 rounded-full bg-gray-300"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ÜBER UNS SECTION -->
+<section class="bg-light py-16 lg:py-24 overflow-hidden">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8">
+    <div class="max-w-[519px] mb-12 reveal">
+      <p class="text-brand text-base tracking-tight2 mb-4">Über uns</p>
+      <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark font-normal">
+        Seit über 10 Jahren für Berufsorientierung an Schulen.
+      </h2>
+    </div>
+
+    <div class="rounded-2xl overflow-hidden h-[300px] sm:h-[480px] lg:h-[655px] mb-10 reveal-scale">
+      <img
+        src="assets/c980bc90.jpg"
+        alt="Team bei der Arbeit"
+        class="w-full h-full object-cover parallax-img"
+      />
+    </div>
+
+    <div class="flex flex-col gap-8 reveal">
+      <p class="text-base lg:text-xl leading-[26px] lg:leading-[30px] text-dark font-medium">
+        Alle Inhalte zu Ihrem Beruf in einer Box.
+      </p>
+      <p class="text-[15px] leading-relaxed text-dark/80 max-w-[843px]">
+        Wir schicken Ihnen unsere Medienbox mit unseren Berufsorientierungsvideos direkt an Ihre Schule. Die Technik ist leicht zu handhaben und ohne Internetzugang nutzbar. Sie können die Box entweder für 3 oder für 7 Tage buchen und gerne mit Kolleg*innen teilen. Anschließend senden Sie die Box einfach an die nächste Schule. Wir übernehmen alle Kosten und die Versicherung.
+      </p>
+
+      <!-- single separator between body text and the list -->
+      <div class="border-t border-line"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-0">
+        <!-- Column 1 -->
+        <div class="flex flex-col">
+          <!-- first item: no top border -->
+          <div class="pt-3 pb-3">
+            <p class="text-[15px] leading-relaxed text-dark">
+              <span class="font-medium">VR-Brille</span>
+              <span class="text-muted"> – Immersive Erlebnisse zu ihrem Beruf</span>
+            </p>
+          </div>
+          <div class="border-t border-line pt-3 pb-3">
+            <p class="text-[15px] leading-relaxed text-dark">
+              <span class="font-medium">BerUFO</span>
+              <span class="text-muted"> – mit 360° Filmen</span>
+            </p>
+          </div>
+          <div class="border-t border-line pt-3 pb-3">
+            <p class="text-[15px] leading-relaxed text-dark">
+              <span class="font-medium">Mini Games</span>
+              <span class="text-muted"> – was ist das für die Personaler</span>
+            </p>
+          </div>
+        </div>
+        <!-- Column 2 -->
+        <div class="flex flex-col">
+          <!-- first item: no top border (desktop); on mobile it gets a top border to separate from col 1 -->
+          <div class="border-t border-line lg:border-t-0 pt-3 pb-3">
+            <p class="text-[15px] leading-relaxed text-dark">
+              <span class="font-medium">VR-Brille</span>
+              <span class="text-muted"> – Immersive Erlebnisse zu ihrem Beruf</span>
+            </p>
+          </div>
+          <div class="border-t border-line pt-3 pb-3">
+            <p class="text-[15px] leading-relaxed text-dark">
+              <span class="font-medium">BerUFO</span>
+              <span class="text-muted"> – mit 360° Filmen</span>
+            </p>
+          </div>
+          <div class="border-t border-line pt-3 pb-3">
+            <p class="text-[15px] leading-relaxed text-dark">
+              <span class="font-medium">Mini Games</span>
+              <span class="text-muted"> – was ist das für die Personaler</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="kontakt" class="bg-light py-16 lg:py-24 overflow-hidden">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8 flex flex-col lg:flex-row gap-10 lg:gap-20 items-start">
+    <div class="w-full lg:w-auto lg:shrink-0 reveal-left">
+      <div class="rounded-2xl overflow-hidden w-full lg:w-[677px] aspect-[4/3] lg:aspect-auto lg:h-[655px]">
+        <img
+          src="assets/71fc7b11.jpg"
+          alt="Henrick Figge"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+    <div class="flex flex-col gap-8 w-full lg:max-w-[428px] lg:pt-20 reveal-right">
+      <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark font-normal">
+        Wir beraten Sie gerne.
+      </h2>
+      <p class="text-[15px] leading-relaxed text-dark/80">
+        Nutzen Sie unsere kostenlosen Unterrichtsangebote, um Ihre Schüler*innen für Berufe zu begeistern. Von der Medienbox bis zur Videostunde – alles kostenlos für Ihre Schule.
+      </p>
+      <div>
+        <p class="text-[15px] font-bold leading-relaxed">Henrick Figge</p>
+        <p class="text-[15px] leading-relaxed">Sales &amp; Operations für Schulen</p>
+        <p class="text-[15px] leading-relaxed">
+          <a href="mailto:h.figge@deinerstertag.de" class="text-brand hover:underline">h.figge@deinerstertag.de</a>
+        </p>
+      </div>
+      <a href="mailto:h.figge@deinerstertag.de" class="inline-flex items-center gap-2 bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200 w-fit group">
+        Beratungsgespräch vereinbaren
+        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="bg-light py-24 px-6 lg:px-8">
+  <div class="max-w-[1440px] mx-auto">
+    <div class="max-w-[519px] mb-16 reveal">
+      <p class="text-brand text-base tracking-tight2 mb-4">FAQs</p>
+      <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark font-normal">
+        Noch unsicher? Hier sind die Fragen, die wir am häufigsten hören.
+      </h2>
+    </div>
+    <div class="flex flex-col reveal">
+      <div class="faq-item border-b border-line">
+        <button class="faq-trigger w-full flex items-center justify-between py-5 text-left" aria-expanded="false">
+          <span class="text-xl leading-[30px] text-dark pr-4 transition-colors duration-200">Wieviel Aufwand habe ich dabei?</span>
+          <svg class="faq-icon w-6 h-6 shrink-0 text-dark transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner pb-5"><p class="text-[15px] leading-relaxed text-dark/70 max-w-[843px]">Wir schicken Ihnen unsere Medienbox mit unseren Berufsorientierungsvideos direkt an Ihre Schule. Die Technik ist leicht zu handhaben und ohne Internetzugang nutzbar. Sie können die Box entweder für 3 oder für 7 Tage buchen und gerne mit Kolleg*innen teilen. Anschließend senden Sie die Box einfach an die nächste Schule. Wir übernehmen alle Kosten und die Versicherung.</p></div></div>
+      </div>
+      <div class="faq-item border-b border-line">
+        <button class="faq-trigger w-full flex items-center justify-between py-5 text-left" aria-expanded="false">
+          <span class="text-xl leading-[30px] text-dark pr-4 transition-colors duration-200">Funktionieren alle Berufe?</span>
+          <svg class="faq-icon w-6 h-6 shrink-0 text-dark transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner pb-5"><p class="text-[15px] leading-relaxed text-dark/70 max-w-[843px]">Grundsätzlich können wir für jeden Ausbildungsberuf passende Medienformate entwickeln. In einem Beratungsgespräch besprechen wir gemeinsam, welche Formate für Ihren spezifischen Beruf am besten geeignet sind.</p></div></div>
+      </div>
+      <div class="faq-item border-b border-line">
+        <button class="faq-trigger w-full flex items-center justify-between py-5 text-left" aria-expanded="false">
+          <span class="text-xl leading-[30px] text-dark pr-4 transition-colors duration-200">Wie läuft die Zusammenarbeit ab?</span>
+          <svg class="faq-icon w-6 h-6 shrink-0 text-dark transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner pb-5"><p class="text-[15px] leading-relaxed text-dark/70 max-w-[843px]">Nach einem kostenlosen Erstgespräch erarbeiten wir gemeinsam ein maßgeschneidertes Konzept. Unsere Redaktion produziert alle Medieninhalte – Sie liefern uns die Informationen über Ihren Beruf, wir kümmern uns um alles weitere.</p></div></div>
+      </div>
+      <div class="faq-item border-b border-line">
+        <button class="faq-trigger w-full flex items-center justify-between py-5 text-left" aria-expanded="false">
+          <span class="text-xl leading-[30px] text-dark pr-4 transition-colors duration-200">Wie groß ist die Reichweite?</span>
+          <svg class="faq-icon w-6 h-6 shrink-0 text-dark transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner pb-5"><p class="text-[15px] leading-relaxed text-dark/70 max-w-[843px]">Unser Netzwerk umfasst über 8.000 Partnerschulen in ganz Deutschland. Sie können regional eingrenzen oder bundesweit arbeiten – je nach Ihren Zielen.</p></div></div>
+      </div>
+      <div class="faq-item border-b border-line">
+        <button class="faq-trigger w-full flex items-center justify-between py-5 text-left" aria-expanded="false">
+          <span class="text-xl leading-[30px] text-dark pr-4 transition-colors duration-200">Welche Kosten entstehen?</span>
+          <svg class="faq-icon w-6 h-6 shrink-0 text-dark transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner pb-5"><p class="text-[15px] leading-relaxed text-dark/70 max-w-[843px]">Die Medienbox und alle Videostunden sind für Schulen und Lehrkräfte vollständig kostenlos. Alle Logistikkosten und die Versicherung übernehmen wir.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-brand pt-20 pb-8">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10 pb-16 border-b border-white/20">
+      <div class="flex flex-col gap-2">
+        <p class="text-white text-[22px] font-medium leading-7 max-w-xs">Mit der JobApp noch schneller und einfacher bewerben.</p>
+        <div class="flex gap-4 mt-4">
+          <img src="assets/08446ed5.png" alt="App Store" class="h-10 rounded-lg" />
+          <img src="assets/d3e7c956.png" alt="Google Play" class="h-10 rounded-lg" />
+        </div>
+      </div>
+      <div class="flex flex-col gap-2">
+        <p class="text-white text-[22px] font-medium leading-7">Fragen, Anregung, Kritik? Schreib uns.</p>
+        <a href="mailto:feedback@deinerstertag.de" class="text-white text-base mt-2 hover:underline">feedback@deinerstertag.de</a>
+      </div>
+      <div class="flex flex-col gap-3">
+        <a href="#" class="flex items-center gap-2 text-white text-sm font-bold hover:text-white/80 transition-colors">
+          <img src="assets/01b29629.svg" alt="" aria-hidden="true" class="w-8 h-8" /> Instagram
+        </a>
+        <a href="#" class="flex items-center gap-2 text-white text-sm font-bold hover:text-white/80 transition-colors">
+          <img src="assets/c958d2c4.svg" alt="" aria-hidden="true" class="w-8 h-8" /> Facebook
+        </a>
+        <a href="#" class="flex items-center gap-2 text-white text-sm font-bold hover:text-white/80 transition-colors">
+          <img src="assets/d8522f4e.svg" alt="" aria-hidden="true" class="w-8 h-8" /> YouTube
+        </a>
+        <a href="#" class="flex items-center gap-2 text-white text-sm font-bold hover:text-white/80 transition-colors">
+          <img src="assets/e2571cf7.svg" alt="" aria-hidden="true" class="w-8 h-8" /> TikTok
+        </a>
+        <a href="#" class="flex items-center gap-2 text-white text-sm font-bold hover:text-white/80 transition-colors">
+          <img src="assets/f9b842de.png" alt="" aria-hidden="true" class="w-8 h-8 object-cover rounded" /> LinkedIn
+        </a>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 py-12 border-b border-white/20">
+      <div class="col-span-2 lg:col-span-1"><img src="logo.svg" alt="DEIN ERSTER TAG" width="96" height="57" class="h-10 w-auto object-contain mb-6 brightness-0 invert" /></div>
+      <div class="flex flex-col gap-3">
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Jobs</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Über uns</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">AGBs</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Kontakt</a>
+      </div>
+      <div class="flex flex-col gap-3">
+        <a href="lehrkraefte.html" class="text-white text-base hover:text-white/70 transition-colors">Für Lehrkräfte</a>
+        <a href="index.html" class="text-white text-base hover:text-white/70 transition-colors">Für Personaler*innen</a>
+        <a href="shop.html" class="text-white text-base hover:text-white/70 transition-colors">Shop</a>
+      </div>
+      <div class="flex flex-col gap-3">
+        <a href="#" class="text-white text-base underline hover:text-white/70 transition-colors">Impressum</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Datenschutz</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Nutzungsbedingungen</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Open Source</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Privatsphäreneinstellungen</a>
+      </div>
+    </div>
+    <div class="pt-6"><p class="text-white text-sm">© 2023 Studio2B GmbH</p></div>
+  </div>
+</footer>
+
+<script src="shared/shared.js"></script>
+</body>
+</html>

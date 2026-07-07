@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Videostunden – DEIN ERSTER TAG</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+  <script src="shared/config.js"></script>
+  <link rel="stylesheet" href="shared/shared.css" />
+</head>
+<body class="font-sans bg-paper text-dark overflow-x-hidden">
+
+<!-- STICKY NAVIGATION -->
+<header class="fixed top-0 left-0 right-0 z-50 nav-bar bg-white/90 border-b border-gray-100">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8 py-3 flex items-center justify-between">
+    <a href="index.html" aria-label="DEIN ERSTER TAG – Startseite">
+      <img src="logo.svg" alt="DEIN ERSTER TAG Logo" width="96" height="57" class="h-10 lg:h-14 w-auto object-contain" />
+    </a>
+    <nav aria-label="Hauptnavigation" class="hidden lg:block">
+      <ul class="flex items-center gap-12 text-base">
+        <li><a href="lehrkraefte.html" class="font-bold text-brand border-b-2 border-brand pb-0.5">Für Lehrkräfte</a></li>
+        <li><a href="index.html" class="text-dark hover:text-brand transition-colors duration-200">Für Personaler*innen</a></li>
+        <li><a href="shop.html" class="text-dark hover:text-brand transition-colors duration-200">Shop</a></li>
+      </ul>
+    </nav>
+    <button id="nav-hamburger" class="lg:hidden p-2 rounded-lg hover:bg-gray-100" aria-label="Menü öffnen" aria-expanded="false">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+  <div id="mobile-menu" class="lg:hidden border-t border-gray-100 bg-white/95">
+    <nav class="flex flex-col px-6 py-4 gap-4 text-base">
+      <a href="lehrkraefte.html" class="font-bold text-brand py-1">Für Lehrkräfte</a>
+      <a href="index.html" class="text-dark hover:text-brand transition-colors py-1">Für Personaler*innen</a>
+      <a href="shop.html" class="text-dark hover:text-brand transition-colors py-1">Shop</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- INTRO SECTION -->
+<section class="bg-paper pt-24 lg:pt-32 pb-10">
+  <div class="max-w-[900px] mx-auto px-6 text-center reveal">
+    <p class="text-brand text-base tracking-tight2 mb-4">Videostunde</p>
+    <h1 class="text-display-xs sm:text-display-sm lg:text-display text-dark font-normal mb-6">
+      Eine starke Headline die Lehrkräften klar macht wie toll die Erlebnisse sind!
+    </h1>
+    <p class="text-base lg:text-xl leading-[26px] lg:leading-[30px] text-dark/80">
+      Jugendliche erleben, wie es in Werkstatt, Labor oder Baustelle wirklich zugeht. Formular ausfüllen &amp; Videostunde 'Arbeitsumfelder entdecken – Praktisch-Technische Berufe' hier abspielen:
+    </p>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<section class="bg-light py-16 lg:py-24">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8">
+    <div class="max-w-[519px] mb-12 reveal">
+      <p class="text-brand text-base tracking-tight2 mb-4">Videostunden</p>
+      <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark font-normal">
+        Berufsorientierung, die ankommt
+      </h2>
+      <p class="mt-4 text-base lg:text-xl leading-[26px] lg:leading-[30px] text-dark/80">
+        Die Videostunde bringt echte Einblicke in die Berufswelt direkt ins Klassenzimmer – kostenfrei, praxisnah und ohne Vorbereitungsaufwand für Lehrkräfte.
+      </p>
+    </div>
+
+    <!-- Video cards grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 reveal">
+
+      <!-- Card 1 -->
+      <div class="bg-paper rounded-2xl overflow-hidden flex flex-col">
+        <div class="relative aspect-video rounded-lg overflow-hidden">
+          <img
+            src="assets/801d01d1.jpg"
+            alt="Praktisch-Technische Berufe"
+            class="w-full h-full object-cover"
+          />
+          <a href="videostunde-detail.html" class="absolute inset-0 flex items-center justify-center group" aria-label="Videostunde abspielen">
+            <img src="ico-play.svg" alt="" aria-hidden="true" width="60" height="60" class="drop-shadow-xl transition-transform duration-200 group-hover:scale-110" />
+          </a>
+        </div>
+        <div class="p-6 flex flex-col gap-4 flex-1">
+          <p class="text-[13px] text-dark/50 uppercase tracking-wide">Praktisch-Technische Berufe</p>
+          <h3 class="text-xl leading-[30px] text-dark font-normal">Arbeitsplätze, bei denen der Kontakt mit Menschen im Mittelpunkt stehen.</h3>
+          <p class="text-[15px] leading-relaxed text-dark/70">Der BerUFO – unser mobiler Streaming-Router – spielt kurze, authentische Berufsvideos direkt auf die Screens der Schüler*innen. Kein Internet nötig, sofort einsatzbereit.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-mist text-dark text-[15px] leading-relaxed px-3 rounded-full">360°-Videos</span>
+            <span class="bg-mist text-dark text-[15px] leading-relaxed px-3 rounded-full">Echte Arbeitgeber aus der Region</span>
+            <span class="bg-mist text-dark text-[15px] leading-relaxed px-3 rounded-full">Keine Technik-Kenntnisse nötig</span>
+          </div>
+          <div class="mt-auto pt-2">
+            <a href="videostunde-detail.html" class="inline-flex items-center gap-2 border-2 border-brand text-brand px-6 py-3 rounded-full text-sm font-medium hover:bg-brand hover:text-white transition-all duration-200 w-fit">
+              Zur Videostunde
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-paper rounded-2xl overflow-hidden flex flex-col">
+        <div class="relative aspect-video rounded-lg overflow-hidden">
+          <img
+            src="assets/13850bb4.jpg"
+            alt="Berufe mit Menschen und Service"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 flex items-center justify-center">
+            <img src="ico-play.svg" alt="" aria-hidden="true" width="60" height="60" class="drop-shadow-xl opacity-60" />
+          </div>
+        </div>
+        <div class="p-6 flex flex-col gap-4 flex-1">
+          <p class="text-[13px] text-dark/50 uppercase tracking-wide">Berufe mit Menschen &amp; Service</p>
+          <h3 class="text-xl leading-[30px] text-dark font-normal">Einblick in verschiedene Berufsfelder – kompakt &amp; lebensnah.</h3>
+          <p class="text-[15px] leading-relaxed text-dark/70">Der BerUFO – unser mobiler Streaming-Router – spielt kurze, authentische Berufsvideos direkt auf die Screens der Schüler*innen. Kein Internet nötig, sofort einsatzbereit.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-mist text-dark text-[15px] leading-relaxed px-3 rounded-full">360°-Videos</span>
+            <span class="bg-mist text-dark text-[15px] leading-relaxed px-3 rounded-full">Echte Arbeitgeber aus der Region</span>
+            <span class="bg-mist text-dark text-[15px] leading-relaxed px-3 rounded-full">Keine Technik-Kenntnisse nötig</span>
+          </div>
+          <div class="mt-auto pt-2">
+            <span class="inline-flex items-center gap-2 border-2 border-gray-300 text-dark/40 px-6 py-3 rounded-full text-sm font-medium w-fit cursor-not-allowed">
+              Demnächst verfügbar
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-paper rounded-2xl overflow-hidden flex flex-col">
+        <div class="relative aspect-video rounded-lg overflow-hidden">
+          <img
+            src="assets/45d328fe.jpg"
+            alt="Berufsfelder entdecken"
+            class="w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 flex items-center justify-center">
+            <img src="ico-play.svg" alt="" aria-hidden="true" width="60" height="60" class="drop-shadow-xl opacity-60" />
+          </div>
+        </div>
+        <div class="p-6 flex flex-col gap-4 flex-1">
+          <p class="text-[13px] text-dark/50 uppercase tracking-wide">Berufsfelder entdecken</p>
+          <h3 class="text-xl leading-[30px] text-dark font-normal">Wie es in Werkstatt, Labor oder Baustelle wirklich zugeht.</h3>
+          <p class="text-[15px] leading-relaxed text-dark/70">Der BerUFO – unser mobiler Streaming-Router – spielt kurze, authentische Berufsvideos direkt auf die Screens der Schüler*innen. Kein Internet nötig, sofort einsatzbereit.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-mist text-dark text-[15px] leading-relaxed px-3 rounded-full">360°-Videos</span>
+            <span class="bg-mist text-dark text-[15px] leading-relaxed px-3 rounded-full">Echte Arbeitgeber aus der Region</span>
+            <span class="bg-mist text-dark text-[15px] leading-relaxed px-3 rounded-full">Keine Technik-Kenntnisse nötig</span>
+          </div>
+          <div class="mt-auto pt-2">
+            <span class="inline-flex items-center gap-2 border-2 border-gray-300 text-dark/40 px-6 py-3 rounded-full text-sm font-medium w-fit cursor-not-allowed">
+              Demnächst verfügbar
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="kontakt" class="bg-paper py-16 lg:py-24 overflow-hidden">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8 flex flex-col lg:flex-row gap-10 lg:gap-20 items-start">
+    <div class="w-full lg:w-auto lg:shrink-0 reveal-left">
+      <div class="rounded-2xl overflow-hidden w-full lg:w-[677px] aspect-[4/3] lg:aspect-auto lg:h-[655px]">
+        <img src="assets/1761de10.jpg" alt="Henrick Figge" class="w-full h-full object-cover" />
+      </div>
+    </div>
+    <div class="flex flex-col gap-8 w-full lg:max-w-[428px] lg:pt-20 reveal-right">
+      <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark font-normal">Sie haben Fragen zur Videostunde?</h2>
+      <p class="text-[15px] leading-relaxed text-dark/80">Wir helfen Ihnen gerne bei der Planung und dem Einsatz der Videostunde in Ihrem Unterricht. Kontaktieren Sie uns einfach.</p>
+      <div>
+        <p class="text-[15px] font-bold leading-relaxed">Henrick Figge</p>
+        <p class="text-[15px] leading-relaxed">Sales &amp; Operations für Schulen</p>
+        <p class="text-[15px] leading-relaxed"><a href="mailto:h.figge@deinerstertag.de" class="text-brand hover:underline">h.figge@deinerstertag.de</a></p>
+      </div>
+      <a href="mailto:h.figge@deinerstertag.de" class="inline-flex items-center gap-2 bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200 w-fit group">
+        Beratungsgespräch vereinbaren
+        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="bg-paper py-24 px-6 lg:px-8">
+  <div class="max-w-[1440px] mx-auto">
+    <div class="max-w-[519px] mb-16 reveal">
+      <p class="text-brand text-base tracking-tight2 mb-4">FAQs</p>
+      <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark font-normal">Noch unsicher? Hier sind die Fragen, die wir am häufigsten hören.</h2>
+    </div>
+    <div class="flex flex-col reveal">
+      <div class="faq-item border-b border-line">
+        <button class="faq-trigger w-full flex items-center justify-between py-5 text-left" aria-expanded="false">
+          <span class="text-xl leading-[30px] text-dark pr-4 transition-colors duration-200">Wieviel Aufwand habe ich dabei?</span>
+          <svg class="faq-icon w-6 h-6 shrink-0 text-dark transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner pb-5"><p class="text-[15px] leading-relaxed text-dark/70 max-w-[843px]">Kaum Aufwand – laden Sie das Arbeitsmaterial herunter, drucken Sie es aus und spielen Sie das Video an Ihr Smartboard. Unsere Lehrkraft übernimmt den Rest.</p></div></div>
+      </div>
+      <div class="faq-item border-b border-line">
+        <button class="faq-trigger w-full flex items-center justify-between py-5 text-left" aria-expanded="false">
+          <span class="text-xl leading-[30px] text-dark pr-4 transition-colors duration-200">Wie lang dauert eine Videostunde?</span>
+          <svg class="faq-icon w-6 h-6 shrink-0 text-dark transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner pb-5"><p class="text-[15px] leading-relaxed text-dark/70 max-w-[843px]">Eine Videostunde dauert in der Regel 45 Minuten. Sie können sie jederzeit pausieren und für Diskussionen mehr Zeit einplanen – dann empfehlen wir 90 Minuten.</p></div></div>
+      </div>
+      <div class="faq-item border-b border-line">
+        <button class="faq-trigger w-full flex items-center justify-between py-5 text-left" aria-expanded="false">
+          <span class="text-xl leading-[30px] text-dark pr-4 transition-colors duration-200">Welche Technik brauche ich?</span>
+          <svg class="faq-icon w-6 h-6 shrink-0 text-dark transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner pb-5"><p class="text-[15px] leading-relaxed text-dark/70 max-w-[843px]">Ein Smartboard oder Beamer reicht. Internetzugang wird für das Streaming benötigt. Die Schüler*innen brauchen nur das ausgedruckte Arbeitsmaterial und einen Stift.</p></div></div>
+      </div>
+      <div class="faq-item border-b border-line">
+        <button class="faq-trigger w-full flex items-center justify-between py-5 text-left" aria-expanded="false">
+          <span class="text-xl leading-[30px] text-dark pr-4 transition-colors duration-200">Ist die Videostunde kostenlos?</span>
+          <svg class="faq-icon w-6 h-6 shrink-0 text-dark transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner pb-5"><p class="text-[15px] leading-relaxed text-dark/70 max-w-[843px]">Ja, alle Videostunden sind für Schulen und Lehrkräfte vollständig kostenlos.</p></div></div>
+      </div>
+      <div class="faq-item border-b border-line">
+        <button class="faq-trigger w-full flex items-center justify-between py-5 text-left" aria-expanded="false">
+          <span class="text-xl leading-[30px] text-dark pr-4 transition-colors duration-200">Welche Klassen eignen sich?</span>
+          <svg class="faq-icon w-6 h-6 shrink-0 text-dark transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner pb-5"><p class="text-[15px] leading-relaxed text-dark/70 max-w-[843px]">Die Videostunden eignen sich für Klassen ab Klasse 7 im Rahmen der Berufsorientierung. Sie können auch hervorragend als Vertretungsstunde eingesetzt werden.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-brand pt-20 pb-8">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10 pb-16 border-b border-white/20">
+      <div class="flex flex-col gap-2">
+        <p class="text-white text-[22px] font-medium leading-7 max-w-xs">Mit der JobApp noch schneller und einfacher bewerben.</p>
+        <div class="flex gap-4 mt-4">
+          <img src="assets/08446ed5.png" alt="App Store" class="h-10 rounded-lg" />
+          <img src="assets/d3e7c956.png" alt="Google Play" class="h-10 rounded-lg" />
+        </div>
+      </div>
+      <div class="flex flex-col gap-2">
+        <p class="text-white text-[22px] font-medium leading-7">Fragen, Anregung, Kritik? Schreib uns.</p>
+        <a href="mailto:feedback@deinerstertag.de" class="text-white text-base mt-2 hover:underline">feedback@deinerstertag.de</a>
+      </div>
+      <div class="flex flex-col gap-3">
+        <a href="#" class="flex items-center gap-2 text-white text-sm font-bold hover:text-white/80 transition-colors">
+          <img src="assets/01b29629.svg" alt="" aria-hidden="true" class="w-8 h-8" /> Instagram
+        </a>
+        <a href="#" class="flex items-center gap-2 text-white text-sm font-bold hover:text-white/80 transition-colors">
+          <img src="assets/c958d2c4.svg" alt="" aria-hidden="true" class="w-8 h-8" /> Facebook
+        </a>
+        <a href="#" class="flex items-center gap-2 text-white text-sm font-bold hover:text-white/80 transition-colors">
+          <img src="assets/d8522f4e.svg" alt="" aria-hidden="true" class="w-8 h-8" /> YouTube
+        </a>
+        <a href="#" class="flex items-center gap-2 text-white text-sm font-bold hover:text-white/80 transition-colors">
+          <img src="assets/e2571cf7.svg" alt="" aria-hidden="true" class="w-8 h-8" /> TikTok
+        </a>
+        <a href="#" class="flex items-center gap-2 text-white text-sm font-bold hover:text-white/80 transition-colors">
+          <img src="assets/f9b842de.png" alt="" aria-hidden="true" class="w-8 h-8 object-cover rounded" /> LinkedIn
+        </a>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 py-12 border-b border-white/20">
+      <div class="col-span-2 lg:col-span-1"><img src="logo.svg" alt="DEIN ERSTER TAG" width="96" height="57" class="h-10 w-auto object-contain mb-6 brightness-0 invert" /></div>
+      <div class="flex flex-col gap-3">
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Jobs</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Über uns</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">AGBs</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Kontakt</a>
+      </div>
+      <div class="flex flex-col gap-3">
+        <a href="lehrkraefte.html" class="text-white text-base hover:text-white/70 transition-colors">Für Lehrkräfte</a>
+        <a href="index.html" class="text-white text-base hover:text-white/70 transition-colors">Für Personaler*innen</a>
+        <a href="shop.html" class="text-white text-base hover:text-white/70 transition-colors">Shop</a>
+      </div>
+      <div class="flex flex-col gap-3">
+        <a href="#" class="text-white text-base underline hover:text-white/70 transition-colors">Impressum</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Datenschutz</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Nutzungsbedingungen</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Open Source</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Privatsphäreneinstellungen</a>
+      </div>
+    </div>
+    <div class="pt-6"><p class="text-white text-sm">© 2023 Studio2B GmbH</p></div>
+  </div>
+</footer>
+
+<script src="shared/shared.js"></script>
+</body>
+</html>

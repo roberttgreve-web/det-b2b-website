@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Component Library – DEIN ERSTER TAG</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Roboto', 'sans-serif'] },
+          colors: { brand: '#00afd6', yellow: '#ffec5c', dark: '#181818', light: '#fafafa' },
+          letterSpacing: { tight2: '-0.03em' },
+        }
+      }
+    }
+  </script>
+  <style>
+    /* FAQ accordion */
+    .faq-answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.45s ease; }
+    .faq-answer.open { grid-template-rows: 1fr; }
+    .faq-answer-inner { overflow: hidden; opacity: 0; transform: translateY(-6px); transition: opacity 0.35s ease 0.05s, transform 0.35s ease 0.05s; }
+    .faq-answer.open .faq-answer-inner { opacity: 1; transform: translateY(0); }
+    .faq-icon { transition: transform 0.35s ease; }
+    .faq-icon.open { transform: rotate(45deg); }
+
+    /* Sidebar nav */
+    .nav-link { display: block; padding: 6px 12px; border-radius: 8px; font-size: 13px; color: #555; transition: all 0.15s; }
+    .nav-link:hover { background: #f0f0f0; color: #181818; }
+    .nav-link.active { background: #e0f6fb; color: #007fa0; font-weight: 500; }
+    .nav-group { font-size: 11px; font-weight: 700; color: #a9a9a9; letter-spacing: 0.08em; text-transform: uppercase; padding: 16px 12px 4px; }
+
+    /* Note badge */
+    .note { background: #fff9d0; border-left: 3px solid #ffec5c; padding: 10px 14px; border-radius: 0 8px 8px 0; font-size: 13px; color: #5a4d00; line-height: 1.6; }
+    .note-brand { background: #e0f6fb; border-left-color: #00afd6; color: #004f62; }
+    .note-dark { background: #f2f2f2; border-left-color: #181818; color: #333; }
+
+    /* Section wrapper */
+    .comp-section { padding: 48px 0 64px; border-bottom: 1px solid #e8e8e8; }
+    .comp-section:last-child { border-bottom: none; }
+    .comp-label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #a9a9a9; margin-bottom: 8px; }
+    .comp-title { font-size: 22px; font-weight: 700; color: #181818; margin-bottom: 4px; }
+    .comp-desc { font-size: 14px; color: #666; margin-bottom: 32px; line-height: 1.6; }
+    .variant-label { font-size: 12px; font-weight: 600; color: #a9a9a9; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid #f0f0f0; }
+    .variant-wrap { margin-bottom: 40px; }
+
+    /* Swipe track */
+    .swipe-track { scrollbar-width: none; -ms-overflow-style: none; }
+    .swipe-track::-webkit-scrollbar { display: none; }
+
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="font-sans bg-[#f5f5f5] text-dark" style="display: flex; min-height: 100vh;">
+
+<!-- ══ SIDEBAR NAV ══ -->
+<aside style="width: 220px; min-width: 220px; background: white; border-right: 1px solid #e8e8e8; position: sticky; top: 0; height: 100vh; overflow-y: auto; padding: 24px 12px; flex-shrink: 0;">
+  <div style="font-size: 15px; font-weight: 700; color: #181818; padding: 0 12px 20px;">
+    <img src="logo.svg" alt="DET" style="height: 32px; width: auto;" />
+  </div>
+  <p style="font-size: 11px; color: #a9a9a9; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0 12px 12px;">Component Library</p>
+
+  <div class="nav-group">Atoms</div>
+  <a class="nav-link" href="#sec-overline">Overline + Heading</a>
+  <a class="nav-link" href="#sec-button">CTA Button</a>
+  <a class="nav-link" href="#sec-icon-box">Icon Box</a>
+  <a class="nav-link" href="#sec-award">Award Badge</a>
+  <a class="nav-link" href="#sec-stat-tile">Stat Tile</a>
+  <a class="nav-link" href="#sec-form">Form Fields</a>
+
+  <div class="nav-group">Molecules</div>
+  <a class="nav-link" href="#sec-feature-row">Feature Row</a>
+  <a class="nav-link" href="#sec-testimonial">Testimonial</a>
+  <a class="nav-link" href="#sec-faq">FAQ Accordion</a>
+  <a class="nav-link" href="#sec-tabs">Tab Bar</a>
+  <a class="nav-link" href="#sec-pagination">Pagination</a>
+  <a class="nav-link" href="#sec-stat-card">Stat Card (Schulen)</a>
+
+  <div class="nav-group">Sections</div>
+  <a class="nav-link" href="#sec-cta-yellow">CTA Yellow Card</a>
+  <a class="nav-link" href="#sec-how-it-works">HOW IT WORKS</a>
+  <a class="nav-link" href="#sec-benefits">Benefits Grid</a>
+  <a class="nav-link" href="#sec-hero-layout">Hero Layout</a>
+
+  <div style="margin-top: 24px; padding: 12px; background: #f5f5f5; border-radius: 8px; font-size: 12px; color: #888; line-height: 1.5;">
+    Tokens<br/>
+    <span style="color: #00afd6;">■</span> brand #00afd6<br/>
+    <span style="color: #ffec5c; -webkit-text-stroke: 0.5px #ccc;">■</span> yellow #ffec5c<br/>
+    <span style="color: #181818;">■</span> dark #181818<br/>
+    <span style="color: #fafafa; -webkit-text-stroke: 0.5px #ccc;">■</span> light #fafafa
+  </div>
+</aside>
+
+<!-- ══ MAIN CONTENT ══ -->
+<main style="flex: 1; padding: 0 48px 80px; max-width: 1100px;">
+
+<!-- ─────────────────────────────────────
+     OVERLINE + HEADING
+───────────────────────────────────── -->
+<section class="comp-section" id="sec-overline">
+  <p class="comp-label">Atom</p>
+  <h2 class="comp-title">Overline + Heading</h2>
+  <p class="comp-desc">Immer zusammen: Brand-blaue Overline (uppercase, 16px, tracking −0.03em) gefolgt von einem H2 in 42px. Der umgebende Container wird auf <code>max-w-[519px]</code> begrenzt — gilt für alle Sektionen außer volle Breite (Partner Logos, Yellow CTA).</p>
+
+  <div class="variant-wrap">
+    <p class="variant-label">Standard (Light BG)</p>
+    <div class="bg-white rounded-2xl p-10">
+      <div class="max-w-[519px]">
+        <p class="text-brand text-base tracking-[-0.03em] mb-4">ABSCHNITTSNAME</p>
+        <h2 class="text-[42px] leading-[53px] tracking-[-0.03em] text-dark font-normal">
+          Headline die zeigt wie lang so eine Zeile werden kann.
+        </h2>
+      </div>
+    </div>
+    <div class="note mt-3">max-w-[519px] auf dem Wrapper hält Headlines auf allen Breiten lesbar. Nie breiter — auch nicht auf 1440px-Screens.</div>
+  </div>
+
+  <div class="variant-wrap">
+    <p class="variant-label">On Blue BG (ohne Overline)</p>
+    <div class="bg-brand rounded-2xl p-10">
+      <div class="max-w-[679px]">
+        <h2 class="text-[42px] leading-[53px] tracking-[-0.03em] text-[#fafafa] font-normal">
+          Auf blauem Hintergrund fällt die Overline weg — die Headline spricht für sich.
+        </h2>
+      </div>
+    </div>
+    <div class="note note-brand mt-3">Blue Section: max-w hier 679px (etwas breiter, weil keine Overline und kein Subtext daneben). Text-Farbe: text-[#fafafa], nicht text-white.</div>
+  </div>
+
+  <div class="variant-wrap">
+    <p class="variant-label">Mit Lead-Text darunter</p>
+    <div class="bg-white rounded-2xl p-10">
+      <div class="max-w-[519px]">
+        <p class="text-brand text-base tracking-[-0.03em] mb-4">SCHULEN IN DER NÄHE</p>
+        <h2 class="text-[28px] sm:text-[34px] xl:text-[42px] leading-tight xl:leading-[53px] tracking-[-0.03em] font-normal mb-3">
+          Diese Schulen in ihrer Nähe arbeiten mit uns zusammen.
+        </h2>
+        <p class="text-[15px] leading-relaxed text-dark/60">
+          Geben Sie eine Postleitzahl ein und wählen Sie Ihren gewünschten Suchradius.
+        </p>
+      </div>
+    </div>
+    <div class="note mt-3">Lead-Text: text-[15px] leading-relaxed text-dark/60. Abstand zur Overline: mb-4. Abstand H2 zu Lead: mb-3.</div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────
+     CTA BUTTON
+───────────────────────────────────── -->
+<section class="comp-section" id="sec-button">
+  <p class="comp-label">Atom</p>
+  <h2 class="comp-title">CTA Button</h2>
+  <p class="comp-desc">Pill-Form, immer brand-blau. Arrow-Icon gleitet bei Hover nach rechts. <code>active:scale-95</code> gibt haptisches Feedback.</p>
+
+  <div class="variant-wrap">
+    <p class="variant-label">Standard (Primary)</p>
+    <div class="bg-white rounded-2xl p-10 flex flex-wrap gap-6 items-center">
+      <a href="#" class="inline-flex items-center gap-2 bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200 group">
+        Beratungsgespräch vereinbaren
+        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#" class="inline-flex items-center gap-2 bg-brand text-white px-4 py-3 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200 group">
+        Kurze Variante
+        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="note mt-3">px-4 für engere Kontexte (Nav), px-6 für freistehende CTAs. Immer rounded-full. Icon: 20×20px chevron.</div>
+  </div>
+
+  <div class="variant-wrap">
+    <p class="variant-label">Mit Icon (Search)</p>
+    <div class="bg-white rounded-2xl p-10">
+      <button class="inline-flex items-center justify-center gap-2 bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        Schulen suchen
+      </button>
+    </div>
+    <div class="note mt-3">Search-Buttons und ähnliche Action-Buttons: Icon links, kein Chevron rechts. w-4 h-4 für kleinere Kontext-Icons.</div>
+  </div>
+
+  <div class="variant-wrap">
+    <p class="variant-label">Idee: Ghost / Outline Variante</p>
+    <div class="bg-white rounded-2xl p-10 flex flex-wrap gap-4 items-center">
+      <a href="#" class="inline-flex items-center gap-2 border border-brand text-brand px-6 py-3 rounded-full text-sm font-medium hover:bg-brand/10 active:scale-95 transition-all duration-200 group">
+        Mehr erfahren
+        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#" class="inline-flex items-center gap-2 border border-white text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-white/10 active:scale-95 transition-all duration-200 group" style="background: rgba(0,175,214,0.15);">
+        Auf blauem BG
+        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="note note-brand mt-3">Noch nicht im Einsatz. Sinnvoll als Sekundär-CTA wenn zwei Buttons nebeneinander stehen müssen (z.B. „Jetzt starten" + „Mehr erfahren").</div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────
+     ICON BOX
+───────────────────────────────────── -->
+<section class="comp-section" id="sec-icon-box">
+  <p class="comp-label">Atom</p>
+  <h2 class="comp-title">Icon Box</h2>
+  <p class="comp-desc">48×48px Container, abgerundete Ecken (rounded-xl = 12px), grauer Hintergrund. Heroicons Outline, 24×24px. Wird als Schritt-Nummer-Container und als Kategorie-Icon eingesetzt.</p>
+
+  <div class="variant-wrap">
+    <p class="variant-label">Icon Varianten</p>
+    <div class="bg-white rounded-2xl p-10 flex flex-wrap gap-6">
+      <div class="w-12 h-12 bg-gray-200/50 rounded-xl flex items-center justify-center">
+        <svg class="w-6 h-6 text-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      </div>
+      <div class="w-12 h-12 bg-gray-200/50 rounded-xl flex items-center justify-center">
+        <svg class="w-6 h-6 text-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+      </div>
+      <div class="w-12 h-12 bg-gray-200/50 rounded-xl flex items-center justify-center">
+        <svg class="w-6 h-6 text-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.07A1 1 0 0121 8.87V15.13a1 1 0 01-1.447.9L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+      </div>
+      <div class="w-12 h-12 bg-[#f0f0f0] rounded-xl flex items-center justify-center">
+        <span class="text-2xl font-normal tracking-tight">1</span>
+      </div>
+      <div class="w-12 h-12 bg-[#f0f0f0] rounded-xl flex items-center justify-center">
+        <span class="text-2xl font-normal tracking-tight">2</span>
+      </div>
+      <div class="w-12 h-12 bg-brand/10 rounded-xl flex items-center justify-center">
+        <svg class="w-6 h-6 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+      </div>
+    </div>
+    <div class="note mt-3">bg-gray-200/50 = Feature-Icons. bg-[#f0f0f0] = Schritt-Nummern (etwas kräftiger). Idee: bg-brand/10 + text-brand für aktive/highlighted Zustände.</div>
+  </div>
+
+  <div class="variant-wrap">
+    <p class="variant-label">Größenvarianten</p>
+    <div class="bg-white rounded-2xl p-10 flex flex-wrap gap-8 items-end">
+      <div class="flex flex-col items-center gap-2">
+        <div class="w-10 h-10 bg-gray-200/50 rounded-xl flex items-center justify-center">
+          <svg class="w-5 h-5 text-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.07A1 1 0 0121 8.87V15.13a1 1 0 01-1.447.9L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+        </div>
+        <span class="text-xs text-dark/40">w-10 Mobile</span>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <div class="w-12 h-12 bg-gray-200/50 rounded-xl flex items-center justify-center">
+          <svg class="w-6 h-6 text-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.07A1 1 0 0121 8.87V15.13a1 1 0 01-1.447.9L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+        </div>
+        <span class="text-xs text-dark/40">w-12 Standard</span>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <div class="w-16 h-16 bg-gray-200/50 rounded-xl flex items-center justify-center">
+          <svg class="w-8 h-8 text-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.07A1 1 0 0121 8.87V15.13a1 1 0 01-1.447.9L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+        </div>
+        <span class="text-xs text-dark/40">w-16 Groß</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────
+     AWARD BADGE
+───────────────────────────────────── -->
+<section class="comp-section" id="sec-award">
+  <p class="comp-label">Atom</p>
+  <h2 class="comp-title">Award Badge</h2>
+  <p class="comp-desc">Gelber Box mit Emoji-Icon links, kleiner Text rechts. Eingesetzt im Hero als Vertrauenselement.</p>
+
+  <div class="variant-wrap">
+    <p class="variant-label">Standard</p>
+    <div class="bg-white rounded-2xl p-10">
+      <div class="flex gap-4 items-center max-w-sm">
+        <div class="bg-yellow flex items-center justify-center p-2.5 rounded-xl shrink-0 w-16 lg:w-20">
+          <span class="text-3xl lg:text-4xl" role="img" aria-label="Trophäe">🏆</span>
+        </div>
+        <p class="text-[13px] leading-relaxed text-dark">
+          <strong>Ausgezeichnet</strong> vom BMBF für bestes Angebot für das Erleben von Berufsfeldern und Berufen in Deutschland.
+        </p>
+      </div>
+    </div>
+    <div class="note mt-3">w-16 mobile, w-20 desktop. Text 13px. Immer shrink-0 auf dem Icon-Container.</div>
+  </div>
+
+  <div class="variant-wrap">
+    <p class="variant-label">Idee: Mehrere Badges nebeneinander</p>
+    <div class="bg-white rounded-2xl p-10 flex flex-col gap-4">
+      <div class="flex gap-4 items-center">
+        <div class="bg-yellow flex items-center justify-center p-2.5 rounded-xl shrink-0 w-14">
+          <span class="text-2xl">🏆</span>
+        </div>
+        <p class="text-[13px] leading-relaxed text-dark"><strong>BMBF Award</strong> – Bestes Berufsfelderlebnis</p>
+      </div>
+      <div class="flex gap-4 items-center">
+        <div class="bg-yellow flex items-center justify-center p-2.5 rounded-xl shrink-0 w-14">
+          <span class="text-2xl">⭐</span>
+        </div>
+        <p class="text-[13px] leading-relaxed text-dark"><strong>Top Arbeitgeber</strong> – Kununu Score 4.8</p>
+      </div>
+    </div>
+    <div class="note note-brand mt-3">Noch nicht im Einsatz. Könnte in einer "Über uns"-Sektion oder im Footer als Trust-Stack funktionieren.</div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────
+     STAT TILE
+───────────────────────────────────── -->
+<section class="comp-section" id="sec-stat-tile">
+  <p class="comp-label">Atom</p>
+  <h2 class="comp-title">Stat Tile (Stats Bar)</h2>
+  <p class="comp-desc">Drei gleichbreite Kacheln in einer Zeile. Linke und rechte Ecken abgerundet, mittlere leicht abgerundet. Auf Mobile: vertikaler Stack, oben/unten voll abgerundet.</p>
+
+  <div class="variant-wrap">
+    <p class="variant-label">Standard 3-er Reihe</p>
+    <div class="bg-white rounded-2xl p-10">
+      <div class="flex flex-col sm:flex-row items-stretch gap-px">
+        <div class="border border-[#e3e3e3] flex items-center justify-center px-4 py-4 sm:rounded-bl-2xl sm:rounded-tl-2xl rounded-t-2xl sm:rounded-t-none flex-1 hover:bg-gray-50 transition-colors">
+          <p class="text-base lg:text-xl text-center"><strong>8000+ Partnerschulen</strong><span class="text-[#a9a9a9]"> in ganz Deutschland</span></p>
+        </div>
+        <div class="border border-[#e3e3e3] flex items-center justify-center px-4 py-4 flex-1 hover:bg-gray-50 transition-colors">
+          <p class="text-base lg:text-xl text-center"><strong>200 Unternehmen</strong><span class="text-[#a9a9a9]"> vertrauen uns</span></p>
+        </div>
+        <div class="border border-[#e3e3e3] flex items-center justify-center px-4 py-4 sm:rounded-br-2xl sm:rounded-tr-2xl rounded-b-2xl sm:rounded-b-none flex-1 hover:bg-gray-50 transition-colors">
+          <p class="text-base lg:text-xl text-center"><strong>35% der Arbeitsagenturen</strong><span class="text-[#a9a9a9]"> kooperieren</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="note mt-3">gap-px zwischen Tiles statt border-Dopplung. Sekundärer Text: text-[#a9a9a9] (nicht text-dark/50 — spezifische Farbe).</div>
+  </div>
+
+  <div class="variant-wrap">
+    <p class="variant-label">Idee: 2-er Reihe</p>
+    <div class="bg-white rounded-2xl p-10">
+      <div class="flex flex-col sm:flex-row items-stretch gap-px">
+        <div class="border border-[#e3e3e3] flex items-center justify-center px-4 py-4 sm:rounded-l-2xl rounded-t-2xl sm:rounded-t-none flex-1">
+          <p class="text-xl text-center"><strong>131 Schulen</strong><span class="text-[#a9a9a9]"> in Berlin</span></p>
+        </div>
+        <div class="border border-[#e3e3e3] flex items-center justify-center px-4 py-4 sm:rounded-r-2xl rounded-b-2xl sm:rounded-b-none flex-1">
+          <p class="text-xl text-center"><strong>30 km</strong><span class="text-[#a9a9a9]"> Suchradius</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="note note-brand mt-3">Könnte als Ergebnis-Zusammenfassung unter der Schulen-Suche dienen. Aktuell nutzen wir dort Stat Cards (großes Zahl-Format).</div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────
+     FORM FIELDS
+───────────────────────────────────── -->
+<section class="comp-section" id="sec-form">
+  <p class="comp-label">Atom</p>
+  <h2 class="comp-title">Form Fields</h2>
+  <p class="comp-desc">Text Input, Select Dropdown und Button als Zeile — aktuell in SCHULEN IN DER NÄHE. Fokus-Ring: brand/20 mit brand border.</p>
+
+  <div class="variant-wrap">
+    <p class="variant-label">Input + Select + Button</p>
+    <div class="bg-white rounded-2xl p-10">
+      <div class="flex flex-col sm:flex-row items-end gap-4">
+        <div class="flex flex-col gap-1.5 w-full sm:w-auto">
+          <label class="text-sm font-medium text-dark">Postleitzahl</label>
+          <input type="text" placeholder="z. B. 10829" class="border border-[#e3e3e3] rounded-xl px-4 py-3 text-base w-full sm:w-48 focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all duration-200 bg-white" />
+        </div>
+        <div class="flex flex-col gap-1.5 w-full sm:w-auto">
+          <label class="text-sm font-medium text-dark">Radius</label>
+          <div class="relative">
+            <select class="appearance-none border border-[#e3e3e3] rounded-xl px-4 py-3 pr-10 text-base w-full sm:w-40 focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all duration-200 bg-white cursor-pointer">
+              <option>10 km</option><option>20 km</option><option selected>30 km</option><option>50 km</option>
+            </select>
+            <svg class="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-dark/40 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+        </div>
+        <button class="inline-flex items-center justify-center gap-2 bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200 w-full sm:w-auto shrink-0">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          Schulen suchen
+        </button>
+      </div>
+    </div>
+    <div class="note mt-3">Input: rounded-xl (nicht rounded-full). Button: rounded-full. Die Mischung ist bewusst — Eingabefelder fühlen sich "stabiler" an, Buttons sind "aktiver".</div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────
+     FEATURE ROW
+───────────────────────────────────── -->
+<section class="comp-section" id="sec-feature-row">
+  <p class="comp-label">Molecule</p>
+  <h2 class="comp-title">Feature Row</h2>
+  <p class="comp-desc">Icon Box + Titel + Body, horizontal. Mit border-t zwischen Items (außer dem ersten). Eingesetzt in School Program und Benefits.</p>
+
+  <div class="variant-wrap">
+    <p class="variant-label">Mit Trennlinie (School Program Stil)</p>
+    <div class="bg-white rounded-2xl p-10 max-w-lg">
+      <div class="flex flex-col gap-6">
+        <div class="flex gap-4 items-start">
+          <div class="w-12 h-12 bg-gray-200/50 rounded-xl shrink-0 flex items-center justify-center">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div>
+            <h3 class="text-xl leading-[30px] mb-2">Kostenlos für die Schule</h3>
+            <p class="text-[15px] leading-relaxed text-dark/70">Ausbildungsplätze bleiben unbesetzt – nicht weil Jugendliche kein Interesse haben.</p>
+          </div>
+        </div>
+        <div class="border-t border-[#eaeaea] pt-7 flex gap-4 items-start">
+          <div class="w-12 h-12 bg-gray-200/50 rounded-xl shrink-0 flex items-center justify-center">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <div>
+            <h3 class="text-xl leading-[30px] mb-2">Regionalisierung</h3>
+            <p class="text-[15px] leading-relaxed text-dark/70">Gezielte Ausspielung in Schulen rund um Ihren Standort.</p>
+          </div>
+        </div>
+        <div class="border-t border-[#eaeaea] pt-7 flex gap-4 items-start">
+          <div class="w-12 h-12 bg-gray-200/50 rounded-xl shrink-0 flex items-center justify-center">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+          </div>
+          <div>
+            <h3 class="text-xl leading-[30px] mb-2">Logistik 100% über uns</h3>
+            <p class="text-[15px] leading-relaxed text-dark/70">Kein eigener Aufwand — wir koordinieren Schulen, Termine, Materialien.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="note mt-3">border-[#eaeaea] + pt-7 für Abstände. Erster Item: kein border-t. H3: text-xl (20px). Body: text-[15px] text-dark/70.</div>
+  </div>
+
+  <div class="variant-wrap">
+    <p class="variant-label">Ohne Trennlinie / Benefits-Stil (vertical stack)</p>
+    <div class="bg-white rounded-2xl p-10">
+      <div class="grid grid-cols-2 gap-8 lg:gap-12">
+        <div class="flex flex-col gap-4">
+          <div class="w-12 h-12 bg-gray-200/50 rounded-xl flex items-center justify-center">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2"/></svg>
+          </div>
+          <div>
+            <h3 class="text-xl leading-[30px] mb-2">Günstiger als Schülermesse</h3>
+            <p class="text-[15px] leading-relaxed text-dark/70">Reichweite zu einem Bruchteil des Aufwands.</p>
+          </div>
+        </div>
+        <div class="flex flex-col gap-4">
+          <div class="w-12 h-12 bg-gray-200/50 rounded-xl flex items-center justify-center">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10"/></svg>
+          </div>
+          <div>
+            <h3 class="text-xl leading-[30px] mb-2">Messbare Ergebnisse</h3>
+            <p class="text-[15px] leading-relaxed text-dark/70">Quartalsreporting mit allen Kennzahlen.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="note mt-3">Icon oben (flex-col gap-4) statt links (flex gap-4). Für grid-Layouts besser geeignet. Kein Trennstrich — gap ersetzt ihn.</div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────
+     TESTIMONIAL
+───────────────────────────────────── -->
+<section class="comp-section" id="sec-testimonial">
+  <p class="comp-label">Molecule</p>
+  <h2 class="comp-title">Testimonial Card</h2>
+  <p class="comp-desc">Rundes Portrait links, kursives Zitat + Name/Rolle rechts. Auf Desktop: zwei nebeneinander mit vertikalem Divider.</p>
+
+  <div class="variant-wrap">
+    <p class="variant-label">Einzelne Karte</p>
+    <div class="bg-white rounded-2xl p-10">
+      <div class="flex gap-7 items-start max-w-lg">
+        <div class="shrink-0 w-20 h-20 rounded-full bg-gray-200 overflow-hidden">
+          <div class="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center text-white text-2xl font-bold">N</div>
+        </div>
+        <div class="flex flex-col gap-5">
+          <p class="text-[15px] leading-relaxed italic text-dark">
+            „Mit DEIN ERSTER TAG erreichen wir Schülerinnen zu dem Zeitpunkt an dem die Berufswahl relevant wird und an dem Ort wo sie sich intensiv damit beschäftigen, in der Schule."
+          </p>
+          <div>
+            <p class="text-[15px] font-bold leading-relaxed">Targobank</p>
+            <p class="text-[15px] leading-relaxed">Nicole Soesanto, Spezialistin Azubi-Marketing</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="note mt-3">Portrait: w-20 h-20 mobile, lg:w-[171px] lg:h-[171px] desktop — großer Sprung. Zitat immer kursiv. Name Bold, Rolle normal. Kein Anführungszeichen-Icon.</div>
+  </div>
+
+  <div class="variant-wrap">
+    <p class="variant-label">Idee: Card-Variante mit Border</p>
+    <div class="bg-white rounded-2xl p-10">
+      <div class="border border-[#e3e3e3] rounded-2xl p-6 max-w-sm">
+        <p class="text-[15px] leading-relaxed italic text-dark mb-5">
+          „Mit DEIN ERSTER TAG erreichen wir Schülerinnen zu dem Zeitpunkt an dem die Berufswahl relevant wird."
+        </p>
+        <div class="flex gap-3 items-center">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center text-white font-bold shrink-0">N</div>
+          <div>
+            <p class="text-[13px] font-bold">Nicole Soesanto</p>
+            <p class="text-[13px] text-dark/60">Targobank</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="note note-brand mt-3">Kompakte Card-Form. Passt für 3-er Grid oder als Sidebar-Element. Noch nicht im Einsatz.</div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────
+     FAQ ACCORDION
+───────────────────────────────────── -->
+<section class="comp-section" id="sec-faq">
+  <p class="comp-label">Molecule</p>
+  <h2 class="comp-title">FAQ Accordion</h2>
+  <p class="comp-desc">Öffnet mit <code>grid-template-rows: 0fr → 1fr</code> (nicht max-height — kein Jump). Icon dreht 45°. Aktiver Zustand: Fragentext + Icon werden brand-blau. Nur ein Item gleichzeitig offen.</p>
+
+  <div class="variant-wrap">
+    <p class="variant-label">Interaktiv (klickbar)</p>
+    <div class="bg-white rounded-2xl p-10">
+      <div class="flex flex-col" id="demo-faq">
+        <div class="faq-item border-t border-[#e3e3e3] py-6">
+          <button class="faq-trigger w-full text-left flex items-center justify-between gap-4" onclick="toggleFaq(this)">
+            <span class="text-[15px] leading-relaxed font-medium">Wie lange dauert es bis mein Beruf in der Schule ist?</span>
+            <svg class="faq-icon w-5 h-5 shrink-0 text-dark/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner pt-4 text-[15px] leading-relaxed text-dark/70">
+              Nach Vertragsabschluss und Briefing beginnt die Produktion. In der Regel sind Ihre Inhalte innerhalb von 4–6 Wochen im Schulprogramm sichtbar.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item border-t border-[#e3e3e3] py-6">
+          <button class="faq-trigger w-full text-left flex items-center justify-between gap-4" onclick="toggleFaq(this)">
+            <span class="text-[15px] leading-relaxed font-medium">Welche Schultypen sind dabei?</span>
+            <svg class="faq-icon w-5 h-5 shrink-0 text-dark/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner pt-4 text-[15px] leading-relaxed text-dark/70">
+              Hauptsächlich Sekundarschulen, Gesamtschulen und Berufsschulen. Über 8.000 Schulen in ganz Deutschland.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item border-t border-b border-[#e3e3e3] py-6">
+          <button class="faq-trigger w-full text-left flex items-center justify-between gap-4" onclick="toggleFaq(this)">
+            <span class="text-[15px] leading-relaxed font-medium">Was kostet eine Partnerschaft?</span>
+            <svg class="faq-icon w-5 h-5 shrink-0 text-dark/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner pt-4 text-[15px] leading-relaxed text-dark/70">
+              Die Preise richten sich nach Reichweite und Medienformat. Kontaktieren Sie uns für ein individuelles Angebot.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="note mt-3">grid-template-rows statt max-height. border-b nur am letzten Item. Aktiver Zustand: Fragentext + Icon text-brand.</div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────
+     TAB BAR
+───────────────────────────────────── -->
+<section class="comp-section" id="sec-tabs">
+  <p class="comp-label">Molecule</p>
+  <h2 class="comp-title">Tab Bar</h2>
+  <p class="comp-desc">Unterstrichen, border-b auf dem Container. Aktiver Tab: brand-Farbe + border-brand. Inaktiv: text-dark/40, border-transparent.</p>
+
+  <div class="variant-wrap">
+    <p class="variant-label">Standard (Schulen-Finder)</p>
+    <div class="bg-white rounded-2xl p-10">
+      <div class="border-b border-[#e3e3e3] mb-6">
+        <div class="flex">
+          <button class="pb-3 mr-8 text-sm font-medium border-b-2 -mb-px text-brand border-brand">
+            Partnerschulen (44)
+          </button>
+          <button class="pb-3 text-sm font-medium border-b-2 -mb-px text-dark/40 border-transparent hover:text-dark/60">
+            Netzwerkschulen (87)
+          </button>
+        </div>
+      </div>
+      <p class="text-sm text-dark/40">↑ Tab-Inhalt würde hier erscheinen</p>
+    </div>
+    <div class="note mt-3">-mb-px auf den Buttons überlappt den container-border-b. Dadurch entsteht der "selected underline" Effekt ohne doppelten Rand.</div>
+  </div>
+
+  <div class="variant-wrap">
+    <p class="variant-label">Idee: Pill-Tabs</p>
+    <div class="bg-white rounded-2xl p-10">
+      <div class="flex gap-2 mb-6">
+        <button class="px-4 py-2 rounded-full text-sm font-medium bg-brand text-white">Partnerschulen</button>
+        <button class="px-4 py-2 rounded-full text-sm font-medium bg-[#f0f0f0] text-dark/60 hover:bg-gray-200">Netzwerkschulen</button>
+      </div>
+      <p class="text-sm text-dark/40">↑ Pill-Variante — auffälliger, passt nicht zum aktuellen Tabellen-Kontext</p>
+    </div>
+    <div class="note note-brand mt-3">Pill-Tabs wären für Content-Switching in Card-Layouts besser. Für Tabellen bleibt der Underline-Stil stimmiger.</div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────
+     PAGINATION
+───────────────────────────────────── -->
+<section class="comp-section" id="sec-pagination">
+  <p class="comp-label">Molecule</p>
+  <h2 class="comp-title">Pagination</h2>
+  <p class="comp-desc">Prev/Next Pfeile + Seitenzahlen + Ellipsis (»). Aktive Seite: brand-Hintergrund. 10 Einträge pro Seite.</p>
+
+  <div class="variant-wrap">
+    <p class="variant-label">Mitten in der Liste (Seite 5 von 9)</p>
+    <div class="bg-white rounded-2xl p-10">
+      <div class="flex items-center justify-center gap-2">
+        <button class="w-9 h-9 flex items-center justify-center rounded-lg text-sm hover:bg-gray-100 text-dark/60">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+        <button class="w-9 h-9 flex items-center justify-center rounded-lg text-sm hover:bg-gray-100">1</button>
+        <span class="w-9 h-9 flex items-center justify-center text-sm text-dark/40">»</span>
+        <button class="w-9 h-9 flex items-center justify-center rounded-lg text-sm hover:bg-gray-100">4</button>
+        <button class="w-9 h-9 flex items-center justify-center rounded-lg text-sm bg-brand text-white font-medium">5</button>
+        <button class="w-9 h-9 flex items-center justify-center rounded-lg text-sm hover:bg-gray-100">6</button>
+        <span class="w-9 h-9 flex items-center justify-center text-sm text-dark/40">»</span>
+        <button class="w-9 h-9 flex items-center justify-center rounded-lg text-sm hover:bg-gray-100">9</button>
+        <button class="w-9 h-9 flex items-center justify-center rounded-lg text-sm hover:bg-gray-100 text-dark/60">
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="note mt-3">Immer Seite 1 + letzte Seite + aktuelle ±2 anzeigen. Lücken mit » (nicht …) füllen. Active: bg-brand text-white, w-9 h-9.</div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────
+     STAT CARD (Schulen)
+───────────────────────────────────── -->
+<section class="comp-section" id="sec-stat-card">
+  <p class="comp-label">Molecule</p>
+  <h2 class="comp-title">Stat Card (Schulen-Finder)</h2>
+  <p class="comp-desc">Große Zahl (52px), Label oben, Sub-Label unten, farbiger Balken am Fuß. Klickbar — wechselt den aktiven Tab.</p>
+
+  <div class="variant-wrap">
+    <p class="variant-label">Standard 2-er Grid</p>
+    <div class="bg-white rounded-2xl p-10">
+      <div class="grid grid-cols-2 gap-4 max-w-lg">
+        <div class="border border-[#e3e3e3] rounded-2xl p-6 cursor-pointer hover:border-brand/30 transition-colors">
+          <p class="text-sm text-dark/50 mb-3">Partnerschulen</p>
+          <p class="text-[52px] leading-none font-normal text-brand mb-3">44</p>
+          <p class="text-[13px] text-dark/50">direkt mit uns</p>
+          <div class="mt-5 h-0.5 bg-brand rounded-full"></div>
+        </div>
+        <div class="border border-[#e3e3e3] rounded-2xl p-6 cursor-pointer hover:border-dark/20 transition-colors">
+          <p class="text-sm text-dark/50 mb-3">Netzwerkschulen</p>
+          <p class="text-[52px] leading-none font-normal text-dark mb-3">87</p>
+          <p class="text-[13px] text-dark/50">über Agenturen für Arbeit</p>
+          <div class="mt-5 h-0.5 bg-dark/20 rounded-full"></div>
+        </div>
+      </div>
+    </div>
+    <div class="note mt-3">text-[52px] leading-none — Zahl ohne Zeilenabstand fühlt sich kompakter und gewichtiger an. Balken am Fuß zeigt die Farbe des zugehörigen Tabs.</div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────
+     CTA YELLOW CARD
+───────────────────────────────────── -->
+<section class="comp-section" id="sec-cta-yellow">
+  <p class="comp-label">Section</p>
+  <h2 class="comp-title">CTA Yellow Card</h2>
+  <p class="comp-desc">Gelber Hintergrund (#ffec5c), rounded-2xl, zentrierter Content. max-w-[651px]. Eingesetzt als Conversion-Moment zwischen Inhaltssektionen.</p>
+
+  <div class="variant-wrap">
+    <p class="variant-label">Standard</p>
+    <div class="bg-[#f0f0f0] rounded-2xl p-4">
+      <div class="bg-yellow rounded-2xl py-16 px-8">
+        <div class="max-w-[651px] mx-auto flex flex-col gap-8 items-center text-center">
+          <div class="flex flex-col gap-4">
+            <h2 class="text-[42px] leading-[53px] tracking-[-0.03em] text-dark">
+              Starten Sie jetzt. Das nächste Schuljahr wartet nicht.
+            </h2>
+            <p class="text-[15px] leading-relaxed text-dark">
+              Wir zeigen Ihnen in einem kostenlosen Beratungsgespräch, welche Schulen und Formate für Ihre Berufe passen.
+            </p>
+          </div>
+          <a href="#" class="inline-flex items-center gap-2 bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200 group">
+            Beratungsgespräch vereinbaren
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="note mt-3">Sitzt in einer <code>px-8 pb-8 bg-light</code> Section — hat also keinen eigenen Section-Wrapper, der gelbe Card ist der visuelle "Freiraum".</div>
+  </div>
+
+  <div class="variant-wrap">
+    <p class="variant-label">Idee: Dark Variante</p>
+    <div class="bg-[#f0f0f0] rounded-2xl p-4">
+      <div class="bg-dark rounded-2xl py-16 px-8">
+        <div class="max-w-[651px] mx-auto flex flex-col gap-8 items-center text-center">
+          <h2 class="text-[42px] leading-[53px] tracking-[-0.03em] text-white">
+            Erfahren Sie mehr über das Schulprogramm.
+          </h2>
+          <a href="#" class="inline-flex items-center gap-2 bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200 group">
+            Jetzt informieren
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="note note-brand mt-3">Dark CTA für Kontexte wo Gelb schon benutzt wurde oder zu viel wäre. Noch nicht im Einsatz.</div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────
+     HOW IT WORKS
+───────────────────────────────────── -->
+<section class="comp-section" id="sec-how-it-works">
+  <p class="comp-label">Section Varianten</p>
+  <h2 class="comp-title">HOW IT WORKS – Schritt-Grid</h2>
+  <p class="comp-desc">Bilder-Reihe oben, nummerierte Texte unten. Original: 4 Spalten. Hier auch als 3-er und 2-er Grid für andere Kontexte.</p>
+
+  <div class="variant-wrap">
+    <p class="variant-label">4 Spalten (Original)</p>
+    <div class="bg-white rounded-2xl p-10">
+      <div class="max-w-[519px] mb-10">
+        <p class="text-brand text-base tracking-[-0.03em] mb-4">SO FUNKTIONIERT ES</p>
+        <h2 class="text-[28px] leading-tight tracking-[-0.03em] text-dark font-normal">
+          Sie geben uns die Berufe, wir bringen Sie in die Schulklassen.
+        </h2>
+      </div>
+      <div class="grid grid-cols-4 gap-3 mb-8">
+        <div class="rounded-2xl overflow-hidden h-[180px] bg-gray-200 flex items-center justify-center text-dark/30 text-sm">Bild 1</div>
+        <div class="rounded-2xl overflow-hidden h-[180px] bg-gray-200 flex items-center justify-center text-dark/30 text-sm">Bild 2</div>
+        <div class="rounded-2xl overflow-hidden h-[180px] bg-gray-200 flex items-center justify-center text-dark/30 text-sm">Bild 3</div>
+        <div class="rounded-2xl overflow-hidden h-[180px] bg-[#1b191a] flex items-center justify-center text-white/30 text-sm">App</div>
+      </div>
+      <div class="grid grid-cols-4 gap-4">
+        <div class="flex flex-col gap-3">
+          <div class="w-10 h-10 bg-[#f0f0f0] rounded-xl flex items-center justify-center shrink-0"><span class="text-lg font-normal">1</span></div>
+          <h3 class="text-base leading-snug">Sie nennen uns ihre Ausbildungsberufe.</h3>
+          <p class="text-[13px] leading-relaxed text-dark/60">Unsere Redaktion bereitet alle Infos jugendgerecht auf.</p>
+        </div>
+        <div class="flex flex-col gap-3">
+          <div class="w-10 h-10 bg-[#f0f0f0] rounded-xl flex items-center justify-center shrink-0"><span class="text-lg font-normal">2</span></div>
+          <h3 class="text-base leading-snug">Wir produzieren die passenden Medien.</h3>
+          <p class="text-[13px] leading-relaxed text-dark/60">360°-Video, AR-Szene oder #kurzerklärt.</p>
+        </div>
+        <div class="flex flex-col gap-3">
+          <div class="w-10 h-10 bg-[#f0f0f0] rounded-xl flex items-center justify-center shrink-0"><span class="text-lg font-normal">3</span></div>
+          <h3 class="text-base leading-snug">Ihr Content erreicht Schüler*innen.</h3>
+          <p class="text-[13px] leading-relaxed text-dark/60">Über Medienboxen, Videostunden, Mini-Games.</p>
+        </div>
+        <div class="flex flex-col gap-3">
+          <div class="w-10 h-10 bg-[#f0f0f0] rounded-xl flex items-center justify-center shrink-0"><span class="text-lg font-normal">4</span></div>
+          <h3 class="text-base leading-snug">Sie sehen wieviele Ihre Botschaft gesehen haben.</h3>
+          <p class="text-[13px] leading-relaxed text-dark/60">Quartalsauswertung mit allen Kennzahlen.</p>
+        </div>
+      </div>
+    </div>
+    <div class="note mt-3">grid-cols-4. Bilderhöhe 367px (hier gekürzt auf 180px für Preview). Letztes Bild hat bg-[#1b191a] für App-Screenshot-Kontrast.</div>
+  </div>
+
+  <div class="variant-wrap">
+    <p class="variant-label">3 Spalten — für 3-Schritt-Prozesse</p>
+    <div class="bg-white rounded-2xl p-10">
+      <div class="max-w-[519px] mb-10">
+        <p class="text-brand text-base tracking-[-0.03em] mb-4">SO FUNKTIONIERT ES</p>
+        <h2 class="text-[28px] leading-tight tracking-[-0.03em] text-dark font-normal">
+          Drei Schritte bis zur ersten Schulklasse.
+        </h2>
+      </div>
+      <div class="grid grid-cols-3 gap-3 mb-8">
+        <div class="rounded-2xl overflow-hidden h-[200px] bg-gray-200 flex items-center justify-center text-dark/30 text-sm">Bild 1</div>
+        <div class="rounded-2xl overflow-hidden h-[200px] bg-gray-200 flex items-center justify-center text-dark/30 text-sm">Bild 2</div>
+        <div class="rounded-2xl overflow-hidden h-[200px] bg-gray-200 flex items-center justify-center text-dark/30 text-sm">Bild 3</div>
+      </div>
+      <div class="grid grid-cols-3 gap-6">
+        <div class="flex flex-col gap-3">
+          <div class="w-10 h-10 bg-[#f0f0f0] rounded-xl flex items-center justify-center shrink-0"><span class="text-lg font-normal">1</span></div>
+          <h3 class="text-lg leading-snug">Briefing in 30 Minuten.</h3>
+          <p class="text-[13px] leading-relaxed text-dark/60">Sie nennen Berufe und Region. Wir kümmern uns um den Rest.</p>
+        </div>
+        <div class="flex flex-col gap-3">
+          <div class="w-10 h-10 bg-[#f0f0f0] rounded-xl flex items-center justify-center shrink-0"><span class="text-lg font-normal">2</span></div>
+          <h3 class="text-lg leading-snug">Produktion & Placement.</h3>
+          <p class="text-[13px] leading-relaxed text-dark/60">Ihre Inhalte gehen in 8.000 Schulen deutschlandweit.</p>
+        </div>
+        <div class="flex flex-col gap-3">
+          <div class="w-10 h-10 bg-[#f0f0f0] rounded-xl flex items-center justify-center shrink-0"><span class="text-lg font-normal">3</span></div>
+          <h3 class="text-lg leading-snug">Messen & Optimieren.</h3>
+          <p class="text-[13px] leading-relaxed text-dark/60">Quartalsreporting zeigt Reichweite und Resonanz.</p>
+        </div>
+      </div>
+    </div>
+    <div class="note note-brand mt-3">grid-cols-3. Bilder haben mehr Platz pro Kachel — wirken ruhiger. Text-Größe kann auf text-lg (20px) hochgehen, da mehr Breite pro Spalte.</div>
+  </div>
+
+  <div class="variant-wrap">
+    <p class="variant-label">2 Spalten — für detailreichere Erklärungen</p>
+    <div class="bg-white rounded-2xl p-10">
+      <div class="max-w-[519px] mb-10">
+        <p class="text-brand text-base tracking-[-0.03em] mb-4">SO FUNKTIONIERT ES</p>
+        <h2 class="text-[28px] leading-tight tracking-[-0.03em] text-dark font-normal">
+          Ihr Beruf. In den Unterricht. In zwei Schritten.
+        </h2>
+      </div>
+      <div class="grid grid-cols-2 gap-4 mb-8">
+        <div class="rounded-2xl overflow-hidden h-[260px] bg-gray-200 flex items-center justify-center text-dark/30">Bild 1</div>
+        <div class="rounded-2xl overflow-hidden h-[260px] bg-gray-200 flex items-center justify-center text-dark/30">Bild 2</div>
+      </div>
+      <div class="grid grid-cols-2 gap-8">
+        <div class="flex flex-col gap-4">
+          <div class="w-12 h-12 bg-[#f0f0f0] rounded-xl flex items-center justify-center shrink-0"><span class="text-2xl font-normal">1</span></div>
+          <h3 class="text-xl leading-[30px]">Sie nennen uns ihre Berufe und Zielregionen.</h3>
+          <p class="text-[15px] leading-relaxed text-dark/70">Sie wählen den Beruf, den Sie vorstellen möchten. Unsere Redaktion bereitet alle Infos jugendgerecht auf und koordiniert die Platzierung in passenden Schulen.</p>
+        </div>
+        <div class="flex flex-col gap-4">
+          <div class="w-12 h-12 bg-[#f0f0f0] rounded-xl flex items-center justify-center shrink-0"><span class="text-2xl font-normal">2</span></div>
+          <h3 class="text-xl leading-[30px]">Wir bringen Ihren Beruf direkt in den Unterricht.</h3>
+          <p class="text-[15px] leading-relaxed text-dark/70">360°-Video, AR-Szene, #kurzerklärt oder Mini Games. Unsere Medienbox kommt in die Klasse, Schüler*innen erleben Ihren Beruf hautnah.</p>
+        </div>
+      </div>
+    </div>
+    <div class="note note-dark mt-3">grid-cols-2 lässt Raum für längere Texte (text-xl H3, mehr Body-Copy). Icon w-12 (größer als bei 3/4-col). Gut für Premium-Darstellung oder Detailseiten.</div>
+  </div>
+
+  <div class="variant-wrap">
+    <p class="variant-label">Idee: Nummeriert mit Verbindungslinie (Timeline)</p>
+    <div class="bg-white rounded-2xl p-10">
+      <div class="flex flex-col gap-0">
+        <div class="flex gap-6 items-start">
+          <div class="flex flex-col items-center">
+            <div class="w-10 h-10 bg-brand rounded-xl flex items-center justify-center shrink-0"><span class="text-lg font-medium text-white">1</span></div>
+            <div class="w-0.5 h-12 bg-[#e3e3e3] mt-1"></div>
+          </div>
+          <div class="pt-1 pb-12">
+            <h3 class="text-lg font-medium mb-1">Briefing in 30 Minuten</h3>
+            <p class="text-[13px] text-dark/60">Sie nennen Berufe und Region. Wir kümmern uns um den Rest.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="flex flex-col items-center">
+            <div class="w-10 h-10 bg-brand rounded-xl flex items-center justify-center shrink-0"><span class="text-lg font-medium text-white">2</span></div>
+            <div class="w-0.5 h-12 bg-[#e3e3e3] mt-1"></div>
+          </div>
+          <div class="pt-1 pb-12">
+            <h3 class="text-lg font-medium mb-1">Produktion & Placement</h3>
+            <p class="text-[13px] text-dark/60">Ihre Inhalte gehen in 8.000 Schulen deutschlandweit.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 items-start">
+          <div class="flex flex-col items-center">
+            <div class="w-10 h-10 bg-brand rounded-xl flex items-center justify-center shrink-0"><span class="text-lg font-medium text-white">3</span></div>
+          </div>
+          <div class="pt-1">
+            <h3 class="text-lg font-medium mb-1">Reporting</h3>
+            <p class="text-[13px] text-dark/60">Quartalsauswertung mit Reichweite und Resonanz.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="note note-brand mt-3">Timeline-Stil. Icon wird brand-blau (statt grau). Verbindungslinie zeigt Sequenzialität. Gut für Mobile oder Sidebar-Kontexte. Noch nicht im Einsatz.</div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────
+     BENEFITS GRID
+───────────────────────────────────── -->
+<section class="comp-section" id="sec-benefits">
+  <p class="comp-label">Section Varianten</p>
+  <h2 class="comp-title">Benefits Grid</h2>
+  <p class="comp-desc">Icon + Titel + Text, im Grid. Aktuell: 4-col auf Desktop, 2-col auf Tablet, 1-col auf Mobile.</p>
+
+  <div class="variant-wrap">
+    <p class="variant-label">4-col (Standard)</p>
+    <div class="bg-white rounded-2xl p-10">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="flex flex-col gap-4">
+          <div class="w-12 h-12 bg-gray-200/50 rounded-xl flex items-center justify-center">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2"/></svg>
+          </div>
+          <div><h3 class="text-xl leading-[30px] mb-2">Günstiger als jede Schülermesse</h3><p class="text-[15px] leading-relaxed text-dark/70">Reichweite zu einem Bruchteil des Aufwands.</p></div>
+        </div>
+        <div class="flex flex-col gap-4">
+          <div class="w-12 h-12 bg-gray-200/50 rounded-xl flex items-center justify-center">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10"/></svg>
+          </div>
+          <div><h3 class="text-xl leading-[30px] mb-2">Messbare Ergebnisse</h3><p class="text-[15px] leading-relaxed text-dark/70">Transparente Daten, quartalsweise.</p></div>
+        </div>
+        <div class="flex flex-col gap-4">
+          <div class="w-12 h-12 bg-gray-200/50 rounded-xl flex items-center justify-center">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
+          </div>
+          <div><h3 class="text-xl leading-[30px] mb-2">Medienrechte inklusive</h3><p class="text-[15px] leading-relaxed text-dark/70">Alle Nutzungsrechte verbleiben bei Ihnen.</p></div>
+        </div>
+        <div class="flex flex-col gap-4">
+          <div class="w-12 h-12 bg-gray-200/50 rounded-xl flex items-center justify-center">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/></svg>
+          </div>
+          <div><h3 class="text-xl leading-[30px] mb-2">Nachhaltige Markenpräsenz</h3><p class="text-[15px] leading-relaxed text-dark/70">Ihr Beruf im Gedächtnis der nächsten Generation.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="variant-wrap">
+    <p class="variant-label">3-col Variante</p>
+    <div class="bg-white rounded-2xl p-10">
+      <div class="grid grid-cols-3 gap-8">
+        <div class="flex flex-col gap-4">
+          <div class="w-12 h-12 bg-gray-200/50 rounded-xl flex items-center justify-center">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2"/></svg>
+          </div>
+          <div><h3 class="text-xl leading-[30px] mb-2">Günstiger als jede Schülermesse</h3><p class="text-[15px] leading-relaxed text-dark/70">Reichweite zu einem Bruchteil des Aufwands. Kein Standaufbau, keine Logistik.</p></div>
+        </div>
+        <div class="flex flex-col gap-4">
+          <div class="w-12 h-12 bg-gray-200/50 rounded-xl flex items-center justify-center">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10"/></svg>
+          </div>
+          <div><h3 class="text-xl leading-[30px] mb-2">Messbare Ergebnisse</h3><p class="text-[15px] leading-relaxed text-dark/70">Transparente Daten, quartalsweise aufbereitet und direkt zugesendet.</p></div>
+        </div>
+        <div class="flex flex-col gap-4">
+          <div class="w-12 h-12 bg-gray-200/50 rounded-xl flex items-center justify-center">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6"/></svg>
+          </div>
+          <div><h3 class="text-xl leading-[30px] mb-2">Nachhaltige Markenpräsenz</h3><p class="text-[15px] leading-relaxed text-dark/70">Ihr Beruf im Gedächtnis der nächsten Generation — nicht nur kurze Impulse.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="note note-brand mt-3">3-col erlaubt etwas mehr Text pro Item (der Platz verteilt sich auf 3 statt 4). Gut wenn 3 starke Kernversprechen kommuniziert werden sollen.</div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────
+     HERO LAYOUT
+───────────────────────────────────── -->
+<section class="comp-section" id="sec-hero-layout">
+  <p class="comp-label">Section Varianten</p>
+  <h2 class="comp-title">Hero Side-by-Side Layout</h2>
+  <p class="comp-desc">Bild links (55% → 795px), Copy rechts. Auf Mobile gestapelt. Eingesetzt in Hero und Contact Section.</p>
+
+  <div class="variant-wrap">
+    <p class="variant-label">Bild Links / Copy Rechts (Standard)</p>
+    <div class="bg-white rounded-2xl p-10 overflow-hidden">
+      <div class="flex flex-col lg:flex-row gap-8 items-start lg:items-center">
+        <div class="w-full lg:w-[45%] aspect-[4/3] rounded-2xl overflow-hidden shrink-0 bg-gray-200 flex items-center justify-center text-dark/30">
+          Bild 4:3
+        </div>
+        <div class="flex flex-col gap-5 flex-1">
+          <p class="text-brand text-base tracking-[-0.03em]">ÜBERLINE</p>
+          <h2 class="text-[28px] leading-tight tracking-[-0.03em] font-normal">Headline auf der rechten Seite neben dem Bild.</h2>
+          <p class="text-[15px] leading-relaxed text-dark/70">Bodytext der die Aussage der Headline ergänzt. Auf Mobile erscheint dieser Block unter dem Bild.</p>
+          <a href="#" class="inline-flex items-center gap-2 bg-brand text-white px-5 py-3 rounded-full text-sm font-medium hover:bg-brand/90 transition-all w-fit group">
+            CTA Button
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="note mt-3">Image: w-full lg:w-[55%] xl:w-[795px] + shrink-0. Gap: gap-8 xl:gap-[105px]. Mobile: aspect-[4/3], Desktop: feste Höhe per Parent.</div>
+  </div>
+
+  <div class="variant-wrap">
+    <p class="variant-label">Copy Links / Bild Rechts</p>
+    <div class="bg-white rounded-2xl p-10 overflow-hidden">
+      <div class="flex flex-col lg:flex-row gap-8 items-start lg:items-center">
+        <div class="flex flex-col gap-5 flex-1 order-2 lg:order-1">
+          <p class="text-brand text-base tracking-[-0.03em]">ÜBERLINE</p>
+          <h2 class="text-[28px] leading-tight tracking-[-0.03em] font-normal">Copy steht links, Bild rechts. Für Abwechslung beim Scrolling.</h2>
+          <p class="text-[15px] leading-relaxed text-dark/70">Dieser Aufbau bricht die Eintönigkeit wenn mehrere Side-by-Side Sektionen aufeinander folgen.</p>
+          <a href="#" class="inline-flex items-center gap-2 bg-brand text-white px-5 py-3 rounded-full text-sm font-medium hover:bg-brand/90 transition-all w-fit group">
+            CTA Button
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="w-full lg:w-[45%] aspect-[4/3] rounded-2xl overflow-hidden shrink-0 bg-gray-200 flex items-center justify-center text-dark/30 order-1 lg:order-2">
+          Bild 4:3
+        </div>
+      </div>
+    </div>
+    <div class="note note-brand mt-3">order-2 / lg:order-1 stellt sicher dass auf Mobile das Bild immer oben bleibt — unabhängig von der Desktop-Reihenfolge.</div>
+  </div>
+</section>
+
+</main>
+
+<script>
+  // FAQ toggle
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const answer = item.querySelector('.faq-answer');
+    const icon = btn.querySelector('.faq-icon');
+    const label = btn.querySelector('span');
+    const isOpen = answer.classList.contains('open');
+
+    // Close all in same container
+    const container = item.closest('#demo-faq');
+    container.querySelectorAll('.faq-answer.open').forEach(a => a.classList.remove('open'));
+    container.querySelectorAll('.faq-icon.open').forEach(i => i.classList.remove('open'));
+    container.querySelectorAll('.faq-trigger span').forEach(s => s.classList.remove('text-brand'));
+
+    if (!isOpen) {
+      answer.classList.add('open');
+      icon.classList.add('open');
+      label.classList.add('text-brand');
+    }
+  }
+
+  // Active nav link on scroll
+  const sections = document.querySelectorAll('.comp-section[id]');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>

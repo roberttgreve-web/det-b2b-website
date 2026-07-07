@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arbeitsumfelder entdecken – DEIN ERSTER TAG</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+  <script src="shared/config.js"></script>
+  <link rel="stylesheet" href="shared/shared.css" />
+</head>
+<body class="font-sans bg-light text-dark overflow-x-hidden">
+
+<!-- STICKY NAVIGATION -->
+<header class="fixed top-0 left-0 right-0 z-50 nav-bar bg-white/90 border-b border-gray-100">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8 py-3 flex items-center justify-between">
+    <a href="index.html" aria-label="DEIN ERSTER TAG – Startseite">
+      <img src="logo.svg" alt="DEIN ERSTER TAG Logo" width="96" height="57" class="h-10 lg:h-14 w-auto object-contain" />
+    </a>
+    <nav aria-label="Hauptnavigation" class="hidden lg:block">
+      <ul class="flex items-center gap-12 text-base">
+        <li><a href="lehrkraefte.html" class="font-bold text-brand border-b-2 border-brand pb-0.5">Für Lehrkräfte</a></li>
+        <li><a href="index.html" class="text-dark hover:text-brand transition-colors duration-200">Für Personaler*innen</a></li>
+        <li><a href="shop.html" class="text-dark hover:text-brand transition-colors duration-200">Shop</a></li>
+      </ul>
+    </nav>
+    <button id="nav-hamburger" class="lg:hidden p-2 rounded-lg hover:bg-gray-100" aria-label="Menü öffnen" aria-expanded="false">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+  <div id="mobile-menu" class="lg:hidden border-t border-gray-100 bg-white/95">
+    <nav class="flex flex-col px-6 py-4 gap-4 text-base">
+      <a href="lehrkraefte.html" class="font-bold text-brand py-1">Für Lehrkräfte</a>
+      <a href="index.html" class="text-dark hover:text-brand transition-colors py-1">Für Personaler*innen</a>
+      <a href="shop.html" class="text-dark hover:text-brand transition-colors py-1">Shop</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO SECTION (dark bg) -->
+<section class="bg-night pt-20 lg:pt-24 pb-16 lg:pb-24">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8 pt-8 lg:pt-10">
+    <div class="max-w-[800px] mb-12 reveal">
+      <h1 class="text-display-xs sm:text-display-sm lg:text-display text-white font-normal mb-6">
+        Arbeitsumfelder entdecken – Prakt.-Technische Berufe
+      </h1>
+      <p class="text-base lg:text-xl leading-[26px] lg:leading-[30px] text-white/80">
+        Im Rahmen der Videostunde übernimmt unsere DEIN ERSTER TAG-Lehrkraft den Unterricht für Sie. Die Lehrkraft führt die Stunde durch und leitet Ihre Klasse an. Die Videostunde eignet sich im Rahmen der Berufsorientierung und kann spielend leicht als Vertretungsstunde eingesetzt werden.
+      </p>
+    </div>
+
+    <!-- Video thumbnail -->
+    <div class="rounded-2xl overflow-hidden h-[240px] sm:h-[480px] lg:h-[730px] reveal-scale relative">
+      <img
+        src="assets/d931cf02.jpg"
+        alt="Videostunde Vorschau"
+        class="w-full h-full object-cover"
+      />
+      <button id="hero-play-btn" aria-label="Video abspielen" class="absolute inset-0 flex items-center justify-center group">
+        <img src="ico-play.svg" alt="" aria-hidden="true" width="80" height="80" class="drop-shadow-xl transition-transform duration-200 group-hover:scale-110 group-active:scale-95" />
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Video Modal -->
+<div id="video-modal" role="dialog" aria-modal="true" aria-label="Video abspielen">
+  <div class="relative w-full max-w-4xl mx-4">
+    <button id="modal-close" class="absolute -top-12 right-0 text-white hover:text-white/70 transition-colors" aria-label="Schließen">
+      <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+    <div class="aspect-video rounded-2xl overflow-hidden">
+      <iframe id="modal-iframe" width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="w-full h-full"></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="bg-light py-16 lg:py-24">
+  <div class="max-w-[750px] mx-auto px-6">
+    <div class="mb-12 reveal">
+      <p class="text-brand text-base tracking-tight2 mb-4">Prakt.-Technische Berufe</p>
+      <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark font-normal">
+        So funktioniert diese Videostunde.
+      </h2>
+      <p class="mt-4 text-[15px] leading-relaxed text-dark/80">
+        Wir schicken Ihnen unsere Medienbox mit unseren Berufsorientierungsvideos direkt an Ihre Schule. Die Technik ist leicht zu handhaben und ohne Internetzugang nutzbar.
+      </p>
+    </div>
+
+    <div class="flex flex-col gap-0 reveal">
+
+      <!-- Step 1 -->
+      <div class="border-t border-line pt-10 pb-10">
+        <div class="flex gap-6 items-start">
+          <div class="w-12 h-12 bg-mist rounded-xl shrink-0 flex items-center justify-center">
+            <svg class="w-6 h-6 text-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-xl leading-[30px] mb-2">Laden Sie das Arbeitsmaterial herunter</h3>
+            <p class="text-[15px] leading-relaxed text-dark/70 mb-4">Das Arbeitsmaterial für Ihre Schüler*innen steht kostenlos zum Download bereit.</p>
+            <a href="#" class="inline-flex items-center gap-2 bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200 w-fit group">
+              Arbeitsmaterial herunterladen
+              <svg class="w-4 h-4 group-hover:translate-y-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="border-t border-line pt-10 pb-10">
+        <div class="flex gap-6 items-start">
+          <div class="w-12 h-12 bg-mist rounded-xl shrink-0 flex items-center justify-center">
+            <svg class="w-6 h-6 text-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/></svg>
+          </div>
+          <div>
+            <h3 class="text-xl leading-[30px] mb-2">Drucken Sie es aus und teilen Sie es Ihren Schüler*innen aus</h3>
+            <p class="text-[15px] leading-relaxed text-dark/70">Jede*r Schüler*in braucht ein Exemplar des Arbeitsmaterials und einen Stift.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="border-t border-line pt-10 pb-10">
+        <div class="flex gap-6 items-start">
+          <div class="w-12 h-12 bg-mist rounded-xl shrink-0 flex items-center justify-center">
+            <svg class="w-6 h-6 text-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <div>
+            <h3 class="text-xl leading-[30px] mb-2">Bringen Sie die Videostunde auf Ihr Smartboard oder per Beamer an die Wand und klicken Sie auf „Play".</h3>
+            <p class="text-[15px] leading-relaxed text-dark/70">Öffnen Sie die Videostunde im Browser und spielen Sie sie auf dem Smartboard oder Beamer ab.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="border-t border-line pt-10 pb-10">
+        <div class="flex gap-6 items-start">
+          <div class="w-12 h-12 bg-mist rounded-xl shrink-0 flex items-center justify-center">
+            <svg class="w-6 h-6 text-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+          </div>
+          <div>
+            <h3 class="text-xl leading-[30px] mb-2">Tragen Sie Ihren Schulnamen und Ihre Schul-Postleitzahl sowie die Anzahl der Schüler*innen ein</h3>
+            <p class="text-[15px] leading-relaxed text-dark/70">Tragen Sie Ihren Schulnamen und Ihre Schul-Postleitzahl sowie die Anzahl der Schüler*innen, die die Videostunde nun erleben, in das Popup-Fenster ein. Diese Daten helfen uns, das Programm weiterzuentwickeln.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="border-t border-line pt-10 pb-10">
+        <div class="flex gap-6 items-start">
+          <div class="w-12 h-12 bg-mist rounded-xl shrink-0 flex items-center justify-center">
+            <svg class="w-6 h-6 text-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <div>
+            <h3 class="text-xl leading-[30px] mb-2">Ihre Schüler*innen werden von unserer Lehrkraft durch die Videostunde geführt</h3>
+            <p class="text-[15px] leading-relaxed text-dark/70">Die Schüler*innen brauchen lediglich das ausgedruckte Arbeitsmaterial und einen Stift dazu. Unsere Lehrkraft im Video übernimmt die Moderation vollständig.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 6 -->
+      <div class="border-t border-line pt-10 pb-10">
+        <div class="flex gap-6 items-start">
+          <div class="w-12 h-12 bg-mist rounded-xl shrink-0 flex items-center justify-center">
+            <svg class="w-6 h-6 text-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div>
+            <h3 class="text-xl leading-[30px] mb-2">Sie können die Videostunde jederzeit stoppen</h3>
+            <p class="text-[15px] leading-relaxed text-dark/70">Sie können die Videostunde jederzeit stoppen und Ihren Schüler*innen mehr Zeit für Diskussion oder Reflexion geben. Planen Sie dafür dann lediglich statt 45 Minuten 90 Minuten ein.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 7 -->
+      <div class="border-t border-line pt-10 pb-10">
+        <div class="flex gap-6 items-start">
+          <div class="w-12 h-12 bg-mist rounded-xl shrink-0 flex items-center justify-center">
+            <svg class="w-6 h-6 text-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/></svg>
+          </div>
+          <div>
+            <h3 class="text-xl leading-[30px] mb-2">Es gibt immer wieder Slots im Video für Einzel- oder Gruppenarbeit</h3>
+            <p class="text-[15px] leading-relaxed text-dark/70">Es gibt immer wieder Slots im Video, in denen die Lernenden in Einzel- oder Gruppenarbeit die Arbeitsblätter bearbeiten und das Gesehene für sich einordnen.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="kontakt" class="bg-light py-16 lg:py-24 overflow-hidden">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8 flex flex-col lg:flex-row gap-10 lg:gap-20 items-start">
+    <div class="w-full lg:w-auto lg:shrink-0 reveal-left">
+      <div class="rounded-2xl overflow-hidden w-full lg:w-[677px] aspect-[4/3] lg:aspect-auto lg:h-[655px]">
+        <img src="assets/d383650f.jpg" alt="Henrick Figge" class="w-full h-full object-cover" />
+      </div>
+    </div>
+    <div class="flex flex-col gap-8 w-full lg:max-w-[428px] lg:pt-20 reveal-right">
+      <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark font-normal">Sie haben Fragen zur Videostunde?</h2>
+      <p class="text-[15px] leading-relaxed text-dark/80">Wir helfen Ihnen gerne bei der Planung und dem Einsatz der Videostunde in Ihrem Unterricht. Kontaktieren Sie uns einfach.</p>
+      <div>
+        <p class="text-[15px] font-bold leading-relaxed">Henrick Figge</p>
+        <p class="text-[15px] leading-relaxed">Sales &amp; Operations für Schulen</p>
+        <p class="text-[15px] leading-relaxed"><a href="mailto:h.figge@deinerstertag.de" class="text-brand hover:underline">h.figge@deinerstertag.de</a></p>
+      </div>
+      <a href="mailto:h.figge@deinerstertag.de" class="inline-flex items-center gap-2 bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200 w-fit group">
+        Beratungsgespräch vereinbaren
+        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="bg-light py-24 px-6 lg:px-8">
+  <div class="max-w-[1440px] mx-auto">
+    <div class="max-w-[519px] mb-16 reveal">
+      <p class="text-brand text-base tracking-tight2 mb-4">FAQs</p>
+      <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark font-normal">Die Häufigsten Fragen zur Videostunde.</h2>
+    </div>
+    <div class="flex flex-col reveal">
+      <div class="faq-item border-b border-line">
+        <button class="faq-trigger w-full flex items-center justify-between py-5 text-left" aria-expanded="false">
+          <span class="text-xl leading-[30px] text-dark pr-4 transition-colors duration-200">Wieviel Aufwand habe ich dabei?</span>
+          <svg class="faq-icon w-6 h-6 shrink-0 text-dark transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner pb-5"><p class="text-[15px] leading-relaxed text-dark/70 max-w-[843px]">Kaum Aufwand – laden Sie das Arbeitsmaterial herunter, drucken Sie es aus und spielen Sie das Video an Ihr Smartboard. Unsere Lehrkraft übernimmt den Rest.</p></div></div>
+      </div>
+      <div class="faq-item border-b border-line">
+        <button class="faq-trigger w-full flex items-center justify-between py-5 text-left" aria-expanded="false">
+          <span class="text-xl leading-[30px] text-dark pr-4 transition-colors duration-200">Wie lang dauert eine Videostunde?</span>
+          <svg class="faq-icon w-6 h-6 shrink-0 text-dark transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner pb-5"><p class="text-[15px] leading-relaxed text-dark/70 max-w-[843px]">Eine Videostunde dauert in der Regel 45 Minuten. Sie können sie jederzeit pausieren und für Diskussionen mehr Zeit einplanen – dann empfehlen wir 90 Minuten.</p></div></div>
+      </div>
+      <div class="faq-item border-b border-line">
+        <button class="faq-trigger w-full flex items-center justify-between py-5 text-left" aria-expanded="false">
+          <span class="text-xl leading-[30px] text-dark pr-4 transition-colors duration-200">Ist die Videostunde kostenlos?</span>
+          <svg class="faq-icon w-6 h-6 shrink-0 text-dark transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner pb-5"><p class="text-[15px] leading-relaxed text-dark/70 max-w-[843px]">Ja, alle Videostunden sind für Schulen und Lehrkräfte vollständig kostenlos.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-brand pt-20 pb-8">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10 pb-16 border-b border-white/20">
+      <div class="flex flex-col gap-2">
+        <p class="text-white text-[22px] font-medium leading-7 max-w-xs">Mit der JobApp noch schneller und einfacher bewerben.</p>
+        <div class="flex gap-4 mt-4">
+          <img src="assets/08446ed5.png" alt="App Store" class="h-10 rounded-lg" />
+          <img src="assets/d3e7c956.png" alt="Google Play" class="h-10 rounded-lg" />
+        </div>
+      </div>
+      <div class="flex flex-col gap-2">
+        <p class="text-white text-[22px] font-medium leading-7">Fragen, Anregung, Kritik? Schreib uns.</p>
+        <a href="mailto:feedback@deinerstertag.de" class="text-white text-base mt-2 hover:underline">feedback@deinerstertag.de</a>
+      </div>
+      <div class="flex flex-col gap-3">
+        <a href="#" class="flex items-center gap-2 text-white text-sm font-bold hover:text-white/80 transition-colors">
+          <img src="assets/01b29629.svg" alt="" aria-hidden="true" class="w-8 h-8" /> Instagram
+        </a>
+        <a href="#" class="flex items-center gap-2 text-white text-sm font-bold hover:text-white/80 transition-colors">
+          <img src="assets/c958d2c4.svg" alt="" aria-hidden="true" class="w-8 h-8" /> Facebook
+        </a>
+        <a href="#" class="flex items-center gap-2 text-white text-sm font-bold hover:text-white/80 transition-colors">
+          <img src="assets/d8522f4e.svg" alt="" aria-hidden="true" class="w-8 h-8" /> YouTube
+        </a>
+        <a href="#" class="flex items-center gap-2 text-white text-sm font-bold hover:text-white/80 transition-colors">
+          <img src="assets/e2571cf7.svg" alt="" aria-hidden="true" class="w-8 h-8" /> TikTok
+        </a>
+        <a href="#" class="flex items-center gap-2 text-white text-sm font-bold hover:text-white/80 transition-colors">
+          <img src="assets/f9b842de.png" alt="" aria-hidden="true" class="w-8 h-8 object-cover rounded" /> LinkedIn
+        </a>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 py-12 border-b border-white/20">
+      <div class="col-span-2 lg:col-span-1"><img src="logo.svg" alt="DEIN ERSTER TAG" width="96" height="57" class="h-10 w-auto object-contain mb-6 brightness-0 invert" /></div>
+      <div class="flex flex-col gap-3">
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Jobs</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Über uns</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">AGBs</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Kontakt</a>
+      </div>
+      <div class="flex flex-col gap-3">
+        <a href="lehrkraefte.html" class="text-white text-base hover:text-white/70 transition-colors">Für Lehrkräfte</a>
+        <a href="index.html" class="text-white text-base hover:text-white/70 transition-colors">Für Personaler*innen</a>
+        <a href="shop.html" class="text-white text-base hover:text-white/70 transition-colors">Shop</a>
+      </div>
+      <div class="flex flex-col gap-3">
+        <a href="#" class="text-white text-base underline hover:text-white/70 transition-colors">Impressum</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Datenschutz</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Nutzungsbedingungen</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Open Source</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Privatsphäreneinstellungen</a>
+      </div>
+    </div>
+    <div class="pt-6"><p class="text-white text-sm">© 2023 Studio2B GmbH</p></div>
+  </div>
+</footer>
+
+<script src="shared/shared.js"></script>
+<script>
+  // ─── Video-Modal (nur videostunde-detail.html) ───
+  (() => {
+    const playBtn = document.getElementById('hero-play-btn');
+    const modal = document.getElementById('video-modal');
+    const modalClose = document.getElementById('modal-close');
+    const modalIframe = document.getElementById('modal-iframe');
+    if (!playBtn || !modal) return;
+    const YT_EMBED = 'https://www.youtube.com/embed/UreWfZDc9FM?si=9Det9V0G3NUSJgjY&autoplay=1';
+
+    playBtn.addEventListener('click', () => {
+      modalIframe.src = YT_EMBED;
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+
+    function closeModal() {
+      modal.classList.remove('open');
+      modalIframe.src = '';
+      document.body.style.overflow = '';
+    }
+
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  })();
+</script>
+</body>
+</html>

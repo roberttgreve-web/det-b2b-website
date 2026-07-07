@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DEIN ERSTER TAG – Für Personaler*innen</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+  <script src="shared/config.js"></script>
+  <link rel="stylesheet" href="shared/shared.css" />
+</head>
+<body class="font-sans bg-light text-dark overflow-x-hidden">
+
+<!-- ═══════════════════════════════════════
+     STICKY NAVIGATION
+═══════════════════════════════════════ -->
+<header class="fixed top-0 left-0 right-0 z-50 nav-bar bg-white/90 border-b border-gray-100">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8 py-3 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="#" aria-label="DEIN ERSTER TAG – Startseite">
+      <img src="logo.svg" alt="DEIN ERSTER TAG Logo" width="96" height="57" class="h-10 lg:h-14 w-auto object-contain" />
+    </a>
+    <!-- Desktop nav links -->
+    <nav aria-label="Hauptnavigation" class="hidden lg:block">
+      <ul class="flex items-center gap-12 text-base">
+        <li><a href="lehrkraefte.html" class="text-dark hover:text-brand transition-colors duration-200">Für Lehrkräfte</a></li>
+        <li><a href="#personaler" class="font-bold text-brand border-b-2 border-brand pb-0.5">Für Personaler*innen</a></li>
+        <li><a href="shop.html" class="text-dark hover:text-brand transition-colors duration-200">Shop</a></li>
+      </ul>
+    </nav>
+    <!-- Mobile hamburger -->
+    <button id="nav-hamburger" class="lg:hidden p-2 rounded-lg hover:bg-gray-100" aria-label="Menü öffnen" aria-expanded="false">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+  <!-- Mobile nav drawer -->
+  <div id="mobile-menu" class="lg:hidden border-t border-gray-100 bg-white/95">
+    <nav class="flex flex-col px-6 py-4 gap-4 text-base">
+      <a href="lehrkraefte.html" class="text-dark hover:text-brand transition-colors py-1">Für Lehrkräfte</a>
+      <a href="#personaler" class="font-bold text-brand py-1">Für Personaler*innen</a>
+      <a href="shop.html" class="text-dark hover:text-brand transition-colors py-1">Shop</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ═══════════════════════════════════════
+     HERO SECTION
+═══════════════════════════════════════ -->
+<section id="personaler" class="pt-20 lg:pt-24 pb-0 bg-light">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8 pt-8 lg:pt-10">
+    <!-- Hero: image left + copy right → stacks on mobile -->
+    <div class="flex flex-col lg:flex-row gap-8 xl:gap-[105px] items-start lg:items-center">
+
+      <!-- Hero image: fluid % between lg–xl, fixed at xl+ -->
+      <div class="w-full lg:w-[55%] xl:w-[795px] aspect-[4/3] lg:aspect-auto lg:h-auto xl:h-[694px] overflow-hidden rounded-2xl shrink-0 reveal-left"
+           style="lg:aspect-ratio: unset;">
+        <img
+          src="assets/887a63d0.jpg"
+          alt="Schüler*innen und Unternehmen in der Schule"
+          class="w-full h-full object-cover parallax-img"
+          style="aspect-ratio: 4/3; object-position: center top;"
+        />
+      </div>
+
+      <!-- Hero copy: fills remaining space -->
+      <div class="flex flex-col gap-6 lg:gap-8 w-full lg:flex-1 lg:min-w-0 reveal-right">
+        <h1 class="text-display-xs sm:text-display-sm lg:text-[36px] xl:text-display text-dark font-normal">
+          Ihr nächster Azubi sitzt in einer Schulklasse. Wir bringen Sie dahin.
+        </h1>
+        <p class="text-base lg:text-xl leading-[26px] lg:leading-[30px] text-dark">
+          DEIN ERSTER TAG ist das größte Schulprogramm Deutschlands – mit Zugang zu 8.000 Schulen, die kein Unternehmen alleine erreicht. Wir bringen Ihren Beruf direkt in den Unterricht.
+        </p>
+        <!-- CTA Button -->
+        <a href="#kontakt" class="inline-flex items-center gap-2 bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200 w-fit group">
+          Beratungsgespräch vereinbaren
+          <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <!-- Award badge -->
+        <div class="flex gap-4 items-center">
+          <div class="bg-yellow flex items-center justify-center p-2.5 rounded-xl shrink-0 w-16 lg:w-20">
+            <span class="text-3xl lg:text-4xl" role="img" aria-label="Trophäe">🏆</span>
+          </div>
+          <p class="text-[13px] leading-relaxed text-dark">
+            <strong>Ausgezeichnet</strong> vom BMBF für bestes Angebot für das Erleben von Berufsfeldern und Berufen in Deutschland.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats bar: horizontal scroll on mobile, full row on desktop -->
+    <div class="flex flex-col sm:flex-row items-stretch mt-8 reveal delay-200 gap-px">
+      <div class="border border-line flex items-center justify-center px-4 py-4 sm:rounded-bl-2xl sm:rounded-tl-2xl rounded-t-2xl sm:rounded-t-none sm:rounded-bl-2xl flex-1 hover:bg-gray-50 transition-colors">
+        <p class="text-base lg:text-xl text-center">
+          <strong>8000+ Partnerschulen</strong>
+          <span class="text-muted"> in ganz Deutschland</span>
+        </p>
+      </div>
+      <div class="border border-line flex items-center justify-center px-4 py-4 flex-1 hover:bg-gray-50 transition-colors">
+        <p class="text-base lg:text-xl text-center">
+          <strong>200 Unternehmen</strong>
+          <span class="text-muted"> vertrauen uns</span>
+        </p>
+      </div>
+      <div class="border border-line flex items-center justify-center px-4 py-4 sm:rounded-br-2xl sm:rounded-tr-2xl rounded-b-2xl sm:rounded-b-none flex-1 hover:bg-gray-50 transition-colors">
+        <p class="text-base lg:text-xl text-center">
+          <strong>35% der Arbeitsagenturen</strong>
+          <span class="text-muted"> kooperieren</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SCHULEN IN DER NÄHE SECTION
+═══════════════════════════════════════ -->
+<section id="schulen-suche" class="bg-light py-16 lg:py-24">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8">
+
+    <!-- Overline + Heading -->
+    <div class="max-w-[519px]">
+      <p class="text-brand text-base tracking-tight2 mb-4 reveal">SCHULEN IN DER NÄHE</p>
+      <h2 class="text-display-xs sm:text-display-sm lg:text-display font-normal mb-3 reveal delay-100">
+        Diese Schulen in ihrer Nähe arbeiten mit uns zusammen.
+      </h2>
+      <p class="text-[15px] leading-relaxed text-dark/60 mb-10 reveal delay-200">
+        Geben Sie eine Postleitzahl ein und wählen Sie Ihren gewünschten Suchradius.
+      </p>
+    </div>
+
+    <!-- Search form -->
+    <div class="flex flex-col sm:flex-row items-end gap-4 mb-12 reveal delay-300">
+      <!-- PLZ -->
+      <div class="flex flex-col gap-1.5 w-full sm:w-auto">
+        <label for="plz-input" class="text-sm font-medium text-dark">Postleitzahl</label>
+        <input id="plz-input" type="text" inputmode="numeric" placeholder="z. B. 10829" maxlength="5"
+               class="border border-line rounded-xl px-4 py-3 text-base w-full sm:w-48 focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all duration-200 bg-white" />
+      </div>
+      <!-- Radius -->
+      <div class="flex flex-col gap-1.5 w-full sm:w-auto">
+        <label for="radius-select" class="text-sm font-medium text-dark">Radius</label>
+        <div class="relative">
+          <select id="radius-select"
+                  class="appearance-none border border-line rounded-xl px-4 py-3 pr-10 text-base w-full sm:w-40 focus:outline-none focus:border-brand focus:ring-2 focus:ring-brand/20 transition-all duration-200 bg-white cursor-pointer">
+            <option value="10">10 km</option>
+            <option value="20">20 km</option>
+            <option value="30" selected>30 km</option>
+            <option value="50">50 km</option>
+            <option value="100">100 km</option>
+          </select>
+          <svg class="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-dark/40 pointer-events-none" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </div>
+      </div>
+      <!-- Button -->
+      <button id="schulen-search-btn"
+              class="inline-flex items-center justify-center gap-2 bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200 w-full sm:w-auto shrink-0">
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+        Schulen suchen
+      </button>
+    </div>
+
+    <!-- Loading indicator -->
+    <div id="schulen-loading" class="hidden py-16 text-center">
+      <div class="inline-flex items-center gap-3 text-brand">
+        <svg class="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
+          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 22 6.477 22 12h-4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+        </svg>
+        <span class="text-[15px] text-dark/60">Schulen werden gesucht…</span>
+      </div>
+    </div>
+
+    <!-- Results -->
+    <div id="schulen-results" class="hidden">
+
+      <!-- Result headline -->
+      <div class="mb-8">
+        <p class="text-brand text-sm tracking-tight2 mb-1.5">Suchergebnis</p>
+        <h3 class="text-display-xs xl:text-display-sm font-normal">
+          Umkreis <span id="result-radius" class="text-brand">30 km</span> · PLZ <span id="result-plz" class="text-brand">10829</span>
+        </h3>
+        <p id="radius-note" class="hidden text-xs text-dark/40 mt-2 italic"></p>
+      </div>
+
+      <!-- Stat cards -->
+      <div class="grid grid-cols-2 gap-4 mb-8">
+        <div class="border border-line rounded-2xl p-6 cursor-pointer hover:border-brand/30 transition-colors" onclick="switchSchulTab('partner')">
+          <p class="text-sm text-dark/50 mb-3">Partnerschulen</p>
+          <p id="partner-count" class="text-[52px] leading-none font-normal text-brand mb-3">0</p>
+          <p class="text-[13px] text-dark/50">direkt mit uns</p>
+          <div class="mt-5 h-0.5 bg-brand rounded-full"></div>
+        </div>
+        <div class="border border-line rounded-2xl p-6 cursor-pointer hover:border-dark/20 transition-colors" onclick="switchSchulTab('network')">
+          <p class="text-sm text-dark/50 mb-3">Netzwerkschulen</p>
+          <p id="network-count" class="text-[52px] leading-none font-normal text-dark mb-3">0</p>
+          <p class="text-[13px] text-dark/50">über Agenturen für Arbeit</p>
+          <div class="mt-5 h-0.5 bg-dark/20 rounded-full"></div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="border-b border-line mb-0">
+        <div class="flex">
+          <button id="tab-btn-partner"
+                  class="pb-3 mr-8 text-sm font-medium border-b-2 -mb-px transition-all duration-200 text-brand border-brand"
+                  onclick="switchSchulTab('partner')">
+            Partnerschulen (<span id="tab-partner-count">0</span>)
+          </button>
+          <button id="tab-btn-network"
+                  class="pb-3 text-sm font-medium border-b-2 -mb-px transition-all duration-200 text-dark/40 border-transparent hover:text-dark/60"
+                  onclick="switchSchulTab('network')">
+            Netzwerkschulen (<span id="tab-network-count">0</span>)
+          </button>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div class="overflow-x-auto">
+        <table class="w-full text-left">
+          <thead>
+            <tr class="border-b border-line">
+              <th class="py-3 pr-8 text-[13px] font-medium text-dark/50 whitespace-nowrap">Schulname ↕</th>
+              <th class="py-3 pr-8 text-[13px] font-medium text-dark/50 whitespace-nowrap">Ort ↕</th>
+              <th class="py-3 pr-8 text-[13px] font-medium text-dark/50 whitespace-nowrap">PLZ ↕</th>
+              <th class="py-3 text-[13px] font-medium text-dark/50 whitespace-nowrap text-right">Entfernung ↑</th>
+            </tr>
+          </thead>
+          <tbody id="schulen-table-body"></tbody>
+        </table>
+      </div>
+
+      <!-- Pagination -->
+      <div id="schulen-pagination" class="hidden flex items-center justify-center gap-2 pt-8 pb-2"></div>
+
+      <!-- Error message -->
+      <div id="schulen-error" class="hidden py-12 text-center text-dark/40 text-[15px]"></div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FACHKRÄFTEMANGEL – BLUE SECTION
+═══════════════════════════════════════ -->
+<section class="bg-brand py-16 lg:py-24 overflow-hidden">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8">
+    <div class="flex flex-col gap-12 lg:gap-24">
+      <!-- Heading -->
+      <div class="max-w-[679px] reveal">
+        <h2 class="text-display-xs sm:text-display-sm lg:text-display text-[#fafafa] font-normal">
+          Fachkräftemangel beginnt damit, dass Schüler*innen Ihren Beruf nicht kennen. Wir ändern das.
+        </h2>
+      </div>
+      <!-- Big classroom image + inline video -->
+      <div id="video-container" class="rounded-2xl h-[240px] sm:h-[420px] lg:h-[730px] reveal-scale relative overflow-hidden">
+        <!-- Thumbnail + play button (visible by default) -->
+        <div id="video-thumbnail" class="absolute inset-0">
+          <img
+            src="assets/ae995004.jpg"
+            alt="Schüler*innen im Unterricht"
+            class="w-full h-full object-cover parallax-img"
+          />
+          <button
+            id="hero-play-btn"
+            aria-label="Video abspielen"
+            class="absolute inset-0 flex items-center justify-center group"
+          >
+            <img
+              src="ico-play.svg"
+              alt=""
+              aria-hidden="true"
+              width="80"
+              height="80"
+              class="drop-shadow-xl transition-transform duration-200 group-hover:scale-110 group-active:scale-95"
+            />
+          </button>
+        </div>
+        <!-- YouTube iframe (hidden until play is clicked) -->
+        <iframe
+          id="video-iframe"
+          width="560"
+          height="315"
+          src=""
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+          class="absolute inset-0 w-full h-full hidden"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     CONTENT FORMATS SECTION (interactive)
+═══════════════════════════════════════ -->
+<section class="bg-light py-16 lg:py-32 overflow-hidden">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8">
+
+    <!-- Section label + heading -->
+    <div class="max-w-[519px] mb-12 lg:mb-20 reveal">
+      <p class="text-brand text-base tracking-tight2 mb-4">DIE INHALTE, DIE SCHÜLER*INNEN WIRKLICH SCHAUEN</p>
+      <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark font-normal">
+        Sehen Sie, wie Ihr Beruf bei Schüler*innen ankommt.
+      </h2>
+    </div>
+
+    <!-- ══ MOBILE swipe carousel (hidden on lg+) ══ -->
+    <div class="lg:hidden">
+      <div class="flex overflow-x-auto snap-x snap-mandatory swipe-track gap-4 pb-4" id="medien-swipe">
+        <!-- Slide 0 – 360° Rundgänge -->
+        <div class="snap-start shrink-0 w-[85vw] flex flex-col gap-4">
+          <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden">
+            <img src="images-medien/360 Rundgang.png" alt="360° Rundgänge" class="w-full h-full object-cover" />
+          </div>
+          <div class="flex flex-col gap-3">
+            <div class="w-10 h-10 bg-mist rounded-lg flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5 text-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.07A1 1 0 0121 8.87V15.13a1 1 0 01-1.447.9L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+            </div>
+            <h3 class="text-lg font-medium text-dark">360° Rundgänge</h3>
+            <p class="text-[15px] leading-relaxed text-dark/70">Sie wählen den Beruf, den Sie vorstellen möchten. Unsere Redaktion bereitet alle Infos jugendgerecht auf.</p>
+          </div>
+        </div>
+        <!-- Slide 1 – Augmented Reality -->
+        <div class="snap-start shrink-0 w-[85vw] flex flex-col gap-4">
+          <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden">
+            <img src="images-medien/Augmented Reality.png" alt="Augmented Reality" class="w-full h-full object-cover" />
+          </div>
+          <div class="flex flex-col gap-3">
+            <div class="w-10 h-10 bg-mist rounded-lg flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5 text-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <h3 class="text-lg font-medium text-dark">Augmented Reality</h3>
+            <p class="text-[15px] leading-relaxed text-dark/70">Sie wählen den Beruf, den Sie vorstellen möchten. Unsere Redaktion bereitet alle Infos jugendgerecht auf.</p>
+          </div>
+        </div>
+        <!-- Slide 2 – #kurzerklärt -->
+        <div class="snap-start shrink-0 w-[85vw] flex flex-col gap-4">
+          <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden">
+            <img src="images-medien/kurzerklaert.png" alt="#kurzerklärt" class="w-full h-full object-cover" />
+          </div>
+          <div class="flex flex-col gap-3">
+            <div class="w-10 h-10 bg-mist rounded-lg flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5 text-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"/></svg>
+            </div>
+            <h3 class="text-lg font-medium text-dark">#kurzerklärt</h3>
+            <p class="text-[15px] leading-relaxed text-dark/70">Sie wählen den Beruf, den Sie vorstellen möchten. Unsere Redaktion bereitet alle Infos jugendgerecht auf.</p>
+          </div>
+        </div>
+        <!-- Slide 3 – Mini games -->
+        <div class="snap-start shrink-0 w-[85vw] flex flex-col gap-4">
+          <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden">
+            <img src="images-medien/sprachnachricht.png" alt="Mini games mit Sprachnachrichten" class="w-full h-full object-cover" />
+          </div>
+          <div class="flex flex-col gap-3">
+            <div class="w-10 h-10 bg-mist rounded-lg flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5 text-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
+            </div>
+            <h3 class="text-lg font-medium text-dark">Mini games mit Sprachnachrichten</h3>
+            <p class="text-[15px] leading-relaxed text-dark/70">Ausbildungsplätze bleiben unbesetzt – nicht weil Jugendliche kein Interesse haben, sondern weil sie nie von Ihnen gehört haben.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Dots -->
+      <div class="flex justify-center gap-2 mt-5" id="medien-dots" aria-hidden="true">
+        <span class="medien-dot w-2 h-2 rounded-full bg-brand transition-all duration-300"></span>
+        <span class="medien-dot w-2 h-2 rounded-full bg-gray-300 transition-all duration-300"></span>
+        <span class="medien-dot w-2 h-2 rounded-full bg-gray-300 transition-all duration-300"></span>
+        <span class="medien-dot w-2 h-2 rounded-full bg-gray-300 transition-all duration-300"></span>
+      </div>
+    </div>
+
+    <!-- ══ DESKTOP interactive layout (hidden below lg) ══ -->
+    <div class="hidden lg:flex lg:items-center" style="gap: 60px;">
+
+      <!-- Image panel (stacked, crossfade) -->
+      <div class="w-[765px] h-[824px] rounded-2xl shrink-0 relative overflow-hidden reveal-left">
+        <img data-medien="0" src="images-medien/360 Rundgang.png"        alt="360° Rundgänge"                  class="medien-img absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100" />
+        <img data-medien="1" src="images-medien/Augmented Reality.png"   alt="Augmented Reality"               class="medien-img absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0" />
+        <img data-medien="2" src="images-medien/kurzerklaert.png"         alt="#kurzerklärt"                    class="medien-img absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0" />
+        <img data-medien="3" src="images-medien/sprachnachricht.png"     alt="Mini games mit Sprachnachrichten" class="medien-img absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0" />
+      </div>
+
+      <!-- Feature list -->
+      <div class="flex flex-col justify-between h-[824px] w-[550px]">
+        <button class="medien-item text-left flex flex-col gap-4 cursor-pointer transition-opacity duration-500 opacity-100" data-medien="0" aria-pressed="true">
+          <div class="w-12 h-12 bg-mist rounded-xl flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6 text-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.07A1 1 0 0121 8.87V15.13a1 1 0 01-1.447.9L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+          </div>
+          <div><h3 class="text-xl leading-[30px] text-dark mb-2">360° Rundgänge</h3><p class="text-[15px] leading-relaxed text-dark/80">Sie wählen den Beruf, den Sie vorstellen möchten. Unsere Redaktion bereitet alle Infos jugendgerecht auf.</p></div>
+          <div class="h-[2px] w-full bg-gray-200 rounded-full overflow-hidden"><div class="medien-bar h-full bg-brand rounded-full w-0"></div></div>
+        </button>
+        <button class="medien-item text-left flex flex-col gap-4 cursor-pointer transition-opacity duration-500 opacity-50" data-medien="1" aria-pressed="false">
+          <div class="w-12 h-12 bg-mist rounded-xl flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6 text-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <div><h3 class="text-xl leading-[30px] text-dark mb-2">Augmented Reality</h3><p class="text-[15px] leading-relaxed text-dark/80">Sie wählen den Beruf, den Sie vorstellen möchten. Unsere Redaktion bereitet alle Infos jugendgerecht auf.</p></div>
+          <div class="h-[2px] w-full bg-gray-200 rounded-full overflow-hidden"><div class="medien-bar h-full bg-brand rounded-full w-0"></div></div>
+        </button>
+        <button class="medien-item text-left flex flex-col gap-4 cursor-pointer transition-opacity duration-500 opacity-50" data-medien="2" aria-pressed="false">
+          <div class="w-12 h-12 bg-mist rounded-xl flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6 text-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"/></svg>
+          </div>
+          <div><h3 class="text-xl leading-[30px] text-dark mb-2">#kurzerklärt</h3><p class="text-[15px] leading-relaxed text-dark/80">Sie wählen den Beruf, den Sie vorstellen möchten. Unsere Redaktion bereitet alle Infos jugendgerecht auf.</p></div>
+          <div class="h-[2px] w-full bg-gray-200 rounded-full overflow-hidden"><div class="medien-bar h-full bg-brand rounded-full w-0"></div></div>
+        </button>
+        <button class="medien-item text-left flex flex-col gap-4 cursor-pointer transition-opacity duration-500 opacity-50" data-medien="3" aria-pressed="false">
+          <div class="w-12 h-12 bg-mist rounded-xl flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6 text-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
+          </div>
+          <div><h3 class="text-xl leading-[30px] text-dark mb-2">Mini games mit Sprachnachrichten</h3><p class="text-[15px] leading-relaxed text-dark/80">Ausbildungsplätze bleiben unbesetzt – nicht weil Jugendliche kein Interesse haben, sondern weil sie nie von Ihnen gehört haben.</p></div>
+          <div class="h-[2px] w-full bg-gray-200 rounded-full overflow-hidden"><div class="medien-bar h-full bg-brand rounded-full w-0"></div></div>
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     CTA YELLOW – 1
+═══════════════════════════════════════ -->
+<section class="px-6 lg:px-8 pb-16 bg-light">
+  <div class="max-w-[1440px] mx-auto">
+    <div class="bg-yellow rounded-2xl py-20 lg:py-24 px-8 reveal-scale">
+      <div class="max-w-[651px] mx-auto flex flex-col gap-6 items-center text-center">
+        <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark"> Starten Sie jetzt. Das nächste Schuljahr wartet nicht. </h2>
+        <p class="text-[15px] leading-relaxed text-dark"> Wir zeigen Ihnen in einem kostenlosen Beratungsgespräch, welche Schulen, Formate und Reichweite für Ihre Berufe passen. </p>
+        <a href="#kontakt" class="inline-flex items-center gap-2 bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200 group"> Beratungsgespräch vereinbaren <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/> </svg> </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     TESTIMONIALS
+═══════════════════════════════════════ -->
+<section class="bg-light py-16 lg:py-24">
+  <!-- Swipeable on mobile, static row on desktop -->
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8">
+    <div class="flex overflow-x-auto snap-x snap-mandatory swipe-track lg:overflow-visible lg:snap-none gap-6 lg:gap-0 lg:items-start lg:justify-between pb-4 lg:pb-0">
+
+      <!-- Testimonial 1 -->
+      <div class="flex gap-5 lg:gap-7 items-start snap-start shrink-0 w-[85vw] sm:w-[70vw] lg:w-auto lg:shrink lg:max-w-[48%]">
+        <div class="shrink-0">
+          <img
+            src="assets/d4ab64d7.jpg"
+            alt="Nicole Soesanto, Targobank"
+            class="w-20 h-20 lg:w-[171px] lg:h-[171px] rounded-full object-cover"
+          />
+        </div>
+        <div class="flex flex-col gap-5 lg:gap-7">
+          <p class="text-[15px] leading-relaxed italic text-dark">
+            "Mit DEIN ERSTER TAG erreichen wir Schülerinnen zu dem Zeitpunkt an dem die Berufswahl relevant wird und an dem Ort wo sie sich intensiv damit beschäftigen, in der Schule."
+          </p>
+          <div>
+            <p class="text-[15px] font-bold leading-relaxed">Targobank</p>
+            <p class="text-[15px] leading-relaxed">Nicole Soesanto, Spezialistin Azubi-Marketing</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Divider (desktop only) -->
+      <div class="w-px bg-gray-200 self-stretch mx-4 hidden lg:block shrink-0"></div>
+
+      <!-- Testimonial 2 -->
+      <div class="flex gap-5 lg:gap-7 items-start snap-start shrink-0 w-[85vw] sm:w-[70vw] lg:w-auto lg:shrink lg:max-w-[48%]">
+        <div class="shrink-0">
+          <img
+            src="assets/16333b01.jpg"
+            alt="Eduarda Goncalves Ribeiro de Castro, Vodafone"
+            class="w-20 h-20 lg:w-[171px] lg:h-[171px] rounded-full object-cover"
+          />
+        </div>
+        <div class="flex flex-col gap-5 lg:gap-7">
+          <p class="text-[15px] leading-relaxed italic text-dark">
+            "Der TikTok-Kanal ist authentisch und passend für die GenZ. Die kreative Planung rund um die TikTok-Videos ist sehr gut und dran an aktuellen Trends."
+          </p>
+          <div>
+            <p class="text-[15px] font-bold leading-relaxed">Vodafone</p>
+            <p class="text-[15px] leading-relaxed">Eduarda Goncalves Ribeiro de Castro, Employer Branding Youth</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- Scroll hint dots (mobile) -->
+    <div class="flex justify-center gap-2 mt-4 lg:hidden" aria-hidden="true">
+      <span class="w-2 h-2 rounded-full bg-brand"></span>
+      <span class="w-2 h-2 rounded-full bg-gray-300"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     HOW IT WORKS – 4 STEPS
+═══════════════════════════════════════ -->
+<section class="bg-light py-16 lg:py-24 overflow-hidden">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8">
+    <!-- Heading -->
+    <div class="max-w-[519px] mb-12 lg:mb-20 reveal">
+      <p class="text-brand text-base tracking-tight2 mb-4">SO FUNKTIONIERT ES</p>
+      <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark font-normal">
+        Sie geben uns die Berufe, wir bringen Sie in die Schulklassen.
+      </h2>
+    </div>
+
+    <!-- ══ MOBILE: unified swipe cards (hidden on lg+) ══ -->
+    <div class="lg:hidden">
+      <div class="flex overflow-x-auto snap-x snap-mandatory swipe-track gap-4 pb-4" id="steps-swipe">
+        <!-- Step 1 -->
+        <div class="snap-start shrink-0 w-[85vw] flex flex-col gap-4">
+          <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden">
+            <img src="assets/24a85759.jpg" alt="Schritt 1" class="w-full h-full object-cover" />
+          </div>
+          <div class="flex flex-col gap-3">
+            <div class="w-10 h-10 bg-mist rounded-lg flex items-center justify-center shrink-0">
+              <span class="text-lg font-medium">1</span>
+            </div>
+            <h3 class="text-lg font-medium text-dark">Sie nennen uns ihre Ausbildungsberufe.</h3>
+            <p class="text-[15px] leading-relaxed text-dark/70">Sie wählen den Beruf, den Sie vorstellen möchten. Unsere Redaktion bereitet alle Infos jugendgerecht auf.</p>
+          </div>
+        </div>
+        <!-- Step 2 -->
+        <div class="snap-start shrink-0 w-[85vw] flex flex-col gap-4">
+          <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden">
+            <img src="assets/3ea8cb5f.jpg" alt="Schritt 2" class="w-full h-full object-cover" />
+          </div>
+          <div class="flex flex-col gap-3">
+            <div class="w-10 h-10 bg-mist rounded-lg flex items-center justify-center shrink-0">
+              <span class="text-lg font-medium">2</span>
+            </div>
+            <h3 class="text-lg font-medium text-dark">Wir produzieren die passenden Medien dazu.</h3>
+            <p class="text-[15px] leading-relaxed text-dark/70">360°-Video, #kurzerklärt oder AR-Szene – wir produzieren Ihr Medium vollständig. Inklusive Nutzungsrechten für Sie.</p>
+          </div>
+        </div>
+        <!-- Step 3 -->
+        <div class="snap-start shrink-0 w-[85vw] flex flex-col gap-4">
+          <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden">
+            <img src="assets/0ec71814.jpg" alt="Schritt 3" class="w-full h-full object-cover" />
+          </div>
+          <div class="flex flex-col gap-3">
+            <div class="w-10 h-10 bg-mist rounded-lg flex items-center justify-center shrink-0">
+              <span class="text-lg font-medium">3</span>
+            </div>
+            <h3 class="text-lg font-medium text-dark">Ihr Content erreicht Schüler*innen direkt im Unterricht.</h3>
+            <p class="text-[15px] leading-relaxed text-dark/70">Ihr Content geht über Medienboxen, Videostunden, Mini-Games und Berufsberatungen direkt in die Klassen.</p>
+          </div>
+        </div>
+        <!-- Step 4 -->
+        <div class="snap-start shrink-0 w-[85vw] flex flex-col gap-4">
+          <div class="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[#1b191a] flex items-center justify-center">
+            <img src="assets/75855258.jpg" alt="App auf Smartphone" class="h-[90%] w-auto object-cover rounded-xl shadow-xl" />
+          </div>
+          <div class="flex flex-col gap-3">
+            <div class="w-10 h-10 bg-mist rounded-lg flex items-center justify-center shrink-0">
+              <span class="text-lg font-medium">4</span>
+            </div>
+            <h3 class="text-lg font-medium text-dark">Sie sehen, wieviele Ihre Botschaft gesehen haben.</h3>
+            <p class="text-[15px] leading-relaxed text-dark/70">Quartalsweise erhalten Sie eine Auswertung: Wie viele Schüler*innen haben Ihre Botschaft gesehen?</p>
+          </div>
+        </div>
+      </div>
+      <!-- Dots -->
+      <div class="flex justify-center gap-2 mt-5" id="steps-dots" aria-hidden="true">
+        <span class="steps-dot w-2 h-2 rounded-full bg-brand transition-all duration-300"></span>
+        <span class="steps-dot w-2 h-2 rounded-full bg-gray-300 transition-all duration-300"></span>
+        <span class="steps-dot w-2 h-2 rounded-full bg-gray-300 transition-all duration-300"></span>
+        <span class="steps-dot w-2 h-2 rounded-full bg-gray-300 transition-all duration-300"></span>
+      </div>
+    </div>
+
+    <!-- ══ DESKTOP: images grid + steps row (hidden below lg) ══ -->
+    <div class="hidden lg:block">
+      <div class="grid grid-cols-4 gap-3 mb-10">
+        <div class="rounded-2xl overflow-hidden h-[367px] reveal delay-100">
+          <img src="assets/24a85759.jpg" alt="Schritt 1" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="rounded-2xl overflow-hidden h-[367px] reveal delay-200">
+          <img src="assets/3ea8cb5f.jpg" alt="Schritt 2" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="rounded-2xl overflow-hidden h-[367px] reveal delay-300">
+          <img src="assets/0ec71814.jpg" alt="Schritt 3" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div class="bg-[#1b191a] rounded-2xl overflow-hidden h-[367px] reveal delay-400">
+          <img src="assets/75855258.jpg" alt="App auf Smartphone" class="w-[237px] h-[335px] object-cover rounded-xl shadow-xl mx-auto mt-8" />
+        </div>
+      </div>
+      <div class="grid grid-cols-4 gap-4">
+        <div class="flex flex-col gap-4 reveal delay-100">
+          <div class="w-12 h-12 bg-mist rounded-xl flex items-center justify-center shrink-0"><span class="text-2xl font-normal tracking-tight">1</span></div>
+          <div><h3 class="text-xl leading-[30px] mb-2">Sie nennen uns ihre Ausbildungsberufe.</h3><p class="text-[15px] leading-relaxed text-dark/70">Sie wählen den Beruf, den Sie vorstellen möchten. Unsere Redaktion bereitet alle Infos jugendgerecht auf.</p></div>
+        </div>
+        <div class="flex flex-col gap-4 reveal delay-200">
+          <div class="w-12 h-12 bg-mist rounded-xl flex items-center justify-center shrink-0"><span class="text-2xl font-normal tracking-tight">2</span></div>
+          <div><h3 class="text-xl leading-[30px] mb-2">Wir produzieren die passenden Medien dazu.</h3><p class="text-[15px] leading-relaxed text-dark/70">360°-Video, #kurzerklärt oder AR-Szene – wir produzieren Ihr Medium vollständig. Inklusive Nutzungsrechten für Sie.</p></div>
+        </div>
+        <div class="flex flex-col gap-4 reveal delay-300">
+          <div class="w-12 h-12 bg-mist rounded-xl flex items-center justify-center shrink-0"><span class="text-2xl font-normal tracking-tight">3</span></div>
+          <div><h3 class="text-xl leading-[30px] mb-2">Ihr Content erreicht Schüler*innen direkt im Unterricht.</h3><p class="text-[15px] leading-relaxed text-dark/70">Ihr Content geht über Medienboxen, Videostunden, Mini-Games und Berufsberatungen direkt in die Klassen.</p></div>
+        </div>
+        <div class="flex flex-col gap-4 reveal delay-400">
+          <div class="w-12 h-12 bg-mist rounded-xl flex items-center justify-center shrink-0"><span class="text-2xl font-normal tracking-tight">4</span></div>
+          <div><h3 class="text-xl leading-[30px] mb-2">Sie sehen, wieviele Ihre Botschaft gesehen haben.</h3><p class="text-[15px] leading-relaxed text-dark/70">Quartalsweise erhalten Sie eine Auswertung: Wie viele Schüler*innen haben Ihre Botschaft gesehen?</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SCHOOL PROGRAM – 8000 SCHOOLS
+═══════════════════════════════════════ -->
+<section class="bg-light py-24 overflow-hidden">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8">
+    <!-- Heading -->
+    <div class="max-w-[519px] mb-20 reveal">
+      <p class="text-brand text-base tracking-tight2 mb-4">Die Schulvermarktung</p>
+      <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark font-normal">
+        Unser Schulprogramm mit 8.000 Schulen. Ihr Beruf ist dabei.
+      </h2>
+    </div>
+
+    <!-- Big image -->
+    <div class="rounded-2xl overflow-hidden h-[655px] mb-10 reveal-scale">
+      <img
+        src="assets/dfb16a03.jpg"
+        alt="Schulprogramm in Aktion"
+        class="w-full h-full object-cover parallax-img"
+      />
+    </div>
+
+    <!-- Features grid: 1-col mobile → 2-col desktop -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-10">
+      <!-- Column 1 -->
+      <div class="flex flex-col gap-6">
+        <div class="flex gap-4 items-start reveal delay-100">
+          <div class="w-12 h-12 bg-mist rounded-xl shrink-0 flex items-center justify-center">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div>
+            <h3 class="text-xl leading-[30px] mb-2">Kostenlos für die Schule</h3>
+            <p class="text-[15px] leading-relaxed text-dark/70">Ausbildungsplätze bleiben unbesetzt – nicht weil Jugendliche kein Interesse haben, sondern weil sie nie von Ihnen gehört haben.</p>
+          </div>
+        </div>
+        <div class="border-t border-line pt-7 flex gap-4 items-start reveal delay-200">
+          <div class="w-12 h-12 bg-mist rounded-xl shrink-0 flex items-center justify-center">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <div>
+            <h3 class="text-xl leading-[30px] mb-2">Regionalisierung</h3>
+            <p class="text-[15px] leading-relaxed text-dark/70">Ausbildungsplätze bleiben unbesetzt – nicht weil Jugendliche kein Interesse haben, sondern weil sie nie von Ihnen gehört haben.</p>
+          </div>
+        </div>
+        <div class="border-t border-line pt-7 flex gap-4 items-start reveal delay-300">
+          <div class="w-12 h-12 bg-mist rounded-xl shrink-0 flex items-center justify-center">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <div>
+            <h3 class="text-xl leading-[30px] mb-2">Berufberater*innen</h3>
+            <p class="text-[15px] leading-relaxed text-dark/70">Ausbildungsplätze bleiben unbesetzt – nicht weil Jugendliche kein Interesse haben, sondern weil sie nie von Ihnen gehört haben.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="flex flex-col gap-6">
+        <div class="flex gap-4 items-start reveal delay-200">
+          <div class="w-12 h-12 bg-mist rounded-xl shrink-0 flex items-center justify-center">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+          </div>
+          <div>
+            <h3 class="text-xl leading-[30px] mb-2">4 Stationen um Ihren Beruf zu erleben</h3>
+            <p class="text-[15px] leading-relaxed text-dark/70">Ausbildungsplätze bleiben unbesetzt – nicht weil Jugendliche kein Interesse haben, sondern weil sie nie von Ihnen gehört haben.</p>
+          </div>
+        </div>
+        <div class="border-t border-line pt-7 flex gap-4 items-start reveal delay-300">
+          <div class="w-12 h-12 bg-mist rounded-xl shrink-0 flex items-center justify-center">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div>
+            <h3 class="text-xl leading-[30px] mb-2">Lange Wiedergabezeiten</h3>
+            <p class="text-[15px] leading-relaxed text-dark/70">Ausbildungsplätze bleiben unbesetzt – nicht weil Jugendliche kein Interesse haben, sondern weil sie nie von Ihnen gehört haben.</p>
+          </div>
+        </div>
+        <div class="border-t border-line pt-7 flex gap-4 items-start reveal delay-400">
+          <div class="w-12 h-12 bg-mist rounded-xl shrink-0 flex items-center justify-center">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+          </div>
+          <div>
+            <h3 class="text-xl leading-[30px] mb-2">Logistik &amp; Marketing 100% über uns</h3>
+            <p class="text-[15px] leading-relaxed text-dark/70">Ausbildungsplätze bleiben unbesetzt – nicht weil Jugendliche kein Interesse haben, sondern weil sie nie von Ihnen gehört haben.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     CTA YELLOW – 2
+═══════════════════════════════════════ -->
+<section class="px-6 lg:px-8 pb-16 bg-light">
+  <div class="max-w-[1440px] mx-auto">
+    <div class="bg-yellow rounded-2xl py-20 lg:py-24 px-8 reveal-scale">
+      <div class="max-w-[651px] mx-auto flex flex-col gap-6 items-center text-center">
+        <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark"> Erfahren Sie welche Medienformate für Sie am besten geeignet sind. </h2>
+        <p class="text-[15px] leading-relaxed text-dark"> Ausbildung oder Duales Studium? Mit uns findest du deinen ersten Job. Ohne Stress, aber mit Zukunft. </p>
+        <a href="#kontakt" class="inline-flex items-center gap-2 bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200 group"> Beratungsgespräch vereinbaren <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"> <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/> </svg> </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     WHAT YOU GET BACK
+═══════════════════════════════════════ -->
+<section class="bg-light py-24 px-6 lg:px-8">
+  <div class="max-w-[1440px] mx-auto">
+    <!-- Heading -->
+    <div class="max-w-[519px] mb-16 reveal">
+      <p class="text-brand text-base tracking-tight2 mb-4">WAS SIE ZURÜCKBEKOMMEN</p>
+      <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark font-normal">
+        Was Sie zurückbekommen: Bewerbungen, Schülerkontakte, Reportings.
+      </h2>
+    </div>
+
+    <!-- Benefits grid: 1→2→4 col -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-16">
+      <div class="flex flex-col gap-6 reveal delay-100">
+        <div class="w-12 h-12 bg-mist rounded-xl flex items-center justify-center">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <div>
+          <h3 class="text-xl leading-[30px] mb-2">Günstiger als jede Schülermesse</h3>
+          <p class="text-[15px] leading-relaxed text-dark/70">Sie wählen den Beruf, den Sie vorstellen möchten. Unsere Redaktion bereitet alle Infos jugendgerecht auf.</p>
+        </div>
+      </div>
+      <div class="flex flex-col gap-6 reveal delay-200">
+        <div class="w-12 h-12 bg-mist rounded-xl flex items-center justify-center">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+        </div>
+        <div>
+          <h3 class="text-xl leading-[30px] mb-2">Messbare Ergebnisse und transparente Daten.</h3>
+          <p class="text-[15px] leading-relaxed text-dark/70">Sie wählen den Beruf, den Sie vorstellen möchten. Unsere Redaktion bereitet alle Infos jugendgerecht auf.</p>
+        </div>
+      </div>
+      <div class="flex flex-col gap-6 reveal delay-300">
+        <div class="w-12 h-12 bg-mist rounded-xl flex items-center justify-center">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"/></svg>
+        </div>
+        <div>
+          <h3 class="text-xl leading-[30px] mb-2">Medien, an denen Sie alle Rechte behalten.</h3>
+          <p class="text-[15px] leading-relaxed text-dark/70">Sie wählen den Beruf, den Sie vorstellen möchten. Unsere Redaktion bereitet alle Infos jugendgerecht auf.</p>
+        </div>
+      </div>
+      <div class="flex flex-col gap-6 reveal delay-400">
+        <div class="w-12 h-12 bg-mist rounded-xl flex items-center justify-center">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"/></svg>
+        </div>
+        <div>
+          <h3 class="text-xl leading-[30px] mb-2">Nachhaltige Markenpräsenz für Ihr Unternehmen.</h3>
+          <p class="text-[15px] leading-relaxed text-dark/70">Sie wählen den Beruf, den Sie vorstellen möchten. Unsere Redaktion bereitet alle Infos jugendgerecht auf.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     CONTACT / ADVISORY SECTION
+═══════════════════════════════════════ -->
+<section id="kontakt" class="bg-light py-16 lg:py-24 overflow-hidden">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8 flex flex-col lg:flex-row gap-10 lg:gap-20 items-start">
+    <!-- Photo -->
+    <div class="w-full lg:w-auto lg:shrink-0 reveal-left">
+      <div class="rounded-2xl overflow-hidden w-full lg:w-[677px] aspect-[4/3] lg:aspect-auto lg:h-[655px]">
+        <img
+          src="assets/17e564dd.jpg"
+          alt="Henrick Figge – Sales & Operations"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+
+    <!-- Copy -->
+    <div class="flex flex-col gap-8 w-full lg:max-w-[428px] lg:pt-20 reveal-right">
+      <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark font-normal">
+        Wir beraten Sie gerne.
+      </h2>
+      <p class="text-[15px] leading-relaxed text-dark/80">
+        Nutzen Sie das größte Schulprogramm Deutschlands, um Ihre Berufe vorzustellen. Begeistern Sie Jugendliche von Ihren Berufen. Mit GenZ-Ausschreibungen, spannenden Videoformaten und einer Bewerbung per Swipe.
+      </p>
+      <div>
+        <p class="text-[15px] font-bold leading-relaxed">Henrick Figge</p>
+        <p class="text-[15px] leading-relaxed">Sales &amp; Operations für Unternehmen</p>
+        <p class="text-[15px] leading-relaxed">
+          <a href="mailto:h.figge@deinerstertag.de" class="text-brand hover:underline">h.figge@deinerstertag.de</a>
+        </p>
+      </div>
+      <a href="mailto:h.figge@deinerstertag.de" class="inline-flex items-center gap-2 bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200 w-fit group">
+        Beratungsgespräch vereinbaren
+        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     PARTNER LOGOS SECTION
+═══════════════════════════════════════ -->
+<section class="bg-light py-16">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8">
+    <p class="text-brand text-base text-center tracking-tight2 mb-10 reveal">
+      Wir arbeiten für über 200 Unternehmen
+    </p>
+    <div class="reveal-scale">
+      <img
+        src="assets/4c942e3f.jpg"
+        alt="Partner-Logos: 200+ Unternehmen"
+        class="w-full object-cover"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FAQ SECTION
+═══════════════════════════════════════ -->
+<section class="bg-light py-24 px-6 lg:px-8">
+  <div class="max-w-[1440px] mx-auto">
+    <!-- Heading -->
+    <div class="max-w-[519px] mb-16 reveal">
+      <p class="text-brand text-base tracking-tight2 mb-4">FAQs</p>
+      <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark font-normal">
+        Noch unsicher? Hier sind die Fragen, die wir am häufigsten hören.
+      </h2>
+    </div>
+
+    <!-- FAQ items -->
+    <div class="flex flex-col reveal">
+
+      <div class="faq-item border-b border-line">
+        <button class="faq-trigger w-full flex items-center justify-between py-5 text-left" aria-expanded="false">
+          <span class="text-xl leading-[30px] text-dark pr-4 transition-colors duration-200">Wieviel Aufwand habe ich dabei?</span>
+          <svg class="faq-icon w-6 h-6 shrink-0 text-dark transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner pb-5">
+            <p class="text-[15px] leading-relaxed text-dark/70 max-w-[843px]">
+              Wir schicken Ihnen unsere Medienbox mit unseren Berufsorientierungsvideos direkt an Ihre Schule. Die Technik ist leicht zu handhaben und ohne Internetzugang nutzbar. Sie können die Box entweder für 3 oder für 7 Tage buchen und gerne mit Kolleg*innen teilen. Anschließend senden Sie die Box einfach an die nächste Schule. Wir übernehmen alle Kosten und die Versicherung.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item border-b border-line">
+        <button class="faq-trigger w-full flex items-center justify-between py-5 text-left" aria-expanded="false">
+          <span class="text-xl leading-[30px] text-dark pr-4 transition-colors duration-200">Funktionieren alle Berufe?</span>
+          <svg class="faq-icon w-6 h-6 shrink-0 text-dark transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner pb-5">
+            <p class="text-[15px] leading-relaxed text-dark/70 max-w-[843px]">
+              Grundsätzlich können wir für jeden Ausbildungsberuf passende Medienformate entwickeln. In einem Beratungsgespräch besprechen wir gemeinsam, welche Formate für Ihren spezifischen Beruf am besten geeignet sind.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item border-b border-line">
+        <button class="faq-trigger w-full flex items-center justify-between py-5 text-left" aria-expanded="false">
+          <span class="text-xl leading-[30px] text-dark pr-4 transition-colors duration-200">Wie läuft die Zusammenarbeit ab?</span>
+          <svg class="faq-icon w-6 h-6 shrink-0 text-dark transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner pb-5">
+            <p class="text-[15px] leading-relaxed text-dark/70 max-w-[843px]">
+              Nach einem kostenlosen Erstgespräch erarbeiten wir gemeinsam ein maßgeschneidertes Konzept. Unsere Redaktion produziert alle Medieninhalte – Sie liefern uns die Informationen über Ihren Beruf, wir kümmern uns um alles weitere.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item border-b border-line">
+        <button class="faq-trigger w-full flex items-center justify-between py-5 text-left" aria-expanded="false">
+          <span class="text-xl leading-[30px] text-dark pr-4 transition-colors duration-200">Wie groß ist die Reichweite?</span>
+          <svg class="faq-icon w-6 h-6 shrink-0 text-dark transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner pb-5">
+            <p class="text-[15px] leading-relaxed text-dark/70 max-w-[843px]">
+              Unser Netzwerk umfasst über 8.000 Partnerschulen in ganz Deutschland. Sie können regional eingrenzen oder bundesweit arbeiten – je nach Ihren Recruiting-Zielen.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item border-b border-line">
+        <button class="faq-trigger w-full flex items-center justify-between py-5 text-left" aria-expanded="false">
+          <span class="text-xl leading-[30px] text-dark pr-4 transition-colors duration-200">Welche Kosten entstehen?</span>
+          <svg class="faq-icon w-6 h-6 shrink-0 text-dark transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner pb-5">
+            <p class="text-[15px] leading-relaxed text-dark/70 max-w-[843px]">
+              Die Kosten variieren je nach gewähltem Paket und Reichweite. In einem kostenlosen Erstgespräch erhalten Sie ein individuelles Angebot, das zu Ihrem Budget und Ihren Zielen passt.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════ -->
+<footer class="bg-brand pt-20 pb-8">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10 pb-16 border-b border-white/20">
+      <div class="flex flex-col gap-2">
+        <p class="text-white text-[22px] font-medium leading-7 max-w-xs">Mit der JobApp noch schneller und einfacher bewerben.</p>
+        <div class="flex gap-4 mt-4">
+          <img src="assets/08446ed5.png" alt="App Store" class="h-10 rounded-lg" />
+          <img src="assets/d3e7c956.png" alt="Google Play" class="h-10 rounded-lg" />
+        </div>
+      </div>
+      <div class="flex flex-col gap-2">
+        <p class="text-white text-[22px] font-medium leading-7">Fragen, Anregung, Kritik? Schreib uns.</p>
+        <a href="mailto:feedback@deinerstertag.de" class="text-white text-base mt-2 hover:underline">feedback@deinerstertag.de</a>
+      </div>
+      <div class="flex flex-col gap-3">
+        <a href="#" class="flex items-center gap-2 text-white text-sm font-bold hover:text-white/80 transition-colors">
+          <img src="assets/01b29629.svg" alt="" aria-hidden="true" class="w-8 h-8" /> Instagram
+        </a>
+        <a href="#" class="flex items-center gap-2 text-white text-sm font-bold hover:text-white/80 transition-colors">
+          <img src="assets/c958d2c4.svg" alt="" aria-hidden="true" class="w-8 h-8" /> Facebook
+        </a>
+        <a href="#" class="flex items-center gap-2 text-white text-sm font-bold hover:text-white/80 transition-colors">
+          <img src="assets/d8522f4e.svg" alt="" aria-hidden="true" class="w-8 h-8" /> YouTube
+        </a>
+        <a href="#" class="flex items-center gap-2 text-white text-sm font-bold hover:text-white/80 transition-colors">
+          <img src="assets/e2571cf7.svg" alt="" aria-hidden="true" class="w-8 h-8" /> TikTok
+        </a>
+        <a href="#" class="flex items-center gap-2 text-white text-sm font-bold hover:text-white/80 transition-colors">
+          <img src="assets/f9b842de.png" alt="" aria-hidden="true" class="w-8 h-8 object-cover rounded" /> LinkedIn
+        </a>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 py-12 border-b border-white/20">
+      <div class="col-span-2 lg:col-span-1"><img src="logo.svg" alt="DEIN ERSTER TAG" width="96" height="57" class="h-10 w-auto object-contain mb-6 brightness-0 invert" /></div>
+      <div class="flex flex-col gap-3">
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Jobs</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Über uns</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">AGBs</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Kontakt</a>
+      </div>
+      <div class="flex flex-col gap-3">
+        <a href="lehrkraefte.html" class="text-white text-base hover:text-white/70 transition-colors">Für Lehrkräfte</a>
+        <a href="index.html" class="text-white text-base hover:text-white/70 transition-colors">Für Personaler*innen</a>
+        <a href="shop.html" class="text-white text-base hover:text-white/70 transition-colors">Shop</a>
+      </div>
+      <div class="flex flex-col gap-3">
+        <a href="#" class="text-white text-base underline hover:text-white/70 transition-colors">Impressum</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Datenschutz</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Nutzungsbedingungen</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Open Source</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Privatsphäreneinstellungen</a>
+      </div>
+    </div>
+    <div class="pt-6"><p class="text-white text-sm">© 2023 Studio2B GmbH</p></div>
+  </div>
+</footer>
+
+<script src="shared/shared.js"></script>
+<script>
+  // ─── Interaktive Medien-Sektion (nur index.html) ───
+  (() => {
+    const medienItems = document.querySelectorAll('.medien-item');
+    const medienImgs  = document.querySelectorAll('.medien-img');
+    if (!medienItems.length) return;
+    const AUTO_DELAY  = 4000;
+    let   medienIndex = 0;
+    let   medienToken = 0;   // invalidates pending advances when state changes
+    let   medienTimerId = null;
+
+    const activeBar = () => medienItems[medienIndex].querySelector('.medien-bar');
+
+    // Sets active item (image crossfade + 50% -> 100% opacity). When autoAdvance
+    // is true, animates the progress bar 0 -> 100% and advances on completion.
+    function activateMedien(index, autoAdvance = true) {
+      medienIndex = index;
+      medienToken++;
+      clearTimeout(medienTimerId);
+
+      medienImgs.forEach(img => {
+        img.classList.toggle('opacity-100', +img.dataset.medien === index);
+        img.classList.toggle('opacity-0',   +img.dataset.medien !== index);
+      });
+
+      medienItems.forEach(item => {
+        const isActive = +item.dataset.medien === index;
+        item.classList.toggle('opacity-100', isActive);
+        item.classList.toggle('opacity-50',  !isActive);
+        item.setAttribute('aria-pressed', isActive);
+        const bar = item.querySelector('.medien-bar');
+        bar.style.transition = 'none';
+        bar.style.width = '0%';
+      });
+
+      if (autoAdvance) runProgress();
+    }
+
+    function runProgress() {
+      const token = medienToken;
+      const bar   = activeBar();
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          if (token !== medienToken) return;
+          bar.style.transition = `width ${AUTO_DELAY}ms linear`;
+          bar.style.width = '100%';
+        });
+      });
+      medienTimerId = setTimeout(() => {
+        if (token !== medienToken) return;
+        activateMedien((medienIndex + 1) % medienItems.length);
+      }, AUTO_DELAY);
+    }
+
+    medienItems.forEach(item => {
+      const idx = +item.dataset.medien;
+      item.addEventListener('click', () => activateMedien(idx, true));
+      item.addEventListener('mouseenter', () => activateMedien(idx, false));
+    });
+
+    const medienSection = medienItems[0].closest('section');
+    medienSection.addEventListener('mouseleave', () => activateMedien(medienIndex, true));
+
+    activateMedien(0);
+  })();
+</script>
+</body>
+</html>

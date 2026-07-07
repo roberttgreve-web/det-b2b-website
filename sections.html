@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Section Map – DEIN ERSTER TAG B2B</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    body { font-family: 'Roboto', sans-serif; background: #f5f5f5; }
+    .card { background: white; border-radius: 12px; padding: 24px 28px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); margin-bottom: 12px; display: flex; align-items: flex-start; gap: 20px; }
+    .num  { background: #00afd6; color: white; border-radius: 8px; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 15px; flex-shrink: 0; margin-top: 2px; }
+    .tag  { display: inline-block; background: #f0f0f0; color: #555; border-radius: 20px; padding: 2px 10px; font-size: 12px; font-weight: 500; margin-right: 6px; margin-top: 4px; }
+    .tag.brand { background: #e0f6fb; color: #007fa0; }
+    .tag.yellow { background: #fff9d0; color: #8a7200; }
+    .section-name { font-size: 17px; font-weight: 700; color: #181818; margin-bottom: 4px; }
+    .section-desc { font-size: 14px; color: #555; line-height: 1.5; margin-bottom: 8px; }
+    code { background: #f0f0f0; padding: 1px 6px; border-radius: 4px; font-size: 12px; color: #c0392b; }
+  </style>
+</head>
+<body class="p-8 max-w-3xl mx-auto">
+
+  <div class="mb-10">
+    <h1 class="text-3xl font-bold text-[#181818] mb-2">Section Map</h1>
+    <p class="text-[15px] text-gray-500">Reference guide for <strong>index.html</strong> — use these names when referring to any section.</p>
+    <div class="mt-4 p-4 rounded-xl bg-[#e0f6fb] text-sm text-[#007fa0]">
+      💡 The order below matches the top-to-bottom order on the page.
+    </div>
+  </div>
+
+  <!-- 1 -->
+  <div class="card">
+    <div class="num">1</div>
+    <div>
+      <div class="section-name">NAV / Navigation Bar</div>
+      <div class="section-desc">Fixed sticky header at the top. Contains the logo, the three nav links (Für Lehrkräfte, Für Personaler*innen, Für Berufsberatungen) and the mobile hamburger menu.</div>
+      <span class="tag brand">fixed</span>
+      <span class="tag">logo</span>
+      <span class="tag">hamburger</span>
+      <span class="tag">mobile drawer</span>
+      <div class="mt-3 text-xs text-gray-400">HTML id: <code>&lt;header&gt;</code> · mobile menu: <code>id="mobile-menu"</code></div>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="card">
+    <div class="num">2</div>
+    <div>
+      <div class="section-name">HERO</div>
+      <div class="section-desc">The first full section. Large photo on the left, headline + body copy + CTA button + award badge on the right. Below: three stat tiles (8000+ Schulen, 200 Unternehmen, 35% Arbeitsagenturen).</div>
+      <span class="tag">hero image</span>
+      <span class="tag">headline</span>
+      <span class="tag brand">CTA button</span>
+      <span class="tag yellow">award badge</span>
+      <span class="tag">stats bar</span>
+      <div class="mt-3 text-xs text-gray-400">HTML id: <code>id="personaler"</code></div>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="card">
+    <div class="num">3</div>
+    <div>
+      <div class="section-name">SCHULEN IN DER NÄHE / School Finder</div>
+      <div class="section-desc">Overline: "SCHULEN IN DER NÄHE". Headline: "Schulen in der Nähe." PLZ input + Radius dropdown (10/20/30/50/100 km, default 30 km) + search button. On submit: geocodes PLZ via Nominatim, then queries Overpass API for schools within radius. Results split into Partnerschulen (~33%) and Netzwerkschulen (~67%). Stat tiles show both counts. Tab bar to switch between both lists. Table columns: Schulname, Ort, PLZ, Entfernung (sorted ascending). Auto-expands radius up to 3× if fewer than 5 results found, shows a discreet hint line below the headline.</div>
+      <span class="tag brand">interactive</span>
+      <span class="tag">PLZ search</span>
+      <span class="tag">live API</span>
+      <span class="tag">tabs</span>
+      <span class="tag">radius fallback</span>
+      <div class="mt-3 text-xs text-gray-400">HTML id: <code>id="schulen-suche"</code> · Input: <code>id="plz-input"</code> · Dropdown: <code>id="radius-select"</code> · Button: <code>id="schulen-search-btn"</code></div>
+      <div class="mt-2 text-xs text-gray-400">Results: <code>id="schulen-results"</code> · Counts: <code>id="partner-count"</code> / <code>id="network-count"</code> · Table body: <code>id="schulen-table-body"</code></div>
+      <div class="mt-2 text-xs text-gray-400">APIs: Nominatim (geocoding) · Overpass FR mirror (school data) · Haversine distance calc</div>
+    </div>
+  </div>
+
+  <!-- 4 (was 3) -->
+  <div class="card">
+    <div class="num">4</div>
+    <div>
+      <div class="section-name">PARTNER LOGOS</div>
+      <div class="section-desc">White/light background strip. Overline: "Wir arbeiten für über 200 Unternehmen". Full-width image showing partner company logos.</div>
+      <span class="tag">logos</span>
+      <span class="tag">social proof</span>
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="card">
+    <div class="num">5</div>
+    <div>
+      <div class="section-name">BLUE SECTION / Fachkräftemangel</div>
+      <div class="section-desc">Full brand-blue background. Headline: "Fachkräftemangel beginnt damit, dass Schüler*innen Ihren Beruf nicht kennen. Wir ändern das." Below: large video thumbnail with play button. On click, plays the YouTube video inline (replaces the thumbnail).</div>
+      <span class="tag brand">blue bg</span>
+      <span class="tag">inline video</span>
+      <span class="tag">play button</span>
+      <div class="mt-3 text-xs text-gray-400">Video container: <code>id="video-container"</code> · play btn: <code>id="hero-play-btn"</code> · iframe: <code>id="video-iframe"</code></div>
+    </div>
+  </div>
+
+  <!-- 6 -->
+  <div class="card">
+    <div class="num">6</div>
+    <div>
+      <div class="section-name">CONTENT FORMATS / Medien-Section</div>
+      <div class="section-desc">Overline: "DIE INHALTE, DIE SCHÜLER*INNEN WIRKLICH SCHAUEN". Headline: "Sehen Sie, wie Ihr Beruf bei Schüler*innen ankommt." Interactive section: crossfading image on the left, 4 clickable feature items on the right. Active item = 100% opacity, others = 50%. Auto-advances every 4 seconds. On mobile: image on top, items stacked below.</div>
+      <span class="tag brand">interactive</span>
+      <span class="tag">auto-advance</span>
+      <span class="tag">crossfade</span>
+      <span class="tag">progress bar</span>
+      <div class="mt-3 text-xs text-gray-400">Items: <code>.medien-item</code> · Images: <code>.medien-img</code> · Bars: <code>.medien-bar</code></div>
+      <div class="mt-2 text-xs text-gray-400">
+        4 items:
+        <code>0 – 360° Rundgänge</code>
+        <code>1 – Augmented Reality</code>
+        <code>2 – #kurzerklärt</code>
+        <code>3 – Mini games mit Sprachnachrichten</code>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7 -->
+  <div class="card">
+    <div class="num">7</div>
+    <div>
+      <div class="section-name">CTA YELLOW 1</div>
+      <div class="section-desc">First yellow call-to-action card. Headline: "Starten Sie jetzt. Das nächste Schuljahr wartet nicht." Centered copy + CTA button. Links to the Contact section.</div>
+      <span class="tag yellow">yellow bg</span>
+      <span class="tag brand">CTA button</span>
+    </div>
+  </div>
+
+  <!-- 8 -->
+  <div class="card">
+    <div class="num">8</div>
+    <div>
+      <div class="section-name">TESTIMONIALS / Quotes</div>
+      <div class="section-desc">Two customer quotes side by side. Targobank (Nicole Soesanto) on the left, Vodafone (Eduarda Goncalves) on the right. Each has a circular portrait photo, italic quote text, name and role. On mobile: horizontally swipeable snap-scroll carousel.</div>
+      <span class="tag">quotes</span>
+      <span class="tag">swipeable mobile</span>
+      <span class="tag">portraits</span>
+    </div>
+  </div>
+
+  <!-- 9 -->
+  <div class="card">
+    <div class="num">9</div>
+    <div>
+      <div class="section-name">HOW IT WORKS / So funktioniert es</div>
+      <div class="section-desc">Overline: "SO FUNKTIONIERT ES". Headline: "Sie geben uns die Berufe, wir bringen Sie in die Schulklassen." 4 step images in a row, then 4 numbered step descriptions below. On mobile: images are a horizontal swipe carousel; steps stack into 1 column.</div>
+      <span class="tag">4 steps</span>
+      <span class="tag">numbered</span>
+      <span class="tag">swipeable images mobile</span>
+    </div>
+  </div>
+
+  <!-- 10 -->
+  <div class="card">
+    <div class="num">10</div>
+    <div>
+      <div class="section-name">SCHOOL PROGRAM / Schulvermarktung</div>
+      <div class="section-desc">Overline: "Die Schulvermarktung". Headline: "Unser Schulprogramm mit 8.000 Schulen. Ihr Beruf ist dabei." Large image, then a 2-column feature grid (6 items total) below: Kostenlos, Regionalisierung, Berufberater*innen, 4 Stationen, Lange Wiedergabezeiten, Logistik &amp; Marketing. On mobile: single column.</div>
+      <span class="tag">big image</span>
+      <span class="tag">2-col features → 1-col mobile</span>
+    </div>
+  </div>
+
+  <!-- 11 -->
+  <div class="card">
+    <div class="num">11</div>
+    <div>
+      <div class="section-name">CTA YELLOW 2</div>
+      <div class="section-desc">Second yellow call-to-action card. Headline: "Erfahren Sie welche Medienformate für Sie am besten geeignet sind." Centered copy + CTA button.</div>
+      <span class="tag yellow">yellow bg</span>
+      <span class="tag brand">CTA button</span>
+    </div>
+  </div>
+
+  <!-- 12 -->
+  <div class="card">
+    <div class="num">12</div>
+    <div>
+      <div class="section-name">BENEFITS / Was Sie zurückbekommen</div>
+      <div class="section-desc">Overline: "WAS SIE ZURÜCKBEKOMMEN". Headline: "Was Sie zurückbekommen: Bewerbungen, Schülerkontakte, Reportings." 4-column icon + text grid: Günstiger als Schülermesse, Messbare Ergebnisse, Medienrechte, Markenpräsenz. On mobile: 1 col, tablet: 2 col, desktop: 4 col.</div>
+      <span class="tag">4 benefits</span>
+      <span class="tag">icons</span>
+      <span class="tag">1→2→4 col</span>
+    </div>
+  </div>
+
+  <!-- 13 -->
+  <div class="card">
+    <div class="num">13</div>
+    <div>
+      <div class="section-name">CONTACT / Wir beraten Sie gerne</div>
+      <div class="section-desc">Headline: "Wir beraten Sie gerne." Large photo of Henrick Figge on the left. Copy, his title, email, and CTA button on the right. On mobile: image stacks above text.</div>
+      <span class="tag">contact person</span>
+      <span class="tag brand">CTA button</span>
+      <span class="tag">stacks mobile</span>
+      <div class="mt-3 text-xs text-gray-400">HTML id: <code>id="kontakt"</code></div>
+    </div>
+  </div>
+
+  <!-- 14 -->
+  <div class="card">
+    <div class="num">14</div>
+    <div>
+      <div class="section-name">FAQ / Häufige Fragen</div>
+      <div class="section-desc">Overline: "FAQs". Headline: "Noch unsicher? Hier sind die Fragen, die wir am häufigsten hören." Accordion with 5 questions. Only one open at a time. Opens with grid-row height animation + opacity fade on the answer text. Active question label and + icon turn brand blue.</div>
+      <span class="tag">accordion</span>
+      <span class="tag">5 questions</span>
+      <span class="tag brand">brand-blue active state</span>
+      <div class="mt-3 text-xs text-gray-400">Items: <code>.faq-item</code> · Triggers: <code>.faq-trigger</code> · Answers: <code>.faq-answer</code> / <code>.faq-answer-inner</code></div>
+    </div>
+  </div>
+
+  <!-- 15 -->
+  <div class="card">
+    <div class="num">15</div>
+    <div>
+      <div class="section-name">FOOTER</div>
+      <div class="section-desc">Brand-blue background. Three columns: (1) App download section with app store badges and headline about the JobApp. (2) Contact email "feedback@deinerstertag.de". (3) Social links: Instagram, Facebook, YouTube, TikTok, LinkedIn. Below: logo (white), 4-column link grid (Jobs/Über uns, Angebote, Landingpages, Legal). Copyright: © 2023 Studio2B GmbH.</div>
+      <span class="tag brand">blue bg</span>
+      <span class="tag">social links</span>
+      <span class="tag">app badges</span>
+      <span class="tag">legal links</span>
+      <span class="tag">copyright</span>
+    </div>
+  </div>
+
+  <div class="mt-10 p-5 bg-white rounded-xl border border-gray-200 text-sm text-gray-500">
+    <strong class="text-dark">Quick reference — CSS classes &amp; IDs used in JS</strong>
+    <div class="mt-3 grid grid-cols-2 gap-2">
+      <div><code>id="personaler"</code> — Hero section anchor</div>
+      <div><code>id="kontakt"</code> — Contact section anchor</div>
+      <div><code>id="video-container"</code> — Blue section video wrapper</div>
+      <div><code>id="hero-play-btn"</code> — Play button (blue section)</div>
+      <div><code>id="video-iframe"</code> — YouTube iframe</div>
+      <div><code>id="video-thumbnail"</code> — Thumbnail shown before play</div>
+      <div><code>.medien-item</code> — Content format tab buttons</div>
+      <div><code>.medien-img</code> — Crossfading images</div>
+      <div><code>.medien-bar</code> — Progress bar inside each tab</div>
+      <div><code>.faq-item</code> — FAQ row wrapper</div>
+      <div><code>.faq-trigger</code> — FAQ clickable button</div>
+      <div><code>.faq-answer</code> — FAQ collapsible container</div>
+      <div><code>.reveal</code> — Scroll fade-in (bottom)</div>
+      <div><code>.reveal-left</code> — Scroll fade-in (from left)</div>
+      <div><code>.reveal-right</code> — Scroll fade-in (from right)</div>
+      <div><code>.reveal-scale</code> — Scroll fade-in (scale up)</div>
+      <div><code>.parallax-img</code> — Parallax scroll effect</div>
+      <div><code>.swipe-track</code> — No-scrollbar horizontal scroll</div>
+      <div><code>id="nav-hamburger"</code> — Mobile menu toggle</div>
+      <div><code>id="mobile-menu"</code> — Mobile nav drawer</div>
+      <div><code>id="schulen-suche"</code> — School finder section</div>
+      <div><code>id="plz-input"</code> — PLZ text input</div>
+      <div><code>id="radius-select"</code> — Radius dropdown</div>
+      <div><code>id="schulen-search-btn"</code> — Search trigger button</div>
+      <div><code>id="schulen-results"</code> — Results container (hidden until search)</div>
+      <div><code>id="partner-count"</code> — Partnerschulen count display</div>
+      <div><code>id="network-count"</code> — Netzwerkschulen count display</div>
+      <div><code>id="schulen-table-body"</code> — Table rows target</div>
+      <div><code>id="radius-note"</code> — Auto-expand hint line</div>
+    </div>
+  </div>
+
+</body>
+</html>

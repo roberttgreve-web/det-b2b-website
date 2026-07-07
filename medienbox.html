@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medienbox – DEIN ERSTER TAG</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+  <script src="shared/config.js"></script>
+  <link rel="stylesheet" href="shared/shared.css" />
+</head>
+<body class="font-sans bg-light text-dark overflow-x-hidden">
+
+<!-- STICKY NAVIGATION -->
+<header class="fixed top-0 left-0 right-0 z-50 nav-bar bg-white/90 border-b border-gray-100">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8 py-3 flex items-center justify-between">
+    <a href="index.html" aria-label="DEIN ERSTER TAG – Startseite">
+      <img src="logo.svg" alt="DEIN ERSTER TAG Logo" width="96" height="57" class="h-10 lg:h-14 w-auto object-contain" />
+    </a>
+    <nav aria-label="Hauptnavigation" class="hidden lg:block">
+      <ul class="flex items-center gap-12 text-base">
+        <li><a href="lehrkraefte.html" class="font-bold text-brand border-b-2 border-brand pb-0.5">Für Lehrkräfte</a></li>
+        <li><a href="index.html" class="text-dark hover:text-brand transition-colors duration-200">Für Personaler*innen</a></li>
+        <li><a href="shop.html" class="text-dark hover:text-brand transition-colors duration-200">Shop</a></li>
+      </ul>
+    </nav>
+    <button id="nav-hamburger" class="lg:hidden p-2 rounded-lg hover:bg-gray-100" aria-label="Menü öffnen" aria-expanded="false">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+  <div id="mobile-menu" class="lg:hidden border-t border-gray-100 bg-white/95">
+    <nav class="flex flex-col px-6 py-4 gap-4 text-base">
+      <a href="lehrkraefte.html" class="font-bold text-brand py-1">Für Lehrkräfte</a>
+      <a href="index.html" class="text-dark hover:text-brand transition-colors py-1">Für Personaler*innen</a>
+      <a href="shop.html" class="text-dark hover:text-brand transition-colors py-1">Shop</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO SECTION (dark bg) -->
+<section class="bg-night pt-20 lg:pt-24 pb-16 lg:pb-24">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8 pt-8 lg:pt-10">
+    <div class="max-w-[800px] mb-12 reveal">
+      <p class="text-brand text-base tracking-tight2 mb-4">Medienbox</p>
+      <h1 class="text-display-xs sm:text-display-sm lg:text-display text-white font-normal mb-6">
+        Eine starke Headline die Lehrkräften klar macht wie toll die Erlebnisse sind!
+      </h1>
+      <p class="text-base lg:text-xl leading-[26px] lg:leading-[30px] text-white/80 mb-8">
+        Fünf Stationen, die Berufsorientierung zum echten Erlebnis machen: In der VR-Brille mitten in den Ausbildungsort eintauchen, Berufe per Augmented Reality ins Klassenzimmer beamen, mit Mini-Games Punkte sammeln, Sprachnachrichten im Azubi-Gruppenchat erhalten und humorvolle Kurzfilme auf jedem Gerät schauen. Einfach bestellen, auspacken, loslegen. Komplett kostenlos.
+      </p>
+      <a href="#bestellen" class="inline-flex items-center gap-2 bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200 w-fit group">
+        Kostenlos bestellen
+        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Video thumbnail with play button -->
+    <div id="video-container" class="rounded-2xl h-[240px] sm:h-[420px] lg:h-[730px] reveal-scale relative overflow-hidden">
+      <div id="video-thumbnail" class="absolute inset-0">
+        <img
+          src="assets/5b6a3cf3.jpg"
+          alt="Medienbox in der Schule"
+          class="w-full h-full object-cover"
+        />
+        <button id="hero-play-btn" aria-label="Video abspielen" class="absolute inset-0 flex items-center justify-center group">
+          <img src="ico-play.svg" alt="" aria-hidden="true" width="80" height="80" class="drop-shadow-xl transition-transform duration-200 group-hover:scale-110 group-active:scale-95" />
+        </button>
+      </div>
+      <iframe id="video-iframe" width="560" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="absolute inset-0 w-full h-full hidden"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING FORM SECTION -->
+<section id="bestellen" class="bg-light py-16 lg:py-24">
+  <div class="max-w-[700px] mx-auto px-6">
+    <div class="mb-10 reveal">
+      <p class="text-brand text-base tracking-tight2 mb-4">Kostenfrei bestellen</p>
+      <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark font-normal mb-4">
+        Bestellen Sie Ihre kostenfreie Medienbox.
+      </h2>
+      <p class="text-base lg:text-xl leading-[26px] lg:leading-[30px] text-dark/80">
+        Die Buchung der Medienbox ist je nach Kapazitäten mehrmals im Schuljahr kostenfrei möglich. Füllen Sie das Formular aus und wir melden uns bei Ihnen.
+      </p>
+    </div>
+
+    <div class="bg-[#f0f8fb] rounded-xl px-4 py-3 mb-8 reveal">
+      <p class="text-[15px] leading-relaxed text-dark">📅 Das aktuell frühestmögliche Buchungsdatum ist der <strong>25.05.2026</strong>.</p>
+    </div>
+
+    <form class="flex flex-col gap-8 reveal" novalidate>
+
+      <!-- Ansprechpartner -->
+      <div class="flex flex-col gap-4">
+        <h3 class="text-xl leading-[30px] text-dark font-medium border-b border-line pb-3">Ansprechpartner für uns.</h3>
+        <div class="select-wrapper w-[272px]">
+          <select class="form-field form-select" aria-label="Anrede">
+            <option value="" disabled selected>Anrede</option>
+            <option>Frau</option>
+            <option>Herr</option>
+            <option>Divers</option>
+          </select>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div><label for="vorname" class="sr-only">Vorname</label><input id="vorname" type="text" placeholder="Vorname" class="form-field" /></div>
+          <div><label for="nachname" class="sr-only">Nachname</label><input id="nachname" type="text" placeholder="Nachname" class="form-field" /></div>
+        </div>
+        <div><label for="email" class="sr-only">E-Mail Adresse</label><input id="email" type="email" placeholder="E-Mail Adresse" class="form-field" /></div>
+        <div><label for="telefon" class="sr-only">Telefonnummer</label><input id="telefon" type="tel" placeholder="Telefonnummer" class="form-field" /></div>
+      </div>
+
+      <!-- Schule -->
+      <div class="flex flex-col gap-4">
+        <h3 class="text-xl leading-[30px] text-dark font-medium border-b border-line pb-3">Angaben zu Ihrer Schule.</h3>
+        <div><label for="schule" class="sr-only">Name der Schule</label><input id="schule" type="text" placeholder="Name der Schule" class="form-field" /></div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div><label for="strasse" class="sr-only">Straße und Hausnummer</label><input id="strasse" type="text" placeholder="Straße und Hausnummer" class="form-field" /></div>
+          <div><label for="plz" class="sr-only">PLZ</label><input id="plz" type="text" placeholder="PLZ" class="form-field" /></div>
+        </div>
+        <div><label for="ort" class="sr-only">Ort</label><input id="ort" type="text" placeholder="Ort" class="form-field" /></div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="select-wrapper">
+            <select class="form-field form-select" aria-label="Land">
+              <option value="" disabled selected>Land</option>
+              <option>Deutschland</option>
+              <option>Österreich</option>
+              <option>Schweiz</option>
+            </select>
+          </div>
+          <div class="select-wrapper">
+            <select class="form-field form-select" aria-label="Bundesland">
+              <option value="" disabled selected>Bundesland</option>
+              <option>Baden-Württemberg</option>
+              <option>Bayern</option>
+              <option>Berlin</option>
+              <option>Brandenburg</option>
+              <option>Bremen</option>
+              <option>Hamburg</option>
+              <option>Hessen</option>
+              <option>Mecklenburg-Vorpommern</option>
+              <option>Niedersachsen</option>
+              <option>Nordrhein-Westfalen</option>
+              <option>Rheinland-Pfalz</option>
+              <option>Saarland</option>
+              <option>Sachsen</option>
+              <option>Sachsen-Anhalt</option>
+              <option>Schleswig-Holstein</option>
+              <option>Thüringen</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Buchung -->
+      <div class="flex flex-col gap-4">
+        <h3 class="text-xl leading-[30px] text-dark font-medium border-b border-line pb-3">Ausleihdauer und Buchungsbeginn.</h3>
+        <div class="select-wrapper">
+          <select class="form-field form-select" aria-label="Ausleihdauer">
+            <option value="" disabled selected>Ausleihdauer wählen</option>
+            <option>3 Tage</option>
+            <option>7 Tage</option>
+          </select>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="relative">
+            <label for="datum" class="sr-only">Buchungsdatum</label>
+            <input id="datum" type="date" placeholder="Buchungsdatum" class="form-field pr-12" />
+          </div>
+        </div>
+        <p class="text-[13px] leading-relaxed text-dark/60">Wann soll die Medienbox bei Ihnen eintreffen? Planen Sie bitte 1–2 Tage vor dem Einsatzdatum ein, damit die Box rechtzeitig ankommt.</p>
+      </div>
+
+      <!-- Privacy -->
+      <div class="flex gap-3 items-start">
+        <input type="checkbox" id="datenschutz" class="mt-1 w-4 h-4 accent-brand shrink-0" />
+        <label for="datenschutz" class="text-[13px] leading-relaxed text-dark/70">Ich stimme zu, dass meine Daten entsprechend der <a href="#" class="text-brand hover:underline">Datenschutzerklärung</a> zur Bearbeitung der Nachricht gespeichert werden.</label>
+      </div>
+
+      <button type="submit" class="inline-flex items-center justify-center bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200 w-fit">
+        Anfrage absenden
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- 4 STATIONS SECTION -->
+<section class="bg-light py-16 lg:py-24">
+  <div class="max-w-[700px] mx-auto px-6">
+    <div class="mb-12 reveal">
+      <p class="text-brand text-base tracking-tight2 mb-4">Die Medienbox</p>
+      <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark font-normal mb-4">
+        Berufe erleben und Schüler*innen begeistern. Auf vier Stationen im Klassenraum.
+      </h2>
+      <p class="text-base lg:text-xl leading-[26px] lg:leading-[30px] text-dark/80">
+        Die Medienbox verwandelt Ihr Klassenzimmer in eine interaktive Berufsmesse – ohne Technik-Kenntnisse und ohne Internetzugang.
+      </p>
+    </div>
+
+    <!-- Video thumbnail -->
+    <div class="rounded-2xl overflow-hidden aspect-video mb-12 reveal-scale relative">
+      <img
+        src="assets/f731b8f0.jpg"
+        alt="Medienbox Stationen Übersicht"
+        class="w-full h-full object-cover"
+      />
+      <button class="absolute inset-0 flex items-center justify-center group" aria-label="Video abspielen">
+        <img src="ico-play.svg" alt="" aria-hidden="true" width="60" height="60" class="drop-shadow-xl transition-transform duration-200 group-hover:scale-110" />
+      </button>
+    </div>
+
+    <!-- Stations -->
+    <div class="flex flex-col gap-0 reveal">
+
+      <!-- Station 1 -->
+      <div class="border-t border-line pt-8 pb-8">
+        <div class="flex gap-4 items-start">
+          <div class="w-12 h-12 bg-station-blue rounded-xl shrink-0 flex items-center justify-center">
+            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.07A1 1 0 0121 8.87V15.13a1 1 0 01-1.447.9L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+          </div>
+          <div class="flex-1">
+            <p class="text-[13px] text-dark/50 mb-1">Station 1</p>
+            <h3 class="text-xl leading-[30px] mb-2">VR Brillen für 360° Erlebnisse</h3>
+            <p class="text-[15px] leading-relaxed text-dark/70 mb-4">Schüler*innen setzen die VR-Brille auf und erleben Berufsalltag hautnah – mitten im Ausbildungsbetrieb, ohne die Schule zu verlassen. Echte 360°-Aufnahmen von realen Arbeitgebern aus der Region machen Berufe greifbar und inspirieren zur Berufswahl.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-mist text-dark text-[15px] leading-relaxed px-3 rounded-full">360°-Videos</span>
+              <span class="bg-mist text-dark text-[15px] leading-relaxed px-3 rounded-full">Echte Arbeitgeber aus der Region</span>
+              <span class="bg-mist text-dark text-[15px] leading-relaxed px-3 rounded-full">Keine Technik-Kenntnisse nötig</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Station 2 -->
+      <div class="border-t border-line pt-8 pb-8">
+        <div class="flex gap-4 items-start">
+          <div class="w-12 h-12 bg-station-dark rounded-xl shrink-0 flex items-center justify-center">
+            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"/></svg>
+          </div>
+          <div class="flex-1">
+            <p class="text-[13px] text-dark/50 mb-1">Station 2</p>
+            <h3 class="text-xl leading-[30px] mb-2">Kurzfilm-Kino</h3>
+            <p class="text-[15px] leading-relaxed text-dark/70 mb-4">Der BerUFO – unser mobiler Streaming-Router – spielt kurze, authentische Berufsvideos direkt auf die Screens der Schüler*innen. Kein Internet nötig, sofort einsatzbereit.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-mist text-dark text-[15px] leading-relaxed px-3 rounded-full">360°-Videos</span>
+              <span class="bg-mist text-dark text-[15px] leading-relaxed px-3 rounded-full">Echte Arbeitgeber aus der Region</span>
+              <span class="bg-mist text-dark text-[15px] leading-relaxed px-3 rounded-full">Keine Technik-Kenntnisse nötig</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Station 3 -->
+      <div class="border-t border-line pt-8 pb-8">
+        <div class="flex gap-4 items-start">
+          <div class="w-12 h-12 bg-station-yellow rounded-xl shrink-0 flex items-center justify-center">
+            <svg class="w-6 h-6 text-dark" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div class="flex-1">
+            <p class="text-[13px] text-dark/50 mb-1">Station 3</p>
+            <h3 class="text-xl leading-[30px] mb-2">Mini-Games</h3>
+            <p class="text-[15px] leading-relaxed text-dark/70 mb-4">Spielerisch Berufe entdecken: In unseren Mini-Games schlüpfen Schüler*innen in verschiedene Berufsrollen und lösen praxisnahe Aufgaben. Direkt im Browser, keine App nötig.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-mist text-dark text-[15px] leading-relaxed px-3 rounded-full">Direkt im Browser spielbar</span>
+              <span class="bg-mist text-dark text-[15px] leading-relaxed px-3 rounded-full">Verschiedene Berufsfelder</span>
+              <span class="bg-mist text-dark text-[15px] leading-relaxed px-3 rounded-full">Teamweise oder alleine</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Station 4 -->
+      <div class="border-t border-line pt-8 pb-8">
+        <div class="flex gap-4 items-start">
+          <div class="w-12 h-12 bg-station-orange rounded-xl shrink-0 flex items-center justify-center">
+            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg>
+          </div>
+          <div class="flex-1">
+            <p class="text-[13px] text-dark/50 mb-1">Station 4</p>
+            <h3 class="text-xl leading-[30px] mb-2">Sprachnachrichten-Raten</h3>
+            <p class="text-[15px] leading-relaxed text-dark/70 mb-4">Echte Azubis berichten von ihrem Berufsalltag – als kurze Sprachnachricht. Schüler*innen hören zu und raten, welcher Beruf beschrieben wird. Eine interaktive und diskussionsreiche Station.</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-mist text-dark text-[15px] leading-relaxed px-3 rounded-full">Echte Azubi-Stimmen</span>
+              <span class="bg-mist text-dark text-[15px] leading-relaxed px-3 rounded-full">Interaktives Rateformat</span>
+              <span class="bg-mist text-dark text-[15px] leading-relaxed px-3 rounded-full">Diskussionsanlass im Unterricht</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S IN THE BOX -->
+<section class="bg-paper py-16 lg:py-24">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8">
+    <div class="max-w-[519px] mb-12 reveal">
+      <p class="text-brand text-base tracking-tight2 mb-4">Die Schulvermarktung</p>
+      <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark font-normal">
+        Was ist in der Medienbox enthalten?
+      </h2>
+      <p class="mt-4 text-[15px] leading-relaxed text-dark/80">Alles was Sie brauchen, um Berufe direkt im Klassenraum erlebbar zu machen. Komplett fertig aufgebaut, einfach auspacken und loslegen.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10 reveal">
+      <div class="flex flex-col gap-4">
+        <div class="flex gap-3 items-center border-b border-line pb-4">
+          <div class="w-10 h-10 bg-mist rounded-lg flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <p class="text-[15px] leading-relaxed text-dark font-medium">VR Brillen</p>
+        </div>
+        <div class="flex gap-3 items-center border-b border-line pb-4">
+          <div class="w-10 h-10 bg-mist rounded-lg flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <p class="text-[15px] leading-relaxed text-dark font-medium">Controller und Ladekabel</p>
+        </div>
+        <div class="flex gap-3 items-center">
+          <div class="w-10 h-10 bg-mist rounded-lg flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.14 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/></svg>
+          </div>
+          <p class="text-[15px] leading-relaxed text-dark font-medium">BerUFO Streaming Router</p>
+        </div>
+      </div>
+      <div class="flex flex-col gap-4">
+        <div class="flex gap-3 items-center border-b border-line pb-4">
+          <div class="w-10 h-10 bg-mist rounded-lg flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+          </div>
+          <p class="text-[15px] leading-relaxed text-dark font-medium">Handbuch und Unterrichtskonzept</p>
+        </div>
+        <div class="flex gap-3 items-center border-b border-line pb-4">
+          <div class="w-10 h-10 bg-mist rounded-lg flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+          </div>
+          <p class="text-[15px] leading-relaxed text-dark font-medium">Noch ein Punkt</p>
+        </div>
+        <div class="flex gap-3 items-center">
+          <div class="w-10 h-10 bg-mist rounded-lg flex items-center justify-center shrink-0">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+          </div>
+          <p class="text-[15px] leading-relaxed text-dark font-medium">Alles verpackt in einer robusten Transportbox</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Yellow info card -->
+    <div class="bg-yellow rounded-2xl py-20 lg:py-24 px-8 reveal-scale">
+      <div class="max-w-[651px] mx-auto flex flex-col gap-6 items-center text-center">
+        <h3 class="text-display-xs sm:text-display-sm text-dark font-normal">
+          Alles kostenlos für Ihre Schule
+        </h3>
+        <p class="text-[15px] leading-relaxed text-dark/80">
+          Die Medienbox ist für Lehrkräfte und Schulen vollständig kostenlos. Versand, Versicherung, Technik – alles inklusive. Sie bekommen, nutzen und schicken sie einfach weiter.
+        </p>
+        <a href="#bestellen" class="inline-flex items-center gap-2 bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200 group">
+          Kostenlos bestellen
+          <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="kontakt" class="bg-light py-16 lg:py-24 overflow-hidden">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8 flex flex-col lg:flex-row gap-10 lg:gap-20 items-start">
+    <div class="w-full lg:w-auto lg:shrink-0 reveal-left">
+      <div class="rounded-2xl overflow-hidden w-full lg:w-[677px] aspect-[4/3] lg:aspect-auto lg:h-[655px]">
+        <img src="assets/08582c87.jpg" alt="Henrick Figge" class="w-full h-full object-cover" />
+      </div>
+    </div>
+    <div class="flex flex-col gap-8 w-full lg:max-w-[428px] lg:pt-20 reveal-right">
+      <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark font-normal">Wir beraten Sie gerne.</h2>
+      <p class="text-[15px] leading-relaxed text-dark/80">Haben Sie Fragen zur Medienbox oder möchten Sie die Box für Ihre Schule buchen? Wir helfen Ihnen gerne weiter.</p>
+      <div>
+        <p class="text-[15px] font-bold leading-relaxed">Henrick Figge</p>
+        <p class="text-[15px] leading-relaxed">Sales &amp; Operations für Schulen</p>
+        <p class="text-[15px] leading-relaxed"><a href="mailto:h.figge@deinerstertag.de" class="text-brand hover:underline">h.figge@deinerstertag.de</a></p>
+      </div>
+      <a href="mailto:h.figge@deinerstertag.de" class="inline-flex items-center gap-2 bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200 w-fit group">
+        Beratungsgespräch vereinbaren
+        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="bg-light py-24 px-6 lg:px-8">
+  <div class="max-w-[1440px] mx-auto">
+    <div class="max-w-[519px] mb-16 reveal">
+      <p class="text-brand text-base tracking-tight2 mb-4">FAQs</p>
+      <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark font-normal">Noch unsicher? Hier sind die Fragen, die wir am häufigsten hören.</h2>
+    </div>
+    <div class="flex flex-col reveal">
+      <div class="faq-item border-b border-line">
+        <button class="faq-trigger w-full flex items-center justify-between py-5 text-left" aria-expanded="false">
+          <span class="text-xl leading-[30px] text-dark pr-4 transition-colors duration-200">Wieviel Aufwand habe ich dabei?</span>
+          <svg class="faq-icon w-6 h-6 shrink-0 text-dark transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner pb-5"><p class="text-[15px] leading-relaxed text-dark/70 max-w-[843px]">Wir schicken Ihnen unsere Medienbox mit unseren Berufsorientierungsvideos direkt an Ihre Schule. Die Technik ist leicht zu handhaben und ohne Internetzugang nutzbar. Sie können die Box entweder für 3 oder für 7 Tage buchen und gerne mit Kolleg*innen teilen. Anschließend senden Sie die Box einfach an die nächste Schule. Wir übernehmen alle Kosten und die Versicherung.</p></div></div>
+      </div>
+      <div class="faq-item border-b border-line">
+        <button class="faq-trigger w-full flex items-center justify-between py-5 text-left" aria-expanded="false">
+          <span class="text-xl leading-[30px] text-dark pr-4 transition-colors duration-200">Wie lange kann ich die Box behalten?</span>
+          <svg class="faq-icon w-6 h-6 shrink-0 text-dark transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner pb-5"><p class="text-[15px] leading-relaxed text-dark/70 max-w-[843px]">Sie können die Box für 3 oder für 7 Tage buchen und sie gerne mit Kolleg*innen teilen. Anschließend senden Sie die Box an die nächste Schule weiter.</p></div></div>
+      </div>
+      <div class="faq-item border-b border-line">
+        <button class="faq-trigger w-full flex items-center justify-between py-5 text-left" aria-expanded="false">
+          <span class="text-xl leading-[30px] text-dark pr-4 transition-colors duration-200">Brauche ich Internetzugang?</span>
+          <svg class="faq-icon w-6 h-6 shrink-0 text-dark transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner pb-5"><p class="text-[15px] leading-relaxed text-dark/70 max-w-[843px]">Nein – die Medienbox funktioniert komplett offline. Der BerUFO Streaming-Router stellt ein eigenes lokales Netzwerk bereit, auf das sich alle Geräte verbinden können.</p></div></div>
+      </div>
+      <div class="faq-item border-b border-line">
+        <button class="faq-trigger w-full flex items-center justify-between py-5 text-left" aria-expanded="false">
+          <span class="text-xl leading-[30px] text-dark pr-4 transition-colors duration-200">Wie groß ist die Reichweite?</span>
+          <svg class="faq-icon w-6 h-6 shrink-0 text-dark transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner pb-5"><p class="text-[15px] leading-relaxed text-dark/70 max-w-[843px]">Unser Netzwerk umfasst über 8.000 Partnerschulen in ganz Deutschland. Sie können regional eingrenzen oder bundesweit arbeiten – je nach Ihren Recruiting-Zielen.</p></div></div>
+      </div>
+      <div class="faq-item border-b border-line">
+        <button class="faq-trigger w-full flex items-center justify-between py-5 text-left" aria-expanded="false">
+          <span class="text-xl leading-[30px] text-dark pr-4 transition-colors duration-200">Welche Kosten entstehen?</span>
+          <svg class="faq-icon w-6 h-6 shrink-0 text-dark transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+        </button>
+        <div class="faq-answer"><div class="faq-answer-inner pb-5"><p class="text-[15px] leading-relaxed text-dark/70 max-w-[843px]">Für Schulen und Lehrkräfte entstehen keine Kosten. Die Medienbox inklusive Versand und Versicherung ist vollständig kostenlos.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-brand pt-20 pb-8">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10 pb-16 border-b border-white/20">
+      <div class="flex flex-col gap-2">
+        <p class="text-white text-[22px] font-medium leading-7 max-w-xs">Mit der JobApp noch schneller und einfacher bewerben.</p>
+        <div class="flex gap-4 mt-4">
+          <img src="assets/08446ed5.png" alt="App Store" class="h-10 rounded-lg" />
+          <img src="assets/d3e7c956.png" alt="Google Play" class="h-10 rounded-lg" />
+        </div>
+      </div>
+      <div class="flex flex-col gap-2">
+        <p class="text-white text-[22px] font-medium leading-7">Fragen, Anregung, Kritik? Schreib uns.</p>
+        <a href="mailto:feedback@deinerstertag.de" class="text-white text-base mt-2 hover:underline">feedback@deinerstertag.de</a>
+      </div>
+      <div class="flex flex-col gap-3">
+        <a href="#" class="flex items-center gap-2 text-white text-sm font-bold hover:text-white/80 transition-colors">
+          <img src="assets/01b29629.svg" alt="" aria-hidden="true" class="w-8 h-8" /> Instagram
+        </a>
+        <a href="#" class="flex items-center gap-2 text-white text-sm font-bold hover:text-white/80 transition-colors">
+          <img src="assets/c958d2c4.svg" alt="" aria-hidden="true" class="w-8 h-8" /> Facebook
+        </a>
+        <a href="#" class="flex items-center gap-2 text-white text-sm font-bold hover:text-white/80 transition-colors">
+          <img src="assets/d8522f4e.svg" alt="" aria-hidden="true" class="w-8 h-8" /> YouTube
+        </a>
+        <a href="#" class="flex items-center gap-2 text-white text-sm font-bold hover:text-white/80 transition-colors">
+          <img src="assets/e2571cf7.svg" alt="" aria-hidden="true" class="w-8 h-8" /> TikTok
+        </a>
+        <a href="#" class="flex items-center gap-2 text-white text-sm font-bold hover:text-white/80 transition-colors">
+          <img src="assets/f9b842de.png" alt="" aria-hidden="true" class="w-8 h-8 object-cover rounded" /> LinkedIn
+        </a>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 py-12 border-b border-white/20">
+      <div class="col-span-2 lg:col-span-1"><img src="logo.svg" alt="DEIN ERSTER TAG" width="96" height="57" class="h-10 w-auto object-contain mb-6 brightness-0 invert" /></div>
+      <div class="flex flex-col gap-3">
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Jobs</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Über uns</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">AGBs</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Kontakt</a>
+      </div>
+      <div class="flex flex-col gap-3">
+        <a href="lehrkraefte.html" class="text-white text-base hover:text-white/70 transition-colors">Für Lehrkräfte</a>
+        <a href="index.html" class="text-white text-base hover:text-white/70 transition-colors">Für Personaler*innen</a>
+        <a href="shop.html" class="text-white text-base hover:text-white/70 transition-colors">Shop</a>
+      </div>
+      <div class="flex flex-col gap-3">
+        <a href="#" class="text-white text-base underline hover:text-white/70 transition-colors">Impressum</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Datenschutz</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Nutzungsbedingungen</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Open Source</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Privatsphäreneinstellungen</a>
+      </div>
+    </div>
+    <div class="pt-6"><p class="text-white text-sm">© 2023 Studio2B GmbH</p></div>
+  </div>
+</footer>
+
+<script src="shared/shared.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+/* DEIN ERSTER TAG – gemeinsame Styles für alle Seiten.
+   Komponentenspezifische Klassen: siehe components.html */
+
+/* ── Scroll-Reveal-Animationen ── */
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-left { opacity: 0; transform: translateX(-50px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+.reveal-right { opacity: 0; transform: translateX(50px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+.reveal-scale { opacity: 0; transform: scale(0.92); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal-scale.visible { opacity: 1; transform: scale(1); }
+.delay-100 { transition-delay: 0.1s; }
+.delay-200 { transition-delay: 0.2s; }
+.delay-300 { transition-delay: 0.3s; }
+.delay-400 { transition-delay: 0.4s; }
+.delay-500 { transition-delay: 0.5s; }
+
+/* ── Parallax ── */
+.parallax-img { will-change: transform; }
+
+/* ── Sticky Nav (Glass-Effekt) ── */
+.nav-bar { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+
+/* ── Swipe-Carousels (Scrollbar ausblenden) ── */
+.swipe-track { scrollbar-width: none; -ms-overflow-style: none; }
+.swipe-track::-webkit-scrollbar { display: none; }
+
+/* ── Mobile Nav Drawer ── */
+#mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+#mobile-menu.open { max-height: 300px; }
+
+/* ── FAQ-Akkordeon ── */
+.faq-answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.45s ease; }
+.faq-answer.open { grid-template-rows: 1fr; }
+.faq-answer-inner { overflow: hidden; opacity: 0; transform: translateY(-6px); transition: opacity 0.35s ease 0.05s, transform 0.35s ease 0.05s; }
+.faq-answer.open .faq-answer-inner { opacity: 1; transform: translateY(0); }
+.faq-icon { transition: transform 0.35s ease; }
+.faq-icon.open { transform: rotate(45deg); }
+.faq-trigger:hover .faq-icon { color: #00afd6; }
+
+/* ── Formularfelder (Bestellformular) ── */
+.form-field { background: #ffffff; border: 1px solid #e3e3e3; border-radius: 8px; height: 53px; padding: 0 24px; color: #808080; font-size: 15px; width: 100%; outline: none; }
+.form-field:focus { border-color: #00afd6; color: #181818; }
+.select-wrapper { position: relative; }
+.select-wrapper::after { content: ''; position: absolute; right: 16px; top: 50%; transform: translateY(-50%); width: 0; height: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 6px solid #808080; pointer-events: none; }
+.form-select { appearance: none; -webkit-appearance: none; }
+
+/* ── Video-Modal ── */
+#video-modal { display: none; position: fixed; inset: 0; z-index: 100; background: rgba(0, 0, 0, 0.85); align-items: center; justify-content: center; }
+#video-modal.open { display: flex; }
+
+/* ── Float-Animation ── */
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+.float-anim { animation: float 6s ease-in-out infinite; }
+
+html { scroll-behavior: smooth; }
