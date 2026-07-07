@@ -55,3 +55,21 @@
 .float-anim { animation: float 6s ease-in-out infinite; }
 
 html { scroll-behavior: smooth; }
+
+/* ── Phone Mockup (reines CSS, kein Bild-Asset nötig) ── */
+.phone-mockup { position: relative; border: 10px solid #181818; border-radius: 2.5rem; background: #181818; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.45); overflow: hidden; }
+.phone-mockup::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 38%; height: 16px; background: #181818; border-radius: 0 0 10px 10px; z-index: 10; }
+.phone-mockup video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* ── Waveform (animierte Audio-Anzeige) ── */
+.waveform-bar { width: 4px; border-radius: 9999px; background: #6a6ff5; animation: waveform-pulse 1.1s ease-in-out infinite; }
+.waveform-bar:nth-child(even) { background: #b3b5fb; }
+@keyframes waveform-pulse {
+  0%, 100% { height: calc(var(--wf-h, 32px) * 0.28); }
+  50%      { height: var(--wf-h, 32px); }
+}
+
+/* ── Sound-Toggle-Button ── */
+.sound-toggle .icon-unmuted { display: none; }
+.sound-toggle.is-unmuted .icon-muted { display: none; }
+.sound-toggle.is-unmuted .icon-unmuted { display: block; }
