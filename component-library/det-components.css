@@ -1,0 +1,558 @@
+/* ══════════════════════════════════════════════════════════════
+   DEIN ERSTER TAG – Komponenten
+   Semantische Klassen (Präfix .det-*), damit sie in jedem Theme /
+   Page-Builder kollisionsfrei sind. Referenzieren nur Tokens aus
+   det-tokens.css. Kein Framework, kein Build-Schritt.
+   ══════════════════════════════════════════════════════════════ */
+
+/* ── Basis / Layout ─────────────────────────────────────────── */
+.det-container {
+  max-width: var(--det-container);
+  margin-inline: auto;
+  padding-inline: var(--det-container-pad);
+}
+@media (min-width: 1024px) {
+  .det-container { padding-inline: var(--det-container-pad-lg); }
+}
+
+.det-section { padding-block: var(--det-section-y); }
+.det-section--paper { background: var(--det-paper); }
+.det-section--light { background: var(--det-light); }
+.det-section--night { background: var(--det-night); color: var(--det-white); }
+.det-section--brand { background: var(--det-brand); color: var(--det-white); }
+
+/* ── Typografie ─────────────────────────────────────────────── */
+.det-overline {
+  color: var(--det-brand);
+  font-size: var(--det-fs-label);
+  letter-spacing: var(--det-tracking);
+  margin: 0 0 16px;
+}
+.det-heading {
+  font-size: var(--det-fs-display);
+  line-height: var(--det-lh-display);
+  letter-spacing: var(--det-tracking);
+  font-weight: 400;
+  margin: 0;
+}
+.det-heading--sm { font-size: var(--det-fs-display-sm); }
+.det-lead {
+  font-size: var(--det-fs-lead);
+  line-height: 1.5;
+  color: var(--det-text-80);
+  margin: 0;
+}
+.det-body {
+  font-size: var(--det-fs-body);
+  line-height: var(--det-lh-body);
+  color: var(--det-text-70);
+  margin: 0;
+}
+/* Kopfblock: Overline + Heading (+ Lead), auf lesbare Breite begrenzt */
+.det-section-head { max-width: 519px; }
+.det-section-head .det-heading { margin-bottom: 12px; }
+
+/* ── Buttons ────────────────────────────────────────────────── */
+.det-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--det-radius-pill);
+  font-size: 13.33px;
+  font-weight: 500;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+  background: var(--det-brand);
+  color: var(--det-white);
+  transition: background var(--det-transition), transform var(--det-transition), color var(--det-transition);
+}
+.det-btn:hover { background: var(--det-brand-hover); }
+.det-btn:active { transform: scale(0.95); }
+.det-btn__icon { width: 20px; height: 20px; transition: transform var(--det-transition); }
+.det-btn:hover .det-btn__icon { transform: translateX(4px); }
+
+.det-btn--outline {
+  background: transparent;
+  color: var(--det-brand);
+  border-color: var(--det-brand);
+}
+.det-btn--outline:hover { background: var(--det-brand); color: var(--det-white); }
+
+.det-btn--disabled,
+.det-btn[disabled] {
+  background: transparent;
+  color: var(--det-text-70);
+  border-color: #d1d5db;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.det-btn--disabled:hover { background: transparent; }
+
+.det-btn--block { display: flex; width: 100%; justify-content: center; }
+
+/* Textlink mit Chevron (Karten-Footer) */
+.det-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--det-brand);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: gap var(--det-transition);
+}
+.det-link:hover { gap: 8px; }
+.det-link__icon { width: 16px; height: 16px; }
+
+/* ── Icon-Box ───────────────────────────────────────────────── */
+.det-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--det-radius);
+  background: var(--det-mist);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--det-dark);
+}
+.det-icon-box svg { width: 24px; height: 24px; }
+.det-icon-box--sm { width: 40px; height: 40px; border-radius: var(--det-radius-sm); }
+.det-icon-box--sm svg { width: 20px; height: 20px; }
+.det-icon-box--brand { color: var(--det-brand); }
+/* Farbige Varianten (Medienbox-Stationen) */
+.det-icon-box--blue   { background: var(--det-station-blue);   color: #fff; }
+.det-icon-box--night  { background: var(--det-station-dark);   color: #fff; }
+.det-icon-box--yellow { background: var(--det-station-yellow); color: var(--det-dark); }
+.det-icon-box--orange { background: var(--det-station-orange); color: #fff; }
+
+/* ── Chip / Tag ─────────────────────────────────────────────── */
+.det-chip {
+  display: inline-block;
+  background: var(--det-mist);
+  color: var(--det-dark);
+  font-size: var(--det-fs-body);
+  line-height: 1.69;
+  padding: 0 12px;
+  border-radius: var(--det-radius-pill);
+}
+
+/* ── Badges ─────────────────────────────────────────────────── */
+.det-badge {                     /* gelbes „Auf Anfrage" */
+  display: inline-block;
+  background: var(--det-yellow);
+  color: var(--det-dark);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 6px 16px;
+  border-radius: var(--det-radius-pill);
+}
+.det-badge--new {                /* brand-blaues „NEU" */
+  background: var(--det-brand);
+  color: var(--det-white);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 4px 12px;
+}
+
+/* ── Award-Badge (Trophäe + Text) ───────────────────────────── */
+.det-award { display: flex; gap: 16px; align-items: center; }
+.det-award__medal {
+  background: var(--det-yellow);
+  border-radius: var(--det-radius);
+  padding: 10px;
+  width: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 30px;
+}
+.det-award__text { font-size: var(--det-fs-small); line-height: 1.5; margin: 0; }
+
+/* ── Stat-Bar (Hero-Statistiken) ────────────────────────────── */
+.det-stat-bar { display: flex; flex-direction: column; gap: 1px; }
+.det-stat {
+  border: 1px solid var(--det-line);
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: background var(--det-transition);
+}
+.det-stat:hover { background: #f9fafb; }
+.det-stat p { margin: 0; font-size: var(--det-fs-lead); }
+.det-stat .det-stat__sub { color: var(--det-muted); }
+.det-stat-bar > :first-child { border-radius: var(--det-radius-lg) var(--det-radius-lg) 0 0; }
+.det-stat-bar > :last-child  { border-radius: 0 0 var(--det-radius-lg) var(--det-radius-lg); }
+@media (min-width: 640px) {
+  .det-stat-bar { flex-direction: row; }
+  .det-stat-bar > :first-child { border-radius: var(--det-radius-lg) 0 0 var(--det-radius-lg); }
+  .det-stat-bar > :last-child  { border-radius: 0 var(--det-radius-lg) var(--det-radius-lg) 0; }
+}
+
+/* ── Feature-Row (Icon + Titel + Text) ──────────────────────── */
+.det-feature { display: flex; gap: 16px; align-items: flex-start; }
+.det-feature__eyebrow { font-size: 13px; color: var(--det-muted); margin: 0 0 4px; }
+.det-feature__title { font-size: 20px; line-height: 30px; margin: 0 0 8px; font-weight: 400; }
+.det-feature__text { font-size: var(--det-fs-body); line-height: var(--det-lh-body); color: var(--det-text-70); margin: 0; }
+.det-feature__tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+/* Gestapelte Liste mit Trennlinien */
+.det-feature-list { display: flex; flex-direction: column; }
+.det-feature-list .det-feature { padding-block: 28px; }
+.det-feature-list .det-feature + .det-feature { border-top: 1px solid var(--det-line); }
+
+/* ── Testimonial ────────────────────────────────────────────── */
+.det-testimonial { display: flex; gap: 20px; align-items: flex-start; }
+.det-testimonial__photo {
+  width: 80px; height: 80px;
+  border-radius: var(--det-radius-pill);
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.det-testimonial__body { display: flex; flex-direction: column; gap: 20px; }
+.det-testimonial__quote { font-size: var(--det-fs-body); line-height: var(--det-lh-body); font-style: italic; color: var(--det-dark); margin: 0; }
+.det-testimonial__name { font-size: var(--det-fs-body); font-weight: 700; margin: 0; }
+.det-testimonial__role { font-size: var(--det-fs-body); margin: 0; }
+@media (min-width: 1024px) {
+  .det-testimonial { gap: 28px; }
+  .det-testimonial__photo { width: 171px; height: 171px; }
+  .det-testimonial__body { gap: 28px; }
+}
+
+/* ── CTA-Karte (gelb) ───────────────────────────────────────── */
+.det-cta {
+  background: var(--det-yellow);
+  border-radius: var(--det-radius-lg);
+  padding: 80px 32px;
+}
+@media (min-width: 1024px) { .det-cta { padding: 96px 32px; } }
+.det-cta__inner {
+  max-width: 651px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  text-align: center;
+}
+.det-cta .det-heading { color: var(--det-dark); }
+.det-cta p { font-size: var(--det-fs-body); line-height: var(--det-lh-body); color: var(--det-dark); margin: 0; }
+
+/* ── FAQ-Akkordeon ──────────────────────────────────────────── */
+.det-faq { display: flex; flex-direction: column; }
+.det-faq__item { border-bottom: 1px solid var(--det-line); }
+.det-faq__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 0;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.det-faq__question { font-size: 20px; line-height: 30px; color: var(--det-dark); transition: color var(--det-transition); }
+.det-faq__icon { width: 24px; height: 24px; flex-shrink: 0; color: var(--det-dark); transition: transform var(--det-transition), color var(--det-transition); }
+.det-faq__trigger:hover .det-faq__icon { color: var(--det-brand); }
+.det-faq__answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.45s ease; }
+.det-faq__inner { overflow: hidden; opacity: 0; transform: translateY(-6px); transition: opacity 0.35s ease 0.05s, transform 0.35s ease 0.05s; }
+.det-faq__inner p { font-size: var(--det-fs-body); line-height: var(--det-lh-body); color: var(--det-text-70); max-width: 843px; margin: 0 0 20px; }
+/* Offener Zustand */
+.det-faq__item.is-open .det-faq__answer { grid-template-rows: 1fr; }
+.det-faq__item.is-open .det-faq__inner { opacity: 1; transform: translateY(0); }
+.det-faq__item.is-open .det-faq__question { color: var(--det-brand); }
+.det-faq__item.is-open .det-faq__icon { color: var(--det-brand); transform: rotate(45deg); }
+
+/* ── Formularfelder ─────────────────────────────────────────── */
+.det-field {
+  background: var(--det-white);
+  border: 1px solid var(--det-line);
+  border-radius: var(--det-radius-sm);
+  height: 53px;
+  padding: 0 24px;
+  color: #808080;
+  font-size: var(--det-fs-body);
+  width: 100%;
+  outline: none;
+  font-family: inherit;
+}
+.det-field:focus { border-color: var(--det-brand); color: var(--det-dark); }
+.det-select-wrap { position: relative; }
+.det-select-wrap::after {
+  content: '';
+  position: absolute;
+  right: 16px; top: 50%;
+  transform: translateY(-50%);
+  width: 0; height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid #808080;
+  pointer-events: none;
+}
+.det-field--select { appearance: none; -webkit-appearance: none; }
+
+/* ── Play-Button (Video-Thumbnail-Overlay) ──────────────────── */
+.det-play-btn {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.det-play-btn img { width: 80px; height: 80px; filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3)); transition: transform var(--det-transition); }
+.det-play-btn:hover img { transform: scale(1.1); }
+.det-play-btn:active img { transform: scale(0.95); }
+.det-play-btn--sm img { width: 56px; height: 56px; }
+
+/* ── Hero (Bild + Copy nebeneinander, helle Startseiten-Variante) ── */
+.det-hero { background: var(--det-light); padding: 112px 0 40px; }
+.det-hero__row { display: flex; flex-direction: column; gap: 32px; align-items: flex-start; }
+.det-hero__media { width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border-radius: var(--det-radius-lg); flex-shrink: 0; }
+.det-hero__media img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.det-hero__body { display: flex; flex-direction: column; gap: 24px; width: 100%; }
+.det-hero__body .det-heading { font-size: var(--det-fs-display); }
+@media (min-width: 1024px) {
+  .det-hero__row { flex-direction: row; align-items: center; gap: 64px; }
+  .det-hero__media { width: 55%; aspect-ratio: auto; height: 500px; flex-shrink: 0; }
+  .det-hero__body { flex: 1; min-width: 0; gap: 32px; }
+}
+@media (min-width: 1280px) {
+  .det-hero__media { width: 795px; height: 694px; }
+}
+.det-hero .det-stat-bar { margin-top: 32px; }
+
+/* Dunkle Hero-Variante (Sub-Seiten): zentrierter Intro-Block, optional
+   gefolgt von einer großen Media-Stage (Bild/Video) im selben Block. */
+.det-hero--dark {
+  background: var(--det-night);
+  color: var(--det-white);
+  padding: 112px 0 80px;
+}
+.det-hero--dark .det-heading,
+.det-hero--dark .det-lead { color: var(--det-white); }
+.det-hero--dark .det-lead { color: rgba(255, 255, 255, 0.8); }
+.det-hero__intro { max-width: 800px; display: flex; flex-direction: column; gap: 24px; }
+.det-hero__intro + .det-hero__stage { margin-top: 48px; }
+.det-hero__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  text-decoration: none;
+  margin-bottom: 32px;
+  transition: color var(--det-transition);
+}
+.det-hero__back:hover { color: rgba(255, 255, 255, 0.8); }
+.det-hero__back svg { width: 16px; height: 16px; }
+.det-hero__stage { position: relative; border-radius: var(--det-radius-lg); overflow: hidden; height: 240px; }
+.det-hero__stage img { width: 100%; height: 100%; object-fit: cover; }
+@media (min-width: 640px) { .det-hero__stage { height: 420px; } }
+@media (min-width: 1024px) { .det-hero__stage { height: 655px; } }
+
+/* Sektion direkt unter der Nav braucht Abstand, falls sie keine
+   Hero-Komponente ist (Hero bringt das Top-Padding schon selbst mit). */
+.det-nav-offset { padding-top: 88px; }
+
+/* ── Video-Embed (Blue-Section, Inline-Video mit Thumbnail-Swap) ──
+   Braucht det.js für den Klick-Handler. Die Embed-URL kommt aus
+   data-embed-src auf dem Play-Button (keine harte URL im JS). */
+.det-video-embed { background: var(--det-brand); color: var(--det-white); padding-block: var(--det-section-y); overflow: hidden; }
+.det-video-embed__intro { max-width: 679px; margin-bottom: 48px; }
+.det-video-embed .det-heading { color: var(--det-white); }
+.det-video-embed__stage { position: relative; border-radius: var(--det-radius-lg); overflow: hidden; height: 240px; }
+.det-video-embed__thumb { position: absolute; inset: 0; }
+.det-video-embed__thumb img { width: 100%; height: 100%; object-fit: cover; }
+.det-video-embed__thumb[hidden] { display: none; }
+.det-video-embed__iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.det-video-embed__iframe[hidden] { display: none; }
+@media (min-width: 640px) { .det-video-embed__stage { height: 420px; } }
+@media (min-width: 1024px) {
+  .det-video-embed__stage { height: 730px; }
+  .det-video-embed__intro { margin-bottom: 96px; }
+}
+
+/* ── Partner-Logos ────────────────────────────────────────────── */
+.det-logos { background: var(--det-light); padding-block: 64px; }
+.det-logos__label { color: var(--det-brand); font-size: var(--det-fs-label); text-align: center; letter-spacing: var(--det-tracking); margin: 0 0 40px; }
+.det-logos__strip img { width: 100%; height: auto; display: block; object-fit: cover; }
+
+/* ── Stat-Karte (Schulen-Finder: klickbare Ergebnis-Kachel) ──── */
+.det-stat-card { display: block; width: 100%; text-align: left; background: var(--det-white); border: 1px solid var(--det-line); border-radius: var(--det-radius-lg); padding: 24px; cursor: pointer; font-family: inherit; transition: border-color var(--det-transition); }
+.det-stat-card:hover { border-color: rgba(0, 175, 214, 0.3); }
+.det-stat-card__label { font-size: 14px; color: var(--det-muted); margin: 0 0 12px; }
+.det-stat-card__value { font-size: 52px; line-height: 1; font-weight: 400; color: var(--det-dark); margin: 0 0 12px; transition: color var(--det-transition); }
+.det-stat-card__sub { font-size: 13px; color: var(--det-muted); margin: 0; }
+.det-stat-card__indicator { display: block; margin-top: 20px; height: 2px; border-radius: 999px; background: var(--det-line); transition: background var(--det-transition); }
+.det-stat-card.is-active .det-stat-card__value { color: var(--det-brand); }
+.det-stat-card.is-active .det-stat-card__indicator { background: var(--det-brand); }
+
+/* ── Tab-Bar (braucht det.js für den Zustandswechsel) ────────── */
+.det-tabs { display: flex; gap: 32px; border-bottom: 1px solid var(--det-line); }
+.det-tabs__item { background: none; border: none; cursor: pointer; padding: 0 0 12px; margin-bottom: -1px; font-size: 14px; font-weight: 500; font-family: inherit; color: rgba(24, 24, 24, 0.4); border-bottom: 2px solid transparent; transition: color var(--det-transition), border-color var(--det-transition); }
+.det-tabs__item:hover { color: rgba(24, 24, 24, 0.6); }
+.det-tabs__item.is-active { color: var(--det-brand); border-color: var(--det-brand); }
+
+/* ── Pagination ───────────────────────────────────────────────── */
+.det-pagination { display: flex; align-items: center; justify-content: center; gap: 8px; }
+.det-pagination__btn { min-width: 36px; height: 36px; padding: 0 8px; border-radius: var(--det-radius-sm); border: none; background: none; color: var(--det-dark); font-size: 14px; font-family: inherit; cursor: pointer; transition: background var(--det-transition), color var(--det-transition); }
+.det-pagination__btn:hover { background: var(--det-mist); }
+.det-pagination__btn.is-active { background: var(--det-brand); color: var(--det-white); }
+.det-pagination__btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ── Preis-Karte (Shop-Detailseiten) ──────────────────────────── */
+.det-price-card { max-width: 480px; background: var(--det-white); border-radius: var(--det-radius-lg); padding: 32px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); }
+.det-price-card__label { font-size: 15px; color: var(--det-muted); margin: 0 0 8px; }
+.det-price-card__value { font-size: 48px; line-height: 1; letter-spacing: var(--det-tracking); color: var(--det-dark); margin: 0 0 4px; }
+.det-price-card__note { font-size: 15px; color: var(--det-muted); margin: 0 0 32px; }
+.det-price-card__list { list-style: none; margin: 0 0 32px; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.det-price-card__list li { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; line-height: 1.7; }
+.det-price-card__check { width: 20px; height: 20px; color: var(--det-brand); flex-shrink: 0; margin-top: 2px; }
+.det-price-card__footnote { font-size: 13px; color: rgba(24, 24, 24, 0.4); text-align: center; margin: 16px 0 0; }
+@media (min-width: 1024px) { .det-price-card { padding: 48px; } }
+
+/* ── Kontakt-Sektion ────────────────────────────────────────── */
+.det-contact { display: flex; flex-direction: column; gap: 40px; align-items: flex-start; }
+.det-contact__media { width: 100%; border-radius: var(--det-radius-lg); overflow: hidden; aspect-ratio: 4 / 3; flex-shrink: 0; }
+.det-contact__media img { width: 100%; height: 100%; object-fit: cover; }
+.det-contact__body { display: flex; flex-direction: column; gap: 32px; width: 100%; }
+.det-contact__person p { margin: 0; font-size: var(--det-fs-body); line-height: 1.7; }
+.det-contact__person p:first-child { font-weight: 700; }
+.det-contact__person a { color: var(--det-brand); text-decoration: none; }
+.det-contact__person a:hover { text-decoration: underline; }
+@media (min-width: 1024px) {
+  .det-contact { flex-direction: row; gap: 80px; }
+  .det-contact__media { width: 677px; height: 655px; aspect-ratio: auto; flex-shrink: 0; }
+  .det-contact__body { max-width: 428px; padding-top: 80px; }
+}
+
+/* ── How it works (Schritte) ─────────────────────────────────
+   Jeder Schritt ist eine eigenständige Karte (Bild, Nummer, Titel, Text) —
+   bewusst anders als im Original (dort getrennte Bild-/Text-Reihen auf
+   Desktop), weil ein einzelner, in sich geschlossener Baustein pro Schritt
+   im Page-Builder einfacher zu ziehen und neu anzuordnen ist. */
+.det-steps { display: grid; grid-template-columns: 1fr; gap: 24px; }
+/* min-width:0 verhindert, dass ein überbreites Grid-Kind (z.B. das
+   Telefon-Bild in --dark) die Spalte über ihren fairen 1fr-Anteil hinaus
+   aufbläht (Grid-Items sind sonst standardmäßig min-width:auto). */
+.det-step { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.det-step__media { width: 100%; aspect-ratio: 4 / 3; border-radius: var(--det-radius-lg); overflow: hidden; }
+.det-step__media img { width: 100%; height: 100%; object-fit: cover; }
+.det-step__media--dark { background: #1b191a; display: flex; align-items: center; justify-content: center; }
+.det-step__media--dark img { width: auto; max-width: 100%; height: 90%; object-fit: cover; border-radius: var(--det-radius); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3); }
+.det-step__num { width: 40px; height: 40px; border-radius: var(--det-radius); background: var(--det-mist); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 500; }
+@media (min-width: 1024px) {
+  .det-steps { grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .det-step__num { width: 48px; height: 48px; font-size: 24px; }
+}
+
+/* ── Produkt-Karte (Shop-Grid) ────────────────────────────────── */
+.det-product-card { display: flex; flex-direction: column; }
+.det-product-card__media { display: block; border-radius: var(--det-radius-lg); overflow: hidden; aspect-ratio: 16 / 9; background: var(--det-mist); margin-bottom: 24px; }
+.det-product-card__media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.det-product-card__media:hover img { transform: scale(1.05); }
+.det-product-card__title { font-size: 26px; line-height: 1.2; letter-spacing: var(--det-tracking); font-weight: 400; margin: 0 0 8px; }
+.det-product-card__text { font-size: var(--det-fs-body); line-height: var(--det-lh-body); color: var(--det-text-70); margin: 0 0 20px; }
+.det-product-card__footer { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+
+/* ── Video-Karte (Videostunden-Grid) ─────────────────────────── */
+.det-video-card { background: var(--det-paper); border-radius: var(--det-radius-lg); overflow: hidden; display: flex; flex-direction: column; }
+.det-video-card__media { position: relative; aspect-ratio: 16 / 9; }
+.det-video-card__media img { width: 100%; height: 100%; object-fit: cover; }
+.det-video-card__body { padding: 24px; display: flex; flex-direction: column; gap: 16px; flex: 1; }
+.det-video-card__eyebrow { font-size: 13px; color: var(--det-text-70); text-transform: uppercase; letter-spacing: 0.03em; margin: 0; }
+.det-video-card__title { font-size: 20px; line-height: 30px; font-weight: 400; margin: 0; color: var(--det-dark); }
+.det-video-card__tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.det-video-card__footer { margin-top: auto; padding-top: 8px; }
+
+/* ── Navigation (Sticky-Header + Mobile-Drawer) ──────────────── */
+.det-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid #f3f4f6; }
+.det-nav__bar { display: flex; align-items: center; justify-content: space-between; padding-block: 12px; }
+.det-nav__logo img { height: 40px; width: auto; object-fit: contain; display: block; }
+.det-nav__links { display: none; align-items: center; gap: 48px; font-size: 16px; list-style: none; margin: 0; padding: 0; }
+.det-nav__link { color: var(--det-dark); text-decoration: none; transition: color var(--det-transition); }
+.det-nav__link:hover { color: var(--det-brand); }
+.det-nav__link.is-active { font-weight: 700; color: var(--det-brand); border-bottom: 2px solid var(--det-brand); padding-bottom: 2px; }
+.det-nav__toggle { display: flex; padding: 8px; border-radius: 8px; border: none; background: none; cursor: pointer; }
+.det-nav__toggle:hover { background: #f3f4f6; }
+.det-nav__toggle svg { width: 24px; height: 24px; }
+.det-nav__mobile { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; border-top: 1px solid #f3f4f6; background: rgba(255, 255, 255, 0.95); }
+.det-nav__mobile.is-open { max-height: 300px; }
+.det-nav__mobile-inner { display: flex; flex-direction: column; padding: 16px 24px; gap: 16px; font-size: 16px; }
+.det-nav__mobile-link { color: var(--det-dark); text-decoration: none; padding-block: 4px; }
+.det-nav__mobile-link.is-active { font-weight: 700; color: var(--det-brand); }
+@media (min-width: 1024px) {
+  .det-nav__links { display: flex; }
+  .det-nav__toggle { display: none; }
+  .det-nav__mobile { display: none; }
+}
+
+/* ── Footer ───────────────────────────────────────────────────── */
+.det-footer { background: var(--det-brand); color: var(--det-white); padding: 80px 0 32px; }
+.det-footer__top { display: flex; flex-direction: column; gap: 40px; padding-bottom: 64px; border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
+.det-footer__app p, .det-footer__contact p { margin: 0; font-size: 22px; font-weight: 500; line-height: 1.4; }
+.det-footer__contact a { color: var(--det-white); font-size: 16px; text-decoration: none; display: inline-block; margin-top: 8px; }
+.det-footer__contact a:hover { text-decoration: underline; }
+.det-footer__badges { display: flex; gap: 16px; margin-top: 16px; }
+.det-footer__badges img { height: 40px; border-radius: var(--det-radius-sm); }
+.det-footer__social { display: flex; flex-direction: column; gap: 12px; }
+.det-footer__social a { display: flex; align-items: center; gap: 8px; color: var(--det-white); font-size: 14px; font-weight: 700; text-decoration: none; }
+.det-footer__social a:hover { color: rgba(255, 255, 255, 0.8); }
+.det-footer__social img { width: 32px; height: 32px; }
+.det-footer__links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; padding-block: 48px; border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
+.det-footer__logo { height: 40px; width: auto; object-fit: contain; filter: brightness(0) invert(1); }
+.det-footer__col { display: flex; flex-direction: column; gap: 12px; }
+.det-footer__col a { color: var(--det-white); font-size: 16px; text-decoration: none; }
+.det-footer__col a:hover { color: rgba(255, 255, 255, 0.7); }
+.det-footer__col a.is-underline { text-decoration: underline; }
+.det-footer__bottom { padding-top: 24px; }
+.det-footer__bottom p { margin: 0; font-size: 14px; }
+@media (min-width: 1024px) {
+  .det-footer__top { flex-direction: row; align-items: flex-start; justify-content: space-between; }
+  .det-footer__links { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ── Content-Formats-Carousel (interaktiv, braucht det.js) ────
+   Mobil: alle Formate als vertikale Karten-Liste (bewusst vereinfacht
+   gegenüber dem Original-Swipe-Carousel — kein Abhängen von Touch-JS
+   pro Breakpoint). Ab 1024px: gemeinsame Bild-Stage + Crossfade/
+   Auto-Advance, wie im Prototyp. */
+.det-carousel { display: flex; flex-direction: column; gap: 32px; }
+.det-carousel__stage { position: relative; width: 100%; aspect-ratio: 4 / 3; border-radius: var(--det-radius-lg); overflow: hidden; display: none; }
+.det-carousel__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.7s ease; }
+.det-carousel__img.is-active { opacity: 1; }
+.det-carousel__list { display: flex; flex-direction: column; gap: 32px; }
+.det-carousel__item { display: flex; flex-direction: column; gap: 16px; text-align: left; background: none; border: none; cursor: pointer; padding: 0; opacity: 1; width: 100%; }
+.det-carousel__item-media { width: 100%; aspect-ratio: 4 / 3; border-radius: var(--det-radius-lg); overflow: hidden; }
+.det-carousel__item-media img { width: 100%; height: 100%; object-fit: cover; }
+.det-carousel__bar { display: none; }
+@media (min-width: 1024px) {
+  .det-carousel { flex-direction: row; align-items: center; gap: 60px; }
+  .det-carousel__stage { display: block; width: 56%; aspect-ratio: auto; height: 600px; flex-shrink: 0; }
+  .det-carousel__list { flex: 1; justify-content: space-between; height: 600px; }
+  .det-carousel__item { opacity: 0.5; transition: opacity 0.5s ease; }
+  .det-carousel__item.is-active { opacity: 1; }
+  .det-carousel__item-media { display: none; } /* Desktop nutzt die gemeinsame Stage statt Einzelbildern */
+  .det-carousel__bar { display: block; height: 2px; width: 100%; background: #e5e7eb; border-radius: 999px; overflow: hidden; }
+  .det-carousel__bar-fill { display: block; height: 100%; width: 0; background: var(--det-brand); border-radius: 999px; }
+}
+
+/* ── Scroll-Reveal (optional, via det.js) ───────────────────── */
+.det-reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.det-reveal--left  { transform: translateX(-50px); }
+.det-reveal--right { transform: translateX(50px); }
+.det-reveal--scale { transform: scale(0.92); }
+.det-reveal.is-visible { opacity: 1; transform: none; }

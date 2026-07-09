@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DEIN ERSTER TAG – Komponenten-Bibliothek</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+  <!-- Die Bibliothek: diese beiden Dateien + det.js sind alles, was ein Theme braucht -->
+  <link rel="stylesheet" href="det-tokens.css" />
+  <link rel="stylesheet" href="det-components.css" />
+  <style>
+    /* Nur Style-Guide-Chrome – NICHT Teil der Bibliothek */
+    body { font-family: var(--det-font); margin: 0; background: #f5f5f5; color: #181818; }
+    .sg-head { background: #fff; border-bottom: 1px solid #e3e3e3; padding: 32px 40px; }
+    .sg-head h1 { margin: 0 0 4px; font-size: 24px; }
+    .sg-head p { margin: 0; color: #666; font-size: 14px; }
+    .sg-main { max-width: 1000px; margin: 0 auto; padding: 40px; }
+    .sg-block { margin-bottom: 48px; }
+    .sg-label { font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #a9a9a9; margin-bottom: 6px; }
+    .sg-title { font-size: 20px; font-weight: 700; margin: 0 0 4px; }
+    .sg-code { font-size: 12px; color: #888; font-family: ui-monospace, monospace; margin-bottom: 16px; }
+    .sg-demo { background: #fff; border: 1px solid #e8e8e8; border-radius: 12px; padding: 32px; }
+    .sg-demo--dark { background: var(--det-night); }
+    .sg-row { display: flex; flex-wrap: wrap; gap: 24px; align-items: center; }
+    /* Bricht aus dem 1000px-Container aus, damit Hero/Nav/Footer/Carousel bei
+       ihren echten Desktop-Breakpoints getestet werden können (reines
+       Style-Guide-Chrome, keine Komponenten-Regel). */
+    .sg-demo--bleed { width: 100vw; margin-left: calc(50% - 50vw); border-radius: 0; border-left: none; border-right: none; }
+  </style>
+</head>
+<body>
+
+<header class="sg-head">
+  <h1>DEIN ERSTER TAG – Komponenten-Bibliothek</h1>
+  <p>Semantische CSS-Komponenten, Page-Builder-neutral. Einbinden: <code>det-tokens.css</code> + <code>det-components.css</code> (+ <code>det.js</code> für Interaktives).</p>
+</header>
+
+<main class="sg-main">
+
+  <!-- Overline + Heading -->
+  <div class="sg-block">
+    <p class="sg-label">Typografie</p>
+    <h2 class="sg-title">Overline + Heading + Lead</h2>
+    <p class="sg-code">.det-overline · .det-heading · .det-lead (responsiv via clamp)</p>
+    <div class="sg-demo">
+      <div class="det-section-head">
+        <p class="det-overline">ABSCHNITTSNAME</p>
+        <h2 class="det-heading">Diese Schulen in ihrer Nähe arbeiten mit uns zusammen.</h2>
+        <p class="det-lead">Geben Sie eine Postleitzahl ein und wählen Sie Ihren gewünschten Suchradius.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Buttons -->
+  <div class="sg-block">
+    <p class="sg-label">Atom</p>
+    <h2 class="sg-title">Buttons</h2>
+    <p class="sg-code">.det-btn · .det-btn--outline · .det-btn--disabled · .det-link</p>
+    <div class="sg-demo sg-row">
+      <a href="#" class="det-btn">Beratungsgespräch vereinbaren
+        <svg class="det-btn__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#" class="det-btn det-btn--outline">Zur Videostunde</a>
+      <span class="det-btn det-btn--disabled">Demnächst verfügbar</span>
+      <a href="#" class="det-link">Mehr erfahren
+        <svg class="det-link__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Icon-Boxen -->
+  <div class="sg-block">
+    <p class="sg-label">Atom</p>
+    <h2 class="sg-title">Icon-Boxen</h2>
+    <p class="sg-code">.det-icon-box (+ --sm, --brand, --blue/--night/--yellow/--orange)</p>
+    <div class="sg-demo sg-row">
+      <div class="det-icon-box"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.07A1 1 0 0121 8.87V15.13a1 1 0 01-1.447.9L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg></div>
+      <div class="det-icon-box det-icon-box--sm"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+      <div class="det-icon-box det-icon-box--brand"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75"/></svg></div>
+      <div class="det-icon-box det-icon-box--blue"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.07A1 1 0 0121 8.87V15.13a1 1 0 01-1.447.9L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg></div>
+      <div class="det-icon-box det-icon-box--yellow"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/></svg></div>
+      <div class="det-icon-box det-icon-box--orange"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4"/></svg></div>
+    </div>
+  </div>
+
+  <!-- Chips + Badges -->
+  <div class="sg-block">
+    <p class="sg-label">Atom</p>
+    <h2 class="sg-title">Chips & Badges</h2>
+    <p class="sg-code">.det-chip · .det-badge · .det-badge--new</p>
+    <div class="sg-demo sg-row">
+      <span class="det-chip">360°-Videos</span>
+      <span class="det-chip">Echte Arbeitgeber aus der Region</span>
+      <span class="det-badge">Auf Anfrage</span>
+      <span class="det-badge det-badge--new">NEU</span>
+    </div>
+  </div>
+
+  <!-- Award -->
+  <div class="sg-block">
+    <p class="sg-label">Molekül</p>
+    <h2 class="sg-title">Award-Badge</h2>
+    <p class="sg-code">.det-award</p>
+    <div class="sg-demo">
+      <div class="det-award" style="max-width:520px">
+        <div class="det-award__medal">🏆</div>
+        <p class="det-award__text"><strong>Ausgezeichnet</strong> vom BMBF für bestes Angebot für das Erleben von Berufsfeldern und Berufen in Deutschland.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stat-Bar -->
+  <div class="sg-block">
+    <p class="sg-label">Molekül</p>
+    <h2 class="sg-title">Stat-Bar</h2>
+    <p class="sg-code">.det-stat-bar · .det-stat (stapelt mobil, Reihe ab 640px)</p>
+    <div class="sg-demo">
+      <div class="det-stat-bar">
+        <div class="det-stat"><p><strong>8000+ Partnerschulen</strong> <span class="det-stat__sub">in ganz Deutschland</span></p></div>
+        <div class="det-stat"><p><strong>200 Unternehmen</strong> <span class="det-stat__sub">vertrauen uns</span></p></div>
+        <div class="det-stat"><p><strong>35% der Arbeitsagenturen</strong> <span class="det-stat__sub">kooperieren</span></p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Feature-Liste -->
+  <div class="sg-block">
+    <p class="sg-label">Molekül</p>
+    <h2 class="sg-title">Feature-Row / -Liste</h2>
+    <p class="sg-code">.det-feature-list > .det-feature (Trennlinien automatisch)</p>
+    <div class="sg-demo">
+      <div class="det-feature-list" style="max-width:531px">
+        <div class="det-feature">
+          <div class="det-icon-box"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1"/></svg></div>
+          <div><h3 class="det-feature__title">Kostenlos für Ihre Schule</h3><p class="det-feature__text">Ausbildungsplätze bleiben unbesetzt – nicht weil Jugendliche kein Interesse haben, sondern weil sie nie von Ihnen gehört haben.</p></div>
+        </div>
+        <div class="det-feature">
+          <div class="det-icon-box"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+          <div><h3 class="det-feature__title">VR Brillen, Kurzfilm Kino und Mini Games</h3><p class="det-feature__text">Authentische 360°-Einblicke in echte Berufe, direkt im Klassenraum erlebbar.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonial -->
+  <div class="sg-block">
+    <p class="sg-label">Molekül</p>
+    <h2 class="sg-title">Testimonial</h2>
+    <p class="sg-code">.det-testimonial (Foto wächst ab 1024px auf 171px)</p>
+    <div class="sg-demo">
+      <div class="det-testimonial" style="max-width:560px">
+        <img class="det-testimonial__photo" src="../assets/d4ab64d7.jpg" alt="Nicole Soesanto" />
+        <div class="det-testimonial__body">
+          <p class="det-testimonial__quote">"Mit DEIN ERSTER TAG erreichen wir Schülerinnen zu dem Zeitpunkt an dem die Berufswahl relevant wird und an dem Ort wo sie sich intensiv damit beschäftigen, in der Schule."</p>
+          <div><p class="det-testimonial__name">Targobank</p><p class="det-testimonial__role">Nicole Soesanto, Spezialistin Azubi-Marketing</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="sg-block">
+    <p class="sg-label">Molekül · interaktiv</p>
+    <h2 class="sg-title">FAQ-Akkordeon</h2>
+    <p class="sg-code">.det-faq (braucht det.js) · nur ein Item offen</p>
+    <div class="sg-demo">
+      <div class="det-faq">
+        <div class="det-faq__item">
+          <button class="det-faq__trigger" aria-expanded="false">
+            <span class="det-faq__question">Wieviel Aufwand habe ich dabei?</span>
+            <svg class="det-faq__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+          </button>
+          <div class="det-faq__answer"><div class="det-faq__inner"><p>Kaum Aufwand – laden Sie das Arbeitsmaterial herunter, drucken Sie es aus und spielen Sie das Video an Ihr Smartboard. Unsere Lehrkraft übernimmt den Rest.</p></div></div>
+        </div>
+        <div class="det-faq__item">
+          <button class="det-faq__trigger" aria-expanded="false">
+            <span class="det-faq__question">Ist die Videostunde kostenlos?</span>
+            <svg class="det-faq__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
+          </button>
+          <div class="det-faq__answer"><div class="det-faq__inner"><p>Ja, alle Videostunden sind für Schulen und Lehrkräfte vollständig kostenlos.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Yellow -->
+  <div class="sg-block">
+    <p class="sg-label">Sektion</p>
+    <h2 class="sg-title">CTA-Karte (gelb)</h2>
+    <p class="sg-code">.det-cta · .det-cta__inner</p>
+    <div class="sg-demo" style="padding:0; overflow:hidden">
+      <div class="det-cta">
+        <div class="det-cta__inner">
+          <h2 class="det-heading">Nicht sicher, welches Produkt zu Ihnen passt?</h2>
+          <p>In einem kostenlosen 30-Minuten-Gespräch finden wir gemeinsam heraus, welche Lösung Ihre Einrichtung am weitesten bringt.</p>
+          <a href="#" class="det-btn">Kostenloses Beratungsgespräch
+            <svg class="det-btn__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Formularfelder -->
+  <div class="sg-block">
+    <p class="sg-label">Atom</p>
+    <h2 class="sg-title">Formularfelder</h2>
+    <p class="sg-code">.det-field · .det-select-wrap + .det-field--select</p>
+    <div class="sg-demo sg-row">
+      <input class="det-field" style="max-width:272px" placeholder="Vorname" />
+      <div class="det-select-wrap" style="width:272px">
+        <select class="det-field det-field--select"><option>Anrede</option><option>Frau</option><option>Herr</option></select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero (hell) -->
+  <div class="sg-block">
+    <p class="sg-label">Sektion</p>
+    <h2 class="sg-title">Hero (hell, Bild + Copy)</h2>
+    <p class="sg-code">.det-hero > .det-hero__row (.det-hero__media, .det-hero__body) + .det-stat-bar</p>
+    <div class="sg-demo sg-demo--bleed" style="padding:0; overflow:hidden">
+      <section class="det-hero">
+        <div class="det-container">
+          <div class="det-hero__row">
+            <div class="det-hero__media"><img src="../assets/887a63d0.jpg" alt="Schüler*innen und Unternehmen in der Schule" /></div>
+            <div class="det-hero__body">
+              <h1 class="det-heading">Ihr nächster Azubi sitzt in einer Schulklasse.</h1>
+              <p class="det-lead">DEIN ERSTER TAG ist das größte Schulprogramm Deutschlands – mit Zugang zu 8.000 Schulen.</p>
+              <a href="#" class="det-btn">Beratungsgespräch vereinbaren
+                <svg class="det-btn__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </a>
+              <div class="det-award">
+                <div class="det-award__medal">🏆</div>
+                <p class="det-award__text"><strong>Ausgezeichnet</strong> vom BMBF für bestes Angebot für das Erleben von Berufsfeldern.</p>
+              </div>
+            </div>
+          </div>
+          <div class="det-stat-bar">
+            <div class="det-stat"><p><strong>8000+ Partnerschulen</strong> <span class="det-stat__sub">in ganz Deutschland</span></p></div>
+            <div class="det-stat"><p><strong>200 Unternehmen</strong> <span class="det-stat__sub">vertrauen uns</span></p></div>
+            <div class="det-stat"><p><strong>35% der Arbeitsagenturen</strong> <span class="det-stat__sub">kooperieren</span></p></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Hero (dunkel) -->
+  <div class="sg-block">
+    <p class="sg-label">Sektion</p>
+    <h2 class="sg-title">Hero (dunkel, zentriert + optionale Stage)</h2>
+    <p class="sg-code">.det-hero--dark > .det-hero__intro (+ .det-hero__back) + .det-hero__stage</p>
+    <div class="sg-demo sg-demo--bleed" style="padding:0; overflow:hidden">
+      <section class="det-hero det-hero--dark">
+        <div class="det-container">
+          <a href="#" class="det-hero__back">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
+            Zurück zum Shop
+          </a>
+          <div class="det-hero__intro">
+            <p class="det-overline">VIDEOSTUNDE</p>
+            <h1 class="det-heading">Arbeitsumfelder entdecken – Prakt.-Technische Berufe</h1>
+            <p class="det-lead">Im Rahmen der Videostunde übernimmt unsere DEIN ERSTER TAG-Lehrkraft den Unterricht für Sie.</p>
+          </div>
+          <div class="det-hero__stage">
+            <img src="../assets/d931cf02.jpg" alt="Videostunde Vorschau" />
+            <button class="det-play-btn" aria-label="Video abspielen"><img src="../ico-play.svg" alt="" aria-hidden="true" /></button>
+          </div>
+        </div>
+      </section>
+    </div>
+    <p class="sg-code" style="margin-top:12px; margin-bottom:0">Ohne Stage (nur Intro + Zurück-Link): shop-Detailseiten. Play-Button-JS: <code>hero-play-btn</code>/Video-Modal ist seitenspezifisch, nicht Teil der Bibliothek.</p>
+  </div>
+
+  <!-- Kontakt -->
+  <div class="sg-block">
+    <p class="sg-label">Sektion</p>
+    <h2 class="sg-title">Kontakt-Sektion</h2>
+    <p class="sg-code">.det-contact > .det-contact__media, .det-contact__body (+ .det-contact__person)</p>
+    <div class="sg-demo">
+      <div class="det-contact">
+        <div class="det-contact__media"><img src="../assets/17e564dd.jpg" alt="Henrick Figge" /></div>
+        <div class="det-contact__body">
+          <h2 class="det-heading">Wir beraten Sie gerne.</h2>
+          <p class="det-body">Nutzen Sie das größte Schulprogramm Deutschlands, um Ihre Berufe vorzustellen.</p>
+          <div class="det-contact__person">
+            <p>Henrick Figge</p>
+            <p>Sales &amp; Operations für Unternehmen</p>
+            <p><a href="mailto:h.figge@deinerstertag.de">h.figge@deinerstertag.de</a></p>
+          </div>
+          <a href="#" class="det-btn">Beratungsgespräch vereinbaren
+            <svg class="det-btn__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- How it works -->
+  <div class="sg-block">
+    <p class="sg-label">Sektion</p>
+    <h2 class="sg-title">How it works (Schritte)</h2>
+    <p class="sg-code">.det-steps > .det-step (Bild, Nummer, Titel, Text)</p>
+    <div class="sg-demo">
+      <div class="det-steps">
+        <div class="det-step">
+          <div class="det-step__media"><img src="../assets/24a85759.jpg" alt="Schritt 1" /></div>
+          <div class="det-step__num">1</div>
+          <h3 class="det-feature__title">Sie nennen uns Ihre Ausbildungsberufe.</h3>
+          <p class="det-feature__text">Sie wählen den Beruf, den Sie vorstellen möchten.</p>
+        </div>
+        <div class="det-step">
+          <div class="det-step__media"><img src="../assets/3ea8cb5f.jpg" alt="Schritt 2" /></div>
+          <div class="det-step__num">2</div>
+          <h3 class="det-feature__title">Wir produzieren die passenden Medien.</h3>
+          <p class="det-feature__text">360°-Video, #kurzerklärt oder AR-Szene.</p>
+        </div>
+        <div class="det-step">
+          <div class="det-step__media"><img src="../assets/0ec71814.jpg" alt="Schritt 3" /></div>
+          <div class="det-step__num">3</div>
+          <h3 class="det-feature__title">Ihr Content erreicht Schüler*innen direkt.</h3>
+          <p class="det-feature__text">Über Medienboxen, Videostunden und Mini-Games.</p>
+        </div>
+        <div class="det-step">
+          <div class="det-step__media det-step__media--dark"><img src="../assets/75855258.jpg" alt="App auf Smartphone" /></div>
+          <div class="det-step__num">4</div>
+          <h3 class="det-feature__title">Sie sehen die Reichweite Ihrer Botschaft.</h3>
+          <p class="det-feature__text">Quartalsweise erhalten Sie eine Auswertung.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Produkt-Karte -->
+  <div class="sg-block">
+    <p class="sg-label">Molekül</p>
+    <h2 class="sg-title">Produkt-Karte (Shop-Grid)</h2>
+    <p class="sg-code">.det-product-card</p>
+    <div class="sg-demo" style="max-width:380px">
+      <div class="det-product-card">
+        <a href="#" class="det-product-card__media"><img src="../images-medien/kurzerklaert.png" alt="VR-Box" /></a>
+        <h3 class="det-product-card__title">VR-Box</h3>
+        <p class="det-product-card__text">140+ virtuelle Betriebserkundungen in 360° auf Meta Quest-Brillen – offline, sofort einsatzbereit.</p>
+        <div class="det-product-card__footer">
+          <span class="det-badge">Auf Anfrage</span>
+          <a href="#" class="det-link">Mehr erfahren
+            <svg class="det-link__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Video-Karte -->
+  <div class="sg-block">
+    <p class="sg-label">Molekül</p>
+    <h2 class="sg-title">Video-Karte (Videostunden-Grid)</h2>
+    <p class="sg-code">.det-video-card</p>
+    <div class="sg-demo" style="max-width:420px; padding:0; overflow:hidden">
+      <div class="det-video-card">
+        <div class="det-video-card__media">
+          <img src="../assets/801d01d1.jpg" alt="Praktisch-Technische Berufe" />
+          <a href="#" class="det-play-btn det-play-btn--sm" aria-label="Videostunde abspielen"><img src="../ico-play.svg" alt="" aria-hidden="true" /></a>
+        </div>
+        <div class="det-video-card__body">
+          <p class="det-video-card__eyebrow">Praktisch-Technische Berufe</p>
+          <h3 class="det-video-card__title">Arbeitsplätze, bei denen der Kontakt mit Menschen im Mittelpunkt steht.</h3>
+          <p class="det-body">Kurze, authentische Berufsvideos direkt auf die Screens der Schüler*innen.</p>
+          <div class="det-video-card__tags">
+            <span class="det-chip">360°-Videos</span>
+            <span class="det-chip">Echte Arbeitgeber</span>
+          </div>
+          <div class="det-video-card__footer">
+            <a href="#" class="det-btn det-btn--outline">Zur Videostunde</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="sg-block">
+    <p class="sg-label">Sektion · interaktiv</p>
+    <h2 class="sg-title">Navigation (Sticky-Header + Mobile-Drawer)</h2>
+    <p class="sg-code">.det-nav (braucht det.js) · data-det-nav-toggle / data-det-mobile-menu</p>
+    <div class="sg-demo sg-demo--bleed" style="position:relative; height:160px; padding:0; overflow:hidden">
+      <header class="det-nav" style="position:absolute;">
+        <div class="det-nav__bar det-container">
+          <a href="#" class="det-nav__logo"><img src="../logo.svg" alt="DEIN ERSTER TAG" /></a>
+          <nav class="det-nav__links">
+            <a href="#" class="det-nav__link is-active">Für Lehrkräfte</a>
+            <a href="#" class="det-nav__link">Für Personaler*innen</a>
+            <a href="#" class="det-nav__link">Shop</a>
+          </nav>
+          <button class="det-nav__toggle" data-det-nav-toggle aria-label="Menü öffnen" aria-expanded="false">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+        <div class="det-nav__mobile" data-det-mobile-menu>
+          <div class="det-nav__mobile-inner">
+            <a href="#" class="det-nav__mobile-link is-active">Für Lehrkräfte</a>
+            <a href="#" class="det-nav__mobile-link">Für Personaler*innen</a>
+            <a href="#" class="det-nav__mobile-link">Shop</a>
+          </div>
+        </div>
+      </header>
+    </div>
+    <p class="sg-code" style="margin-top:12px; margin-bottom:0">In der echten Seite ist <code>.det-nav</code> <code>position: fixed</code> (hier nur für die Demo per Inline-Style auf <code>absolute</code> gesetzt, damit sie im Kasten bleibt). Auf schmalen Viewports auf „Menü öffnen" klicken, um den Drawer zu testen.</p>
+  </div>
+
+  <!-- Footer -->
+  <div class="sg-block">
+    <p class="sg-label">Sektion</p>
+    <h2 class="sg-title">Footer</h2>
+    <p class="sg-code">.det-footer</p>
+    <div class="sg-demo sg-demo--bleed" style="padding:0; overflow:hidden">
+      <footer class="det-footer">
+        <div class="det-container">
+          <div class="det-footer__top">
+            <div class="det-footer__app">
+              <p>Mit der JobApp noch schneller und einfacher bewerben.</p>
+              <div class="det-footer__badges">
+                <img src="../assets/08446ed5.png" alt="App Store" />
+                <img src="../assets/d3e7c956.png" alt="Google Play" />
+              </div>
+            </div>
+            <div class="det-footer__contact">
+              <p>Fragen, Anregung, Kritik? Schreib uns.</p>
+              <a href="mailto:feedback@deinerstertag.de">feedback@deinerstertag.de</a>
+            </div>
+            <div class="det-footer__social">
+              <a href="#"><img src="../assets/01b29629.svg" alt="" aria-hidden="true" /> Instagram</a>
+              <a href="#"><img src="../assets/c958d2c4.svg" alt="" aria-hidden="true" /> Facebook</a>
+              <a href="#"><img src="../assets/d8522f4e.svg" alt="" aria-hidden="true" /> YouTube</a>
+              <a href="#"><img src="../assets/e2571cf7.svg" alt="" aria-hidden="true" /> TikTok</a>
+              <a href="#"><img src="../assets/f9b842de.png" alt="" aria-hidden="true" style="border-radius:4px; object-fit:cover" /> LinkedIn</a>
+            </div>
+          </div>
+          <div class="det-footer__links">
+            <div><img class="det-footer__logo" src="../logo.svg" alt="DEIN ERSTER TAG" /></div>
+            <div class="det-footer__col">
+              <a href="#">Jobs</a>
+              <a href="#">Über uns</a>
+              <a href="#">AGBs</a>
+              <a href="#">Kontakt</a>
+            </div>
+            <div class="det-footer__col">
+              <a href="#">Für Lehrkräfte</a>
+              <a href="#">Für Personaler*innen</a>
+              <a href="#">Shop</a>
+            </div>
+            <div class="det-footer__col">
+              <a href="#" class="is-underline">Impressum</a>
+              <a href="#">Datenschutz</a>
+              <a href="#">Nutzungsbedingungen</a>
+            </div>
+          </div>
+          <div class="det-footer__bottom"><p>© 2026 Studio2B GmbH</p></div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Content-Formats-Carousel -->
+  <div class="sg-block">
+    <p class="sg-label">Sektion · interaktiv</p>
+    <h2 class="sg-title">Content-Formats-Carousel</h2>
+    <p class="sg-code">.det-carousel (braucht det.js) · data-det-carousel</p>
+    <div class="sg-demo">
+      <div class="det-carousel" data-det-carousel>
+        <div class="det-carousel__stage">
+          <img class="det-carousel__img" data-carousel-img="0" src="../images-medien/360 Rundgang.png" alt="360° Rundgänge" />
+          <img class="det-carousel__img" data-carousel-img="1" src="../images-medien/Augmented Reality.png" alt="Augmented Reality" />
+          <img class="det-carousel__img" data-carousel-img="2" src="../images-medien/kurzerklaert.png" alt="#kurzerklärt" />
+          <img class="det-carousel__img" data-carousel-img="3" src="../images-medien/sprachnachricht.png" alt="Mini-Games mit Sprachnachrichten" />
+        </div>
+        <div class="det-carousel__list">
+          <button class="det-carousel__item" aria-pressed="false">
+            <div class="det-carousel__item-media"><img src="../images-medien/360 Rundgang.png" alt="360° Rundgänge" /></div>
+            <div class="det-icon-box"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.07A1 1 0 0121 8.87V15.13a1 1 0 01-1.447.9L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg></div>
+            <div><h3 class="det-feature__title">360° Rundgänge</h3><p class="det-feature__text">Sie wählen den Beruf, den Sie vorstellen möchten.</p></div>
+            <div class="det-carousel__bar"><span class="det-carousel__bar-fill"></span></div>
+          </button>
+          <button class="det-carousel__item" aria-pressed="false">
+            <div class="det-carousel__item-media"><img src="../images-medien/Augmented Reality.png" alt="Augmented Reality" /></div>
+            <div class="det-icon-box"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></div>
+            <div><h3 class="det-feature__title">Augmented Reality</h3><p class="det-feature__text">Sie wählen den Beruf, den Sie vorstellen möchten.</p></div>
+            <div class="det-carousel__bar"><span class="det-carousel__bar-fill"></span></div>
+          </button>
+          <button class="det-carousel__item" aria-pressed="false">
+            <div class="det-carousel__item-media"><img src="../images-medien/kurzerklaert.png" alt="#kurzerklärt" /></div>
+            <div class="det-icon-box"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"/></svg></div>
+            <div><h3 class="det-feature__title">#kurzerklärt</h3><p class="det-feature__text">Sie wählen den Beruf, den Sie vorstellen möchten.</p></div>
+            <div class="det-carousel__bar"><span class="det-carousel__bar-fill"></span></div>
+          </button>
+          <button class="det-carousel__item" aria-pressed="false">
+            <div class="det-carousel__item-media"><img src="../images-medien/sprachnachricht.png" alt="Mini-Games mit Sprachnachrichten" /></div>
+            <div class="det-icon-box"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/></svg></div>
+            <div><h3 class="det-feature__title">Mini-Games mit Sprachnachrichten</h3><p class="det-feature__text">Ausbildungsplätze bleiben unbesetzt – nicht weil Jugendliche kein Interesse haben.</p></div>
+            <div class="det-carousel__bar"><span class="det-carousel__bar-fill"></span></div>
+          </button>
+        </div>
+      </div>
+    </div>
+    <p class="sg-code" style="margin-top:12px; margin-bottom:0">Mobil (unter 1024px) erscheinen alle vier als vertikale Karten mit eigenem Bild (kein Swipe/Autoplay) – bewusste Vereinfachung, siehe INVENTORY.md.</p>
+  </div>
+
+  <!-- Video-Embed (Blue-Section) -->
+  <div class="sg-block">
+    <p class="sg-label">Sektion · interaktiv</p>
+    <h2 class="sg-title">Video-Embed (Blue-Section)</h2>
+    <p class="sg-code">.det-video-embed (braucht det.js) · data-embed-src auf dem Play-Button</p>
+    <div class="sg-demo sg-demo--bleed" style="padding:0; overflow:hidden">
+      <section class="det-video-embed">
+        <div class="det-container">
+          <div class="det-video-embed__intro">
+            <h2 class="det-heading">Fachkräftemangel beginnt damit, dass Schüler*innen Ihren Beruf nicht kennen.</h2>
+          </div>
+          <div class="det-video-embed__stage">
+            <div class="det-video-embed__thumb">
+              <img src="../assets/ae995004.jpg" alt="Schüler*innen im Unterricht" />
+              <button class="det-play-btn" data-det-video-trigger data-embed-src="https://www.youtube.com/embed/UreWfZDc9FM?si=9Det9V0G3NUSJgjY&autoplay=1" aria-label="Video abspielen">
+                <img src="../ico-play.svg" alt="" aria-hidden="true" />
+              </button>
+            </div>
+            <iframe class="det-video-embed__iframe" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen hidden></iframe>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Medienbox-Stationen (Feature-Row-Erweiterung) -->
+  <div class="sg-block">
+    <p class="sg-label">Molekül</p>
+    <h2 class="sg-title">Medienbox-Stationen</h2>
+    <p class="sg-code">.det-feature (+ .det-feature__eyebrow, .det-feature__tags) mit farbigen Icon-Boxen</p>
+    <div class="sg-demo">
+      <div class="det-feature-list" style="max-width:600px">
+        <div class="det-feature">
+          <div class="det-icon-box det-icon-box--blue"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.07A1 1 0 0121 8.87V15.13a1 1 0 01-1.447.9L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg></div>
+          <div>
+            <p class="det-feature__eyebrow">Station 1</p>
+            <h3 class="det-feature__title">VR Brillen für 360° Erlebnisse</h3>
+            <p class="det-feature__text">Schüler*innen setzen die VR-Brille auf und erleben Berufsalltag hautnah.</p>
+            <div class="det-feature__tags">
+              <span class="det-chip">360°-Videos</span>
+              <span class="det-chip">Echte Arbeitgeber aus der Region</span>
+            </div>
+          </div>
+        </div>
+        <div class="det-feature">
+          <div class="det-icon-box det-icon-box--yellow"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/></svg></div>
+          <div>
+            <p class="det-feature__eyebrow">Station 3</p>
+            <h3 class="det-feature__title">Mini-Games</h3>
+            <p class="det-feature__text">Spielerisch Berufe entdecken – direkt im Browser, keine App nötig.</p>
+            <div class="det-feature__tags">
+              <span class="det-chip">Direkt im Browser spielbar</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Partner-Logos -->
+  <div class="sg-block">
+    <p class="sg-label">Sektion</p>
+    <h2 class="sg-title">Partner-Logos</h2>
+    <p class="sg-code">.det-logos</p>
+    <div class="sg-demo" style="padding:0; overflow:hidden">
+      <section class="det-logos">
+        <div class="det-container">
+          <p class="det-logos__label">Wir arbeiten für über 200 Unternehmen</p>
+          <div class="det-logos__strip"><img src="../assets/4c942e3f.jpg" alt="Partner-Logos: 200+ Unternehmen" /></div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Schulen-Finder: Stat-Karte, Tabs, Pagination -->
+  <div class="sg-block">
+    <p class="sg-label">Molekül · interaktiv</p>
+    <h2 class="sg-title">Schulen-Finder: Stat-Karte, Tab-Bar, Pagination</h2>
+    <p class="sg-code">.det-stat-card · .det-tabs (braucht det.js) · .det-pagination</p>
+    <div class="sg-demo" data-det-tabs-scope>
+      <div class="sg-row" style="align-items:stretch; margin-bottom:24px">
+        <button class="det-stat-card is-active" style="flex:1">
+          <p class="det-stat-card__label">Partnerschulen</p>
+          <p class="det-stat-card__value">12</p>
+          <p class="det-stat-card__sub">direkt mit uns</p>
+          <span class="det-stat-card__indicator"></span>
+        </button>
+        <button class="det-stat-card" style="flex:1">
+          <p class="det-stat-card__label">Netzwerkschulen</p>
+          <p class="det-stat-card__value">34</p>
+          <p class="det-stat-card__sub">über Agenturen für Arbeit</p>
+          <span class="det-stat-card__indicator"></span>
+        </button>
+      </div>
+      <div class="det-tabs" style="margin-bottom:24px">
+        <button class="det-tabs__item is-active" data-tab-target="partner">Partnerschulen (12)</button>
+        <button class="det-tabs__item" data-tab-target="network">Netzwerkschulen (34)</button>
+      </div>
+      <p data-tab-panel="partner" class="det-body" style="margin-bottom:24px">Tabelle/Karten der Partnerschulen …</p>
+      <p data-tab-panel="network" class="det-body" style="margin-bottom:24px" hidden>Tabelle/Karten der Netzwerkschulen …</p>
+      <nav class="det-pagination" aria-label="Seitennavigation">
+        <button class="det-pagination__btn" aria-label="Vorherige Seite" disabled>‹</button>
+        <button class="det-pagination__btn is-active">1</button>
+        <button class="det-pagination__btn">2</button>
+        <button class="det-pagination__btn">3</button>
+        <button class="det-pagination__btn" aria-label="Nächste Seite">›</button>
+      </nav>
+    </div>
+    <p class="sg-code" style="margin-top:12px; margin-bottom:0">Stat-Karte und Tab-Bar sind unabhängige Bausteine, hier nur gemeinsam demonstriert. Die eigentliche PLZ-Suche/Ergebnistabelle bleibt zurückgestellt (⏸, siehe INVENTORY.md) — diese Bausteine sind schon jetzt nutzbar.</p>
+  </div>
+
+  <!-- Preis-Karte -->
+  <div class="sg-block">
+    <p class="sg-label">Molekül</p>
+    <h2 class="sg-title">Preis-Karte (Shop-Detailseiten)</h2>
+    <p class="sg-code">.det-price-card</p>
+    <div class="sg-demo">
+      <div class="det-price-card">
+        <p class="det-price-card__label">Preis</p>
+        <p class="det-price-card__value">Auf Anfrage</p>
+        <p class="det-price-card__note">je nach Anzahl der Brillen &amp; Konfiguration</p>
+        <ul class="det-price-card__list">
+          <li><svg class="det-price-card__check" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Meta Quest 3S Brillen inkl. Controller</li>
+          <li><svg class="det-price-card__check" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> DETAR-App vorinstalliert</li>
+          <li><svg class="det-price-card__check" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg> Halbjährliche Content-Updates inklusive</li>
+        </ul>
+        <a href="#" class="det-btn det-btn--block">Angebot anfragen
+          <svg class="det-btn__icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </a>
+        <p class="det-price-card__footnote">Persönliche Beratung inklusive. Kein Abo-Zwang.</p>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script src="det.js" defer></script>
+</body>
+</html>

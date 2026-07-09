@@ -14,6 +14,9 @@ tailwind.config = {
         line: '#e3e3e3',    // alle Trennlinien & Rahmen
         muted: '#a9a9a9',   // sekundärer/abgedunkelter Text
         night: '#002e38',   // dunkler Hero-Hintergrund
+        slate: '#384a53',   // Breadcrumb-Nav Text
+        cloud: '#f2f2f2',   // Shop-Cross-Sell-Karte Hintergrund
+        skylight: '#f0f8fb', // Info-Banner Hintergrund (z.B. Lieferdatum-Hinweis)
         station: {
           blue: '#33b9da',
           dark: '#2c2d3e',

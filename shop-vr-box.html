@@ -16,19 +16,21 @@
 <header class="fixed top-0 left-0 right-0 z-50 nav-bar bg-white/90 border-b border-gray-100">
   <div class="max-w-[1440px] mx-auto px-6 lg:px-8 py-3 flex items-center justify-between">
     <a href="index.html" aria-label="DEIN ERSTER TAG – Startseite"><img src="logo.svg" alt="DEIN ERSTER TAG Logo" width="96" height="57" class="h-10 lg:h-14 w-auto object-contain" /></a>
-    <nav aria-label="Hauptnavigation" class="hidden lg:block"><ul class="flex items-center gap-12 text-base">
-      <li><a href="lehrkraefte.html" class="text-dark hover:text-brand transition-colors duration-200">Für Lehrkräfte</a></li>
-      <li><a href="index.html" class="text-dark hover:text-brand transition-colors duration-200">Für Personaler*innen</a></li>
-      <li><a href="shop.html" class="font-bold text-brand border-b-2 border-brand pb-0.5">Shop</a></li>
-    </ul></nav>
+    <nav aria-label="Hauptnavigation" class="hidden lg:flex items-center gap-[23px]">
+      <a href="https://www.deinerstertag.de/" target="_blank" rel="noopener" class="inline-flex items-center gap-[7px] text-slate hover:text-dark transition-colors duration-200"><svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02Z" clip-rule="evenodd"/></svg><span class="text-[14px] leading-[16px]">Schüler*innen</span></a>
+      <a href="lehrkraefte.html" class="inline-flex items-center gap-[7px] text-slate hover:text-dark transition-colors duration-200"><svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02Z" clip-rule="evenodd"/></svg><span class="text-[14px] leading-[16px]">Lehrer*innen</span></a>
+      <a href="index.html" class="inline-flex items-center gap-[7px] text-slate hover:text-dark transition-colors duration-200"><svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02Z" clip-rule="evenodd"/></svg><span class="text-[14px] leading-[16px]">Personaler*innen</span></a>
+      <a href="shop.html" class="inline-flex items-center gap-[7px] text-slate" aria-current="page"><svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02Z" clip-rule="evenodd"/></svg><span class="text-[14px] leading-[16px] font-bold">Shop</span></a>
+    </nav>
     <button id="nav-hamburger" class="lg:hidden p-2 rounded-lg hover:bg-gray-100" aria-label="Menü öffnen" aria-expanded="false">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
     </button>
   </div>
   <div id="mobile-menu" class="lg:hidden border-t border-gray-100 bg-white/95">
     <nav class="flex flex-col px-6 py-4 gap-4 text-base">
-      <a href="lehrkraefte.html" class="text-dark hover:text-brand transition-colors py-1">Für Lehrkräfte</a>
-      <a href="index.html" class="text-dark hover:text-brand transition-colors py-1">Für Personaler*innen</a>
+      <a href="https://www.deinerstertag.de/" target="_blank" rel="noopener" class="text-dark hover:text-brand transition-colors py-1">Schüler*innen</a>
+      <a href="lehrkraefte.html" class="text-dark hover:text-brand transition-colors py-1">Lehrer*innen</a>
+      <a href="index.html" class="text-dark hover:text-brand transition-colors py-1">Personaler*innen</a>
       <a href="shop.html" class="font-bold text-brand py-1">Shop</a>
     </nav>
   </div>
@@ -36,18 +38,18 @@
 
 <main>
 
-<!-- HERO -->
-<section class="bg-night pt-20 lg:pt-28 pb-16 lg:pb-24">
+<!-- HERO (light stage) -->
+<section class="bg-paper pt-24 lg:pt-32 pb-16 lg:pb-24">
   <div class="max-w-[1440px] mx-auto px-6 lg:px-8">
-    <a href="shop.html" class="inline-flex items-center gap-1 text-white/50 text-sm mb-8 hover:text-white/80 transition-colors">
+    <a href="shop.html" class="inline-flex items-center gap-1 text-dark/50 text-sm mb-8 hover:text-dark/80 transition-colors">
       <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
       Zurück zum Shop
     </a>
     <p class="text-brand text-base tracking-tight2 mb-4">VR-BOX</p>
-    <h1 class="text-display-xs sm:text-display-sm lg:text-display text-white font-normal mb-6 max-w-[700px]">140 Berufe erleben – ohne Busfahrt, ohne Betriebsbesuch.</h1>
-    <p class="text-base lg:text-xl leading-[26px] lg:leading-[30px] text-white/70 max-w-[560px] mb-8">Mit der VR-Box entdecken Schüler*innen virtuelle Betriebserkundungen in 360° – auf Meta Quest 3S Brillen, offline, ohne Login, sofort einsatzbereit.</p>
+    <h1 class="text-display-xs sm:text-display-sm lg:text-display text-slate font-normal mb-6 max-w-[700px]">140 Berufe erleben – ohne Busfahrt, ohne Betriebsbesuch.</h1>
+    <p class="text-base lg:text-xl leading-[26px] lg:leading-[30px] text-slate max-w-[560px] mb-8">Mit der VR-Box entdecken Schüler*innen virtuelle Betriebserkundungen in 360° – auf Meta Quest 3S Brillen, offline, ohne Login, sofort einsatzbereit.</p>
     <div class="flex flex-wrap items-center gap-4">
-      <span class="bg-yellow text-dark rounded-full px-5 py-2 text-base font-medium">Auf Anfrage</span>
+      <span class="bg-yellow text-dark rounded-full px-5 py-2 text-base font-medium">ab 890 €</span>
       <a href="#kontakt" class="inline-flex items-center gap-2 bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200 group">
         Jetzt anfragen
         <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
@@ -169,11 +171,11 @@
   <div class="max-w-[1440px] mx-auto px-6 lg:px-8">
     <div class="max-w-[519px] mb-12 reveal">
       <p class="text-brand text-base tracking-tight2 mb-4">PREIS</p>
-      <h2 class="text-display-xs sm:text-display-sm lg:text-display font-normal">Individuell nach Bedarf &amp; Konfiguration.</h2>
+      <h2 class="text-display-xs sm:text-display-sm lg:text-display font-normal">Ab 890 € pro Quartal.</h2>
     </div>
     <div class="max-w-[480px] bg-white rounded-2xl p-8 lg:p-12 shadow-sm reveal-scale">
       <p class="text-[15px] text-dark/50 mb-2">Preis</p>
-      <p class="text-[48px] leading-none font-normal tracking-tight2 text-dark mb-1">Auf Anfrage</p>
+      <p class="text-[48px] leading-none font-normal tracking-tight2 text-dark mb-1">890 €</p>
       <p class="text-[15px] text-dark/50 mb-8">je nach Anzahl der Brillen &amp; Konfiguration</p>
       <div class="flex flex-col gap-3 mb-8">
         <div class="flex items-start gap-3">

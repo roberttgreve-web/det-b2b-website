@@ -1,0 +1,61 @@
+/* ══════════════════════════════════════════════════════════════
+   DEIN ERSTER TAG – Design-Tokens
+   Als CSS-Custom-Properties. Kein Build-Schritt, in jedes Theme einbindbar.
+   Alle Komponenten in det-components.css referenzieren ausschließlich diese Werte.
+   ══════════════════════════════════════════════════════════════ */
+:root {
+  /* ── Farben ── */
+  --det-brand: #00afd6;          /* DET Blau – CTAs, Links, aktive Zustände, Overlines, Footer */
+  --det-brand-hover: #0b9ec2;    /* Hover-Zustand für brand-Buttons */
+  --det-yellow: #ffec5c;         /* DET Gelb – CTA-Karten, Award-Badge, Preis-Badge */
+  --det-dark: #181818;           /* Text, Headlines */
+  --det-light: #fafafa;          /* Seitenhintergrund */
+  --det-paper: #f4f4f2;          /* alternierender Sektionshintergrund, Karten */
+  --det-mist: #f0f0f0;           /* Icon-Boxen, Chips, Nummern-Badges */
+  --det-line: #e3e3e3;           /* alle Trennlinien & Rahmen */
+  --det-muted: #a9a9a9;          /* sekundärer/abgedunkelter Text */
+  --det-night: #002e38;          /* dunkle Hero-Hintergründe */
+  --det-white: #ffffff;
+
+  /* Text-Abstufungen (auf hellem Grund) */
+  --det-text: #181818;
+  --det-text-70: rgba(24, 24, 24, 0.7);
+  --det-text-80: rgba(24, 24, 24, 0.8);
+
+  /* Station-Akzentfarben (Medienbox-Icon-Boxen) */
+  --det-station-blue: #33b9da;
+  --det-station-dark: #2c2d3e;
+  --det-station-yellow: #f7cb28;
+  --det-station-orange: #f27c50;
+
+  /* ── Typografie ── */
+  --det-font: 'Roboto', system-ui, -apple-system, sans-serif;
+  --det-tracking: -0.03em;       /* Headlines & Overlines */
+
+  /* Display-Skala (responsiv per clamp: mobil → desktop) */
+  --det-fs-display: clamp(28px, 1.2rem + 2.6vw, 42px);   /* H1/H2 groß (28→42) */
+  --det-fs-display-sm: clamp(24px, 1.1rem + 1.6vw, 34px);/* H2 mittel */
+  --det-lh-display: 1.2;
+
+  /* Fließtext */
+  --det-fs-lead: clamp(16px, 0.9rem + 0.6vw, 20px);      /* Lead-Absatz */
+  --det-fs-body: 15px;                                    /* Fließtext, Feature-Text */
+  --det-fs-label: 16px;                                   /* Overlines */
+  --det-fs-small: 13px;                                   /* Kleintext, Badges */
+  --det-lh-body: 1.69;
+
+  /* ── Radien ── */
+  --det-radius-sm: 8px;          /* App-Badges, Formularfelder */
+  --det-radius: 12px;            /* Icon-Boxen, Feature-Icons */
+  --det-radius-lg: 16px;         /* Bilder, Karten, CTA-Sektionen */
+  --det-radius-pill: 9999px;     /* Buttons, Avatare */
+
+  /* ── Layout ── */
+  --det-container: 1440px;
+  --det-container-pad: 24px;     /* mobil */
+  --det-container-pad-lg: 32px;  /* ab 1024px */
+  --det-section-y: clamp(64px, 8vw, 96px); /* vertikaler Sektionsabstand (py-16 → py-24) */
+
+  /* ── Transitions ── */
+  --det-transition: 200ms ease;
+}

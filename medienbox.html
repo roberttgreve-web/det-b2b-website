@@ -19,12 +19,11 @@
     <a href="index.html" aria-label="DEIN ERSTER TAG – Startseite">
       <img src="logo.svg" alt="DEIN ERSTER TAG Logo" width="96" height="57" class="h-10 lg:h-14 w-auto object-contain" />
     </a>
-    <nav aria-label="Hauptnavigation" class="hidden lg:block">
-      <ul class="flex items-center gap-12 text-base">
-        <li><a href="lehrkraefte.html" class="font-bold text-brand border-b-2 border-brand pb-0.5">Für Lehrkräfte</a></li>
-        <li><a href="index.html" class="text-dark hover:text-brand transition-colors duration-200">Für Personaler*innen</a></li>
-        <li><a href="shop.html" class="text-dark hover:text-brand transition-colors duration-200">Shop</a></li>
-      </ul>
+    <nav aria-label="Hauptnavigation" class="hidden lg:flex items-center gap-[23px]">
+      <a href="https://www.deinerstertag.de/" target="_blank" rel="noopener" class="inline-flex items-center gap-[7px] text-slate hover:text-dark transition-colors duration-200"><svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02Z" clip-rule="evenodd"/></svg><span class="text-[14px] leading-[16px]">Schüler*innen</span></a>
+      <a href="lehrkraefte.html" class="inline-flex items-center gap-[7px] text-slate" aria-current="page"><svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02Z" clip-rule="evenodd"/></svg><span class="text-[14px] leading-[16px] font-bold">Lehrer*innen</span></a>
+      <a href="index.html" class="inline-flex items-center gap-[7px] text-slate hover:text-dark transition-colors duration-200"><svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02Z" clip-rule="evenodd"/></svg><span class="text-[14px] leading-[16px]">Personaler*innen</span></a>
+      <a href="shop.html" class="inline-flex items-center gap-[7px] text-slate hover:text-dark transition-colors duration-200"><svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02Z" clip-rule="evenodd"/></svg><span class="text-[14px] leading-[16px]">Shop</span></a>
     </nav>
     <button id="nav-hamburger" class="lg:hidden p-2 rounded-lg hover:bg-gray-100" aria-label="Menü öffnen" aria-expanded="false">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -34,8 +33,9 @@
   </div>
   <div id="mobile-menu" class="lg:hidden border-t border-gray-100 bg-white/95">
     <nav class="flex flex-col px-6 py-4 gap-4 text-base">
-      <a href="lehrkraefte.html" class="font-bold text-brand py-1">Für Lehrkräfte</a>
-      <a href="index.html" class="text-dark hover:text-brand transition-colors py-1">Für Personaler*innen</a>
+      <a href="https://www.deinerstertag.de/" target="_blank" rel="noopener" class="text-dark hover:text-brand transition-colors py-1">Schüler*innen</a>
+      <a href="lehrkraefte.html" class="font-bold text-brand py-1">Lehrer*innen</a>
+      <a href="index.html" class="text-dark hover:text-brand transition-colors py-1">Personaler*innen</a>
       <a href="shop.html" class="text-dark hover:text-brand transition-colors py-1">Shop</a>
     </nav>
   </div>
@@ -43,15 +43,15 @@
 
 <main>
 
-<!-- HERO SECTION (dark bg) -->
-<section class="bg-night pt-20 lg:pt-24 pb-16 lg:pb-24">
-  <div class="max-w-[1440px] mx-auto px-6 lg:px-8 pt-8 lg:pt-10">
+<!-- HERO SECTION (light stage) -->
+<section class="bg-paper pt-24 lg:pt-32 pb-16 lg:pb-24">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8">
     <div class="max-w-[800px] mb-12 reveal">
       <p class="text-brand text-base tracking-tight2 mb-4">Medienbox</p>
-      <h1 class="text-display-xs sm:text-display-sm lg:text-display text-white font-normal mb-6">
+      <h1 class="text-display-xs sm:text-display-sm lg:text-display text-slate font-normal mb-6">
         Eine starke Headline die Lehrkräften klar macht wie toll die Erlebnisse sind!
       </h1>
-      <p class="text-base lg:text-xl leading-[26px] lg:leading-[30px] text-white/80 mb-8">
+      <p class="text-base lg:text-xl leading-[26px] lg:leading-[30px] text-slate mb-8">
         Fünf Stationen, die Berufsorientierung zum echten Erlebnis machen: In der VR-Brille mitten in den Ausbildungsort eintauchen, Berufe per Augmented Reality ins Klassenzimmer beamen, mit Mini-Games Punkte sammeln, Sprachnachrichten im Azubi-Gruppenchat erhalten und humorvolle Kurzfilme auf jedem Gerät schauen. Einfach bestellen, auspacken, loslegen. Komplett kostenlos.
       </p>
       <a href="#bestellen" class="inline-flex items-center gap-2 bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200 w-fit group">
@@ -298,74 +298,19 @@
   </div>
 </section>
 
-<!-- WHAT'S IN THE BOX -->
-<section class="bg-paper py-16 lg:py-24">
-  <div class="max-w-[1440px] mx-auto px-6 lg:px-8">
-    <div class="max-w-[519px] mb-12 reveal">
-      <p class="text-brand text-base tracking-tight2 mb-4">Die Schulvermarktung</p>
-      <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark font-normal">
-        Was ist in der Medienbox enthalten?
-      </h2>
-      <p class="mt-4 text-[15px] leading-relaxed text-dark/80">Alles was Sie brauchen, um Berufe direkt im Klassenraum erlebbar zu machen. Komplett fertig aufgebaut, einfach auspacken und loslegen.</p>
-    </div>
-
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10 reveal">
-      <div class="flex flex-col gap-4">
-        <div class="flex gap-3 items-center border-b border-line pb-4">
-          <div class="w-10 h-10 bg-mist rounded-lg flex items-center justify-center shrink-0">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-          </div>
-          <p class="text-[15px] leading-relaxed text-dark font-medium">VR Brillen</p>
-        </div>
-        <div class="flex gap-3 items-center border-b border-line pb-4">
-          <div class="w-10 h-10 bg-mist rounded-lg flex items-center justify-center shrink-0">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-          </div>
-          <p class="text-[15px] leading-relaxed text-dark font-medium">Controller und Ladekabel</p>
-        </div>
-        <div class="flex gap-3 items-center">
-          <div class="w-10 h-10 bg-mist rounded-lg flex items-center justify-center shrink-0">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.14 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/></svg>
-          </div>
-          <p class="text-[15px] leading-relaxed text-dark font-medium">BerUFO Streaming Router</p>
-        </div>
-      </div>
-      <div class="flex flex-col gap-4">
-        <div class="flex gap-3 items-center border-b border-line pb-4">
-          <div class="w-10 h-10 bg-mist rounded-lg flex items-center justify-center shrink-0">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-          </div>
-          <p class="text-[15px] leading-relaxed text-dark font-medium">Handbuch und Unterrichtskonzept</p>
-        </div>
-        <div class="flex gap-3 items-center border-b border-line pb-4">
-          <div class="w-10 h-10 bg-mist rounded-lg flex items-center justify-center shrink-0">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
-          </div>
-          <p class="text-[15px] leading-relaxed text-dark font-medium">Noch ein Punkt</p>
-        </div>
-        <div class="flex gap-3 items-center">
-          <div class="w-10 h-10 bg-mist rounded-lg flex items-center justify-center shrink-0">
-            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
-          </div>
-          <p class="text-[15px] leading-relaxed text-dark font-medium">Alles verpackt in einer robusten Transportbox</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Yellow info card -->
+<!-- CTA YELLOW -->
+<section class="px-6 lg:px-8 pb-16 bg-light">
+  <div class="max-w-[1440px] mx-auto">
     <div class="bg-yellow rounded-2xl py-20 lg:py-24 px-8 reveal-scale">
       <div class="max-w-[651px] mx-auto flex flex-col gap-6 items-center text-center">
-        <h3 class="text-display-xs sm:text-display-sm text-dark font-normal">
-          Alles kostenlos für Ihre Schule
-        </h3>
-        <p class="text-[15px] leading-relaxed text-dark/80">
-          Die Medienbox ist für Lehrkräfte und Schulen vollständig kostenlos. Versand, Versicherung, Technik – alles inklusive. Sie bekommen, nutzen und schicken sie einfach weiter.
-        </p>
+        <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark">Medienbox für ihre Schule bestellen.</h2>
+        <p class="text-[15px] leading-relaxed text-dark">Ausbildung oder Duales Studium? Mit uns findest du deinen ersten Job. Ohne Stress, aber mit Zukunft. Leg los mit unserer kostenlosen App.</p>
+        <div class="bg-skylight rounded px-4 py-2 w-fit">
+          <p class="text-[15px] leading-relaxed text-dark">📅 Garantiertes Lieferdatum für die Medienbox <strong class="font-bold">10.07.2026.</strong></p>
+        </div>
         <a href="#bestellen" class="inline-flex items-center gap-2 bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200 group">
-          Kostenlos bestellen
-          <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
-          </svg>
+          Medienbox kostenlos bestellen
+          <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
         </a>
       </div>
     </div>

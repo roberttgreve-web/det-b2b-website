@@ -54,8 +54,6 @@
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
 .float-anim { animation: float 6s ease-in-out infinite; }
 
-html { scroll-behavior: smooth; }
-
 /* ── Phone Mockup (reines CSS, kein Bild-Asset nötig) ── */
 .phone-mockup { position: relative; border: 10px solid #181818; border-radius: 2.5rem; background: #181818; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.45); overflow: hidden; }
 .phone-mockup::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 38%; height: 16px; background: #181818; border-radius: 0 0 10px 10px; z-index: 10; }
@@ -77,3 +75,5 @@ html { scroll-behavior: smooth; }
 /* ── Sprachnachricht: wortweises Text-Overlay, synchron zur Clip-Dauer ── */
 .ov-word { opacity: 0; transition: opacity 0.3s ease; }
 .ov-word.visible { opacity: 1; }
+
+html { scroll-behavior: smooth; }

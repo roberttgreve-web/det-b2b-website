@@ -2,3 +2,4 @@ Logins.env
 .DS_Store
 .vercel
 node_modules
+__MACOSX

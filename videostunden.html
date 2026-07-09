@@ -19,12 +19,11 @@
     <a href="index.html" aria-label="DEIN ERSTER TAG – Startseite">
       <img src="logo.svg" alt="DEIN ERSTER TAG Logo" width="96" height="57" class="h-10 lg:h-14 w-auto object-contain" />
     </a>
-    <nav aria-label="Hauptnavigation" class="hidden lg:block">
-      <ul class="flex items-center gap-12 text-base">
-        <li><a href="lehrkraefte.html" class="font-bold text-brand border-b-2 border-brand pb-0.5">Für Lehrkräfte</a></li>
-        <li><a href="index.html" class="text-dark hover:text-brand transition-colors duration-200">Für Personaler*innen</a></li>
-        <li><a href="shop.html" class="text-dark hover:text-brand transition-colors duration-200">Shop</a></li>
-      </ul>
+    <nav aria-label="Hauptnavigation" class="hidden lg:flex items-center gap-[23px]">
+      <a href="https://www.deinerstertag.de/" target="_blank" rel="noopener" class="inline-flex items-center gap-[7px] text-slate hover:text-dark transition-colors duration-200"><svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02Z" clip-rule="evenodd"/></svg><span class="text-[14px] leading-[16px]">Schüler*innen</span></a>
+      <a href="lehrkraefte.html" class="inline-flex items-center gap-[7px] text-slate" aria-current="page"><svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02Z" clip-rule="evenodd"/></svg><span class="text-[14px] leading-[16px] font-bold">Lehrer*innen</span></a>
+      <a href="index.html" class="inline-flex items-center gap-[7px] text-slate hover:text-dark transition-colors duration-200"><svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02Z" clip-rule="evenodd"/></svg><span class="text-[14px] leading-[16px]">Personaler*innen</span></a>
+      <a href="shop.html" class="inline-flex items-center gap-[7px] text-slate hover:text-dark transition-colors duration-200"><svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02Z" clip-rule="evenodd"/></svg><span class="text-[14px] leading-[16px]">Shop</span></a>
     </nav>
     <button id="nav-hamburger" class="lg:hidden p-2 rounded-lg hover:bg-gray-100" aria-label="Menü öffnen" aria-expanded="false">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -34,8 +33,9 @@
   </div>
   <div id="mobile-menu" class="lg:hidden border-t border-gray-100 bg-white/95">
     <nav class="flex flex-col px-6 py-4 gap-4 text-base">
-      <a href="lehrkraefte.html" class="font-bold text-brand py-1">Für Lehrkräfte</a>
-      <a href="index.html" class="text-dark hover:text-brand transition-colors py-1">Für Personaler*innen</a>
+      <a href="https://www.deinerstertag.de/" target="_blank" rel="noopener" class="text-dark hover:text-brand transition-colors py-1">Schüler*innen</a>
+      <a href="lehrkraefte.html" class="font-bold text-brand py-1">Lehrer*innen</a>
+      <a href="index.html" class="text-dark hover:text-brand transition-colors py-1">Personaler*innen</a>
       <a href="shop.html" class="text-dark hover:text-brand transition-colors py-1">Shop</a>
     </nav>
   </div>
@@ -45,12 +45,12 @@
 
 <!-- INTRO SECTION -->
 <section class="bg-paper pt-24 lg:pt-32 pb-10">
-  <div class="max-w-[900px] mx-auto px-6 text-center reveal">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8 reveal">
     <p class="text-brand text-base tracking-tight2 mb-4">Videostunde</p>
-    <h1 class="text-display-xs sm:text-display-sm lg:text-display text-dark font-normal mb-6">
+    <h1 class="text-display-xs sm:text-display-sm lg:text-display text-dark font-normal mb-6 max-w-[700px]">
       Eine starke Headline die Lehrkräften klar macht wie toll die Erlebnisse sind!
     </h1>
-    <p class="text-base lg:text-xl leading-[26px] lg:leading-[30px] text-dark/80">
+    <p class="text-base lg:text-xl leading-[26px] lg:leading-[30px] text-dark/80 max-w-[560px]">
       Jugendliche erleben, wie es in Werkstatt, Labor oder Baustelle wirklich zugeht. Formular ausfüllen &amp; Videostunde 'Arbeitsumfelder entdecken – Praktisch-Technische Berufe' hier abspielen:
     </p>
   </div>
@@ -59,16 +59,6 @@
 <!-- MAIN CONTENT -->
 <section class="bg-light py-16 lg:py-24">
   <div class="max-w-[1440px] mx-auto px-6 lg:px-8">
-    <div class="max-w-[519px] mb-12 reveal">
-      <p class="text-brand text-base tracking-tight2 mb-4">Videostunden</p>
-      <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark font-normal">
-        Berufsorientierung, die ankommt
-      </h2>
-      <p class="mt-4 text-base lg:text-xl leading-[26px] lg:leading-[30px] text-dark/80">
-        Die Videostunde bringt echte Einblicke in die Berufswelt direkt ins Klassenzimmer – kostenfrei, praxisnah und ohne Vorbereitungsaufwand für Lehrkräfte.
-      </p>
-    </div>
-
     <!-- Video cards grid -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 reveal">
 
@@ -164,7 +154,7 @@
 </section>
 
 <!-- CONTACT SECTION -->
-<section id="kontakt" class="bg-paper py-16 lg:py-24 overflow-hidden">
+<section id="kontakt" class="bg-light py-16 lg:py-24 overflow-hidden">
   <div class="max-w-[1440px] mx-auto px-6 lg:px-8 flex flex-col lg:flex-row gap-10 lg:gap-20 items-start">
     <div class="w-full lg:w-auto lg:shrink-0 reveal-left">
       <div class="rounded-2xl overflow-hidden w-full lg:w-[677px] aspect-[4/3] lg:aspect-auto lg:h-[655px]">
@@ -188,7 +178,7 @@
 </section>
 
 <!-- FAQ SECTION -->
-<section class="bg-paper py-24 px-6 lg:px-8">
+<section class="bg-light py-24 px-6 lg:px-8">
   <div class="max-w-[1440px] mx-auto">
     <div class="max-w-[519px] mb-16 reveal">
       <p class="text-brand text-base tracking-tight2 mb-4">FAQs</p>

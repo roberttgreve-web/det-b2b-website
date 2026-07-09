@@ -8,17 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { sans: ['Roboto', 'sans-serif'] },
-          colors: { brand: '#00afd6', yellow: '#ffec5c', dark: '#181818', light: '#fafafa' },
-          letterSpacing: { tight2: '-0.03em' },
-        }
-      }
-    }
-  </script>
+  <script src="shared/config.js"></script>
   <style>
     /* FAQ accordion */
     .faq-answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.45s ease; }
@@ -73,6 +63,7 @@
   <a class="nav-link" href="#sec-form">Form Fields</a>
 
   <div class="nav-group">Molecules</div>
+  <a class="nav-link" href="#sec-breadcrumb-nav">Breadcrumb Nav</a>
   <a class="nav-link" href="#sec-feature-row">Feature Row</a>
   <a class="nav-link" href="#sec-testimonial">Testimonial</a>
   <a class="nav-link" href="#sec-faq">FAQ Accordion</a>
@@ -82,16 +73,26 @@
 
   <div class="nav-group">Sections</div>
   <a class="nav-link" href="#sec-cta-yellow">CTA Yellow Card</a>
+  <a class="nav-link" href="#sec-shop-cross-sell">Shop Cross-Sell Card</a>
   <a class="nav-link" href="#sec-how-it-works">HOW IT WORKS</a>
   <a class="nav-link" href="#sec-benefits">Benefits Grid</a>
   <a class="nav-link" href="#sec-hero-layout">Hero Layout</a>
 
   <div style="margin-top: 24px; padding: 12px; background: #f5f5f5; border-radius: 8px; font-size: 12px; color: #888; line-height: 1.5;">
-    Tokens<br/>
+    Tokens (shared/config.js)<br/>
     <span style="color: #00afd6;">■</span> brand #00afd6<br/>
     <span style="color: #ffec5c; -webkit-text-stroke: 0.5px #ccc;">■</span> yellow #ffec5c<br/>
     <span style="color: #181818;">■</span> dark #181818<br/>
-    <span style="color: #fafafa; -webkit-text-stroke: 0.5px #ccc;">■</span> light #fafafa
+    <span style="color: #fafafa; -webkit-text-stroke: 0.5px #ccc;">■</span> light #fafafa<br/>
+    <span style="color: #f4f4f2; -webkit-text-stroke: 0.5px #ccc;">■</span> paper #f4f4f2<br/>
+    <span style="color: #f0f0f0; -webkit-text-stroke: 0.5px #ccc;">■</span> mist #f0f0f0<br/>
+    <span style="color: #e3e3e3;">■</span> line #e3e3e3<br/>
+    <span style="color: #a9a9a9;">■</span> muted #a9a9a9<br/>
+    <span style="color: #002e38;">■</span> night #002e38<br/>
+    <span style="color: #384a53;">■</span> slate #384a53<br/>
+    <span style="color: #f2f2f2; -webkit-text-stroke: 0.5px #ccc;">■</span> cloud #f2f2f2<br/>
+    <span style="color: #f0f8fb; -webkit-text-stroke: 0.5px #ccc;">■</span> skylight #f0f8fb<br/>
+    <br/>Typo: text-display (42/53),<br/>text-display-sm (34), text-display-xs (28)
   </div>
 </aside>
 
@@ -104,26 +105,26 @@
 <section class="comp-section" id="sec-overline">
   <p class="comp-label">Atom</p>
   <h2 class="comp-title">Overline + Heading</h2>
-  <p class="comp-desc">Immer zusammen: Brand-blaue Overline (uppercase, 16px, tracking −0.03em) gefolgt von einem H2 in 42px. Der umgebende Container wird auf <code>max-w-[519px]</code> begrenzt — gilt für alle Sektionen außer volle Breite (Partner Logos, Yellow CTA).</p>
+  <p class="comp-desc">Immer zusammen: Brand-blaue Overline (uppercase, 16px, <code>tracking-tight2</code>) gefolgt von einem H2 in der Display-Skala. Der umgebende Container wird auf <code>max-w-[519px]</code> begrenzt — gilt für alle Sektionen außer volle Breite (Partner Logos, Yellow CTA).</p>
 
   <div class="variant-wrap">
     <p class="variant-label">Standard (Light BG)</p>
     <div class="bg-white rounded-2xl p-10">
       <div class="max-w-[519px]">
-        <p class="text-brand text-base tracking-[-0.03em] mb-4">ABSCHNITTSNAME</p>
-        <h2 class="text-[42px] leading-[53px] tracking-[-0.03em] text-dark font-normal">
+        <p class="text-brand text-base tracking-tight2 mb-4">ABSCHNITTSNAME</p>
+        <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark font-normal">
           Headline die zeigt wie lang so eine Zeile werden kann.
         </h2>
       </div>
     </div>
-    <div class="note mt-3">max-w-[519px] auf dem Wrapper hält Headlines auf allen Breiten lesbar. Nie breiter — auch nicht auf 1440px-Screens.</div>
+    <div class="note mt-3">Headline-Skala immer über die Tokens: <code>text-display-xs sm:text-display-sm lg:text-display</code> (28 → 34 → 42/53, Letter-Spacing eingebaut). Keine festen px-Werte mehr. max-w-[519px] auf dem Wrapper hält Headlines auf allen Breiten lesbar.</div>
   </div>
 
   <div class="variant-wrap">
     <p class="variant-label">On Blue BG (ohne Overline)</p>
     <div class="bg-brand rounded-2xl p-10">
       <div class="max-w-[679px]">
-        <h2 class="text-[42px] leading-[53px] tracking-[-0.03em] text-[#fafafa] font-normal">
+        <h2 class="text-display-xs sm:text-display-sm lg:text-display text-[#fafafa] font-normal">
           Auf blauem Hintergrund fällt die Overline weg — die Headline spricht für sich.
         </h2>
       </div>
@@ -135,8 +136,8 @@
     <p class="variant-label">Mit Lead-Text darunter</p>
     <div class="bg-white rounded-2xl p-10">
       <div class="max-w-[519px]">
-        <p class="text-brand text-base tracking-[-0.03em] mb-4">SCHULEN IN DER NÄHE</p>
-        <h2 class="text-[28px] sm:text-[34px] xl:text-[42px] leading-tight xl:leading-[53px] tracking-[-0.03em] font-normal mb-3">
+        <p class="text-brand text-base tracking-tight2 mb-4">SCHULEN IN DER NÄHE</p>
+        <h2 class="text-display-xs sm:text-display-sm lg:text-display font-normal mb-3">
           Diese Schulen in ihrer Nähe arbeiten mit uns zusammen.
         </h2>
         <p class="text-[15px] leading-relaxed text-dark/60">
@@ -163,12 +164,8 @@
         Beratungsgespräch vereinbaren
         <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
       </a>
-      <a href="#" class="inline-flex items-center gap-2 bg-brand text-white px-4 py-3 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200 group">
-        Kurze Variante
-        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-      </a>
     </div>
-    <div class="note mt-3">px-4 für engere Kontexte (Nav), px-6 für freistehende CTAs. Immer rounded-full. Icon: 20×20px chevron.</div>
+    <div class="note mt-3">Einheitlich px-6 py-3 — es gibt keine px-4-Variante mehr. Immer rounded-full, immer transition-all duration-200. Icon: 20×20px chevron.</div>
   </div>
 
   <div class="variant-wrap">
@@ -183,18 +180,27 @@
   </div>
 
   <div class="variant-wrap">
-    <p class="variant-label">Idee: Ghost / Outline Variante</p>
+    <p class="variant-label">Secondary (Outline) + Disabled</p>
     <div class="bg-white rounded-2xl p-10 flex flex-wrap gap-4 items-center">
-      <a href="#" class="inline-flex items-center gap-2 border border-brand text-brand px-6 py-3 rounded-full text-sm font-medium hover:bg-brand/10 active:scale-95 transition-all duration-200 group">
-        Mehr erfahren
-        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      <a href="#" class="inline-flex items-center gap-2 border-2 border-brand text-brand px-6 py-3 rounded-full text-sm font-medium hover:bg-brand hover:text-white transition-all duration-200 w-fit">
+        Zur Videostunde
       </a>
-      <a href="#" class="inline-flex items-center gap-2 border border-white text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-white/10 active:scale-95 transition-all duration-200 group" style="background: rgba(0,175,214,0.15);">
-        Auf blauem BG
-        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+      <span class="inline-flex items-center gap-2 border-2 border-gray-300 text-dark/40 px-6 py-3 rounded-full text-sm font-medium w-fit cursor-not-allowed">
+        Demnächst verfügbar
+      </span>
+    </div>
+    <div class="note note-brand mt-3">Sekundär-CTA (z.B. Videostunden-Karten). Gleiche Maße wie Primary: px-6 py-3, rounded-full. Disabled-Zustand als span mit border-gray-300 + text-dark/40.</div>
+  </div>
+
+  <div class="variant-wrap">
+    <p class="variant-label">Textlink mit Chevron</p>
+    <div class="bg-white rounded-2xl p-10">
+      <a href="#" class="inline-flex items-center gap-1 text-brand text-sm font-medium hover:gap-2 transition-all duration-200">
+        Mehr erfahren
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
       </a>
     </div>
-    <div class="note note-brand mt-3">Noch nicht im Einsatz. Sinnvoll als Sekundär-CTA wenn zwei Buttons nebeneinander stehen müssen (z.B. „Jetzt starten" + „Mehr erfahren").</div>
+    <div class="note mt-3">Für Karten-Footer (Shop-Produktkarten). Chevron w-4 h-4, Abstand animiert von gap-1 auf gap-2.</div>
   </div>
 </section>
 
@@ -377,6 +383,40 @@
 </section>
 
 <!-- ─────────────────────────────────────
+     BREADCRUMB NAV
+───────────────────────────────────── -->
+<section class="comp-section" id="sec-breadcrumb-nav">
+  <p class="comp-label">Molecule</p>
+  <h2 class="comp-title">Breadcrumb Nav</h2>
+  <p class="comp-desc">Seit Juli 2026 (Figma-File <code>DET-Website-B2B</code>) die Hauptnavigation auf <strong>allen</strong> Seiten — ersetzt die alte 3-Link-Nav. 4 Zielgruppen, chevron-getrennt: Schüler*innen, Lehrer*innen, Personaler*innen, Shop. Header ist nicht per Include geteilt — Änderungen müssen auf allen 11 HTML-Seiten dupliziert werden.</p>
+
+  <div class="variant-wrap">
+    <p class="variant-label">Desktop (aktive Seite: Lehrer*innen)</p>
+    <div class="bg-white rounded-2xl p-10">
+      <nav aria-label="Hauptnavigation" class="flex items-center gap-[23px]">
+        <a href="https://www.deinerstertag.de/" target="_blank" rel="noopener" class="inline-flex items-center gap-[7px] text-slate hover:text-dark transition-colors duration-200">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02Z" clip-rule="evenodd"/></svg>
+          <span class="text-[14px] leading-[16px]">Schüler*innen</span>
+        </a>
+        <a href="#" class="inline-flex items-center gap-[7px] text-slate" aria-current="page">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02Z" clip-rule="evenodd"/></svg>
+          <span class="text-[14px] leading-[16px] font-bold">Lehrer*innen</span>
+        </a>
+        <a href="#" class="inline-flex items-center gap-[7px] text-slate hover:text-dark transition-colors duration-200">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02Z" clip-rule="evenodd"/></svg>
+          <span class="text-[14px] leading-[16px]">Personaler*innen</span>
+        </a>
+        <a href="#" class="inline-flex items-center gap-[7px] text-slate hover:text-dark transition-colors duration-200">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02Z" clip-rule="evenodd"/></svg>
+          <span class="text-[14px] leading-[16px]">Shop</span>
+        </a>
+      </nav>
+    </div>
+    <div class="note note-brand mt-3">Jedes Item: <code>heroicons-mini/chevron-right</code> (14px) + Label 12px. Farbe immer <code>text-slate</code> (#384a53) — aktive Seite bekommt nur <code>font-bold</code> + <code>aria-current="page"</code>, keine Farbänderung. Schüler*innen verlinkt (innerhalb dieses Prototypen) extern auf <code>https://www.deinerstertag.de/</code> (<code>target="_blank" rel="noopener"</code>), da diese Seite hier noch nicht existiert. Sobald es eine eigene Schüler*innen-Seite im Prototyp gibt: auf allen 11 Seiten gleichzeitig auf ein lokales <code>href</code> umstellen.</div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────
      FEATURE ROW
 ───────────────────────────────────── -->
 <section class="comp-section" id="sec-feature-row">
@@ -509,42 +549,30 @@
     <p class="variant-label">Interaktiv (klickbar)</p>
     <div class="bg-white rounded-2xl p-10">
       <div class="flex flex-col" id="demo-faq">
-        <div class="faq-item border-t border-[#e3e3e3] py-6">
-          <button class="faq-trigger w-full text-left flex items-center justify-between gap-4" onclick="toggleFaq(this)">
-            <span class="text-[15px] leading-relaxed font-medium">Wie lange dauert es bis mein Beruf in der Schule ist?</span>
-            <svg class="faq-icon w-5 h-5 shrink-0 text-dark/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+        <div class="faq-item border-b border-line">
+          <button class="faq-trigger w-full flex items-center justify-between py-5 text-left" onclick="toggleFaq(this)" aria-expanded="false">
+            <span class="text-xl leading-[30px] text-dark pr-4 transition-colors duration-200">Wie lange dauert es bis mein Beruf in der Schule ist?</span>
+            <svg class="faq-icon w-6 h-6 shrink-0 text-dark transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
           </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner pt-4 text-[15px] leading-relaxed text-dark/70">
-              Nach Vertragsabschluss und Briefing beginnt die Produktion. In der Regel sind Ihre Inhalte innerhalb von 4–6 Wochen im Schulprogramm sichtbar.
-            </div>
-          </div>
+          <div class="faq-answer"><div class="faq-answer-inner pb-5"><p class="text-[15px] leading-relaxed text-dark/70 max-w-[843px]">Nach Vertragsabschluss und Briefing beginnt die Produktion. In der Regel sind Ihre Inhalte innerhalb von 4–6 Wochen im Schulprogramm sichtbar.</p></div></div>
         </div>
-        <div class="faq-item border-t border-[#e3e3e3] py-6">
-          <button class="faq-trigger w-full text-left flex items-center justify-between gap-4" onclick="toggleFaq(this)">
-            <span class="text-[15px] leading-relaxed font-medium">Welche Schultypen sind dabei?</span>
-            <svg class="faq-icon w-5 h-5 shrink-0 text-dark/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+        <div class="faq-item border-b border-line">
+          <button class="faq-trigger w-full flex items-center justify-between py-5 text-left" onclick="toggleFaq(this)" aria-expanded="false">
+            <span class="text-xl leading-[30px] text-dark pr-4 transition-colors duration-200">Welche Schultypen sind dabei?</span>
+            <svg class="faq-icon w-6 h-6 shrink-0 text-dark transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
           </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner pt-4 text-[15px] leading-relaxed text-dark/70">
-              Hauptsächlich Sekundarschulen, Gesamtschulen und Berufsschulen. Über 8.000 Schulen in ganz Deutschland.
-            </div>
-          </div>
+          <div class="faq-answer"><div class="faq-answer-inner pb-5"><p class="text-[15px] leading-relaxed text-dark/70 max-w-[843px]">Hauptsächlich Sekundarschulen, Gesamtschulen und Berufsschulen. Über 8.000 Schulen in ganz Deutschland.</p></div></div>
         </div>
-        <div class="faq-item border-t border-b border-[#e3e3e3] py-6">
-          <button class="faq-trigger w-full text-left flex items-center justify-between gap-4" onclick="toggleFaq(this)">
-            <span class="text-[15px] leading-relaxed font-medium">Was kostet eine Partnerschaft?</span>
-            <svg class="faq-icon w-5 h-5 shrink-0 text-dark/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+        <div class="faq-item border-b border-line">
+          <button class="faq-trigger w-full flex items-center justify-between py-5 text-left" onclick="toggleFaq(this)" aria-expanded="false">
+            <span class="text-xl leading-[30px] text-dark pr-4 transition-colors duration-200">Was kostet eine Partnerschaft?</span>
+            <svg class="faq-icon w-6 h-6 shrink-0 text-dark transition-colors duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/></svg>
           </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner pt-4 text-[15px] leading-relaxed text-dark/70">
-              Die Preise richten sich nach Reichweite und Medienformat. Kontaktieren Sie uns für ein individuelles Angebot.
-            </div>
-          </div>
+          <div class="faq-answer"><div class="faq-answer-inner pb-5"><p class="text-[15px] leading-relaxed text-dark/70 max-w-[843px]">Die Preise richten sich nach Reichweite und Medienformat. Kontaktieren Sie uns für ein individuelles Angebot.</p></div></div>
         </div>
       </div>
     </div>
-    <div class="note mt-3">grid-template-rows statt max-height. border-b nur am letzten Item. Aktiver Zustand: Fragentext + Icon text-brand.</div>
+    <div class="note mt-3">Es gibt genau EINE FAQ-Variante (diese). Frage: text-xl, Icon: w-6 h-6 Plus, Trenner: border-b border-line, Antwort: pb-5 + max-w-[843px]. grid-template-rows statt max-height. Aktiver Zustand: Fragentext + Icon brand-blau.</div>
   </div>
 </section>
 
@@ -695,6 +723,39 @@
       </div>
     </div>
     <div class="note note-brand mt-3">Dark CTA für Kontexte wo Gelb schon benutzt wurde oder zu viel wäre. Noch nicht im Einsatz.</div>
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────
+     SHOP CROSS-SELL CARD
+───────────────────────────────────── -->
+<section class="comp-section" id="sec-shop-cross-sell">
+  <p class="comp-label">Section</p>
+  <h2 class="comp-title">Shop Cross-Sell Card</h2>
+  <p class="comp-desc">Bewirbt ein einzelnes Shop-Produkt im Kontext einer Zielgruppenseite (z.B. VR-Box auf lehrkraefte.html). Hintergrund <code>bg-cloud</code> (#f2f2f2) grenzt die Karte von den umgebenden <code>bg-light</code> Sections ab. Neu seit Juli 2026 (Figma-File <code>DET-Website-B2B</code>).</p>
+
+  <div class="variant-wrap">
+    <p class="variant-label">Standard</p>
+    <div class="bg-cloud rounded-2xl flex flex-col lg:flex-row gap-8 lg:gap-16 items-center p-6 lg:p-8">
+      <div class="w-full lg:w-[300px] shrink-0 rounded-2xl overflow-hidden aspect-[4/3] bg-gray-200 flex items-center justify-center text-dark/30 text-sm">Produktbild</div>
+      <div class="flex flex-col gap-4 w-full">
+        <p class="text-brand text-base tracking-tight2">Shop</p>
+        <h2 class="text-display-xs font-normal text-dark">VR-Box: 140+ Berufe in 360°</h2>
+        <span class="bg-yellow text-dark rounded-full px-4 py-1.5 text-sm font-medium w-fit">ab 890 €</span>
+        <p class="text-base leading-[26px] text-dark">140+ virtuelle Betriebserkundungen auf Meta Quest-Brillen – offline, DSGVO-konform, sofort einsatzbereit im Unterricht.</p>
+        <div class="flex flex-wrap gap-6 items-center">
+          <a href="#" class="inline-flex items-center gap-2 bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200 w-fit group">
+            Zur Bestellung
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#" class="inline-flex items-center gap-1 text-brand text-sm font-medium hover:gap-2 transition-all duration-200">
+            Mehr erfahren
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="note note-brand mt-3">Preis-Badge zeigt den Startpreis des Produkts (z.B. „ab 890 €"), gleiche Pill wie auf den Produktkarten auf shop.html. Bild links (Desktop) / oben (Mobile). Beide CTAs (Button + Textlink) verlinken auf dieselbe Produkt-Detailseite.</div>
   </div>
 </section>
 
@@ -983,13 +1044,16 @@
     // Close all in same container
     const container = item.closest('#demo-faq');
     container.querySelectorAll('.faq-answer.open').forEach(a => a.classList.remove('open'));
-    container.querySelectorAll('.faq-icon.open').forEach(i => i.classList.remove('open'));
-    container.querySelectorAll('.faq-trigger span').forEach(s => s.classList.remove('text-brand'));
+    container.querySelectorAll('.faq-icon').forEach(i => { i.classList.remove('open'); i.style.color = ''; });
+    container.querySelectorAll('.faq-trigger span').forEach(s => s.style.color = '');
+    container.querySelectorAll('.faq-trigger').forEach(b => b.setAttribute('aria-expanded', 'false'));
 
     if (!isOpen) {
       answer.classList.add('open');
       icon.classList.add('open');
-      label.classList.add('text-brand');
+      icon.style.color = '#00afd6';
+      label.style.color = '#00afd6';
+      btn.setAttribute('aria-expanded', 'true');
     }
   }
 
