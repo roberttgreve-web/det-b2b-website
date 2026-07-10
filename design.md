@@ -204,8 +204,15 @@ Mobile:   [  IMAGE 100% 4:3  ]
 - Ersetzt seit Juli 2026 (Figma-File `DET-Website-B2B`, Node `Lehrkräfte/Videostunde Detail`) die dunkle `bg-night`-Stage als Standard für Hero+Video/Bild-Kombinationen — **`night` wird nicht mehr für neue Hero-Sections verwendet**
 - Hintergrund `bg-paper`, Headline **und** Lead-Text in `text-slate` (nicht `text-dark` — bewusste Abweichung lt. Figma, softer als Standard-Body-Text)
 - Kein extra `pt-8`/`pt-10`-Innenabstand mehr (war Artefakt der dunklen Vollbild-Stage) — normales Section-Padding `pt-24 lg:pt-32 pb-16 lg:pb-24`
-- Auf den Shop-Detailseiten (VR-Box, BerUFO, Job Terminal, Messe-Set, AR) gibt's zusätzlich einen „Zurück zum Shop"-Link vor der Headline: `text-dark/50 hover:text-dark/80 transition-colors` (war `text-white/50 hover:text-white/80` auf der dunklen Stage)
-- Vollständig umgesetzt auf allen 7 Seiten, die vorher `bg-night` nutzten: `videostunde-detail.html`, `medienbox.html`, `shop-vr-box.html`, `shop-berufo.html`, `shop-jobterminal.html`, `shop-messe-set.html`, `shop-ar.html`
+- **Seit Juli 2026 nutzen die Shop-Detailseiten NICHT mehr die Light Stage Hero**, sondern die neue [Produkt-Bühne](#produkt-buehne-shop-detailseiten). Light Stage Hero bleibt aktuell nur auf `videostunde-detail.html` und `medienbox.html` im Einsatz.
+
+### Produkt-Bühne (Shop-Detailseiten — seit Juli 2026, Figma `DET-Website-B2B` Node `Produkt/Detailseite`)
+Zweispaltiges Hero für Produkt-Detailseiten (`shop-vr-box.html`, `shop-berufo.html`, `shop-jobterminal.html`, `shop-messe-set.html`, `shop-ar.html`) — ersetzt die frühere Light-Stage-Hero + „Zurück zum Shop"-Link.
+- Section `bg-light pt-24 lg:pt-32 pb-16 lg:pb-24`; darüber Breadcrumb-Text `Shop / <Produkt>` (`text-[14px] text-slate`, „Shop" fett & verlinkt)
+- Links: **Produkt-Slider** `bg-white rounded-2xl aspect-[696/608]` mit `.slider-track` (translateX), Prev/Next-Buttons (`w-10 h-10 rounded-full bg-white shadow-md`), Dots (`.slider-dots`, aktiv `bg-brand w-6`, inaktiv `bg-dark/20`). Logik als kleines Inline-`<script>` pro Seite (`[data-slider]`), NICHT in shared.js
+- Rechts (`lg:w-[428px]`): H1 (`text-display-xs lg:text-[32px]`), Preiszeile (`text-brand text-xl` + `text-muted` Zusatz), Lead, **Häkchen-Box** (`bg-cloud rounded-2xl p-4`, 3 Check-Items), Primary-CTA → `#bestellen`
+- Danach feste Sektionsabfolge: **PRODUKTINFORMATIONEN** (zentriert `max-w-[788px]`) → **DIE VORTEILE** (basiert auf [4 STATIONEN](#5-section-patterns): Intro + Video-Thumbnail mit Play-Button + Liste, runde Icons `bg-mist rounded-full`) → **BESTELLEN** (Formular auf `bg-paper`, aus medienbox übernommen) → **FAQ** → **KONTAKT** („Sie haben Fragen zu …?") → **CROSS-SELLING** (3 Produktkarten). Entfernt ggü. alt: FÜR WEN, CTA YELLOW, separate PREIS-Karte
+- Produktbild VR-Box lokal: `assets/vr-box-produkt.png` (aus Figma exportiert)
 
 ### Yellow CTA Card (kanonisch — überall identisch)
 ```html

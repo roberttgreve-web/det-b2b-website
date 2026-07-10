@@ -85,3 +85,23 @@ Wenn du die Abfolge ändern willst, verschiebe die Einträge hier und sag mir Be
 | 4 | **CONTACT** | „Sie haben Fragen zur Videostunde?" | `id="kontakt"` |
 | 5 | **FAQ** | „Die Häufigsten Fragen zur Videostunde." | `.faq-item` |
 | 6 | **FOOTER** | App-Badges · Social Links · Legal | `<footer>` |
+
+---
+
+## 6. shop-*.html — Produkt-Detailseiten (VR-Box, BerUFO, Job Terminal, Messe-Set, AR)
+
+Einheitliche Vorlage seit Juli 2026 (Figma `DET-Website-B2B` Node `Produkt/Detailseite`). Alle 5 Produktseiten folgen exakt dieser Abfolge; nur Copy/Preise/Bilder unterscheiden sich.
+
+| # | Sektion | Headline / Kerninhalt | HTML-ID |
+|---|---------|-----------------------|---------|
+| 1 | **NAV** | Logo · 4 Zielgruppen · Hamburger | `<header>` |
+| 2 | **BÜHNE** | Zweispaltig: Produkt-Bildslider (Pfeile + Dots) · Titel, Preis „ab … €", Häkchen-Box, CTA → Formular · Breadcrumb „Shop / <Produkt>" | — |
+| 3 | **PRODUKTINFORMATIONEN** | Zentrierte Textsektion (`max-w-[788px]`) | — |
+| 4 | **DIE VORTEILE** | Basiert auf 4 STATIONEN (Medienbox): Intro + Video-Thumbnail + Liste mit runden Icons | — |
+| 5 | **BESTELLEN** | Bestellformular „Bestellen Sie Ihr/e …" (auf `bg-paper`) | `id="bestellen"` |
+| 6 | **FAQ** | „Hier sind die Fragen, die wir am häufigsten hören." | `.faq-item` |
+| 7 | **KONTAKT** | „Sie haben Fragen zu …?" · Henrick Figge | `id="kontakt"` |
+| 8 | **CROSS-SELLING** | „Vielleicht gefällt Ihnen auch" · 3 Produktkarten | — |
+| 9 | **FOOTER** | App-Badges · Social Links · Legal | `<footer>` |
+
+**Entfernt ggü. der alten Shop-Detailseite:** Light-Stage-Hero, „Zurück zum Shop"-Link, FÜR-WEN-Sektion, CTA-YELLOW, separate PREIS-Karte.
