@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Über uns – DEIN ERSTER TAG</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+  <script src="shared/config.js"></script>
+  <link rel="stylesheet" href="shared/shared.css" />
+</head>
+<body class="font-sans bg-light text-dark overflow-x-hidden">
+
+<!-- STICKY NAVIGATION -->
+<header class="fixed top-0 left-0 right-0 z-50 nav-bar bg-white/90 border-b border-gray-100">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8 py-3 flex items-center justify-between">
+    <a href="index.html" aria-label="DEIN ERSTER TAG – Startseite">
+      <img src="logo.svg" alt="DEIN ERSTER TAG Logo" width="96" height="57" class="h-10 lg:h-14 w-auto object-contain" />
+    </a>
+    <nav aria-label="Hauptnavigation" class="hidden lg:flex items-center gap-[23px]">
+      <a href="https://www.deinerstertag.de/" target="_blank" rel="noopener" class="inline-flex items-center gap-[7px] text-slate hover:text-dark transition-colors duration-200"><svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02Z" clip-rule="evenodd"/></svg><span class="text-[14px] leading-[16px]">Schüler*innen</span></a>
+      <a href="lehrkraefte.html" class="inline-flex items-center gap-[7px] text-slate hover:text-dark transition-colors duration-200"><svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02Z" clip-rule="evenodd"/></svg><span class="text-[14px] leading-[16px]">Lehrer*innen</span></a>
+      <a href="index.html" class="inline-flex items-center gap-[7px] text-slate hover:text-dark transition-colors duration-200"><svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02Z" clip-rule="evenodd"/></svg><span class="text-[14px] leading-[16px]">Personaler*innen</span></a>
+      <a href="shop.html" class="inline-flex items-center gap-[7px] text-slate hover:text-dark transition-colors duration-200"><svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02Z" clip-rule="evenodd"/></svg><span class="text-[14px] leading-[16px]">Shop</span></a>
+    </nav>
+    <button id="nav-hamburger" class="lg:hidden p-2 rounded-lg hover:bg-gray-100" aria-label="Menü öffnen" aria-expanded="false">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+  <div id="mobile-menu" class="lg:hidden border-t border-gray-100 bg-white/95">
+    <nav class="flex flex-col px-6 py-4 gap-4 text-base">
+      <a href="https://www.deinerstertag.de/" target="_blank" rel="noopener" class="text-dark hover:text-brand transition-colors py-1">Schüler*innen</a>
+      <a href="lehrkraefte.html" class="text-dark hover:text-brand transition-colors py-1">Lehrer*innen</a>
+      <a href="index.html" class="text-dark hover:text-brand transition-colors py-1">Personaler*innen</a>
+      <a href="shop.html" class="text-dark hover:text-brand transition-colors py-1">Shop</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ═══════════════════════════════════════
+     HERO SECTION
+═══════════════════════════════════════ -->
+<section class="pt-20 lg:pt-24 pb-16 bg-light">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8 pt-8 lg:pt-10">
+    <div class="flex flex-col lg:flex-row gap-8 xl:gap-[105px] items-start lg:items-center">
+
+      <div class="w-full lg:w-[55%] xl:w-[795px] aspect-[4/3] lg:aspect-auto lg:h-auto xl:h-[694px] overflow-hidden rounded-2xl shrink-0 reveal-left">
+        <img
+          src="assets/Über uns Hero.png"
+          alt="Das DEIN ERSTER TAG Team"
+          class="w-full h-full object-cover"
+          style="aspect-ratio: 4/3; object-position: center top;"
+        />
+      </div>
+
+      <div class="flex flex-col gap-6 lg:gap-8 w-full lg:flex-1 lg:min-w-0 reveal-right">
+        <h1 class="text-display-xs sm:text-display-sm lg:text-[36px] xl:text-display text-dark font-normal">
+          Wir machen Berufsorientierung, die begeistert.
+        </h1>
+        <p class="text-base lg:text-xl leading-[26px] lg:leading-[30px] text-dark">
+          Mit uns erleben Jugendliche echte Ausbildungsberufe. Spannend, interaktiv und so, dass es hängen bleibt. So senken wir Jugendarbeitslosigkeit, wirken dem Fachkräftemangel entgegen und bringen aktivierende Berufsorientierung direkt ins Schulgebäude.
+        </p>
+        <a href="#" class="inline-flex items-center gap-2 bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200 w-fit group">
+          Aktuelle Jobs
+          <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Stats bar -->
+    <div class="flex flex-col sm:flex-row items-stretch mt-8 reveal delay-200 gap-px">
+      <div class="border border-line flex items-center justify-center px-4 py-4 sm:rounded-bl-2xl sm:rounded-tl-2xl rounded-t-2xl sm:rounded-t-none sm:rounded-bl-2xl flex-1 hover:bg-gray-50 transition-colors">
+        <p class="text-base lg:text-xl text-center">
+          <strong>8.500+ Partnerschulen</strong>
+          <span class="text-muted"> in ganz Deutschland</span>
+        </p>
+      </div>
+      <div class="border border-line flex items-center justify-center px-4 py-4 flex-1 hover:bg-gray-50 transition-colors">
+        <p class="text-base lg:text-xl text-center">
+          <strong>200+ Berufe</strong>
+          <span class="text-muted"> erlebbar gemacht</span>
+        </p>
+      </div>
+      <div class="border border-line flex items-center justify-center px-4 py-4 sm:rounded-br-2xl sm:rounded-tr-2xl rounded-b-2xl sm:rounded-b-none flex-1 hover:bg-gray-50 transition-colors">
+        <p class="text-base lg:text-xl text-center">
+          <strong>350.000 Schüler*innen</strong>
+          <span class="text-muted"> jährlich im Klassenraum</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     DAS MACHEN WIR
+═══════════════════════════════════════ -->
+<section class="bg-brand py-16 lg:py-24">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8">
+    <div class="max-w-[788px] reveal">
+      <p class="text-white text-base tracking-tight2 mb-4">DAS MACHEN WIR</p>
+      <h2 class="text-display-xs sm:text-display-sm lg:text-display text-[#fafafa] font-normal mb-6">
+        So erreichen wir 350.000 Schüler*innen im Klassenraum jedes Jahr
+      </h2>
+      <p class="text-[15px] leading-relaxed text-white/70 mb-4">
+        Das Modell von DEIN ERSTER TAG ist einfach: Wir gehen in echte Ausbildungsbetriebe und produzieren dort Medien zu Ausbildungsberufen – mit Virtual und Augmented Reality, verschiedenen Videoformaten und spielerischen Ansätzen.
+      </p>
+      <p class="text-[15px] leading-relaxed text-white/70">
+        Schulen nutzen diese Medien kostenlos für ihre Berufsorientierung: auf schulinternen Messen, im Unterricht oder bei Projektwochen – über unsere Medienbox oder die Videostunde.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     TEAM / GESCHÄFTSFÜHRUNG
+═══════════════════════════════════════ -->
+<section class="bg-light py-16 lg:py-24">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+
+      <!-- Image + Caption -->
+      <div class="w-full lg:flex-1 flex flex-col gap-3 reveal-left">
+        <div class="rounded-2xl overflow-hidden aspect-[4/3] lg:aspect-auto lg:h-[600px]">
+          <img
+            src="assets/DET GF.jpg"
+            alt="Die Geschäftsführung von DEIN ERSTER TAG"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <p class="text-[13px] text-dark/50">Das ist unsere Geschäftsführung: Robert, Jasmin und Julian.</p>
+      </div>
+
+      <!-- Copy -->
+      <div class="w-full lg:w-[531px] shrink-0 flex flex-col gap-8 reveal-right">
+        <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark font-normal">
+          30 Teammitglieder, ein Auftrag: Begeisternde Berufsorientierung.
+        </h2>
+        <div class="flex flex-col gap-6">
+          <div class="flex gap-4 items-start">
+            <div class="w-12 h-12 bg-mist rounded-xl shrink-0 flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <div>
+              <h3 class="text-xl leading-[30px] mb-2">Seit 10 Jahren am Start</h3>
+              <p class="text-[15px] leading-relaxed text-dark/70">Entstanden aus dem Lehramtsstudium an der Freien Universität Berlin.</p>
+            </div>
+          </div>
+          <div class="border-t border-line pt-6 flex gap-4 items-start">
+            <div class="w-12 h-12 bg-mist rounded-xl shrink-0 flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <div>
+              <h3 class="text-xl leading-[30px] mb-2">Büro in Berlin, Einsatz in ganz Deutschland</h3>
+              <p class="text-[15px] leading-relaxed text-dark/70">Wir sind ein Berliner Unternehmen, aber deutschlandweit im Einsatz.</p>
+            </div>
+          </div>
+          <div class="border-t border-line pt-6 flex gap-4 items-start">
+            <div class="w-12 h-12 bg-mist rounded-xl shrink-0 flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            </div>
+            <div>
+              <h3 class="text-xl leading-[30px] mb-2">Vielfältige Fähigkeiten</h3>
+              <p class="text-[15px] leading-relaxed text-dark/70">Ehemalige Lehrkräfte, Kreative und Entwickler*innen arbeiten bei uns Hand in Hand für gute Berufsorientierung.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     CTA YELLOW – JOBS
+═══════════════════════════════════════ -->
+<section class="px-6 lg:px-8 pb-16 bg-light">
+  <div class="max-w-[1440px] mx-auto">
+    <div class="bg-yellow rounded-2xl py-20 lg:py-24 px-8 reveal-scale">
+      <div class="max-w-[651px] mx-auto flex flex-col gap-6 items-center text-center">
+        <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark">Jobs bei DEIN ERSTER TAG</h2>
+        <p class="text-[15px] leading-relaxed text-dark">Schau doch gerne mal rein, ob wir gerade neue Kolleginnen und Kollegen suchen.</p>
+        <a href="#" class="inline-flex items-center gap-2 bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200 group">
+          Zu den freien Stellen
+          <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     AUSZEICHNUNGEN
+═══════════════════════════════════════ -->
+<section class="bg-light py-16 lg:py-24">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8">
+    <div class="flex overflow-x-auto snap-x snap-mandatory swipe-track lg:overflow-visible lg:snap-none gap-6 lg:gap-0 lg:items-start lg:justify-between pb-4 lg:pb-0">
+
+      <div class="flex gap-5 lg:gap-7 items-start snap-start shrink-0 w-[85vw] sm:w-[70vw] lg:w-auto lg:shrink lg:max-w-[48%]">
+        <div class="shrink-0 w-20 h-20 lg:w-[171px] lg:h-[171px] rounded-full bg-white border border-line flex items-center justify-center overflow-hidden">
+          <img
+            src="assets/Deutschland-Land-der-Ideen.jpg"
+            alt="Ausgezeichnete Orte im Land der Ideen"
+            class="w-full h-full object-contain p-3"
+          />
+        </div>
+        <div class="flex flex-col gap-5 lg:gap-7">
+          <p class="text-[15px] leading-relaxed text-dark">
+            Für unseren Ansatz einer begeisternden, niedrigschwelligen Berufsorientierung wurden wir im bundesweiten Innovationswettbewerb ausgezeichnet.
+          </p>
+          <div>
+            <p class="text-[15px] font-bold leading-relaxed">Ausgezeichnete Orte im Land der Ideen</p>
+            <p class="text-[15px] leading-relaxed">Bundesweiter Innovationswettbewerb</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-px bg-gray-200 self-stretch mx-4 hidden lg:block shrink-0"></div>
+
+      <div class="flex gap-5 lg:gap-7 items-start snap-start shrink-0 w-[85vw] sm:w-[70vw] lg:w-auto lg:shrink lg:max-w-[48%]">
+        <div class="shrink-0 w-20 h-20 lg:w-[171px] lg:h-[171px] rounded-full bg-white border border-line flex items-center justify-center overflow-hidden">
+          <img
+            src="assets/dbop.jpg"
+            alt="D-BOP-Preis"
+            class="w-full h-full object-contain p-3"
+          />
+        </div>
+        <div class="flex flex-col gap-5 lg:gap-7">
+          <p class="text-[15px] leading-relaxed text-dark">
+            Das Bundesbildungsministerium und das Bundesinstitut für Berufsbildung (BIBB) haben uns mit dem D-BOP-Preis für unseren herausragenden Ansatz digitaler Berufsorientierung geehrt.
+          </p>
+          <div>
+            <p class="text-[15px] font-bold leading-relaxed">D-BOP-Preis</p>
+            <p class="text-[15px] leading-relaxed">Kategorie: Erleben von Berufsfeldern und Berufen</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-center gap-2 mt-4 lg:hidden" aria-hidden="true">
+      <span class="w-2 h-2 rounded-full bg-brand"></span>
+      <span class="w-2 h-2 rounded-full bg-gray-300"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     CONTACT SECTION
+═══════════════════════════════════════ -->
+<section id="kontakt" class="bg-light py-16 lg:py-24 overflow-hidden">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8 flex flex-col lg:flex-row gap-10 lg:gap-20 items-start">
+    <div class="w-full lg:w-auto lg:shrink-0 reveal-left">
+      <div class="rounded-2xl overflow-hidden w-full lg:w-[677px] aspect-[4/3] lg:aspect-auto lg:h-[655px]">
+        <img
+          src="assets/Nina.jpg"
+          alt="Nina"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    </div>
+    <div class="flex flex-col gap-8 w-full lg:max-w-[428px] lg:pt-20 reveal-right">
+      <h2 class="text-display-xs sm:text-display-sm lg:text-display text-dark font-normal">
+        Sag doch mal Hallo!
+      </h2>
+      <p class="text-[15px] leading-relaxed text-dark/80">
+        Schreib uns eine E-Mail an info[at]studio2b.de oder ruf uns an: 030 1663 570 114.
+      </p>
+      <a href="mailto:info@studio2b.de" class="inline-flex items-center gap-2 bg-brand text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-brand/90 active:scale-95 transition-all duration-200 w-fit group">
+        E-Mail senden
+        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-brand pt-20 pb-8">
+  <div class="max-w-[1440px] mx-auto px-6 lg:px-8">
+    <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10 pb-16 border-b border-white/20">
+      <div class="flex flex-col gap-2">
+        <p class="text-white text-[22px] font-medium leading-7 max-w-xs">Mit der JobApp noch schneller und einfacher bewerben.</p>
+        <div class="flex gap-4 mt-4">
+          <img src="assets/08446ed5.png" alt="App Store" class="h-10 rounded-lg" />
+          <img src="assets/d3e7c956.png" alt="Google Play" class="h-10 rounded-lg" />
+        </div>
+      </div>
+      <div class="flex flex-col gap-2">
+        <p class="text-white text-[22px] font-medium leading-7">Fragen, Anregung, Kritik? Schreib uns.</p>
+        <a href="mailto:hallo@deinerstertag.de" class="text-white text-base mt-2 hover:underline">hallo@deinerstertag.de</a>
+      </div>
+      <div class="flex flex-col gap-3">
+        <a href="#" class="flex items-center gap-2 text-white text-sm font-bold hover:text-white/80 transition-colors">
+          <img src="assets/01b29629.svg" alt="" aria-hidden="true" class="w-8 h-8" /> Instagram
+        </a>
+        <a href="#" class="flex items-center gap-2 text-white text-sm font-bold hover:text-white/80 transition-colors">
+          <img src="assets/c958d2c4.svg" alt="" aria-hidden="true" class="w-8 h-8" /> Facebook
+        </a>
+        <a href="#" class="flex items-center gap-2 text-white text-sm font-bold hover:text-white/80 transition-colors">
+          <img src="assets/d8522f4e.svg" alt="" aria-hidden="true" class="w-8 h-8" /> YouTube
+        </a>
+        <a href="#" class="flex items-center gap-2 text-white text-sm font-bold hover:text-white/80 transition-colors">
+          <img src="assets/e2571cf7.svg" alt="" aria-hidden="true" class="w-8 h-8" /> TikTok
+        </a>
+        <a href="#" class="flex items-center gap-2 text-white text-sm font-bold hover:text-white/80 transition-colors">
+          <img src="assets/f9b842de.png" alt="" aria-hidden="true" class="w-8 h-8 object-cover rounded" /> LinkedIn
+        </a>
+      </div>
+    </div>
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 py-12 border-b border-white/20">
+      <div class="col-span-2 lg:col-span-1"><img src="logo.svg" alt="DEIN ERSTER TAG" width="96" height="57" class="h-10 w-auto object-contain mb-6 brightness-0 invert" /></div>
+      <div class="flex flex-col gap-3">
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Jobs</a>
+        <a href="ueber-uns.html" class="text-white text-base hover:text-white/70 transition-colors">Über uns</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">AGBs</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Kontakt</a>
+      </div>
+      <div class="flex flex-col gap-3">
+        <a href="lehrkraefte.html" class="text-white text-base hover:text-white/70 transition-colors">Für Lehrkräfte</a>
+        <a href="index.html" class="text-white text-base hover:text-white/70 transition-colors">Für Personaler*innen</a>
+        <a href="shop.html" class="text-white text-base hover:text-white/70 transition-colors">Shop</a>
+      </div>
+      <div class="flex flex-col gap-3">
+        <a href="#" class="text-white text-base underline hover:text-white/70 transition-colors">Impressum</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Datenschutz</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Nutzungsbedingungen</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Open Source</a>
+        <a href="#" class="text-white text-base hover:text-white/70 transition-colors">Privatsphäreneinstellungen</a>
+      </div>
+    </div>
+    <div class="pt-6"><p class="text-white text-sm">© 2026 Studio2B GmbH</p></div>
+  </div>
+</footer>
+
+<script src="shared/shared.js"></script>
+</body>
+</html>
